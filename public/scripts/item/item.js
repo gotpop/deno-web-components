@@ -1,4 +1,4 @@
-const cssPath = "./item.css";
+import { loadCSS } from "../utils/loadCss.js";
 
 export class GridItem extends HTMLElement {
   constructor() {
@@ -8,26 +8,8 @@ export class GridItem extends HTMLElement {
     const article = document.createElement("article");
     const slot = document.createElement("slot");
 
-    const loadCSS = async () => {
-      try {
-        // Using relative path and dynamic import
-        const cssModule = await import(cssPath, {
-          with: { type: "css" },
-        });
-
-        console.log("cssModule :", cssModule.default);
-
-        if (cssModule?.default) {
-          shadow.adoptedStyleSheets = [cssModule.default];
-        } else {
-          console.error("No default export found in CSS module");
-        }
-      } catch (error) {
-        console.error("Failed to load CSS:", error);
-      }
-    };
-
-    loadCSS();
+    const cssPath = new URL("./item.css", import.meta.url).href;
+    loadCSS(cssPath, shadow);
 
     article.appendChild(slot);
     shadow.appendChild(article);
