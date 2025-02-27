@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "main.js": "./src/public/scripts/main.js",
-    "main.css": "./src/public/styles/main.css"
-  }
-}

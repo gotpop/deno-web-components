@@ -6,6 +6,12 @@
     <title>Test</title>
     <link rel="stylesheet" href="./styles/main.css" />
      <script defer type="module" src="./scripts/main.js"></script>
+       <script>
+    if (location.hostname === 'localhost') {
+      const ws = new WebSocket(`ws://${location.host}/live-reload`);
+      ws.onmessage = () => location.reload();
+    }
+  </script>
   </body>
   </head>
   <body>

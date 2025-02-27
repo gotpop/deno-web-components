@@ -1,5 +1,34 @@
 {
   "compilerOptions": {
+    "lib": ["deno.window"],
     "strict": true
+  },
+  "tasks": {
+    "dev": "DEV=true deno run --allow-net --allow-read --allow-env --watch src/server.ts",
+    "start": "deno run --allow-net --allow-read src/server.ts",
+    "test": "deno test",
+    "lint": "deno lint",
+    "fmt": "deno fmt"
+  },
+  "imports": {
+    "main.js": "./src/public/scripts/main.js",
+    "main.css": "./src/public/styles/main.css"
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "singleQuote": true,
+    "lineWidth": 80,
+    "trailingComma": "all",
+    "semiColons": false
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"],
+      "exclude": [
+        "style/no-experimental",
+        "style/no-unknown-properties",
+        "style/no-invalid-position"
+      ]
+    }
   }
 }

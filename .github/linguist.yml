@@ -1,0 +1,9 @@
+ignored:
+  - "vendor/*"
+  - "node_modules/*"
+languages:
+  TypeScript:
+    type: programming
+    color: "#2b7489"
+    extensions:
+      - ".tsx"
