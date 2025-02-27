@@ -15,6 +15,7 @@ async function serveFile(filePath: string): Promise<Response> {
 
 function getContentType(filePath: string): string {
   const ext = filePath.split(".").pop()?.toLowerCase();
+
   const types: Record<string, string> = {
     html: "text/html",
     css: "text/css",
@@ -25,6 +26,7 @@ function getContentType(filePath: string): string {
     jpeg: "image/jpeg",
     gif: "image/gif",
   };
+
   return types[ext ?? ""] ?? "text/plain";
 }
 
