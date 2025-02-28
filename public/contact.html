@@ -6,6 +6,16 @@
     <title>Test</title>
     <link rel="stylesheet" href="./styles/main.css" />
     <script defer type="module" src="./scripts/main.js"></script>
+    <script type="speculationrules">
+      {
+        "prefetch": [
+          {
+            "source": "list",
+            "urls": ["/", "/about"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <app-shell id="app-shell" role="application" aria-label="Site container">
@@ -26,7 +36,7 @@
       </site-header>
       <main-content id="main" role="main" aria-label="Main content">
         <site-hero id="hero">
-          <h1 aria-label="Site heading">About page</h1>
+          <h1 aria-label="Site heading">Contact page</h1>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
             eveniet commodi voluptas in vero labore rerum iure quibusdam at
