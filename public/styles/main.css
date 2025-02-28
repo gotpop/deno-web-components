@@ -8,16 +8,12 @@
   --columns-number: 12;
 }
 
-@view-transition {
-  navigation: auto;
-}
-
 body {
   margin: unset;
 }
 
 :not(:defined) {
-  visibility: hidden !important;
+  visibility: hidden;
 }
 
 @keyframes fadeIn {
@@ -45,4 +41,32 @@ body {
 a, button, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", sans-serif;
   text-box: trim-both cap alphabetic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  margin-block-end: 1rem;
+}
+
+#app-shell {
+  display: grid;
+  row-gap: 1rem;
+  grid-template-rows:
+    [header] min-content
+    [main] 1fr
+    [footer] min-content;
+  grid-template-columns:
+    [full-start margin-start] minmax(1rem, 1fr)
+    [margin-end content-start] repeat(
+    12,
+    [col-start] minmax(
+      auto,
+      calc(var(--site-max-width) / var(--columns-number))
+    ) [col-end]
+  )
+    [content-end margin-start] minmax(1rem, 1fr)
+    [margin-end full-end];
+  min-height: 100dvh;
+  background-color: var(--colour-light);
+  view-transition-name: attr(id type(<custom-ident>), none);
 }
