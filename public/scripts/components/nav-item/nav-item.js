@@ -7,7 +7,9 @@ export class NavItem extends HTMLElement {
 
     const anchor = document.createElement("a");
     anchor.setAttribute("part", "anchor"); // Allows external styling if needed
-    anchor.setAttribute("href", "#");
+
+    const href = this.getAttribute("href") || "#";
+    anchor.setAttribute("href", href);
 
     const slot = document.createElement("slot");
     anchor.appendChild(slot);

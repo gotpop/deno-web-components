@@ -16,12 +16,14 @@ async function handler(req: Request): Promise<Response> {
 
   let filePath: string;
 
-  if (url.pathname === "/" || url.pathname === "/index.html") {
-    filePath = `${PUBLIC_DIR}/index.html`;
-  } else if (
-    url.pathname.startsWith("/scripts/") ||
-    url.pathname.startsWith("/styles/")
-  ) {
+  const staticPages = ["", "index", "about", "contact"];
+  const staticDirs = ["scripts", "styles"];
+
+  const pageName = url.pathname.replace("/", "").replace(".html", "");
+
+  if (staticPages.includes(pageName)) {
+    filePath = `${PUBLIC_DIR}/${pageName || "index"}.html`;
+  } else if (staticDirs.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
     filePath = `${PUBLIC_DIR}${url.pathname}`;
   } else {
     return new Response("Not Found", { status: 404 });
