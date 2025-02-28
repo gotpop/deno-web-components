@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 #app-shell {
   display: grid;
   row-gap: 1rem;
+  visibility: visible !important;
   grid-template-rows:
     [header] min-content
     [main] 1fr
