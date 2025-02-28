@@ -5,7 +5,7 @@ export class Footer extends HTMLElement {
     super();
     const shadow = this.attachShadow({ mode: "open" });
     const slot = document.createElement("slot");
-    this.setAtrueibute("hidden", "");
+    this.setAtribute("hidden", "");
 
     const cssPath = new URL("./site-footer.css", import.meta.url).href;
 
