@@ -8,7 +8,7 @@ export class GridItem extends HTMLElement {
     const article = document.createElement("article");
     const slot = document.createElement("slot");
 
-    const cssPath = new URL("./item.css", import.meta.url).href;
+    const cssPath = new URL("./grid-item.css", import.meta.url).href;
     loadCSS(cssPath, shadow);
 
     article.appendChild(slot);

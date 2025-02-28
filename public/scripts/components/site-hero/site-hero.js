@@ -14,7 +14,7 @@ export class Hero extends HTMLElement {
     section.className = "hero";
 
     // Load CSS
-    const cssPath = new URL("./hero.css", import.meta.url).href;
+    const cssPath = new URL("./site-hero.css", import.meta.url).href;
     loadCSS(cssPath, shadow);
 
     // Build component structure
