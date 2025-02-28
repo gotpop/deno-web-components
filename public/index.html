@@ -20,7 +20,7 @@
   </head>
   <body>
     <app-shell id="app-shell" role="application" aria-label="Site container">
-      <site-header id="header" role="banner" aria-label="Site header">
+      <site-header hidden id="header" role="banner" aria-label="Site header">
         <nav class="nav" aria-label="Primary navigation">
           <nav-list
             role="menubar"
@@ -37,13 +37,22 @@
       </site-header>
       <main-content id="main" role="main" aria-label="Main content">
         <site-hero id="hero">
-          <h1 aria-label="Site heading">Site intro</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            eveniet commodi voluptas in vero labore rerum iure quibusdam at
-            deleniti, debitis error cupiditate consectetur est deserunt totam.
-            Incidunt, aspernatur rerum!
-          </p>
+          <article>
+            <h1 aria-label="Site heading">Site intro</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              eveniet commodi voluptas in vero labore rerum iure quibusdam at
+              deleniti, debitis error cupiditate consectetur est deserunt totam.
+              Incidunt, aspernatur rerum!
+            </p>
+          </article>
+          <aside>
+            <ul>
+              <li>Point one</li>
+              <li>Point two</li>
+              <li>Point three</li>
+            </ul>
+          </aside>
         </site-hero>
         <grid-item
           id="grid-item-1"
