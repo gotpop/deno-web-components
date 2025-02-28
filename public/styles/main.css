@@ -11,37 +11,3 @@
 body {
   margin: unset;
 }
-
-.nav {
-  background-color: oklab(from var(--colour-dark) 0.9 a b);
-  display: grid;
-  grid-column: content;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around;
-}
-
-a {
-  text-decoration: none;
-  color: var(--colour-dark);
-
-  &:hover {
-    color: var(--colour-primary);
-  }
-}
-
-.item {
-  background-color: oklab(from var(--colour-dark) 0.7 a b);
-  color: var(--colour-light);
-  padding: var(--padding);
-  grid-column: span 4;
-  grid-row: span 2;
-}
-
-.grid-container {
-  display: contents;
-}

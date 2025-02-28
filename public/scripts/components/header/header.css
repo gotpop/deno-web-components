@@ -7,21 +7,15 @@
   grid-template-columns: subgrid;
   position: sticky;
   top: 0;
+  background-color: aqua;
 }
 
 /* Style the slotted navigation */
 ::slotted(.nav) {
-  display: flex;
+  background-color: oklab(from var(--colour-dark) 0.9 a b);
+  display: grid;
   grid-column: content;
-}
-
-::slotted(.nav-list) {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
   padding: 0;
-  width: 100%;
-  justify-content: space-between;
 }
 
 ::slotted(nav-item) {
@@ -32,4 +26,13 @@
 ::slotted(a) {
   color: var(--colour-light);
   text-decoration: none;
+}
+
+::part(nav-list) {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-between;
 }

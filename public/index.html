@@ -5,39 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test</title>
     <link rel="stylesheet" href="./styles/main.css" />
-     <script defer type="module" src="./scripts/main.js"></script>
-       <script>
-    if (location.hostname === 'localhost') {
-      const ws = new WebSocket(`ws://${location.host}/live-reload`);
-      ws.onmessage = () => location.reload();
-    }
-  </script>
-  </body>
+    <script defer type="module" src="./scripts/main.js"></script>
   </head>
   <body>
-  <app-shell>
-      <site-header>
-        <nav class="nav">
-          <ul class="nav-list">
-            <nav-item>Home</nav-item>
-            <nav-item>About</nav-item>
-            <nav-item>Contact</nav-item>
-          </ul>
+    <app-shell role="application" aria-label="Site container">
+      <site-header role="banner" aria-label="Site header">
+        <nav class="nav" aria-label="Primary navigation">
+          <nav-list
+            role="menubar"
+            aria-orientation="horizontal"
+            aria-label="Main"
+          >
+            <nav-item role="menuitem" aria-current="page">Home</nav-item>
+            <nav-item role="menuitem">About</nav-item>
+            <nav-item role="menuitem">Contact</nav-item>
+          </nav-list>
         </nav>
       </site-header>
-      <main-component>
+      <main-content role="main" aria-label="Main content">
         <site-hero>
-          <h1>Test!</h1>
+          <h1 aria-label="Site heading">Site intro</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            eveniet commodi voluptas in vero labore rerum iure quibusdam at
+            deleniti, debitis error cupiditate consectetur est deserunt totam.
+            Incidunt, aspernatur rerum!
+          </p>
         </site-hero>
-        <grid-item data-columns="6" data-rows="2">Title 1</grid-item>
-        <grid-item data-columns="2" data-rows="2">Title 2</grid-item>
-        <grid-item data-columns="4" data-rows="2">Title 3</grid-item>
-        <grid-item data-columns="2" data-rows="2">Title 4</grid-item>
-        <grid-item data-columns="4" data-rows="2">Title 5</grid-item>
-        <grid-item data-columns="2" data-rows="2">Title 6</grid-item>
-      </main-component>
-      <site-footer>
-        <p>&copy; 2025 Test</p>
+        <grid-item
+          role="region"
+          aria-label="Title 1"
+          data-columns="12"
+          data-rows="4"
+          >Title 1</grid-item
+        >
+        <grid-item
+          role="region"
+          aria-label="Title 2"
+          data-columns="2"
+          data-rows="2"
+          >Title 2</grid-item
+        >
+        <grid-item
+          role="region"
+          aria-label="Title 3"
+          data-columns="4"
+          data-rows="2"
+          >Title 3</grid-item
+        >
+        <grid-item
+          role="region"
+          aria-label="Title 4"
+          data-columns="2"
+          data-rows="2"
+          >Title 4</grid-item
+        >
+        <grid-item
+          role="region"
+          aria-label="Title 5"
+          data-columns="4"
+          data-rows="2"
+          >Title 5</grid-item
+        >
+        <grid-item
+          role="region"
+          aria-label="Title 6"
+          data-columns="12"
+          data-rows="2"
+          >Title 6</grid-item
+        >
+      </main-content>
+      <site-footer role="contentinfo" aria-label="Site footer">
+        <p>&copy; 2025</p>
       </site-footer>
     </app-shell>
   </body>

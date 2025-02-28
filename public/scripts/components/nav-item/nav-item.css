@@ -6,3 +6,12 @@
   grid-row: span 1;
   text-align: center;
 }
+
+::slotted(a) {
+  text-decoration: none;
+  color: var(--colour-dark);
+}
+
+::slotted(a:hover) {
+  color: var(--colour-primary);
+}
