@@ -18,6 +18,7 @@ body {
 
 :not(:defined) {
   visibility: hidden;
+  opacity: 0;
 }
 
 @keyframes fadeIn {
@@ -30,6 +31,7 @@ body {
 }
 
 :defined {
+  opacity: 1;
   animation: fadeIn 0.3s ease-in-out;
 }
 
