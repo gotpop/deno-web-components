@@ -12,38 +12,6 @@ body {
   margin: unset;
 }
 
-.site {
-  display: grid;
-  row-gap: 1rem;
-  grid-template-rows:
-    [header] min-content
-    [main] 1fr
-    [footer] min-content;
-  grid-template-columns:
-    [full-start margin-start] minmax(1rem, 1fr)
-    [margin-end content-start] repeat(
-      12,
-      [col-start]
-        minmax(auto, calc(var(--site-max-width) / var(--columns-number)))
-        [col-end]
-    )
-    [content-end margin-start] minmax(1rem, 1fr)
-    [margin-end full-end];
-  min-height: 100dvh;
-  background-color: var(--colour-light);
-}
-
-.header {
-  background-color: var(--colour-dark);
-  color: var(--colour-light);
-  display: grid;
-  grid-column: full;
-  grid-row: header;
-  grid-template-columns: subgrid;
-  position: sticky;
-  top: 0;
-}
-
 .nav {
   background-color: oklab(from var(--colour-dark) 0.9 a b);
   display: grid;
@@ -66,40 +34,12 @@ a {
   }
 }
 
-.main {
-  background-color: oklab(from var(--colour-dark) 0.9 a b);
-  display: grid;
-  grid-column: content;
-  grid-row: main;
-  grid-template-columns: subgrid;
-  padding: var(--padding);
-  gap: var(--padding);
-}
-
-.hero {
-  background-color: var(--colour-dark);
-  color: var(--colour-light);
-  padding: var(--padding);
-  grid-column: content;
-  grid-row: span 1;
-  text-align: center;
-}
-
 .item {
   background-color: oklab(from var(--colour-dark) 0.7 a b);
   color: var(--colour-light);
   padding: var(--padding);
   grid-column: span 4;
   grid-row: span 2;
-}
-
-.footer {
-  background-color: var(--colour-dark);
-  color: var(--colour-light);
-  padding: var(--padding);
-  grid-column: full;
-  grid-row: footer;
-  text-align: center;
 }
 
 .grid-container {

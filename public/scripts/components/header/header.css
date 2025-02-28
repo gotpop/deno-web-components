@@ -1,0 +1,35 @@
+:host {
+  background-color: var(--colour-dark);
+  color: var(--colour-light);
+  display: grid;
+  grid-column: full;
+  grid-row: header;
+  grid-template-columns: subgrid;
+  position: sticky;
+  top: 0;
+}
+
+/* Style the slotted navigation */
+::slotted(.nav) {
+  display: flex;
+  grid-column: content;
+}
+
+::slotted(.nav-list) {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+::slotted(nav-item) {
+  margin: 0;
+  padding: 1rem;
+}
+
+::slotted(a) {
+  color: var(--colour-light);
+  text-decoration: none;
+}

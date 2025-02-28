@@ -15,31 +15,30 @@
   </body>
   </head>
   <body>
-    <div class="site">
-      <header class="header">
+  <app-shell>
+      <site-header>
         <nav class="nav">
           <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Contact</a>
-            </li>
+            <nav-item>Home</nav-item>
+            <nav-item>About</nav-item>
+            <nav-item>Contact</nav-item>
           </ul>
         </nav>
-      </header>
-      <main class="main">
-        <section class="hero">
+      </site-header>
+      <main-component>
+        <site-hero>
           <h1>Test!</h1>
-        </section>
-        <div id="grid-container" class="grid-container"></div>
-      </main>
-      <footer class="footer">
+        </site-hero>
+        <grid-item data-columns="6" data-rows="2">Title 1</grid-item>
+        <grid-item data-columns="2" data-rows="2">Title 2</grid-item>
+        <grid-item data-columns="4" data-rows="2">Title 3</grid-item>
+        <grid-item data-columns="2" data-rows="2">Title 4</grid-item>
+        <grid-item data-columns="4" data-rows="2">Title 5</grid-item>
+        <grid-item data-columns="2" data-rows="2">Title 6</grid-item>
+      </main-component>
+      <site-footer>
         <p>&copy; 2025 Test</p>
-      </footer>
-    </div>
+      </site-footer>
+    </app-shell>
   </body>
 </html>

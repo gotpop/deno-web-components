@@ -1,26 +1,24 @@
-import { GridItem } from "./item/item.js"
+import { AppShell } from "./components/app-shell/app-shell.js";
+import { Footer } from "./components/footer/footer.js";
+import { GridItem } from "./components/item/item.js";
+import { Header } from "./components/header/header.js";
+import { Hero } from "./components/hero/hero.js";
+import { Main } from "./components/main/main.js";
+import { NavItem } from "./components/nav-item/nav-item.js";
 
-customElements.define("grid-item", GridItem)
+const components = [
+  ["app-shell", AppShell],
+  ["site-header", Header],
+  ["site-hero", Hero],
+  ["main-component", Main],
+  ["site-footer", Footer],
+  ["nav-item", NavItem],
+  ["grid-item", GridItem],
+];
 
-export const items = [
-  { title: "Title 1", columns: 6, rows: 2 },
-  { title: "Title 2", columns: 6, rows: 2 },
-  { title: "Title 3", columns: 4, rows: 3 },
-  { title: "Title 4", columns: 4, rows: 2 },
-  { title: "Title 5", columns: 4, rows: 2 },
-  { title: "Title 6", columns: 4, rows: 2 },
-]
-
-const container = document.getElementById("grid-container")
-
-const render = ({ title, columns, rows }) => {
-  const item = document.createElement("grid-item")
-  item.textContent = title
-
-  if (columns) item.setAttribute("data-columns", columns.toString())
-  if (rows) item.setAttribute("data-rows", rows.toString())
-
-  container?.appendChild(item)
+// Register all components
+for (const [name, constructor] of components) {
+  if (!customElements.get(name)) {
+    customElements.define(name, constructor);
+  }
 }
-
-items.forEach((item) => render(item))

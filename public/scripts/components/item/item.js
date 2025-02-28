@@ -1,4 +1,4 @@
-import { loadCSS } from "../utils/loadCss.js";
+import { loadCSS } from "../../utils/loadCss.js";
 
 export class GridItem extends HTMLElement {
   constructor() {

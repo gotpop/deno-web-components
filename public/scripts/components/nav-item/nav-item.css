@@ -1,0 +1,8 @@
+:host {
+  background-color: var(--colour-dark);
+  color: var(--colour-light);
+  padding: var(--padding);
+  grid-column: content;
+  grid-row: span 1;
+  text-align: center;
+}
