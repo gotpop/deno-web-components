@@ -18,12 +18,19 @@ const components = [
   ["site-footer", Footer],
 ];
 
-// Register all components
-for (const [name, constructor] of components) {
+// Register all components and track their definitions
+const definitions = components.map(([name, constructor]) => {
   if (!customElements.get(name)) {
     customElements.define(name, constructor);
+    return customElements.whenDefined(name);
   }
-}
+  return Promise.resolve();
+});
+
+// Wait for all components to be defined
+Promise.all(definitions).then(() => {
+  console.log("All components are ready");
+});
 
 if (location.hostname === "localhost") {
   const ws = new WebSocket(`ws://${location.host}/live-reload`);

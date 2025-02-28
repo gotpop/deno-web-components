@@ -8,6 +8,10 @@
   --columns-number: 12;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 body {
   margin: unset;
 }
@@ -16,7 +20,16 @@ body {
   visibility: hidden;
 }
 
-@keyframes fadeIn {
+html {
+  view-transition-name: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
+/* @keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -27,7 +40,7 @@ body {
 
 :defined {
   animation: fadeIn 0.3s ease-in-out;
-}
+} */
 
 * {
   box-sizing: border-box;

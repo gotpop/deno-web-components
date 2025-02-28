@@ -18,4 +18,5 @@
     [margin-end full-end];
   min-height: 100dvh;
   background-color: var(--colour-light);
+  view-transition-name: attr(id type(<custom-ident>), none);
 }

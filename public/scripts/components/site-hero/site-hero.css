@@ -5,4 +5,5 @@
   grid-column: content;
   grid-row: span 1;
   text-align: center;
+  view-transition-name: attr(id type(<custom-ident>), none);
 }
