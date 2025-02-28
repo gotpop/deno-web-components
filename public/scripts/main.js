@@ -1,7 +1,7 @@
 import { AppShell } from "./components/app-shell/app-shell.js";
-import { Footer } from "./components/footer/footer.js";
+import { Footer } from "./components/site-footer/site-footer.js";
 import { GridItem } from "./components/item/item.js";
-import { Header } from "./components/header/header.js";
+import { Header } from "./components/site-header/site-header.js";
 import { Hero } from "./components/hero/hero.js";
 import { MainContent } from "./components/main-content/main-content.js";
 import { NavItem } from "./components/nav-item/nav-item.js";

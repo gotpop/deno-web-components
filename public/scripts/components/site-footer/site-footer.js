@@ -6,7 +6,7 @@ export class Footer extends HTMLElement {
     const shadow = this.attachShadow({ mode: "open" });
     const slot = document.createElement("slot");
 
-    const cssPath = new URL("./footer.css", import.meta.url).href;
+    const cssPath = new URL("./site-footer.css", import.meta.url).href;
     loadCSS(cssPath, shadow);
 
     shadow.appendChild(slot);

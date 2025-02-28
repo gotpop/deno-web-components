@@ -7,7 +7,7 @@ export class Header extends HTMLElement {
 
     const slot = document.createElement("slot");
 
-    const cssPath = new URL("./header.css", import.meta.url).href;
+    const cssPath = new URL("./site-header.css", import.meta.url).href;
     loadCSS(cssPath, shadow);
 
     shadow.appendChild(slot);
