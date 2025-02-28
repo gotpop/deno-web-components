@@ -17,10 +17,10 @@ body {
 }
 
 :not(:defined) {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
-/* @keyframes fadeIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -31,7 +31,7 @@ body {
 
 :defined {
   animation: fadeIn 0.3s ease-in-out;
-} */
+}
 
 * {
   box-sizing: border-box;
