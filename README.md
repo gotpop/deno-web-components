@@ -1,49 +1,100 @@
-# README.md
+# Deno Baseline Server
 
-# Deno Server Project
+A modern Deno server implementation with hot reloading capabilities and strict
+TypeScript configuration.
 
-This project is a simple Deno server that serves a JavaScript file and a CSS file with hot reloading and browser updating functionality.
+## Architecture
+
+```mermaid
+graph TD
+    A[Browser] -->|HTTP Request| B[Deno Server]
+    B -->|Static Files| C[Public Directory]
+    B -->|Hot Reload| A
+    C -->|main.js| D[JavaScript]
+    C -->|main.css| E[Styles]
+```
 
 ## Project Structure
 
-```
-deno-server
-├── src
-│   ├── server.ts          # Entry point for the Deno server
-│   └── public
-│       ├── styles
-│       │   └── main.css   # CSS styles for the application
-│       └── scripts
-│           └── main.js    # JavaScript code for the application
-├── deno.json              # Deno configuration file
-├── import_map.json        # Module import mapping
-└── README.md              # Project documentation
+```mermaid
+graph TD
+    A[deno-server] -->|Contains| B[src]
+    A -->|Config| C[deno.json]
+    B -->|Entry| D[server.ts]
+    B -->|Static| E[public]
+    E -->|Scripts| F[main.js]
+    E -->|Styles| G[main.css]
 ```
 
-## Setup Instructions
+## Features
 
-1. **Install Deno**: Make sure you have Deno installed on your machine. You can follow the instructions on the [Deno website](https://deno.land/).
+- Hot module reloading
+- Static file serving
+- TypeScript support
+- Strict type checking
+- Development mode with watch
+- Formatting and linting built-in
 
-2. **Clone the Repository**: Clone this repository to your local machine.
+## Configuration
 
+The project uses `deno.json` for configuration with the following features:
+
+```json
+{
+  "compilerOptions": {
+    "lib": ["deno.window"],
+    "strict": true
+  }
+}
+```
+
+## Available Scripts
+
+- `deno task dev` - Run in development mode with hot reloading
+- `deno task start` - Run in production mode
+- `deno task test` - Run tests
+- `deno task lint` - Lint code
+- `deno task fmt` - Format code
+
+## Getting Started
+
+1. Install Deno:
    ```bash
-   git clone <repository-url>
-   cd deno-server
+   curl -fsSL https://deno.land/x/install/install.sh | sh
    ```
 
-3. **Run the Server**: Start the Deno server with the following command:
-
+2. Run the development server:
    ```bash
-   deno run --allow-net --allow-read src/server.ts
+   deno task dev
    ```
 
-4. **Access the Application**: Open your browser and navigate to `http://localhost:8000` to view the application.
+3. Access the server at `http://localhost:8000`
 
-## Usage
+## Development Flow
 
-- The server will automatically reload the JavaScript and CSS files when changes are detected, allowing for a smooth development experience.
-- You can modify the `main.js` and `main.css` files to see the changes reflected in the browser without needing to refresh manually.
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant Server
+    participant FileSystem
+    
+    Browser->>Server: Request page
+    Server->>FileSystem: Read static files
+    FileSystem->>Server: Return file contents
+    Server->>Browser: Serve HTML/JS/CSS
+    
+    loop Hot Reload
+        FileSystem->>Server: File change detected
+        Server->>Browser: Push update
+        Browser->>Browser: Update content
+    end
+```
+
+## Requirements
+
+- Deno 2.2 or higher
+- Modern browser (for development)
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
