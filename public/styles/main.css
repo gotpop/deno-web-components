@@ -20,15 +20,6 @@ body {
   visibility: hidden;
 }
 
-html {
-  view-transition-name: none;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 0.3s;
-}
-
 /* @keyframes fadeIn {
   from {
     opacity: 0;
