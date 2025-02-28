@@ -71,3 +71,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--colour-light);
   view-transition-name: attr(id type(<custom-ident>), none);
 }
+
+#header {
+  background-color: var(--colour-dark);
+  visibility: visible !important;
+  color: var(--colour-light);
+  display: grid;
+  grid-column: full;
+  grid-row: header;
+  grid-template-columns: subgrid;
+  position: sticky;
+  top: 0;
+  view-transition-name: attr(id type(<custom-ident>), none);
+}
