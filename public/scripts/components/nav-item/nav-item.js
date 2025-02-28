@@ -4,19 +4,11 @@ export class NavItem extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
-
-    const anchor = document.createElement("a");
-    anchor.setAttribute("part", "anchor"); // Allows external styling if needed
-
-    const href = this.getAttribute("href") || "#";
-    anchor.setAttribute("href", href);
-
     const slot = document.createElement("slot");
-    anchor.appendChild(slot);
 
     const cssPath = new URL("./nav-item.css", import.meta.url).href;
     loadCSS(cssPath, shadow);
 
-    shadow.appendChild(anchor);
+    shadow.appendChild(slot);
   }
 }

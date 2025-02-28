@@ -28,3 +28,17 @@ body {
 :defined {
   animation: fadeIn 0.3s ease-in-out;
 }
+
+* {
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+a, button, p, h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  text-box: trim-both cap alphabetic;
+}
