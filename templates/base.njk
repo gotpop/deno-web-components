@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - My Site</title>
     <link rel="stylesheet" href="/styles/main.css">
-    <script src="/scripts/live-reload.js"></script>
     <script defer type="module" src="./scripts/main.js"></script>
+    {% if env === 'development' %}
+        <script src="/scripts/live-reload.js"></script>
+    {% endif %}
 </head>
 <body>
     <div
