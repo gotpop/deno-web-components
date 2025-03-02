@@ -1,8 +1,16 @@
+import { configure } from "https://esm.sh/nunjucks@3.2.4";
 import { serveFile } from "./utils/fileServer.ts";
 
 const PORT = 8000;
 const PUBLIC_DIR = "./public";
+const TEMPLATES_DIR = "./templates";
 const connections = new Set<WebSocket>();
+
+// Configure Nunjucks
+const nunjucks = configure(TEMPLATES_DIR, {
+  autoescape: true,
+  noCache: true, // Disable cache for development
+});
 
 async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);
@@ -14,22 +22,29 @@ async function handler(req: Request): Promise<Response> {
     return response;
   }
 
-  let filePath: string;
-
-  const staticPages = ["", "index", "about", "contact"];
   const staticDirs = ["scripts", "styles"];
-
   const pageName = url.pathname.replace("/", "").replace(".html", "");
 
-  if (staticPages.includes(pageName)) {
-    filePath = `${PUBLIC_DIR}/${pageName || "index"}.html`;
-  } else if (staticDirs.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
-    filePath = `${PUBLIC_DIR}${url.pathname}`;
-  } else {
-    return new Response("Not Found", { status: 404 });
+  // Serve static files from public directory
+  if (staticDirs.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
+    return await serveFile(`${PUBLIC_DIR}${url.pathname}`);
   }
 
-  return await serveFile(filePath);
+  // Render templates for pages
+  try {
+    const template = pageName || "index";
+    const html = nunjucks.render(`${template}.njk`, {
+      title: template.charAt(0).toUpperCase() + template.slice(1),
+      currentPage: template,
+    });
+
+    return new Response(html, {
+      headers: { "content-type": "text/html" },
+    });
+  } catch (e) {
+    console.error(e);
+    return new Response("Not Found", { status: 404 });
+  }
 }
 
 const server = Deno.serve({ port: PORT }, handler);

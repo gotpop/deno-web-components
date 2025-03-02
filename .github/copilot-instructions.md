@@ -4,9 +4,7 @@ This is a personal project
 
 This project will be using experimental web platform features
 
-This project uses Deno and no other libraries
-
-This project does not use React
+This project does not use React or any front end frame works
 
 Do not hallucinate
 
