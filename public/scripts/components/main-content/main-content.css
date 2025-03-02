@@ -4,6 +4,5 @@
   grid-column: content;
   grid-row: main;
   grid-template-columns: subgrid;
-  padding: var(--padding);
   gap: var(--padding);
 }

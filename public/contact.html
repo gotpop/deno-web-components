@@ -19,22 +19,30 @@
     </script>
   </head>
   <body>
-    <app-shell id="app-shell" role="application" aria-label="Site container">
-      <site-header id="header" role="banner" aria-label="Site header">
+    <div
+      id="app-shell"
+      class="application"
+      role="application"
+      aria-label="Site container"
+    >
+      <header id="header" class="header" role="banner" aria-label="Site header">
         <nav class="nav" aria-label="Primary navigation">
-          <nav-list
+          <ul
             role="menubar"
+            class="menubar"
             aria-orientation="horizontal"
             aria-label="Main"
           >
-            <nav-item role="menuitem" aria-current="page"
-              ><a href="/">Home</a></nav-item
-            >
-            <nav-item role="menuitem"><a href="/about">About</a></nav-item>
-            <nav-item role="menuitem"><a href="/contact">Contact</a></nav-item>
-          </nav-list>
+            <li class="menuitem" role="menuitem" aria-current="page">
+              <a href="/">Home</a>
+            </li>
+            <li class="menuitem" role="menuitem"><a href="/about">About</a></li>
+            <li class="menuitem" role="menuitem">
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
         </nav>
-      </site-header>
+      </header>
       <main-content id="main" role="main" aria-label="Main content">
         <site-hero id="hero">
           <h1 aria-label="Site heading">Contact page</h1>
@@ -97,6 +105,6 @@
       <site-footer id="footer" role="contentinfo" aria-label="Site footer">
         <p>&copy; 2025</p>
       </site-footer>
-    </app-shell>
+    </div>
   </body>
 </html>

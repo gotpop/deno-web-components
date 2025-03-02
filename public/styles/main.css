@@ -12,7 +12,61 @@ body {
   margin: unset;
 }
 
-:not(:defined) {
+@view-transition {
+  navigation: auto;
+}
+
+
+/* :not(.application, .header):defined :not(:defined) {
+  visibility: hidden;
+} */
+
+:not(.application, .header):is(
+  [is],
+  :not(
+    :where(
+      a,
+      div,
+      span,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      li,
+      section,
+      article,
+      header,
+      footer,
+      main,
+      nav,
+      aside,
+      figure,
+      figcaption,
+      img,
+      button,
+      input,
+      form,
+      textarea,
+      select,
+      option,
+      label,
+      table,
+      tr,
+      td,
+      th,
+      thead,
+      tbody,
+      video,
+      audio,
+      iframe
+    )
+  )
+):defined
+  :not(:defined) {
   visibility: hidden;
 }
 
@@ -25,7 +79,7 @@ body {
   }
 }
 
-:defined {
+not(.application, .header):defined {
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -46,4 +100,73 @@ a, button, p, h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   margin-block-end: 1rem;
+}
+
+.application {
+  display: grid;
+  row-gap: 1rem;
+  grid-template-rows:
+    [header] min-content
+    [main] 1fr
+    [footer] min-content;
+  grid-template-columns:
+    [full-start margin-start] minmax(1rem, 1fr)
+    [margin-end content-start] repeat(
+    12,
+    [col-start] minmax(
+      auto,
+      calc(var(--site-max-width) / var(--columns-number))
+    ) [col-end]
+  )
+    [content-end margin-start] minmax(1rem, 1fr)
+    [margin-end full-end];
+  min-height: 100dvh;
+  background-color: var(--colour-light);
+  view-transition-name: attr(id type(<custom-ident>), none);
+}
+
+.header {
+  background-color: oklab(from var(--colour-dark) 0.9 a b);
+  color: var(--colour-light);
+  display: grid;
+  grid-column: full;
+  grid-row: header;
+  grid-template-columns: subgrid;
+  position: sticky;
+  top: 0;
+  view-transition-name: attr(id type(<custom-ident>), none);
+}
+
+.nav {
+  display: grid;
+  grid-column: content;
+  padding: 0;
+}
+
+.menubar {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding: var(--padding);
+  gap: var(--padding);
+  justify-content: center;
+}
+
+.menuitem {
+  color: var(--colour-light);
+  display: flex;
+
+  a {
+    text-align: center;
+    padding: var(--padding);
+    background-color: var(--colour-dark);
+    text-decoration: none;
+    color: var(--colour-light);
+    background-color: var(--colour-dark);
+
+    &:hover {
+      color: var(--colour-primary);
+    }
+  }
 }
