@@ -14,9 +14,19 @@ export class Hero extends HTMLElement {
     this.setAttribute("hidden", "");
 
     // Load CSS
-    const cssPath = new URL("./site-hero.css", import.meta.url).href;
+    const cssPathConstructed =
+      new URL("./site-hero-constructed.css", import.meta.url).href;
 
-    loadCSS(cssPath, shadow, (success) => {
+    loadCSS(cssPathConstructed, shadow, (success) => {
+      if (success) {
+        this.removeAttribute("hidden");
+      }
+    });
+
+    // Load CSS
+    const cssPath = new URL("./site-hero-styletag.css", import.meta.url).href;
+
+    loadCSS(cssPath, this, (success) => {
       if (success) {
         this.removeAttribute("hidden");
       }
