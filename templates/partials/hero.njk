@@ -1,18 +1,7 @@
 <site-hero id="hero">
-    <article>
-    <h1 aria-label="Site heading">Site intro</h1>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-        eveniet commodi voluptas in vero labore rerum iure quibusdam at
-        deleniti, debitis error cupiditate consectetur est deserunt totam.
-        Incidunt, aspernatur rerum!
-    </p>
+    <article slot="content">  
+        <h1 part="heading">Your Heading</h1>
+        <p part="subheading">Your paragraph content goes here</p>
     </article>
-    <aside>
-    <ul>
-        <li>Point one</li>
-        <li>Point two</li>
-        <li>Point three</li>
-    </ul>
-    </aside>
+    <aside slot="points">Sidebar content</aside>
 </site-hero>

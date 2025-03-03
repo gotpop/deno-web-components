@@ -4,7 +4,13 @@ export class Hero extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
-    const slot = document.createElement("slot");
+
+    const slotContent = document.createElement("slot");
+    const slotPoints = document.createElement("slot");
+
+    slotContent.setAttribute("name", "content");
+    slotPoints.setAttribute("name", "points");
+
     this.setAttribute("hidden", "");
 
     // Load CSS
@@ -14,8 +20,9 @@ export class Hero extends HTMLElement {
       if (success) {
         this.removeAttribute("hidden");
       }
-    });
+    }, true);
 
-    shadow.appendChild(slot);
+    shadow.appendChild(slotContent);
+    shadow.appendChild(slotPoints);
   }
 }

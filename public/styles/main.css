@@ -1,3 +1,5 @@
+@import "https://unpkg.com/open-props";
+
 :root {
   --colour-dark: #333;
   --colour-light: #f4f4f4;
@@ -6,6 +8,8 @@
   --padding: 1rem;
   --site-max-width: 1200px;
   --columns-number: 12;
+
+  --site-background-colour: var(--gradient-1);
 }
 
 body {
@@ -121,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
     [content-end margin-start] minmax(1rem, 1fr)
     [margin-end full-end];
   min-height: 100dvh;
-  background-color: var(--colour-light);
+  background: var(--site-background-colour);
   view-transition-name: attr(id type(<custom-ident>), none);
 }
 
@@ -169,4 +173,10 @@ h1, h2, h3, h4, h5, h6 {
       color: var(--colour-primary);
     }
   }
+}
+
+
+site-hero::part(heading) {
+  font-size: 20rem;
+  background-color: aqua;
 }
