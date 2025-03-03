@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - My Site</title>
-    <link rel="stylesheet" href="/styles/main.css">
-    <script defer type="module" src="./scripts/main.js"></script>
-    {% if env === 'development' %}
-        <script src="/scripts/live-reload.js"></script>
-    {% endif %}
+    {% include "partials/head.njk" %}
 </head>
 <body>
     <div
@@ -17,20 +10,7 @@
       role="application"
       aria-label="Site container"
     >
-      <header id="header" class="header" role="banner" aria-label="Site header">
-        <nav class="nav" aria-label="Primary navigation">
-          <ul
-            role="menubar"
-            class="menubar"
-            aria-orientation="horizontal"
-            aria-label="Main"
-          >
-            <li class="menuitem" role="menuitem" aria-current="page"> <a href="/" class="{% if currentPage === 'index' %}active{% endif %}">Home</a></li>
-            <li class="menuitem" role="menuitem"><a href="/about" class="{% if currentPage === 'about' %}active{% endif %}">About</a></li>
-            <li class="menuitem" role="menuitem"><a href="/contact" class="{% if currentPage === 'contact' %}active{% endif %}">Contact</a></li>
-          </ul>
-        </nav>
-        </header>
+        {% include "partials/header.njk" %}
         {% block content %}{% endblock %}
     </div>
 </body>
