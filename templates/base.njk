@@ -11,7 +11,10 @@
       aria-label="Site container"
     >
         {% include "partials/header.njk" %}
-        {% block content %}{% endblock %}
+        <main-content id="main" role="main" aria-label="Main content">
+          {% block content %}{% endblock %}
+        </main-content>
+        {% include "partials/footer.njk" %}
     </div>
 </body>
 </html>
