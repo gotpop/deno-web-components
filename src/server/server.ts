@@ -13,13 +13,14 @@ const nunjucks = configure(TEMPLATES_DIR, {
   noCache: true, // Disable cache for development
 });
 
+const templateConfig = {
+  componentPath: "/src/templates/components",
+};
+
 // Add importCss filter
 nunjucks.addFilter("importCss", function (cssFilePath: string) {
   try {
-    const fullPath = cssFilePath.startsWith("/")
-      ? cssFilePath.substring(1)
-      : join(Deno.cwd(), cssFilePath);
-
+    const fullPath = join(Deno.cwd(), cssFilePath);
     const css = Deno.readTextFileSync(fullPath);
     return css;
   } catch (error) {
@@ -27,6 +28,25 @@ nunjucks.addFilter("importCss", function (cssFilePath: string) {
     return "/* CSS import failed */";
   }
 });
+
+// Add a helper filter for component CSS paths
+nunjucks.addFilter("componentCss", function (componentName: string) {
+  const path = join(
+    templateConfig.componentPath,
+    componentName,
+    `${componentName}.css`
+  );
+  console.log(`Resolved component CSS path: ${path}`);
+  return path;
+});
+
+// Add a filter for active navigation items
+nunjucks.addFilter(
+  "isActive",
+  function (pageName: string, currentPage: string) {
+    return pageName === currentPage ? "active" : "";
+  }
+);
 
 async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);
@@ -52,6 +72,7 @@ async function handler(req: Request): Promise<Response> {
     const html = nunjucks.render(`${template}.njk`, {
       title: template.charAt(0).toUpperCase() + template.slice(1),
       currentPage: template,
+      componentPath: templateConfig.componentPath, // Add this line
     });
 
     return new Response(html, {
