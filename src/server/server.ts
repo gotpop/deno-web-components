@@ -27,8 +27,8 @@ const handler = async (req: Request): Promise<Response> => {
 const server = Deno.serve({ port: PORT }, handler);
 console.log(`Server running on http://localhost:${PORT}`);
 
-// Setup file watcher for live-reload
-setupFileWatcher("./public");
+// Setup file watcher for live-reload - now watching both directories
+setupFileWatcher(["./public", "./src"]);
 
 // Handle server shutdown
 await server;

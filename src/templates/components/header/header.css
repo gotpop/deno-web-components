@@ -2,7 +2,7 @@
   & {
     --color-dark: var(--colour-dark);
 
-    background-color: --lighten(var(--color-dark), 2.5);
+    background-color: --lighten(var(--color-dark), 1.5);
     color: var(--colour-light);
     display: grid;
     grid-column: full;

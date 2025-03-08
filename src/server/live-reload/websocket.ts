@@ -15,17 +15,19 @@ export function notifyClients(message: string = "reload") {
   }
 }
 
-export function setupFileWatcher(directory: string) {
-  const watcher = Deno.watchFs(directory);
+export function setupFileWatcher(directories: string | string[]) {
+  const dirs = Array.isArray(directories) ? directories : [directories];
 
-  (async () => {
-    for await (const event of watcher) {
-      if (event.kind === "modify") {
-        console.log(`File ${event.paths[0]} modified, reloading clients...`);
-        notifyClients();
+  dirs.forEach((dir) => {
+    const watcher = Deno.watchFs(dir);
+
+    (async () => {
+      for await (const event of watcher) {
+        if (event.kind === "modify") {
+          console.log(`File ${event.paths[0]} modified, reloading clients...`);
+          notifyClients();
+        }
       }
-    }
-  })();
-
-  return watcher;
+    })();
+  });
 }

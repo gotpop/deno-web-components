@@ -4,7 +4,7 @@
     {% include "partials/head.njk" %}
 </head>
 <body>
-    <div
+    <app-shell
       id="app-shell"
       class="application"
       role="application"
@@ -15,6 +15,6 @@
           {% block content %}{% endblock %}
         </main-content>
         {% include "partials/footer.njk" %}
-    </div>
+    </app-shell>
 </body>
 </html>
