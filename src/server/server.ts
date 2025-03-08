@@ -1,10 +1,10 @@
 import { configure } from "https://esm.sh/nunjucks@3.2.4";
 import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
-import { serveFile } from "./utils/fileServer.ts";
+import { serveFile } from "../utils/fileServer.ts";
 
 const PORT = 8000;
 const PUBLIC_DIR = "./public";
-const TEMPLATES_DIR = "./templates";
+const TEMPLATES_DIR = "./src/templates";
 const connections = new Set<WebSocket>();
 
 // Configure Nunjucks
