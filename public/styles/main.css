@@ -80,69 +80,6 @@ h6 {
   margin-block-end: 1rem;
 }
 
-.application {
-  display: grid;
-  row-gap: 1rem;
-  grid-template-rows: --grid-row-base();
-  grid-template-columns: --grid(1200px, 12);
-  min-height: 100dvh;
-  background: var(--site-background-colour);
-  view-transition-name: attr(id type(<custom-ident>), none);
-}
-
 @function --lighten(--color <color>, --factor <number>) returns <color> {
   result: oklch(from var(--color) calc(l * var(--factor)) c h);
-}
-
-/* .header {
-  --color-dark: var(--colour-dark);
-
-  background-color: --lighten(var(--color-dark), 2.5);
-  color: var(--colour-light);
-  display: grid;
-  grid-column: full;
-  grid-row: header;
-  grid-template-columns: subgrid;
-  position: sticky;
-  top: 0;
-  view-transition-name: attr(id type(<custom-ident>), none);
-} */
-
-.nav {
-  display: grid;
-  grid-column: content;
-  padding: 0;
-}
-
-.menubar {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  padding: var(--padding);
-  gap: var(--padding);
-  justify-content: center;
-}
-
-.menuitem {
-  color: var(--colour-light);
-  display: flex;
-
-  a {
-    text-align: center;
-    padding: var(--padding);
-    background-color: var(--colour-dark);
-    text-decoration: none;
-    color: var(--colour-light);
-    background-color: var(--colour-dark);
-
-    &:hover {
-      color: var(--colour-primary);
-    }
-  }
-}
-
-site-hero::part(heading) {
-  font-size: 20rem;
-  background-color: aqua;
 }

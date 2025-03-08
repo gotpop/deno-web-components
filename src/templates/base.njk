@@ -6,14 +6,12 @@
 <body>
     {% from "components/app-shell/app-shell.njk" import appShell %}
     
-    {% set shellContent %}
+    {% call appShell() %}
         {% include "components/header/header.njk" %}
         <main-content id="main" role="main" aria-label="Main content">
           {% block content %}{% endblock %}
         </main-content>
         {% include "partials/footer.njk" %}
-    {% endset %}
-    
-    {{ appShell(shellContent) }}
+    {% endcall %}
 </body>
 </html>
