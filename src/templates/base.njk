@@ -4,17 +4,16 @@
     {% include "partials/head.njk" %}
 </head>
 <body>
-    <app-shell
-      id="app-shell"
-      class="application"
-      role="application"
-      aria-label="Site container"
-    >
+    {% from "components/app-shell/app-shell.njk" import appShell %}
+    
+    {% set shellContent %}
         {% include "components/header/header.njk" %}
         <main-content id="main" role="main" aria-label="Main content">
           {% block content %}{% endblock %}
         </main-content>
         {% include "partials/footer.njk" %}
-    </app-shell>
+    {% endset %}
+    
+    {{ appShell(shellContent) }}
 </body>
 </html>

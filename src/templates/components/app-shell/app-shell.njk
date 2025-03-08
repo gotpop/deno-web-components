@@ -1,0 +1,10 @@
+{% macro appShell(content, id="app-shell", class="application", role="application", ariaLabel="Site container") %}
+<app-shell
+  id="{{ id }}"
+  class="{{ class }}"
+  role="{{ role }}"
+  aria-label="{{ ariaLabel }}"
+>
+  {{ content | safe }}
+</app-shell>
+{% endmacro %}
