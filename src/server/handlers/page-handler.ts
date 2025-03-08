@@ -4,9 +4,17 @@ import { templateConfig } from "../nunjucks/config.ts";
 const PUBLIC_DIR = "./public";
 const staticDirs = ["scripts", "styles"];
 
+interface PageContext {
+  title: string;
+  currentPage: string;
+  componentPath: string;
+}
+
 export async function handlePageRequest(
   url: URL,
-  nunjucks: any
+  nunjucks: {
+    render: (template: string, context: PageContext) => string;
+  }
 ): Promise<Response> {
   const pageName = url.pathname.replace("/", "").replace(".html", "");
 
