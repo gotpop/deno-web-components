@@ -1,0 +1,15 @@
+@scope {
+  & {
+    --color-dark: var(--colour-dark);
+
+    background-color: --lighten(var(--color-dark), 2.5);
+    color: var(--colour-light);
+    display: grid;
+    grid-column: full;
+    grid-row: header;
+    grid-template-columns: subgrid;
+    position: sticky;
+    top: 0;
+    view-transition-name: attr(id type(<custom-ident>), none);
+  }
+}

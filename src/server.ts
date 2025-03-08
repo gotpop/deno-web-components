@@ -1,4 +1,5 @@
 import { configure } from "https://esm.sh/nunjucks@3.2.4";
+import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { serveFile } from "./utils/fileServer.ts";
 
 const PORT = 8000;
@@ -10,6 +11,21 @@ const connections = new Set<WebSocket>();
 const nunjucks = configure(TEMPLATES_DIR, {
   autoescape: true,
   noCache: true, // Disable cache for development
+});
+
+// Add importCss filter
+nunjucks.addFilter("importCss", function (cssFilePath: string) {
+  try {
+    const fullPath = cssFilePath.startsWith("/")
+      ? cssFilePath.substring(1)
+      : join(Deno.cwd(), cssFilePath);
+
+    const css = Deno.readTextFileSync(fullPath);
+    return css;
+  } catch (error) {
+    console.error(`Error importing CSS file ${cssFilePath}:`, error);
+    return "/* CSS import failed */";
+  }
 });
 
 async function handler(req: Request): Promise<Response> {

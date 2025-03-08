@@ -20,8 +20,7 @@ body {
   navigation: auto;
 }
 
-@function --grid(--site-max-width <length>, --columns-number <integer>) returns
-  <grid-template-columns> {
+@function --grid(--site-max-width <length>, --columns-number <integer>) {
   result: [full-start margin-start] minmax(1rem, 1fr) [margin-end content-start]
     repeat(
       12,
@@ -34,59 +33,6 @@ body {
 
 @function --grid-row-base(--gap-one: 1rem, --gap-two: 2rem) {
   result: [header] min-content [main] 1fr [footer] min-content;
-}
-
-/* :not(.application, .header):defined :not(:defined) {
-  visibility: hidden;
-} */
-
-:not(.application, .header):is(
-    [is],
-    :not(
-        :where(
-            a,
-            div,
-            span,
-            p,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            ul,
-            li,
-            section,
-            article,
-            header,
-            footer,
-            main,
-            nav,
-            aside,
-            figure,
-            figcaption,
-            img,
-            button,
-            input,
-            form,
-            textarea,
-            select,
-            option,
-            label,
-            table,
-            tr,
-            td,
-            th,
-            thead,
-            tbody,
-            video,
-            audio,
-            iframe
-          )
-      )
-  ):defined
-  :not(:defined) {
-  visibility: hidden;
 }
 
 @keyframes fadeIn {
@@ -148,7 +94,7 @@ h6 {
   result: oklch(from var(--color) calc(l * var(--factor)) c h);
 }
 
-.header {
+/* .header {
   --color-dark: var(--colour-dark);
 
   background-color: --lighten(var(--color-dark), 2.5);
@@ -160,7 +106,7 @@ h6 {
   position: sticky;
   top: 0;
   view-transition-name: attr(id type(<custom-ident>), none);
-}
+} */
 
 .nav {
   display: grid;
