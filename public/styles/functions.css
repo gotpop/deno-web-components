@@ -1,0 +1,18 @@
+@function --grid(--site-max-width <length>, --columns-number <integer>) {
+  result: [full-start margin-start] minmax(1rem, 1fr) [margin-end content-start]
+    repeat(
+      12,
+      [col-start]
+        minmax(auto, calc(var(--site-max-width) / var(--columns-number)))
+        [col-end]
+    )
+    [content-end margin-start] minmax(1rem, 1fr) [margin-end full-end];
+}
+
+@function --grid-row-base(--gap-one: 1rem, --gap-two: 2rem) {
+  result: [header] min-content [main] 1fr [footer] min-content;
+}
+
+@function --lighten(--color <color>, --factor <number>) returns <color> {
+  result: oklch(from var(--color) calc(l * var(--factor)) c h);
+}

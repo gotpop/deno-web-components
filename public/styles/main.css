@@ -1,85 +1,10 @@
 @import "https://unpkg.com/open-props";
-
-:root {
-  --colour-dark: #333;
-  --colour-light: #f4f4f4;
-  --colour-primary: #e7b900;
-
-  --padding: 1rem;
-  --site-max-width: 1200px;
-  --columns-number: 12;
-
-  --site-background-colour: var(--gradient-1);
-}
-
-body {
-  margin: unset;
-}
+@import "./functions.css";
+@import "./typography.css";
+@import "./keyframes.css";
+@import "./variables.css";
+@import "./reset.css";
 
 @view-transition {
   navigation: auto;
-}
-
-@function --grid(--site-max-width <length>, --columns-number <integer>) {
-  result: [full-start margin-start] minmax(1rem, 1fr) [margin-end content-start]
-    repeat(
-      12,
-      [col-start]
-        minmax(auto, calc(var(--site-max-width) / var(--columns-number)))
-        [col-end]
-    )
-    [content-end margin-start] minmax(1rem, 1fr) [margin-end full-end];
-}
-
-@function --grid-row-base(--gap-one: 1rem, --gap-two: 2rem) {
-  result: [header] min-content [main] 1fr [footer] min-content;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-not(.application, .header):defined {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-* {
-  box-sizing: border-box;
-
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
-}
-
-a,
-button,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto", sans-serif;
-  text-box: trim-both cap alphabetic;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  margin-block-end: 1rem;
-}
-
-@function --lighten(--color <color>, --factor <number>) returns <color> {
-  result: oklch(from var(--color) calc(l * var(--factor)) c h);
 }

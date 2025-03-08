@@ -1,0 +1,11 @@
+:root {
+  --colour-dark: #333;
+  --colour-light: #f4f4f4;
+  --colour-primary: #e7b900;
+
+  --padding: 1rem;
+  --site-max-width: 1200px;
+  --columns-number: 12;
+
+  --site-background-colour: var(--gradient-1);
+}

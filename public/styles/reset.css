@@ -1,0 +1,12 @@
+body {
+  margin: unset;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
