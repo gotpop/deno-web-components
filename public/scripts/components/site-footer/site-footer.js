@@ -3,18 +3,18 @@ import { loadCSS } from "../../utils/loadCss.js";
 export class Footer extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: "open" });
+
+    const shadowRoot = this.attachShadow({ mode: "open" });
     const slot = document.createElement("slot");
+
     this.setAttribute("hidden", "");
 
-    const cssPath = new URL("./site-footer.css", import.meta.url).href;
-
-    loadCSS(cssPath, shadow, (success) => {
-      if (success) {
-        this.removeAttribute("hidden");
-      }
+    loadCSS({
+      callback: (success) => success && this.removeAttribute("hidden"),
+      cssPath: new URL("./site-footer.css", import.meta.url).href,
+      shadowRoot,
     });
 
-    shadow.appendChild(slot);
+    shadowRoot.appendChild(slot);
   }
 }

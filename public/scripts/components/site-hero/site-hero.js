@@ -13,24 +13,33 @@ export class Hero extends HTMLElement {
 
     this.setAttribute("hidden", "");
 
-    // Load CSS
+    const cssPath = new URL("./site-hero-styletag.css", import.meta.url).href;
     const cssPathConstructed =
       new URL("./site-hero-constructed.css", import.meta.url).href;
 
-    loadCSS(cssPathConstructed, shadow, (success) => {
-      if (success) {
-        this.removeAttribute("hidden");
-      }
-    });
+    const cssConfig = {
+      cssPath: cssPathConstructed,
+      shadowRoot: shadow,
+      callback: (success) => {
+        if (success) {
+          this.removeAttribute("hidden");
+        }
+      },
+    };
 
-    // Load CSS
-    const cssPath = new URL("./site-hero-styletag.css", import.meta.url).href;
+    const cssConfigStyled = {
+      cssPath: cssPath,
+      shadowRoot: this,
+      callback: (success) => {
+        if (success) {
+          this.removeAttribute("hidden");
+        }
+      },
+      useStyletag: true,
+    };
 
-    loadCSS(cssPath, this, (success) => {
-      if (success) {
-        this.removeAttribute("hidden");
-      }
-    }, true);
+    loadCSS(cssConfig);
+    loadCSS(cssConfigStyled);
 
     shadow.appendChild(slotContent);
     shadow.appendChild(slotPoints);

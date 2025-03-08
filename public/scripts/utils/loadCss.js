@@ -7,10 +7,7 @@
  * @returns {Promise<CSSStyleSheet|HTMLStyleElement|null>} - The loaded stylesheet/style element or null if failed
  */
 export async function loadCSS(
-  cssPath,
-  shadowRoot,
-  callback,
-  useStyletag = false,
+  { cssPath, shadowRoot, callback, useStyletag = false },
 ) {
   try {
     // Using relative path and dynamic import

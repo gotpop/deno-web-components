@@ -20,56 +20,71 @@ body {
   navigation: auto;
 }
 
+@function --grid(--site-max-width <length>, --columns-number <integer>) returns
+  <grid-template-columns> {
+  result: [full-start margin-start] minmax(1rem, 1fr) [margin-end content-start]
+    repeat(
+      12,
+      [col-start]
+        minmax(auto, calc(var(--site-max-width) / var(--columns-number)))
+        [col-end]
+    )
+    [content-end margin-start] minmax(1rem, 1fr) [margin-end full-end];
+}
+
+@function --grid-row-base(--gap-one: 1rem, --gap-two: 2rem) {
+  result: [header] min-content [main] 1fr [footer] min-content;
+}
 
 /* :not(.application, .header):defined :not(:defined) {
   visibility: hidden;
 } */
 
 :not(.application, .header):is(
-  [is],
-  :not(
-    :where(
-      a,
-      div,
-      span,
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      ul,
-      li,
-      section,
-      article,
-      header,
-      footer,
-      main,
-      nav,
-      aside,
-      figure,
-      figcaption,
-      img,
-      button,
-      input,
-      form,
-      textarea,
-      select,
-      option,
-      label,
-      table,
-      tr,
-      td,
-      th,
-      thead,
-      tbody,
-      video,
-      audio,
-      iframe
-    )
-  )
-):defined
+    [is],
+    :not(
+        :where(
+            a,
+            div,
+            span,
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            ul,
+            li,
+            section,
+            article,
+            header,
+            footer,
+            main,
+            nav,
+            aside,
+            figure,
+            figcaption,
+            img,
+            button,
+            input,
+            form,
+            textarea,
+            select,
+            option,
+            label,
+            table,
+            tr,
+            td,
+            th,
+            thead,
+            tbody,
+            video,
+            audio,
+            iframe
+          )
+      )
+  ):defined
   :not(:defined) {
   visibility: hidden;
 }
@@ -96,12 +111,25 @@ not(.application, .header):defined {
   }
 }
 
-a, button, p, h1, h2, h3, h4, h5, h6 {
+a,
+button,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Roboto", sans-serif;
   text-box: trim-both cap alphabetic;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   margin-block-end: 1rem;
 }
@@ -109,28 +137,21 @@ h1, h2, h3, h4, h5, h6 {
 .application {
   display: grid;
   row-gap: 1rem;
-  grid-template-rows:
-    [header] min-content
-    [main] 1fr
-    [footer] min-content;
-  grid-template-columns:
-    [full-start margin-start] minmax(1rem, 1fr)
-    [margin-end content-start] repeat(
-    12,
-    [col-start] minmax(
-      auto,
-      calc(var(--site-max-width) / var(--columns-number))
-    ) [col-end]
-  )
-    [content-end margin-start] minmax(1rem, 1fr)
-    [margin-end full-end];
+  grid-template-rows: --grid-row-base();
+  grid-template-columns: --grid(1200px, 12);
   min-height: 100dvh;
   background: var(--site-background-colour);
   view-transition-name: attr(id type(<custom-ident>), none);
 }
 
+@function --lighten(--color <color>, --factor <number>) returns <color> {
+  result: oklch(from var(--color) calc(l * var(--factor)) c h);
+}
+
 .header {
-  background-color: oklab(from var(--colour-dark) 0.9 a b);
+  --color-dark: var(--colour-dark);
+
+  background-color: --lighten(var(--color-dark), 2.5);
   color: var(--colour-light);
   display: grid;
   grid-column: full;
@@ -174,7 +195,6 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
-
 
 site-hero::part(heading) {
   font-size: 20rem;

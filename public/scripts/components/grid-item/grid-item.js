@@ -11,11 +11,17 @@ export class GridItem extends HTMLElement {
 
     const cssPath = new URL("./grid-item.css", import.meta.url).href;
 
-    loadCSS(cssPath, shadow, (success) => {
-      if (success) {
-        this.removeAttribute("hidden");
-      }
-    });
+    const cssConfig = {
+      cssPath,
+      shadowRoot: shadow,
+      callback: (success) => {
+        if (success) {
+          this.removeAttribute("hidden");
+        }
+      },
+    };
+
+    loadCSS(cssConfig);
 
     article.appendChild(slot);
     shadow.appendChild(article);

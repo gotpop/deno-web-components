@@ -7,7 +7,18 @@ export class MainContent extends HTMLElement {
     const slot = document.createElement("slot");
 
     const cssPath = new URL("./main-content.css", import.meta.url).href;
-    loadCSS(cssPath, shadow);
+
+    const cssConfig = {
+      cssPath,
+      shadowRoot: shadow,
+      callback: (success) => {
+        if (success) {
+          this.removeAttribute("hidden");
+        }
+      },
+    };
+
+    loadCSS(cssConfig);
 
     shadow.appendChild(slot);
   }
