@@ -21,5 +21,16 @@ export function setupNunjucks() {
   nunjucks.addFilter("componentCss", componentCss);
   nunjucks.addFilter("isActive", isActive);
 
+  // Add the getJsonData function to the environment
+  nunjucks.addGlobal("getJsonData", async (path: string) => {
+    try {
+      const data = await Deno.readTextFile(path);
+      return JSON.parse(data);
+    } catch (error) {
+      console.error("Error reading JSON data:", error);
+      return null;
+    }
+  });
+
   return nunjucks;
 }
