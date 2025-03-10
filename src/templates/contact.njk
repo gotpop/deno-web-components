@@ -1,9 +1,5 @@
 {% extends "base.njk" %}
 
-{% block content %}
-  {% include "components/hero/hero.njk" %}
-  
-  {# {% set gridItems = getJsonData('./src/data/grid-items.json') %} #}
   {% set gridItems = [
     {
       id: "grid-item-1",
@@ -54,6 +50,9 @@
       titleTag: "h3"
     }
   ] %}
+
+{% block content %}
+  {% include "components/hero/hero.njk" %}
 
   {% for item in gridItems %}
     {% include "components/grid-item/grid-item.njk" %}

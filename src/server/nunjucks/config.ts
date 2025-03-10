@@ -21,10 +21,24 @@ export function setupNunjucks() {
   nunjucks.addFilter("componentCss", componentCss);
   nunjucks.addFilter("isActive", isActive);
 
+  nunjucks.addFilter("debug", function (obj) {
+    return JSON.stringify(obj, null, 2);
+  });
+
+  nunjucks.addGlobal(
+    "loadData",
+    async (filepath: string, exportName: string) => {
+      const module = await import(filepath);
+      console.log("module :", module);
+      return module[exportName];
+    }
+  );
+
   // Add the getJsonData function to the environment
   nunjucks.addGlobal("getJsonData", async (path: string) => {
     try {
       const data = await Deno.readTextFile(path);
+      console.log("data :", data);
       return JSON.parse(data);
     } catch (error) {
       console.error("Error reading JSON data:", error);
