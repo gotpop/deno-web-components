@@ -5,9 +5,9 @@
   role="{{ role }}"
   aria-label="{{ ariaLabel }}"
 >
- <style>
-        {{ "app-shell" | componentCss | importCss | safe }}
-    </style>
+  <style>
+    {{ "app-shell" | componentCss | importCss | safe }}
+  </style>
   {{ caller() }}
 </app-shell>
 {% endmacro %}
