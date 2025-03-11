@@ -4,5 +4,9 @@
   aria-label="{{ item.label }}"
   data-columns="{{ item.columns }}"
   data-rows="{{ item.rows }}"
-  ><{{ item.titleTag }}>{{ item.title }}</{{ item.titleTag }}>
+  >
+  <style>
+    {{"grid-item" | componentCss | importCss | safe}}
+  </style>
+  <{{ item.titleTag }}>{{ item.title }}</{{ item.titleTag }}>
 </grid-item>

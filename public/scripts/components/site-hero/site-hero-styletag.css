@@ -1,7 +1,0 @@
-@scope {
-  & {
-    h1 {
-      font-size: var(--font-size-fluid-3);
-    }
-  }
-}

@@ -1,6 +1,6 @@
 @scope {
   & {
-    background-color: oklab(from var(--colour-dark) 0.9 a b);
+    /* background-color: oklab(from var(--colour-dark) 0.9 a b); */
     display: grid;
     grid-column: content;
     grid-row: main;

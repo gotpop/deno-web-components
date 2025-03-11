@@ -12,7 +12,7 @@
     {
       id: "grid-item-2",
       label: "Title 2",
-      columns: 2,
+      columns: 4,
       rows: 2,
       title: "Title 2",
       titleTag: "h3"
@@ -20,7 +20,7 @@
     {
       id: "grid-item-3",
       label: "Title 3",
-      columns: 4,
+      columns: 8,
       rows: 2,
       title: "Title 3",
       titleTag: "h3"
@@ -28,7 +28,7 @@
     {
       id: "grid-item-4",
       label: "Title 4",
-      columns: 2,
+      columns: 12,
       rows: 2,
       title: "Title 4",
       titleTag: "h3"
@@ -36,8 +36,8 @@
     {
       id: "grid-item-5",
       label: "Title 5",
-      columns: 4,
-      rows: 2,
+      columns: 12,
+      rows: 6,
       title: "Title 5",
       titleTag: "h3"
     },
@@ -52,7 +52,7 @@
   ] %}
 
 {% block content %}
-  {% include "components/hero/hero.njk" %}
+  {% include "components/site-hero/site-hero.njk" %}
 
   {% for item in gridItems %}
     {% include "components/grid-item/grid-item.njk" %}
