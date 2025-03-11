@@ -1,0 +1,10 @@
+<site-hero id="hero">
+  <style>
+    {{ "site-hero" | componentCss | importCss | safe }}
+  </style>
+  <article slot="content">
+    <h1 part="heading">Your Heading</h1>
+    <p part="subheading">Your paragraph content goes here</p>
+  </article>
+  <aside slot="points">Sidebar content</aside>
+</site-hero>

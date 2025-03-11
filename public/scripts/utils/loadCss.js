@@ -13,54 +13,54 @@ export async function loadCSS(
     // Using relative path and dynamic import
     const cssModule = await import(cssPath, {
       with: { type: "css" },
-    });
+    })
 
     if (cssModule?.default) {
       if (useStyletag) {
         // Use traditional style tag approach
-        const styleElement = document.createElement("style");
+        const styleElement = document.createElement("style")
 
         // Extract actual CSS text from the stylesheet
-        const sheet = cssModule.default;
-        let cssText = "";
+        const sheet = cssModule.default
+        let cssText = ""
         for (const rule of sheet.cssRules) {
-          cssText += rule.cssText + "\n";
+          cssText += rule.cssText + "\n"
         }
 
-        styleElement.textContent = cssText;
-        shadowRoot.appendChild(styleElement);
+        styleElement.textContent = cssText
+        shadowRoot.appendChild(styleElement)
 
         if (typeof callback === "function") {
-          callback(true);
+          callback(true)
         }
 
-        return styleElement;
+        return styleElement
       } else {
         // Default: Use adoptedStyleSheets (constructable stylesheets)
-        shadowRoot.adoptedStyleSheets = [cssModule.default];
+        shadowRoot.adoptedStyleSheets = [cssModule.default]
 
         if (typeof callback === "function") {
-          callback(true);
+          callback(true)
         }
 
-        return cssModule.default;
+        return cssModule.default
       }
     } else {
-      console.error("No default export found in CSS module");
+      console.error("No default export found in CSS module")
 
       if (typeof callback === "function") {
-        callback(false);
+        callback(false)
       }
 
-      return null;
+      return null
     }
   } catch (error) {
-    console.error(`Failed to load CSS from ${cssPath}:`, error);
+    console.error(`Failed to load CSS from ${cssPath}:`, error)
 
     if (typeof callback === "function") {
-      callback(false);
+      callback(false)
     }
 
-    return null;
+    return null
   }
 }

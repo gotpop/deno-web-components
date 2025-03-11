@@ -10,6 +10,6 @@ Do not hallucinate
 
 Browser support is not an issue
 
-This project uses Deno 2.2
+This project uses Deno 2.3
 
 Keep things simple

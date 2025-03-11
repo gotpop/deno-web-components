@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {% include "partials/head.njk" %}
-</head>
-<body>
-    {% from "components/app-shell/app-shell.njk" import appShell %}
-    
-    {% call appShell() %}
-        {% include "components/header/header.njk" %}
-        <main-content id="main" role="main" aria-label="Main content">
-          {% block content %}{% endblock %}
-        </main-content>
-        {% include "partials/footer.njk" %}
-    {% endcall %}
-</body>
+  </head>
+  <body>
+    <app-shell
+      id="app-shell"
+      class="application"
+      role="application"
+      aria-label="application"
+    >
+      <style>
+        {{ "app-shell" | componentCss | importCss | safe }}
+      </style>
+      {% include "components/header/header.njk" %}
+      <main-content id="main" role="main" aria-label="Main content">
+        <style>
+          {{ "main-content" | componentCss | importCss | safe }}
+        </style>
+        {% block content %}{% endblock %}
+      </main-content>
+      {% include "partials/footer.njk" %}
+    </app-shell>
+  </body>
 </html>

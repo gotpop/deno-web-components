@@ -1,13 +1,12 @@
-{% macro appShell(id="app-shell", class="application", role="application", ariaLabel="Site container") %}
 <app-shell
-  id="{{ id }}"
-  class="{{ class }}"
-  role="{{ role }}"
-  aria-label="{{ ariaLabel }}"
+  id="app-shell"
+  class="application"
+  role="application"
+  aria-label="application"
 >
   <style>
     {{ "app-shell" | componentCss | importCss | safe }}
   </style>
-  {{ caller() }}
+  {% block shell %}{% endblock %}
 </app-shell>
-{% endmacro %}
+

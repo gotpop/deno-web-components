@@ -1,0 +1,13 @@
+@scope {
+  & {
+    background-color: var(--colour-dark);
+    color: var(--colour-light);
+    display: grid;
+    grid-column: content;
+    grid-row: span 1;
+    grid-template-columns: subgrid;
+    padding: var(--padding);
+    text-align: center;
+    view-transition-name: attr(id type(<custom-ident>), none);
+  }
+}

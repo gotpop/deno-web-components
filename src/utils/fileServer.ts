@@ -1,20 +1,20 @@
 async function serveFile(filePath: string): Promise<Response> {
   try {
-    const file = await Deno.readFile(filePath);
-    const contentType = getContentType(filePath);
+    const file = await Deno.readFile(filePath)
+    const contentType = getContentType(filePath)
 
     return new Response(file, {
       headers: {
         "content-type": contentType,
       },
-    });
+    })
   } catch {
-    return new Response("File not found", { status: 404 });
+    return new Response("File not found", { status: 404 })
   }
 }
 
 function getContentType(filePath: string): string {
-  const ext = filePath.split(".").pop()?.toLowerCase();
+  const ext = filePath.split(".").pop()?.toLowerCase()
 
   const types: Record<string, string> = {
     html: "text/html",
@@ -25,9 +25,9 @@ function getContentType(filePath: string): string {
     jpg: "image/jpeg",
     jpeg: "image/jpeg",
     gif: "image/gif",
-  };
+  }
 
-  return types[ext ?? ""] ?? "text/plain";
+  return types[ext ?? ""] ?? "text/plain"
 }
 
-export { serveFile };
+export { serveFile }

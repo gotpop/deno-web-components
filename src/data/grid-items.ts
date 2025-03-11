@@ -47,4 +47,4 @@ export const gridItems = [
     title: "Title 6",
     titleTag: "h3",
   },
-] as const;
+] as const

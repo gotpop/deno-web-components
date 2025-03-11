@@ -1,42 +1,42 @@
-import { serveFile } from "../../utils/fileServer.ts";
-import { templateConfig } from "../nunjucks/config.ts";
+import { serveFile } from "../../utils/fileServer.ts"
+import { templateConfig } from "../nunjucks/config.ts"
 
-const PUBLIC_DIR = "./public";
-const staticDirs = ["scripts", "styles"];
+const PUBLIC_DIR = "./public"
+const staticDirs = ["scripts", "styles"]
 
 interface PageContext {
-  title: string;
-  currentPage: string;
-  componentPath: string;
+  title: string
+  currentPage: string
+  componentPath: string
 }
 
 export async function handlePageRequest(
   url: URL,
   nunjucks: {
-    render: (template: string, context: PageContext) => string;
-  }
+    render: (template: string, context: PageContext) => string
+  },
 ): Promise<Response> {
-  const pageName = url.pathname.replace("/", "").replace(".html", "");
+  const pageName = url.pathname.replace("/", "").replace(".html", "")
 
   // Serve static files from public directory
   if (staticDirs.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
-    return await serveFile(`${PUBLIC_DIR}${url.pathname}`);
+    return await serveFile(`${PUBLIC_DIR}${url.pathname}`)
   }
 
   // Render templates for pages
   try {
-    const template = pageName || "index";
+    const template = pageName || "index"
     const html = nunjucks.render(`${template}.njk`, {
       title: template.charAt(0).toUpperCase() + template.slice(1),
       currentPage: template,
       componentPath: templateConfig.componentPath,
-    });
+    })
 
     return new Response(html, {
       headers: { "content-type": "text/html" },
-    });
+    })
   } catch (e) {
-    console.error(e);
-    return new Response("Not Found", { status: 404 });
+    console.error(e)
+    return new Response("Not Found", { status: 404 })
   }
 }
