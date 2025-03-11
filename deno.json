@@ -4,8 +4,8 @@
     "strict": true
   },
   "tasks": {
-    "dev": "DEV=true deno run --allow-net --allow-read --allow-env --watch src/server/server.ts",
-    "start": "deno run --allow-net --allow-read src/server/server.ts",
+    "dev": "DEV=true deno run --allow-net --allow-read --allow-env --watch ./src/server/server.ts",
+    "start": "deno run --allow-net --allow-read ./src/server/server.ts",
     "test": "deno test",
     "lint": "deno lint",
     "fmt": "deno fmt"
