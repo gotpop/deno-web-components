@@ -4,15 +4,15 @@
     "strict": true
   },
   "tasks": {
-    "dev": "DEV=true deno run --allow-net --allow-read --allow-env --watch src/server/server.ts",
-    "start": "deno run --allow-net --allow-read --allow-env src/server/server.ts",
+    "dev": "DEV=true deno run --allow-net --allow-read --allow-env --watch server/server.ts",
+    "start": "deno run --allow-net --allow-read --allow-env server/server.ts",
     "test": "deno test",
     "lint": "deno lint",
     "fmt": "deno fmt"
   },
   "imports": {
-    "main.js": "./src/public/scripts/main.js",
-    "main.css": "./src/public/styles/main.css"
+    "main.js": "./public/scripts/main.js",
+    "main.css": "./public/styles/main.css"
   },
   "fmt": {
     "files": {
