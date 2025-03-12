@@ -2,6 +2,7 @@ import { Footer } from "./components/site-footer/site-footer.js"
 import { GridItem } from "./components/grid-item/grid-item.js"
 import { Hero } from "./components/site-hero/site-hero.js"
 import { MainContent } from "./components/main-content/main-content.js"
+import { testCssFeatures } from "./utils/test-css-features.js"
 
 const components = [
   ["site-hero", Hero],
@@ -28,3 +29,9 @@ if (location.hostname === "localhost") {
   const ws = new WebSocket(`ws://${location.host}/live-reload`)
   ws.onmessage = () => location.reload()
 }
+
+const popover = document.getElementById("feature-detect-popover")
+popover.showPopover()
+
+const test = testCssFeatures()
+console.log("test :", test)

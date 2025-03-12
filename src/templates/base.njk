@@ -20,7 +20,8 @@
         </style>
         {% block content %}{% endblock %}
       </main-content>
-      {% include "partials/footer.njk" %}
+      {% include "partials/footer.njk" %} {% include
+      "components/feature-detect-popover/feature-detect-popover.njk" %}
     </app-shell>
   </body>
 </html>

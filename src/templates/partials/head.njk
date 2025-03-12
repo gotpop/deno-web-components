@@ -7,6 +7,15 @@
 <script src="/scripts/live-reload.js"></script>
 {% endif %}
 
+<meta
+  name="description"
+  content="{{ description | default('A Deno Web Components project') }}"
+/>
+<meta name="generator" content="Deno {{ deno.version }}" />
+
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="modulepreload" href="./scripts/main.js" />
+
 <script type="speculationrules">
   {
     "prerender": [
