@@ -2,17 +2,48 @@
   & {
     background-color: var(--colour-dark);
     color: var(--colour-light);
-    display: grid;
+    display: none;
     grid-column: content;
     grid-row: span 1;
     grid-template-columns: subgrid;
-    padding: var(--padding);
+    padding: calc(var(--padding) * 2);
     text-align: center;
     view-transition-name: attr(id type(<custom-ident>), none);
+    width: min(calc(100% - 2rem), 30rem);
+    border: unset;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(50px);
+
+    &:popover-open {
+      display: grid;
+    }
 
     &::backdrop {
       background-color: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(50px);
+    }
+
+    .feature-list {
+      padding: 1rem;
+      display: grid;
+    }
+
+    details {
+      margin-bottom: 0.5rem;
+      background-color: var(--colour-light);
+      color: var(--colour-dark);
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+
+    summary {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
