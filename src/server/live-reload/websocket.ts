@@ -1,47 +1,41 @@
-const connections = new Set<WebSocket>();
+const clients = new Set<WebSocket>();
 
 export function handleWebSocketConnection(req: Request): Response {
-  try {
-    const { socket, response } = Deno.upgradeWebSocket(req);
-    connections.add(socket);
+  const { socket, response } = Deno.upgradeWebSocket(req);
 
-    socket.onclose = () => {
-      connections.delete(socket);
-      console.log("Client disconnected");
-    };
+  socket.onopen = () => {
+    clients.add(socket);
+    console.log("Client connected to live reload");
+  };
 
-    socket.onerror = (error) => {
-      console.error("WebSocket error:", error);
-      connections.delete(socket);
-    };
+  socket.onclose = () => {
+    clients.delete(socket);
+    console.log("Client disconnected from live reload");
+  };
 
-    return response;
-  } catch (error) {
-    console.error("Failed to upgrade WebSocket:", error);
-    return new Response("WebSocket upgrade failed", { status: 500 });
-  }
+  socket.onerror = (e) => {
+    console.error("WebSocket error:", e);
+    clients.delete(socket);
+  };
+
+  return response;
 }
 
-export function notifyClients(message: string = "reload") {
-  for (const socket of connections) {
-    if (socket.readyState === WebSocket.OPEN) {
-      socket.send(message);
+export async function setupFileWatcher(paths: string[]) {
+  const watcher = Deno.watchFs(paths);
+
+  for await (const event of watcher) {
+    if (event.kind !== "access") {
+      console.log(`File change detected: ${event.paths.join(", ")}`);
+      notifyClients();
     }
   }
 }
 
-export function setupFileWatcher(directories: string | string[]) {
-  const dirs = Array.isArray(directories) ? directories : [directories];
-
-  dirs.forEach((dir) => {
-    const watcher = Deno.watchFs(dir);
-    (async () => {
-      for await (const event of watcher) {
-        if (event.kind === "modify") {
-          console.log(`File ${event.paths[0]} modified, reloading clients...`);
-          notifyClients();
-        }
-      }
-    })();
+function notifyClients() {
+  clients.forEach((socket) => {
+    if (socket.readyState === WebSocket.OPEN) {
+      socket.send("reload");
+    }
   });
 }

@@ -1,5 +1,9 @@
+import {
+  handleWebSocketConnection,
+  setupFileWatcher,
+} from "./live-reload/websocket.ts";
+
 import { handlePageRequest } from "./handlers/page-handler.ts";
-import { setupFileWatcher } from "./live-reload/websocket.ts";
 import { setupNunjucks } from "./nunjucks/config.ts";
 
 const PORT = 8000;
@@ -9,12 +13,12 @@ const nunjucks = setupNunjucks();
 const handler = async (req: Request): Promise<Response> => {
   const url = new URL(req.url);
 
-  // if (
-  //   url.pathname === "/live-reload" &&
-  //   Deno.env.get("ENVIRONMENT") === "development"
-  // ) {
-  //   return handleWebSocketConnection(req);
-  // }
+  if (
+    url.pathname === "/live-reload" &&
+    Deno.env.get("ENVIRONMENT") === "development"
+  ) {
+    return handleWebSocketConnection(req);
+  }
 
   return await handlePageRequest(url, nunjucks);
 };
@@ -22,7 +26,11 @@ const handler = async (req: Request): Promise<Response> => {
 const server = Deno.serve({ port: PORT }, handler);
 console.log(`Server running on http://localhost:${PORT}`);
 
-// setupFileWatcher(["./public", "./src"]);
+// Only setup file watcher in development
+if (Deno.env.get("ENVIRONMENT") === "development") {
+  setupFileWatcher(["./public", "./src"]);
+  console.log("Live reload enabled - watching for file changes");
+}
 
 // Handle server shutdown
 await server;
