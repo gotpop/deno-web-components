@@ -11,7 +11,7 @@
 
 #feature-detect-popover {
   background-color: var(--colour-dark);
-  background-color: orange;
+  background-color: red;
   color: var(--colour-light);
   grid-column: content;
   grid-row: span 1;

@@ -21,41 +21,9 @@
 />
 
 <script defer type="module" src="./scripts/main.js"></script>
-<script>
-  (function () {
-    // Create WebSocket connection for live reload
-    const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-    const host = window.location.host;
-    const socket = new WebSocket(`${protocol}//${host}/live-reload`);
-
-    // Connection opened
-    socket.addEventListener("open", function (event) {
-      console.log("Connected to live-reload server");
-    });
-
-    // Listen for messages
-    socket.addEventListener("message", function (event) {
-      if (event.data === "reload") {
-        console.log("Reloading page due to file changes");
-        window.location.reload();
-      }
-    });
-
-    // Connection closed or error, attempt to reconnect
-    socket.addEventListener("close", function () {
-      console.log(
-        "Live-reload connection closed, attempting to reconnect in 3s"
-      );
-      setTimeout(() => {
-        window.location.reload();
-      }, 3000);
-    });
-
-    // Handle connection errors
-    socket.addEventListener("error", function (error) {
-      console.error("Live-reload connection error:", error);
-    });
-  })();
+<script defer type="module">
+  import { initLiveReload } from "./scripts/live-reload.js";
+  initLiveReload();
 </script>
 {% if env.ENVIRONMENT == "development" %} {% endif %} {# {% if env ===
 'development' %}

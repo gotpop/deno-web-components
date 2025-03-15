@@ -1,16 +1,37 @@
-if (location.hostname === "localhost") {
-  const connectWebSocket = () => {
-    const ws = new WebSocket(`ws://${location.host}/live-reload`)
+export const initLiveReload = () => {
+  let reconnectAttempts = 0
+  const maxReconnectAttempts = 5
 
-    ws.onmessage = () => location.reload()
+  function connectWebSocket() {
+    if (window.location.hostname !== "localhost") return
 
-    ws.onerror = (error) => {
-      console.warn("WebSocket error:", error)
-    }
+    try {
+      const protocol = window.location.protocol === "https:" ? "wss:" : "ws:"
+      const host = window.location.host
+      const socket = new WebSocket(`${protocol}//${host}/live-reload`)
 
-    ws.onclose = () => {
-      console.log("WebSocket closed, attempting to reconnect...")
-      setTimeout(connectWebSocket, 1000)
+      socket.addEventListener("open", () => {
+        reconnectAttempts = 0
+      })
+
+      socket.addEventListener("message", (event) => {
+        if (event.data === "reload") {
+          window.location.reload()
+        }
+      })
+
+      socket.addEventListener("close", () => {
+        if (reconnectAttempts < maxReconnectAttempts) {
+          reconnectAttempts++
+          setTimeout(connectWebSocket, 3000)
+        }
+      })
+
+      socket.addEventListener("error", () => {
+        // Silent error handling
+      })
+    } catch (err) {
+      // Silent error handling
     }
   }
 
