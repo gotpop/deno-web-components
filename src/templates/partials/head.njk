@@ -21,17 +21,11 @@
 />
 
 <script defer type="module" src="./scripts/main.js"></script>
-<script defer type="module">
-  import { initLiveReload } from "./scripts/live-reload.js";
-  initLiveReload();
-</script>
-{% if env.ENVIRONMENT == "development" %} {% endif %} {# {% if env ===
-'development' %}
-<script src="/scripts/live-reload.js"></script>
-{% endif %} #}
+<script defer type="module" src="./scripts/live-reload.js"></script>
 
 <link rel="preload" href="/styles/main.css" as="style" />
 <link rel="modulepreload" href="./scripts/main.js" />
+
 <script type="speculationrules">
   {
     "prerender": [
