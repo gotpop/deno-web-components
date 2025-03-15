@@ -3,6 +3,7 @@ import { Footer } from "./components/site-footer/site-footer.js"
 import { GridItem } from "./components/grid-item/grid-item.js"
 import { Hero } from "./components/site-hero/site-hero.js"
 import { MainContent } from "./components/main-content/main-content.js"
+import { initLiveReload } from "./live-reload.js"
 
 const components = [
   ["site-hero", Hero],
@@ -28,3 +29,8 @@ Promise.all([
 
 const dialog = document.getElementById("feature-detect-popover")
 new FeatureDetect(dialog).init()
+
+
+if (window.location.hostname === 'localhost') {
+ initLiveReload()
+}
