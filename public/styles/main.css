@@ -1,4 +1,4 @@
-@import "https://unpkg.com/open-props";
+/* @import "https://unpkg.com/open-props"; */
 @import "./functions.css";
 @import "./typography.css";
 @import "./keyframes.css";
@@ -7,4 +7,56 @@
 
 @view-transition {
   navigation: auto;
+}
+
+#feature-detect-popover {
+  background-color: var(--colour-dark);
+  color: var(--colour-light);
+  grid-column: content;
+  grid-row: span 1;
+  grid-template-columns: subgrid;
+  padding: calc(var(--padding) * 2);
+  text-align: center;
+  width: min(calc(100% - 2rem), 30rem);
+  border: unset;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px);
+  display: block;
+  position: fixed;
+
+  &:popover-open {
+    display: block;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2000px);
+  }
+
+  .feature-list {
+    gap: 1rem;
+    display: grid;
+  }
+
+  details {
+    background-color: var(--colour-light);
+    color: var(--colour-dark);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+  }
+
+  summary {
+    padding: 1.5rem;
+    background-color: aquamarine;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 100%;
+  }
 }

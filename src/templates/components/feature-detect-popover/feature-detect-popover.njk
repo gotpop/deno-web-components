@@ -1,13 +1,18 @@
-<feature-detect-popover id="feature-detect-popover" popover="manual">
-  <style>
-    {{"feature-detect-popover" | componentCss | importCss | safe}}
-  </style>
+<dialog id="feature-detect-popover">
+  <template id="feature-item">
+    <details name="features" class="feature-item">
+      <summary>
+        <span class="summary-text"></span><span class="summary-icon"></span>
+      </summary>
+      <div></div>
+    </details>
+  </template>
   <article class="hero-content">
     <h1 class="heading">Browser not supported</h1>
     <p class="subheading">
       This project is a demonstration of experimental web platform features.
     </p>
-
     <a href="chrome://flags">chrome://flags</a>
+    <div class="feature-list"></div>
   </article>
-</feature-detect-popover>
+</dialog>
