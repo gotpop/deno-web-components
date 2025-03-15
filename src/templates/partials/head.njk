@@ -2,7 +2,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{{ title }} - Deno Web Components</title>
 <link rel="stylesheet" href="/styles/main.css" />
-
+<meta
+  name="description"
+  content="{{ description | default('A Deno Web Components project') }}"
+/>
 <link
   rel="icon"
   type="image/png"
@@ -18,19 +21,10 @@
 />
 
 <script defer type="module" src="./scripts/main.js"></script>
-{% if env === 'development' %}
+{# {% if env === 'development' %}
 <script src="/scripts/live-reload.js"></script>
-{% endif %}
-
-<meta
-  name="description"
-  content="{{ description | default('A Deno Web Components project') }}"
-/>
-<meta name="generator" content="Deno {{ deno.version }}" />
-
-<link rel="preload" href="/styles/main.css" as="style" />
-<link rel="modulepreload" href="./scripts/main.js" />
-
+{% endif %} #} {# <link rel="preload" href="/styles/main.css" as="style" />
+<link rel="modulepreload" href="./scripts/main.js" /> #} {#
 <script type="speculationrules">
   {
     "prerender": [
@@ -40,3 +34,4 @@
     ]
   }
 </script>
+#}
