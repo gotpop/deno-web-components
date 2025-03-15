@@ -37,6 +37,5 @@
       ]
     },
     "exclude": ["./scripts/**/*.js", "./public/scripts/**/*.js"]
-  },
-  "exclude": ["./scripts/**/*.js", "./public/scripts/**/*.js"]
+  }
 }
