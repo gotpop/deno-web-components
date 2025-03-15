@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["deno.window", "dom"],
+    "lib": ["deno.window", "dom", "esnext"],
     "strict": true
   },
   "tasks": {
@@ -35,6 +35,8 @@
         "style/no-unknown-properties",
         "style/no-invalid-position"
       ]
-    }
-  }
+    },
+    "exclude": ["./scripts/**/*.js", "./public/scripts/**/*.js"]
+  },
+  "exclude": ["./scripts/**/*.js", "./public/scripts/**/*.js"]
 }
