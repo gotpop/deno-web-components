@@ -39,8 +39,10 @@ export class FeatureDetect {
 
   createFeatureItem({ description, supported, title }) {
     const clone = this.template.content.cloneNode(true)
+
     const summary = clone.querySelector("summary")
     const div = clone.querySelector("div")
+
     const summaryText = summary.querySelector(".summary-text")
     const summaryIcon = summary.querySelector(".summary-icon")
 
