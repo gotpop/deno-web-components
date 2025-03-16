@@ -1,7 +1,7 @@
-import { Footer } from "./components/site-footer/site-footer.js"
 import { GridItem } from "./components/grid-item/grid-item.js"
 import { Hero } from "./components/site-hero/site-hero.js"
 import { MainContent } from "./components/main-content/main-content.js"
+import { SiteFooter } from "./components/site-footer/site-footer.js"
 import { log } from "./console-log.js"
 
 export const initWebComponents = () => {
@@ -9,7 +9,7 @@ export const initWebComponents = () => {
     ["site-hero", Hero],
     ["main-content", MainContent],
     ["grid-item", GridItem],
-    ["site-footer", Footer],
+    ["site-footer", SiteFooter],
   ]
 
   // Register remaining components
