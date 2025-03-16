@@ -10,6 +10,9 @@
   content="{{ keywords | default('deno, web components, typescript, css') }}"
 />
 
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="modulepreload" href="/scripts/main.js" />
+
 {% include "partials/speculation-rules.njk" %}
 {% include "partials/favicon-links.njk" %}
 
