@@ -31,6 +31,7 @@ export class FeatureDetect {
     }
 
     this.render(testedCSSFeatures)
+    this.logSupportedFeatures(testedCSSFeatures)
   }
 
   render(testedCSSFeatures) {
@@ -52,5 +53,17 @@ export class FeatureDetect {
     div.textContent = description
 
     this.featureList.appendChild(clone)
+  }
+
+  logSupportedFeatures(testedCSSFeatures) {
+    const featuresArray = Array.from(testedCSSFeatures).map((
+      [key, feature],
+    ) => ({
+      Feature: feature.title,
+      Supported: feature.supported ? "✅" : "❌",
+      Description: feature.description,
+    }))
+
+    console.table(featuresArray)
   }
 }
