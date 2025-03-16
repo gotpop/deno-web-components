@@ -3,6 +3,7 @@ import {
   setupFileWatcher,
 } from "./live-reload/websocket.ts";
 
+import { green } from "https://deno.land/std@0.220.1/fmt/colors.ts";
 import { handlePageRequest } from "./handlers/page-handler.ts";
 import { setupNunjucks } from "./nunjucks/config.ts";
 
@@ -24,11 +25,12 @@ const handler = async (req: Request): Promise<Response> => {
 };
 
 const server = Deno.serve({ port: PORT }, handler);
-console.log(`Server running on http://localhost:${PORT}`);
+console.log(green("\nServer running on"), `http://localhost:${PORT}\n`);
 
 // Only setup file watcher in development
 if (Deno.env.get("ENVIRONMENT") === "development") {
   setupFileWatcher(["./public", "./src"]);
+
   console.log("Live reload enabled - watching for file changes");
 }
 

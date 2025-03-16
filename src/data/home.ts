@@ -1,0 +1,52 @@
+export const homeData = {
+  gridItems: [
+    {
+      id: "grid-item-1",
+      label: "Title 1",
+      columns: 12,
+      rows: 8,
+      title: "Title 1",
+      titleTag: "h2",
+    },
+    {
+      id: "grid-item-2",
+      label: "Title 2",
+      columns: 4,
+      rows: 2,
+      title: "Title 2",
+      titleTag: "h3",
+    },
+    {
+      id: "grid-item-3",
+      label: "Title 3",
+      columns: 2,
+      rows: 2,
+      title: "Title 3",
+      titleTag: "h3",
+    },
+    {
+      id: "grid-item-4",
+      label: "Title 4",
+      columns: 2,
+      rows: 2,
+      title: "Title 4",
+      titleTag: "h3",
+    },
+    {
+      id: "grid-item-5",
+      label: "Title 5",
+      columns: 4,
+      rows: 2,
+      title: "Title 5",
+      titleTag: "h3",
+    },
+    {
+      id: "grid-item-6",
+      label: "Title 6",
+      columns: 12,
+      rows: 2,
+      title: "Title 6",
+      titleTag: "h3",
+    },
+  ],
+};
