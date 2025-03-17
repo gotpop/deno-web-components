@@ -29,13 +29,31 @@ export function initViewTransitions() {
       const html = await response.text()
       const newDoc = new DOMParser().parseFromString(html, "text/html")
 
-      await document.startViewTransition(() => {
+      // Start transition before any DOM changes
+      const transition = document.startViewTransition(async () => {
+        // Re-initialize components and features
+        const init = async () => {
+          initWebComponents()
+          new FeatureDetect(
+            document.getElementById("feature-detect-popover"),
+          ).init()
+          if (window.location.hostname === "localhost") {
+            initLiveReload()
+          }
+        }
+
         document.documentElement.replaceChildren(
           ...newDoc.documentElement.childNodes,
         )
-        window.scrollTo(0, 0)
-      }).finished
 
+        // Wait for DOM update before re-initializing
+        await Promise.resolve()
+        await init()
+        window.scrollTo(0, 0)
+      })
+
+      // Wait for transition to complete
+      await transition.finished
       history.pushState({}, "", url)
     } catch (err) {
       console.error("Navigation failed:", err)
@@ -43,9 +61,15 @@ export function initViewTransitions() {
     }
   })
 
-  window.addEventListener("popstate", () => {
-    location.reload()
+  // Handle back/forward navigation
+  window.addEventListener("popstate", async () => {
+    if (document.startViewTransition) {
+      await document.startViewTransition(() => location.reload()).finished
+    } else {
+      location.reload()
+    }
   })
 }
 
+// Initialize on page load
 initViewTransitions()
