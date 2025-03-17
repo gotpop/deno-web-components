@@ -13,6 +13,36 @@ if (window.location.hostname === "localhost") {
 export function initViewTransitions() {
   if (!document.startViewTransition) return
 
+  async function updateDOM(newDoc) {
+    // Create init function outside transition
+    const init = async () => {
+      try {
+        await initWebComponents()
+        const popover = document.getElementById("feature-detect-popover")
+        if (popover) {
+          new FeatureDetect(popover).init()
+        }
+        if (window.location.hostname === "localhost") {
+          initLiveReload()
+        }
+      } catch (error) {
+        console.error("Init error:", error)
+      }
+    }
+
+    return document.startViewTransition(async () => {
+      // Update DOM
+      document.documentElement.replaceChildren(
+        ...newDoc.documentElement.childNodes,
+      )
+
+      // Ensure DOM is updated before continuing
+      await new Promise((resolve) => requestAnimationFrame(resolve))
+      await init()
+      window.scrollTo(0, 0)
+    }).finished
+  }
+
   document.addEventListener("click", async (e) => {
     const link = e.target.closest("a")
     if (!link || link.target || !link.href) return
@@ -29,31 +59,7 @@ export function initViewTransitions() {
       const html = await response.text()
       const newDoc = new DOMParser().parseFromString(html, "text/html")
 
-      // Start transition before any DOM changes
-      const transition = document.startViewTransition(async () => {
-        // Re-initialize components and features
-        const init = async () => {
-          initWebComponents()
-          new FeatureDetect(
-            document.getElementById("feature-detect-popover"),
-          ).init()
-          if (window.location.hostname === "localhost") {
-            initLiveReload()
-          }
-        }
-
-        document.documentElement.replaceChildren(
-          ...newDoc.documentElement.childNodes,
-        )
-
-        // Wait for DOM update before re-initializing
-        await Promise.resolve()
-        await init()
-        window.scrollTo(0, 0)
-      })
-
-      // Wait for transition to complete
-      await transition.finished
+      await updateDOM(newDoc)
       history.pushState({}, "", url)
     } catch (err) {
       console.error("Navigation failed:", err)
@@ -63,13 +69,16 @@ export function initViewTransitions() {
 
   // Handle back/forward navigation
   window.addEventListener("popstate", async () => {
-    if (document.startViewTransition) {
-      await document.startViewTransition(() => location.reload()).finished
-    } else {
+    try {
+      const response = await fetch(location.href)
+      const html = await response.text()
+      const newDoc = new DOMParser().parseFromString(html, "text/html")
+      await updateDOM(newDoc)
+    } catch {
       location.reload()
     }
   })
 }
 
 // Initialize on page load
-initViewTransitions()
+document.addEventListener("DOMContentLoaded", initViewTransitions)

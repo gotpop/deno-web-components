@@ -34,3 +34,18 @@
     opacity: 1;
   }
 } */
+
+@view-transition {
+  * {
+    animation-duration: 300ms;
+    animation-timing-function: ease;
+  }
+}
+
+::view-transition-old(root) {
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
