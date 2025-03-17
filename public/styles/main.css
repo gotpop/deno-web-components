@@ -9,7 +9,7 @@
   navigation: auto;
 }
 
-::view-transition-old(root) {
+/* ::view-transition-old(root) {
   animation: 300ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
 }
 
@@ -33,4 +33,4 @@
   to {
     opacity: 1;
   }
-}
+} */
