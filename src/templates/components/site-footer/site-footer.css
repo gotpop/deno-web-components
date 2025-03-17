@@ -1,7 +1,7 @@
 @scope {
   & {
-    background-color: var(--colour-dark);
-    color: var(--colour-light);
+    background-color: var(--colour-dark-1);
+    color: var(--colour-light-1);
     padding: var(--padding);
     grid-column: full;
     grid-row: footer;

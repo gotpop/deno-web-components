@@ -1,11 +1,36 @@
-:root {
-  --colour-dark: #333;
-  --colour-light: #f4f4f4;
-  --colour-primary: #e7b900;
+:where(html) {
+  --base-colour: deeppink;
+
+  --colour-1: var(--base-colour);
+  --colour-2: oklch(from var(--base-colour) calc(l - 0.1) c calc(h - 10));
+  --colour-3: oklch(from var(--base-colour) calc(l - 0.2) c calc(h - 20));
+  --colour-4: oklch(from var(--base-colour) calc(l - 0.3) c calc(h - 30));
+  --colour-5: oklch(from var(--base-colour) calc(l - 0.4) c calc(h - 40));
+
+  --colour-light-1: --lighten(var(--colour-5), 6);
+  --colour-light-2: --lighten(var(--colour-5), 5);
+  --colour-light-3: --lighten(var(--colour-5), 4);
+  --colour-light-4: --lighten(var(--colour-5), 3);
+  --colour-light-5: --lighten(var(--colour-5), 2);
+
+  --colour-dark-1: oklch(from var(--colour-5) calc(l * 0.05) c h);
+  --colour-dark-2: oklch(from var(--colour-5) calc(l * 0.05) c h);
+  --colour-dark-3: oklch(from var(--colour-5) calc(l * 0.05) c h);
+  --colour-dark-4: oklch(from var(--colour-5) calc(l * 0.05) c h);
+  --colour-dark-5: oklch(from var(--colour-5) calc(l * 1.5) c h);
+
+  --colour-primary: var(--colour-1);
 
   --padding: 1rem;
   --site-max-width: 1200px;
   --columns-number: 12;
 
-  --site-background-colour: var(--gradient-1);
+  --site-background: linear-gradient(
+    to bottom right,
+    var(--colour-1),
+    var(--colour-2),
+    var(--colour-3),
+    var(--colour-4),
+    var(--colour-5)
+  );
 }

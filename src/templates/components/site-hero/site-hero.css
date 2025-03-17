@@ -1,18 +1,39 @@
 @scope {
   & {
-    background-color: var(--colour-dark);
-    color: var(--colour-light);
+    /* background-color: var(--colour-dark-1); */
+    background-image: radial-gradient(
+      circle at center bottom,
+      var(--colour-dark-1),
+      transparent
+    );
+    color: var(--colour-light-1);
     display: grid;
-    grid-column: content;
-    grid-row: span 1;
+    grid-column: full;
+    grid-row: span 4;
     grid-template-columns: subgrid;
-    padding: var(--padding);
+    padding-block: calc(var(--padding) * 5);
     text-align: center;
     view-transition-name: attr(id type(<custom-ident>), none);
 
     article {
-      grid-column: span 6;
+      grid-column: content-start / span 6;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .heading {
+      font-size: 7rem;
+      font-weight: 900;
+      /* text-shadow: 0px -1px 0 rgba(255, 255, 255, 1); */
+    }
+
+    .subheading {
+      font-size: 1.5rem;
+      font-weight: 300;
+      display: inline-block;
+      margin-top: 1rem;
     }
 
     aside {

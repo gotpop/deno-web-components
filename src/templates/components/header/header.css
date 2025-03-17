@@ -1,9 +1,9 @@
 @scope {
   & {
-    --color-dark: var(--colour-dark);
+    --color-dark: var(--colour-dark-1);
 
     background-color: --lighten(var(--color-dark), 1.5);
-    color: var(--colour-light);
+    color: var(--colour-light-1);
     display: grid;
     grid-column: full;
     grid-row: header;
@@ -11,6 +11,7 @@
     position: sticky;
     top: 0;
     view-transition-name: attr(id type(<custom-ident>), none);
+    z-index: 1;
   }
 
   .nav {
@@ -30,16 +31,16 @@
   }
 
   .menuitem {
-    color: var(--colour-light);
+    color: var(--colour-light-1);
     display: flex;
 
     a {
       text-align: center;
       padding: var(--padding);
-      background-color: var(--colour-dark);
+      background-color: var(--colour-dark-1);
       text-decoration: none;
-      color: var(--colour-light);
-      background-color: var(--colour-dark);
+      color: var(--colour-light-1);
+      background-color: var(--colour-dark-1);
 
       &:hover {
         color: var(--colour-primary);

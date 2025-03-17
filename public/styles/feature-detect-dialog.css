@@ -1,7 +1,7 @@
 #feature-detect-popover {
-  background-color: var(--colour-dark);
+  background-color: var(--colour-dark-1);
   background-color: red;
-  color: var(--colour-light);
+  color: var(--colour-light-1);
   grid-column: content;
   grid-row: span 1;
   grid-template-columns: subgrid;
@@ -31,8 +31,8 @@
   }
 
   details {
-    background-color: var(--colour-light);
-    color: var(--colour-dark);
+    background-color: var(--colour-light-1);
+    color: var(--colour-dark-1);
     border-radius: 0.5rem;
     cursor: pointer;
     overflow: clip;

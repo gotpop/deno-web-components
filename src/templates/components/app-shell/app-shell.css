@@ -1,11 +1,10 @@
 @scope {
   & {
     display: grid;
-    row-gap: 1rem;
     grid-template-rows: --grid-row-base();
     grid-template-columns: --grid(1200px, 12);
     min-height: 100dvh;
-    background: var(--site-background-colour);
+    background: var(--site-background);
     view-transition-name: attr(id type(<custom-ident>), none);
   }
 }

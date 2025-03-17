@@ -61,9 +61,10 @@ export class FeatureDetect {
     ) => ({
       Feature: feature.title,
       Supported: feature.supported ? "✅" : "❌",
-      Description: feature.description,
+      // Description: feature.description,
     }))
-
     console.table(featuresArray)
+    console.groupCollapsed("CSS Feature Support")
+    console.groupEnd("CSS Feature Support")
   }
 }

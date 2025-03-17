@@ -1,10 +1,8 @@
 @scope {
   & {
-    /* background-color: oklab(from var(--colour-dark) 0.9 a b); */
     display: grid;
-    grid-column: content;
+    grid-column: full;
     grid-row: main;
     grid-template-columns: subgrid;
-    gap: var(--padding);
   }
 }

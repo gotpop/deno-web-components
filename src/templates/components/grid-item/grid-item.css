@@ -1,10 +1,10 @@
 @scope {
   & {
     display: block;
-    background-color: oklch(from var(--colour-dark) l c h);
+    background-color: oklch(from var(--colour-dark-1) l c h);
     /* background-color: blue; */
-    color: var(--colour-light);
-    padding: var(--padding, 1rem);
+    color: var(--colour-light-1);
+    padding: calc(var(--padding) * 5);
     grid-column: span attr(data-columns type(<integer>));
     grid-row: span attr(data-rows type(<integer>));
     view-transition-name: attr(id type(<custom-ident>), none);

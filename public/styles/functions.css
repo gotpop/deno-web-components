@@ -17,6 +17,10 @@
   result: oklch(from var(--color) calc(l * var(--factor)) c h);
 }
 
+@function --darken(--color <color>, --factor <number>) returns <color> {
+  result: oklch(from var(--color) calc(l * var(--factor)) c h);
+}
+
 @function --hide-when-supported() {
   result: none;
 }
