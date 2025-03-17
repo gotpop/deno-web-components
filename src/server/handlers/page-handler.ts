@@ -1,6 +1,10 @@
-import { aboutData, contactData, homeData } from "../../data/index.ts"
+import {
+  aboutData,
+  contactData,
+  featuresData,
+  homeData,
+} from "../../data/index.ts"
 
-import { green } from "https://deno.land/std@0.220.1/fmt/colors.ts"
 import { serveFile } from "../../utils/fileServer.ts"
 import { templateConfig } from "../nunjucks/config.ts"
 
@@ -19,7 +23,11 @@ export async function handlePageRequest(
     render: (template: string, context: PageContext) => string
   },
 ): Promise<Response> {
-  const pageName = url.pathname.replace("/", "").replace(".html", "")
+  const pathParts = url.pathname.replace("/", "").replace(".html", "").split(
+    "/",
+  )
+  const pageName = pathParts[0]
+  const subPage = pathParts[1]
 
   // TODO: Check ensure HMR is not used in production
   // TODO: See if there's a way to get rid of this special case
@@ -36,15 +44,31 @@ export async function handlePageRequest(
   // Render templates for pages
   try {
     const template = pageName || "index"
-    const pageData = template === "contact"
-      ? contactData
-      : template === "about"
-      ? aboutData
-      : template === "index"
-      ? homeData
-      : {}
+    let pageData = {}
+    let templateFile = `${template}.njk`
 
-    const html = nunjucks.render(`${template}.njk`, {
+    // Handle features pages
+    if (template === "features") {
+      if (subPage) {
+        const feature = featuresData.features.find((f) => f.slug === subPage)
+        if (!feature) return new Response("Not Found", { status: 404 })
+        pageData = { ...featuresData, currentFeature: feature }
+        templateFile = "features/single.njk" // Changed from feature-detail.njk
+      } else {
+        pageData = featuresData
+      }
+    } else {
+      // Handle other pages as before
+      pageData = template === "contact"
+        ? contactData
+        : template === "about"
+        ? aboutData
+        : template === "index"
+        ? homeData
+        : {}
+    }
+
+    const html = nunjucks.render(templateFile, {
       title: template.charAt(0).toUpperCase() + template.slice(1),
       currentPage: template,
       componentPath: templateConfig.componentPath,

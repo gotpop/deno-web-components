@@ -1,0 +1,9 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  {% include "components/site-hero/site-hero.njk" %}
+
+  {% for item in gridItems %}
+    {% include "components/grid-item/grid-item.njk" %}
+  {% endfor %}
+{% endblock %}
