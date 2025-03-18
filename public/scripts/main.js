@@ -38,6 +38,22 @@ export function initViewTransitions() {
     if (!link || link.target || !link.href) return
 
     const url = new URL(link.href)
+
+    // Handle same-page anchor links
+    if (
+      url.origin === location.origin && url.pathname === location.pathname &&
+      url.hash
+    ) {
+      e.preventDefault()
+      const element = document.querySelector(url.hash)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+      history.pushState({}, "", url.hash)
+      return
+    }
+
+    // Handle cross-page navigation
     if (url.origin !== location.origin) return
 
     e.preventDefault()
@@ -60,7 +76,7 @@ export function initViewTransitions() {
           ...newDoc.documentElement.childNodes,
         )
         await waitForStylesheets(document)
-        window.scrollTo(0, 0)
+        // window.scrollTo(0, 0)
       }).finished
 
       history.pushState({}, "", url)
@@ -70,7 +86,16 @@ export function initViewTransitions() {
     }
   })
 
-  window.addEventListener("popstate", () => {
+  window.addEventListener("popstate", (e) => {
+    // Handle hash changes without reload
+    if (window.location.hash) {
+      const element = document.querySelector(window.location.hash)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+      e.preventDefault()
+      return
+    }
     location.reload()
   })
 }

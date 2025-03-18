@@ -23,6 +23,7 @@
 
   --padding: 1rem;
   --site-max-width: 1200px;
+  --site-header-height: 6rem;
   --columns-number: 12;
 
   --site-background: linear-gradient(
