@@ -1,0 +1,6 @@
+@scope {
+  & {
+    grid-column: span 6;
+    padding: calc(var(--padding) * 2);
+  }
+}

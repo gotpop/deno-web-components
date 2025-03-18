@@ -1,0 +1,8 @@
+<section class="page-content">
+    <style>
+    {{"page-content" | componentCss | importCss | safe}}
+    </style>
+    {% for item in bodyMarkupData %}
+        {{ heading.render(item.tag, item.content, item.id) }}
+    {% endfor %}
+</section>

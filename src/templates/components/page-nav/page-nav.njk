@@ -1,0 +1,13 @@
+<aside class="page-nav">
+    <style>
+      {{"page-nav" | componentCss | importCss | safe}}
+    </style>
+    <h2>On this page</h2>
+    <nav>
+        {% for item in bodyMarkupData %}
+            {% if item.tag.startsWith('h') %}
+                <a href="#{{ item.id }}">{{ item.content }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+</aside>

@@ -2,4 +2,16 @@ import { baseFeatures } from "./baseFeatures.ts"
 
 export const contactData = {
   features: baseFeatures,
+  bodyMarkupData: [
+    {
+      tag: "h2",
+      content: "Contact Us",
+      id: "contact-us",
+    },
+    {
+      tag: "p",
+      content:
+        "We'd love to hear from you. Please reach out to us with any questions or comments.",
+    },
+  ],
 }

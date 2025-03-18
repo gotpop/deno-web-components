@@ -1,0 +1,14 @@
+@scope {
+  & {
+    background-color: yellow !important;
+    grid-column: content-start / span 6;
+    padding: calc(var(--padding) * 2);
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: var(--padding);
+    }
+  }
+}

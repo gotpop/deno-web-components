@@ -1,17 +1,9 @@
 {% extends "base.njk" %}
 
+{% import "components/heading/heading.njk" as heading %}
+
 {% block content %}
     {% include "components/site-hero/site-hero.njk" %}
-    <section>
-        <h2>About Us</h2>
-        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nunc nec</p>
-    </section>
-    <section>
-        <h2>Our Team</h2>
-        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nunc nec</p>
-    </section>
-    <section>
-        <h2>Our Mission</h2>
-        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nunc nec</p>
-    </section>
+    {% include "components/page-nav/page-nav.njk" %}
+    {% include "components/page-content/page-content.njk" %}
 {% endblock %}
