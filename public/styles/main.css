@@ -35,12 +35,12 @@
   }
 } */
 
-@view-transition {
+/* @view-transition {
   * {
     animation-duration: 300ms;
     animation-timing-function: ease;
   }
-}
+} */
 
 ::view-transition-old(root) {
   mix-blend-mode: normal;

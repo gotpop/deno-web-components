@@ -15,20 +15,20 @@ export function initViewTransitions() {
 
   async function updateDOM(newDoc) {
     // Create init function outside transition
-    const init = async () => {
-      try {
-        await initWebComponents()
-        const popover = document.getElementById("feature-detect-popover")
-        if (popover) {
-          new FeatureDetect(popover).init()
-        }
-        if (window.location.hostname === "localhost") {
-          initLiveReload()
-        }
-      } catch (error) {
-        console.error("Init error:", error)
-      }
-    }
+    // const init = async () => {
+    //   try {
+    //     await initWebComponents()
+    //     const popover = document.getElementById("feature-detect-popover")
+    //     if (popover) {
+    //       new FeatureDetect(popover).init()
+    //     }
+    //     if (window.location.hostname === "localhost") {
+    //       initLiveReload()
+    //     }
+    //   } catch (error) {
+    //     console.error("Init error:", error)
+    //   }
+    // }
 
     return document.startViewTransition(async () => {
       // Update DOM
@@ -80,5 +80,4 @@ export function initViewTransitions() {
   })
 }
 
-// Initialize on page load
-document.addEventListener("DOMContentLoaded", initViewTransitions)
+// initViewTransitions()
