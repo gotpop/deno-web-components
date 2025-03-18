@@ -1,12 +1,24 @@
 @scope {
   & {
-    display: block;
+    --grid-column: attr(data-start-column type(<integer>)) /
+      attr(data-end-column type(<integer>));
+
     background-color: oklch(from var(--colour-dark-1) l c h);
-    /* background-color: blue; */
     color: var(--colour-light-1);
-    padding: calc(var(--padding) * 5);
+    display: grid;
     grid-column: span attr(data-columns type(<integer>));
     grid-row: span attr(data-rows type(<integer>));
+    grid-template-columns: subgrid;
+    padding-block: calc(var(--padding) * 5);
     view-transition-name: attr(id type(<custom-ident>), none);
+
+    .feature {
+      grid-column: var(--grid-column);
+
+      &:has(:hover) {
+        background-color: gray;
+        color: var(--colour-light-1);
+      }
+    }
   }
 }

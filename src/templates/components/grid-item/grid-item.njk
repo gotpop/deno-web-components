@@ -4,11 +4,16 @@
   aria-label="{{ feature.label }}"
   data-columns="{{ feature.columns }}"
   data-rows="{{ feature.rows }}"
+  data-start-column="{{ feature['feature-start'] }}"
+  data-end-column="{{ feature['feature-end'] }}"
+  
   >
   <style>
     {{"grid-item" | componentCss | importCss | safe}}
   </style>
-  <{{ feature.titleTag }}>{{ feature.title }}</{{ feature.titleTag }}>
-  <p>{{ feature.description }}</p>
-  <a href="/features/{{ feature.slug }}">Read more</a>
+  <article class="feature">
+    <{{ feature.titleTag }}>{{ feature.title }}</{{ feature.titleTag }}>
+    <p>{{ feature.description }}</p>
+    <a href="/features/{{ feature.slug }}">Read more</a>
+  </article>
 </grid-item>

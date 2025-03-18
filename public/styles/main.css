@@ -11,6 +11,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
 }
 
 /* ::view-transition-old(root) {
