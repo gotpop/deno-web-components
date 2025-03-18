@@ -13,6 +13,26 @@ if (window.location.hostname === "localhost") {
 export function initViewTransitions() {
   if (!document.startViewTransition) return
 
+  async function waitForStylesheets(doc) {
+    const links = [...doc.getElementsByTagName("link")]
+    const stylesheets = links.filter((link) =>
+      link.rel === "stylesheet" ||
+      link.rel === "preload" && link.as === "style"
+    )
+
+    await Promise.all(
+      stylesheets.map((link) => {
+        if (link.rel === "preload") {
+          link.rel = "stylesheet"
+        }
+        return link.sheet ? Promise.resolve() : new Promise((resolve) => {
+          link.onload = resolve
+          link.onerror = resolve // Continue even if style fails
+        })
+      }),
+    )
+  }
+
   document.addEventListener("click", async (e) => {
     const link = e.target.closest("a")
     if (!link || link.target || !link.href) return
@@ -35,10 +55,11 @@ export function initViewTransitions() {
       const html = await response.text()
       const newDoc = new DOMParser().parseFromString(html, "text/html")
 
-      await document.startViewTransition(() => {
+      await document.startViewTransition(async () => {
         document.documentElement.replaceChildren(
           ...newDoc.documentElement.childNodes,
         )
+        await waitForStylesheets(document)
         window.scrollTo(0, 0)
       }).finished
 
