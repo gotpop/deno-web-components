@@ -1,4 +1,4 @@
-export const homeData = {
+export const featuresIndexData = {
   features: [
     {
       id: "grid-item-1",

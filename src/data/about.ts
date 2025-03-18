@@ -1,5 +1,5 @@
 export const aboutData = {
-  gridItems: [
+  features: [
     {
       id: "grid-item-1",
       label: "Title 1",

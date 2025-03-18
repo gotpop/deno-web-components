@@ -1,13 +1,13 @@
 <grid-item
-  id="{{ item.id }}"
+  id="{{ feature.id }}"
   role="region"
-  aria-label="{{ item.label }}"
-  data-columns="{{ item.columns }}"
-  data-rows="{{ item.rows }}"
+  aria-label="{{ feature.label }}"
+  data-columns="{{ feature.columns }}"
+  data-rows="{{ feature.rows }}"
   >
   <style>
     {{"grid-item" | componentCss | importCss | safe}}
   </style>
-  <{{ item.titleTag }}>{{ item.title }}</{{ item.titleTag }}>
-  <p>{{ item.description }}</p>
+  <{{ feature.titleTag }}>{{ feature.title }}</{{ feature.titleTag }}>
+  <p>{{ feature.description }}</p>
 </grid-item>

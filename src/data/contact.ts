@@ -1,5 +1,5 @@
 export const contactData = {
-  gridItems: [
+  features: [
     {
       id: "grid-item-1",
       label: "Title 1",
@@ -49,4 +49,4 @@ export const contactData = {
       titleTag: "h3",
     },
   ],
-};
+}

@@ -50,11 +50,11 @@
   </style>
   <article class="hero-content">
     <h1 class="heading">Features</h1>
-    <p class="subheading">A demonstation of the latest in CSS and Web Compinents</p>
+    <p class="subheading">A demonstation of the latest in CSS and Web Components</p>
   </article>
 </site-hero>
 
-  {% for item in gridItems %}
+  {% for feature in features %}
     {% include "components/grid-item/grid-item.njk" %}
   {% endfor %}
 {% endblock %}

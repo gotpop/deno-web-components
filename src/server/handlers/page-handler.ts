@@ -2,6 +2,7 @@ import {
   aboutData,
   contactData,
   featuresData,
+  featuresIndexData,
   homeData,
 } from "../../data/index.ts"
 
@@ -55,7 +56,7 @@ export async function handlePageRequest(
         pageData = { ...featuresData, currentFeature: feature }
         templateFile = "features/single.njk" // Changed from feature-detail.njk
       } else {
-        pageData = featuresData
+        pageData = featuresIndexData
       }
     } else {
       // Handle other pages as before
@@ -65,6 +66,8 @@ export async function handlePageRequest(
         ? aboutData
         : template === "index"
         ? homeData
+        : template === "features"
+        ? featuresIndexData
         : {}
     }
 
