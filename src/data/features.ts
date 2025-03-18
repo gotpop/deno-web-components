@@ -1,3 +1,4 @@
+import { baseFeatures } from "./baseFeatures.ts"
 export interface Feature {
   id: string
   title: string
@@ -8,18 +9,5 @@ export interface Feature {
 export const featuresData = {
   title: "Features",
   description: "Explore our features",
-  features: [
-    {
-      id: "1",
-      title: "Web Components",
-      description: "Native web components without frameworks",
-      slug: "web-components",
-    },
-    {
-      id: "2",
-      title: "Deno Runtime",
-      description: "Modern JavaScript/TypeScript runtime",
-      slug: "deno-runtime",
-    },
-  ],
+  features: baseFeatures,
 }
