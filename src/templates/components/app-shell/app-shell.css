@@ -6,5 +6,6 @@
     min-height: 100dvh;
     background: var(--site-background);
     view-transition-name: attr(id type(<custom-ident>), none);
+    background-image: paint(grid);
   }
 }

@@ -10,6 +10,16 @@ if (window.location.hostname === "localhost") {
   initLiveReload()
 }
 
+if ("paintWorklet" in CSS) {
+  try {
+    await CSS.paintWorklet.addModule("./worklets/worklet.grid.js")
+  } catch (error) {
+    console.warn("Worklet failed to load:", error)
+  }
+}
+
+// CSS.paintWorklet.addModule("/scripts/worklets/worklet.grid.js")
+
 export function initViewTransitions() {
   if (!document.startViewTransition) return
 

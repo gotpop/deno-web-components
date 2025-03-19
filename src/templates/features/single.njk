@@ -1,8 +1,8 @@
 {% extends "base-hero.njk" %}
 
 {% block hero_left %}
-    <h1 class="heading">{{ currentFeature.title }}</h1>
-    <p class="subheading">{{ currentFeature.description }}</p>
+    <h1 class="heading" id="heading-primary">{{ currentFeature.title }}</h1>
+    <p class="subheading" id="subheading">{{ currentFeature.description }}</p>
 {% endblock %}
 
 {% block hero_right %}
