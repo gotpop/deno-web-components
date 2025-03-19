@@ -2,7 +2,7 @@
   & {
     background-color: var(--colour-dark-1);
     color: var(--colour-light-1);
-    grid-column: content-start / span 3;
+    grid-column: content-start / span 9;
     padding: calc(var(--padding) * 2);
     height: max-content;
     position: sticky;

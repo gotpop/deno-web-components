@@ -14,10 +14,44 @@
     z-index: 1;
   }
 
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding);
+    margin: 0;
+    color: var(--colour-light-1);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    max-height: 80px;
+
+    &:hover {
+      fill: var(--colour-primary);
+    }
+  }
+
+  .logo-link {
+    display: flex;
+    grid-column: content-start / span 3;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--colour-light-1);
+    font-size: 2rem;
+    font-weight: bold;
+    max-height: 80px;
+
+    &:hover {
+      fill: var(--colour-primary);
+    }
+  }
+
   .nav {
     display: grid;
     grid-column: content;
     padding: 0;
+    grid-column: 15 / span 6;
   }
 
   .menubar {
