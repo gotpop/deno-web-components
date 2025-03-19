@@ -1,9 +1,28 @@
-{% extends "base.njk" %}
+{% extends "base-hero.njk" %}
 
+{# Note this is being used in page content maybe remove later #}
 {% import "components/heading/heading.njk" as heading %}
+{# Note this is being used in page content maybe remove later #}
 
-{% block content %}
-    {% include "components/site-hero/site-hero.njk" %}
-    {% include "components/page-nav/page-nav.njk" %}
-    {% include "components/page-content/page-content.njk" %}
+
+{% block hero_left %}
+    <h1 class="heading">About page</h1>
+    <p class="subheading">A demonstation of the latest in CSS and Web Compinents</p>
 {% endblock %}
+
+{% block hero_right %}
+    <article class="hero-content">
+        <p>Stuff</p>
+    </article>
+{% endblock %}
+
+{% block page_content %}
+    <div class="page-wrapper">
+        <style>
+            {{"page-wrapper" | componentCss | importCss | safe}}
+        </style>
+        {% include "components/page-nav/page-nav.njk" %}
+        {% include "components/page-content/page-content.njk" %}
+    </div>
+{% endblock %}
+    

@@ -1,59 +1,17 @@
-{% extends "base.njk" %}
+{% extends "base-hero.njk" %}
 
-{% block content %}
-  <site-hero id="hero">
-  <style>
-    @scope {
-  & {
-    /* background-color: var(--colour-dark-1); */
-    background-image: radial-gradient(
-      circle at center bottom,
-      var(--colour-dark-1),
-      transparent
-    );
-    color: var(--colour-light-1);
-    display: grid;
-    grid-column: full;
-    grid-row: span 4;
-    grid-template-columns: subgrid;
-    padding-block: calc(var(--padding) * 5);
-    text-align: center;
-    view-transition-name: attr(id type(<custom-ident>), none);
-
-    article {
-      grid-column: content-start / span 6;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .heading {
-      font-size: 7rem;
-      font-weight: 900;
-      /* text-shadow: 0px -1px 0 rgba(255, 255, 255, 1); */
-    }
-
-    .subheading {
-      font-size: 1.5rem;
-      font-weight: 300;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    aside {
-      grid-column: span 6;
-    }
-  }
-}
-
-  </style>
-  <article class="hero-content">
+{% block hero_left %}
     <h1 class="heading">Features</h1>
     <p class="subheading">A demonstation of the latest in CSS and Web Components</p>
-  </article>
-</site-hero>
+{% endblock %}
 
+{% block hero_right %}
+    <article class="hero-content">
+        <p>Stuff</p>
+    </article>
+{% endblock %}
+
+{% block page_content %}
   {% for feature in features %}
     {% include "components/grid-item/grid-item.njk" %}
   {% endfor %}

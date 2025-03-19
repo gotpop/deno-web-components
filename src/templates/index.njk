@@ -1,8 +1,15 @@
-{% extends "base.njk" %}
+{% extends "base-hero.njk" %}
 
-{% block content %}
-  {% include "components/site-hero/site-hero.njk" %}
+{% block hero_left %}
+    <h1 class="heading">Deno Web Components</h1>
+    <p class="subheading">A demonstation of the latest in CSS and Web Compinents</p>
+{% endblock %}
 
+{% block hero_right %}
+     <aside class="points">Sidebar content</aside>
+{% endblock %}
+
+{% block page_content %}
   {% for feature in features %}
     {% include "components/grid-item/grid-item.njk" %}
   {% endfor %}
