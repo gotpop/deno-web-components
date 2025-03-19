@@ -16,7 +16,7 @@
     view-transition-name: attr(id type(<custom-ident>), none);
 
     article {
-      grid-column: content-start / span 6;
+      grid-column: content-start / span 19;
       text-align: left;
       display: flex;
       flex-direction: column;
