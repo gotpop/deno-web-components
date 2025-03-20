@@ -6,6 +6,7 @@ import {
   homeData,
 } from "../../data/index.ts"
 
+import { getCssSpecification } from "./mdn.ts"
 import { serveFile } from "../../utils/fileServer.ts"
 import { templateConfig } from "../nunjucks/config.ts"
 
@@ -53,8 +54,23 @@ export async function handlePageRequest(
       if (subPage) {
         const feature = featuresData.features.find((f) => f.slug === subPage)
         if (!feature) return new Response("Not Found", { status: 404 })
-        pageData = { ...featuresData, currentFeature: feature }
-        templateFile = "features/single.njk" // Changed from feature-detail.njk
+
+        const spec = getCssSpecification("css-contain-3").then((data) => {
+          console.log("data :", data)
+          return data
+        })
+        // const spec = getCssSpecification("css-grid-2").then((data) => {
+        //   console.log("data :", data)
+        //   return data
+        // })
+        console.log("spec :", spec)
+
+        pageData = {
+          ...featuresData,
+          currentFeature: feature,
+          // mdnData,
+        }
+        templateFile = "features/single.njk"
       } else {
         pageData = featuresIndexData
       }
