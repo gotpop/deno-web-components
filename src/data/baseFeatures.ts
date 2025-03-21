@@ -1,17 +1,22 @@
-export type Feature = {
-  id: string
+type Layout = {
   columns: number
   rows: number
+  "feature-start": number
+  "feature-end": number
+}
+
+type Link = {
+  label: string
+  link: string
+  type: "spec" | "docs" | "github"
+}
+
+export type Feature = {
+  layout: Layout
   title: string
   description: string
   slug: string
-  "feature-start": number
-  "feature-end": number
-  links: {
-    label: string
-    link: string
-    type: "spec" | "docs" | "github"
-  }[]
+  links: Link[]
   label?: string
 }
 
