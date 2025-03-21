@@ -4,11 +4,11 @@ export const baseFeatures = [
     label: "Title 1",
     columns: 14,
     rows: 1,
-    title: "CSS functions",
+    title: "CSS Functions and Mixins Module",
     description:
       "CSS functions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
     titleTag: "h2",
-    slug: "css-functions",
+    slug: "css-mixins",
     "feature-start": 4,
     "feature-end": 11,
   },
@@ -21,7 +21,7 @@ export const baseFeatures = [
     description:
       "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     titleTag: "h3",
-    slug: "cross-document-view-transitions",
+    slug: "css-view-transitions-2",
     "feature-start": 2,
     "feature-end": 10,
   },
@@ -34,7 +34,7 @@ export const baseFeatures = [
     description:
       "Expanded attr() is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     titleTag: "h3",
-    slug: "expanded-attr",
+    slug: "css-values-5",
     "feature-start": 2,
     "feature-end": 10,
   },
@@ -47,7 +47,7 @@ export const baseFeatures = [
     description:
       "Anchor positioning is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     titleTag: "h3",
-    slug: "anchor-positioning",
+    slug: "css-anchor-position-1",
     "feature-start": 4,
     "feature-end": 11,
   },
@@ -73,7 +73,7 @@ export const baseFeatures = [
     description:
       "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     titleTag: "h3",
-    slug: "scope-rule",
+    slug: "css-scoping",
     "feature-start": 2,
     "feature-end": 10,
   },
