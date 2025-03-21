@@ -1,10 +1,8 @@
 import {
-  aboutData,
-  contactData,
-  featuresData,
-  featuresIndexData,
-  homeData,
-} from "../../data/index.ts"
+  getPageData,
+  handleFeatureTemplate,
+  handlePaths,
+} from "./get-page-data.ts"
 
 import { serveFile } from "../../utils/fileServer.ts"
 import { templateConfig } from "../nunjucks/config.ts"
@@ -18,69 +16,54 @@ interface PageContext {
   componentPath: string
 }
 
+type FeatureData = {
+  slug: string
+  [key: string]: unknown
+}
+
+export type PageData = {
+  features?: FeatureData[]
+  [key: string]: unknown
+}
+
+type NunjucksRenderer = {
+  render: (template: string, context: PageContext & PageData) => string
+}
+
 export async function handlePageRequest(
   url: URL,
-  nunjucks: {
-    render: (template: string, context: PageContext) => string
-  },
+  nunjucks: NunjucksRenderer,
 ): Promise<Response> {
-  const pathParts = url.pathname.replace("/", "").replace(".html", "").split(
-    "/",
-  )
-  const pageName = pathParts[0]
-  const subPage = pathParts[1]
+  const { pageName, subPage } = handlePaths(url)
 
-  // TODO: Check ensure HMR is not used in production
-  // TODO: See if there's a way to get rid of this special case
-  // Handle Chrome DevTools special requests
-  if (url.pathname.startsWith("/.well-known/")) {
-    return new Response("Not Found", { status: 404 })
-  }
-
-  // Serve static files from public directory
   if (staticDirs.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
     return await serveFile(`${PUBLIC_DIR}${url.pathname}`)
   }
 
-  // List of valid pages
   const validPages = ["index", "about", "contact", "features"]
+  const isInvalidPage = pageName && !validPages.includes(pageName)
 
-  // Check if the page is valid, but allow subpages for features
-  if (pageName && !validPages.includes(pageName) && pageName !== "features") {
+  if (isInvalidPage) {
     return new Response("Not Found", { status: 404 })
   }
 
-  // Render templates for pages
   try {
     const template = pageName || "index"
-    let pageData = {}
+    let pageData: PageData = {}
     let templateFile = `${template}.njk`
 
-    // Handle features pages
     if (template === "features") {
-      if (subPage) {
-        const feature = featuresData.features.find((f) => f.slug === subPage)
-        if (!feature) return new Response("Not Found", { status: 404 })
+      try {
+        const { pageData: featureData, templateFile: featureTemplate } =
+          handleFeatureTemplate(subPage)
 
-        pageData = {
-          ...featuresData,
-          currentFeature: feature,
-        }
-        templateFile = "features/single.njk"
-      } else {
-        pageData = featuresData
+        pageData = featureData
+        templateFile = featureTemplate
+      } catch (_error) {
+        return new Response("Not Found", { status: 404 })
       }
     } else {
-      // Handle other pages as before
-      pageData = template === "contact"
-        ? contactData
-        : template === "about"
-        ? aboutData
-        : template === "index"
-        ? homeData
-        : template === "features"
-        ? featuresData
-        : {}
+      pageData = getPageData(template)
     }
 
     const html = nunjucks.render(templateFile, {
