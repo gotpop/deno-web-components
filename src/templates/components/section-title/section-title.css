@@ -1,0 +1,6 @@
+@scope {
+  & {
+    background-color: hotpink;
+    grid-column: 2 / -2;
+  }
+}

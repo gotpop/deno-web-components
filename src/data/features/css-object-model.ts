@@ -2,17 +2,14 @@ import { Feature } from "./data-types.ts"
 
 export const cssomFeaturesMap = new Map()
   .set("css-paint-api", {
-    tags: ["cssom"],
+    description:
+      "The CSS Paint API allows developers to programmatically generate images that can be used as CSS backgrounds, borders, masks, and more, directly in JavaScript",
     layout: {
       columns: 12,
       rows: 1,
       "feature-start": 2,
       "feature-end": 10,
     },
-    title: "CSS Paint API",
-    description:
-      "The CSS Paint API allows developers to programmatically generate images that can be used as CSS backgrounds, borders, masks, and more, directly in JavaScript",
-    slug: "css-paint-api",
     links: [
       {
         label: "W3C Specification",
@@ -26,19 +23,20 @@ export const cssomFeaturesMap = new Map()
         type: "docs",
       },
     ],
+    slug: "css-paint-api",
+    tags: ["cssom"],
+    title: "CSS Paint API",
+    type: "cssom",
   })
   .set("css-layout-api", {
-    tags: ["cssom"],
+    description:
+      "The CSS Layout API allows developers to create custom layout algorithms that can be used alongside CSS's built-in algorithms like flexbox and grid",
     layout: {
       columns: 12,
       rows: 1,
       "feature-start": 2,
       "feature-end": 10,
     },
-    title: "CSS Layout API",
-    description:
-      "The CSS Layout API allows developers to create custom layout algorithms that can be used alongside CSS's built-in algorithms like flexbox and grid",
-    slug: "css-layout-api",
     links: [
       {
         label: "W3C Specification",
@@ -52,6 +50,10 @@ export const cssomFeaturesMap = new Map()
         type: "github",
       },
     ],
+    slug: "css-layout-api",
+    tags: ["cssom"],
+    title: "CSS Layout API",
+    type: "cssom",
   })
 
 export const cssomFeatures: Feature[] = Array.from(

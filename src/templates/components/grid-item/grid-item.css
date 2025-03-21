@@ -13,6 +13,18 @@
     view-transition-name: attr(id type(<custom-ident>), none);
     /* border: 3px dotted white; */
 
+    &[data-card-type="css"] {
+      background-color: var(--colour-dark-5);
+    }
+
+    &[data-card-type="cssom"] {
+      background-color: red;
+    }
+
+    &[data-card-type="bapi"] {
+      background-color: yellow;
+    }
+
     .feature {
       /* background-color: yellow; */
       grid-column: var(--grid-column);

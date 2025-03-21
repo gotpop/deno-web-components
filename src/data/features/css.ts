@@ -2,14 +2,14 @@ import { Feature } from "./data-types.ts"
 
 export const cssFeaturesMap = new Map()
   .set("css-mixins", {
-    tags: ["css"],
+    description:
+      "CSS functions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
     layout: {
       columns: 14,
       rows: 1,
       "feature-start": 4,
       "feature-end": 11,
     },
-    title: "CSS Functions and Mixins Module",
     links: [
       {
         label: "CSS Working Group Draft",
@@ -17,22 +17,20 @@ export const cssFeaturesMap = new Map()
         type: "spec",
       },
     ],
-    description:
-      "CSS functions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
     slug: "css-mixins",
+    tags: ["css"],
+    title: "CSS Functions and Mixins Module",
+    type: "css",
   })
   .set("css-values-5", {
-    tags: ["css"],
+    description:
+      "Expanded attr() is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
       columns: 14,
       rows: 1,
       "feature-start": 2,
       "feature-end": 10,
     },
-    title: "Expanded attr() notation",
-    description:
-      "Expanded attr() is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    slug: "css-values-5",
     links: [
       {
         label: "CSS Values Level 5",
@@ -40,20 +38,21 @@ export const cssFeaturesMap = new Map()
         type: "spec",
       },
     ],
+    slug: "css-values-5",
+    tags: ["css"],
+    title: "Expanded attr() notation",
+    type: "css",
   })
   .set("css-anchor-position-1", {
-    tags: ["css"],
+    description:
+      "Anchor positioning is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    label: "Title 4",
     layout: {
       columns: 14,
       rows: 1,
       "feature-start": 4,
       "feature-end": 11,
     },
-    label: "Title 4",
-    title: "Anchor positioning",
-    description:
-      "Anchor positioning is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    slug: "css-anchor-position-1",
     links: [
       {
         label: "CSS Working Group Draft",
@@ -67,20 +66,21 @@ export const cssFeaturesMap = new Map()
         type: "docs",
       },
     ],
+    slug: "css-anchor-position-1",
+    tags: ["css"],
+    title: "Anchor positioning",
+    type: "css",
   })
   .set("css-scoping", {
-    tags: ["css"],
+    description:
+      "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    label: "Title 6",
     layout: {
       columns: 14,
       rows: 1,
       "feature-start": 2,
       "feature-end": 10,
     },
-    label: "Title 6",
-    title: "@scope rule",
-    description:
-      "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    slug: "css-scoping",
     links: [
       {
         label: "CSS Working Group Draft",
@@ -88,6 +88,10 @@ export const cssFeaturesMap = new Map()
         type: "spec",
       },
     ],
+    slug: "css-scoping",
+    tags: ["css"],
+    title: "@scope rule",
+    type: "css",
   })
 
 export const cssFeatures: Feature[] = Array.from(cssFeaturesMap.values())
