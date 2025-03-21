@@ -6,7 +6,6 @@ import {
   homeData,
 } from "../../data/index.ts"
 
-import { getCssSpecification } from "./mdn.ts"
 import { serveFile } from "../../utils/fileServer.ts"
 import { templateConfig } from "../nunjucks/config.ts"
 
@@ -43,6 +42,14 @@ export async function handlePageRequest(
     return await serveFile(`${PUBLIC_DIR}${url.pathname}`)
   }
 
+  // List of valid pages
+  const validPages = ["index", "about", "contact", "features"]
+
+  // Check if the page is valid, but allow subpages for features
+  if (pageName && !validPages.includes(pageName) && pageName !== "features") {
+    return new Response("Not Found", { status: 404 })
+  }
+
   // Render templates for pages
   try {
     const template = pageName || "index"
@@ -55,24 +62,13 @@ export async function handlePageRequest(
         const feature = featuresData.features.find((f) => f.slug === subPage)
         if (!feature) return new Response("Not Found", { status: 404 })
 
-        const spec = getCssSpecification("css-contain-3").then((data) => {
-          console.log("data :", data)
-          return data
-        })
-        // const spec = getCssSpecification("css-grid-2").then((data) => {
-        //   console.log("data :", data)
-        //   return data
-        // })
-        console.log("spec :", spec)
-
         pageData = {
           ...featuresData,
           currentFeature: feature,
-          // mdnData,
         }
         templateFile = "features/single.njk"
       } else {
-        pageData = featuresIndexData
+        pageData = featuresData
       }
     } else {
       // Handle other pages as before
@@ -83,7 +79,7 @@ export async function handlePageRequest(
         : template === "index"
         ? homeData
         : template === "features"
-        ? featuresIndexData
+        ? featuresData
         : {}
     }
 

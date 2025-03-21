@@ -1,82 +1,149 @@
-export const baseFeatures = [
-  {
-    id: "grid-item-1",
-    label: "Title 1",
-    columns: 14,
-    rows: 1,
+export type Feature = {
+  id: string
+  columns: number
+  rows: number
+  title: string
+  description: string
+  slug: string
+  "feature-start": number
+  "feature-end": number
+  links: {
+    label: string
+    link: string
+    type: "spec" | "docs" | "github"
+  }[]
+  label?: string
+}
+
+export const baseFeaturesMap = new Map()
+  .set("css-mixins", {
+    layout: {
+      columns: 14,
+      rows: 1,
+      "feature-start": 4,
+      "feature-end": 11,
+    },
     title: "CSS Functions and Mixins Module",
+    links: [
+      {
+        label: "CSS Working Group Draft",
+        link: "https://drafts.csswg.org/css-mixins",
+        type: "spec",
+      },
+    ],
     description:
       "CSS functions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
-    titleTag: "h2",
     slug: "css-mixins",
-    "feature-start": 4,
-    "feature-end": 11,
-  },
-  {
-    id: "grid-item-2",
-    label: "Title 2",
-    columns: 12,
-    rows: 1,
+  })
+  .set("css-view-transitions-2", {
+    layout: {
+      columns: 12,
+      rows: 1,
+      "feature-start": 2,
+      "feature-end": 10,
+    },
     title: "Cross document view transitions",
     description:
       "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    titleTag: "h3",
     slug: "css-view-transitions-2",
-    "feature-start": 2,
-    "feature-end": 10,
-  },
-  {
-    id: "grid-item-3",
-    label: "Title 3",
-    columns: 14,
-    rows: 1,
-    title: "Expanded attr()",
+    links: [
+      {
+        label: "W3C Specification",
+        link: "https://www.w3.org/TR/css-view-transitions-2/",
+        type: "spec",
+      },
+    ],
+  })
+  .set("css-values-5", {
+    layout: {
+      columns: 14,
+      rows: 1,
+      "feature-start": 2,
+      "feature-end": 10,
+    },
+    title: "Expanded attr() notation",
     description:
       "Expanded attr() is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    titleTag: "h3",
     slug: "css-values-5",
-    "feature-start": 2,
-    "feature-end": 10,
-  },
-  {
-    id: "grid-item-4",
+    links: [
+      {
+        label: "CSS Values Level 5",
+        link: "https://drafts.csswg.org/css-values-5/#attr-notation",
+        type: "spec",
+      },
+    ],
+  })
+  .set("css-anchor-position-1", {
+    layout: {
+      columns: 14,
+      rows: 1,
+      "feature-start": 4,
+      "feature-end": 11,
+    },
     label: "Title 4",
-    columns: 14,
-    rows: 1,
     title: "Anchor positioning",
     description:
       "Anchor positioning is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    titleTag: "h3",
     slug: "css-anchor-position-1",
-    "feature-start": 4,
-    "feature-end": 11,
-  },
-  {
-    id: "grid-item-5",
+    links: [
+      {
+        label: "CSS Working Group Draft",
+        link: "https://drafts.csswg.org/css-anchor-position-1",
+        type: "spec",
+      },
+      {
+        label: "MDN Documentation",
+        link:
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning",
+        type: "docs",
+      },
+    ],
+  })
+  .set("custom-elements", {
+    layout: {
+      columns: 12,
+      rows: 1,
+      "feature-start": 2,
+      "feature-end": 10,
+    },
     label: "Title 5",
-    columns: 12,
-    rows: 1,
     title: "Custom elements",
     description:
       "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    titleTag: "h3",
     slug: "custom-elements",
-    "feature-start": 2,
-    "feature-end": 10,
-  },
-  {
-    id: "grid-item-6",
+    links: [
+      {
+        label: "MDN Documentation",
+        link:
+          "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements",
+        type: "docs",
+      },
+      {
+        label: "Web Components Repository",
+        link: "https://github.com/WICG/webcomponents",
+        type: "github",
+      },
+    ],
+  })
+  .set("css-scoping", {
+    layout: {
+      columns: 14,
+      rows: 1,
+      "feature-start": 2,
+      "feature-end": 10,
+    },
     label: "Title 6",
-    columns: 14,
-    rows: 1,
     title: "@scope rule",
     description:
       "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
-    titleTag: "h3",
     slug: "css-scoping",
-    "feature-start": 2,
-    "feature-end": 10,
-  },
-]
+    links: [
+      {
+        label: "CSS Working Group Draft",
+        link: "https://drafts.csswg.org/css-cascade-6/#scoped-styles",
+        type: "spec",
+      },
+    ],
+  })
 
-export type Feature = typeof baseFeatures[number]
+export const baseFeatures: Feature[] = Array.from(baseFeaturesMap.values())

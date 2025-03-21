@@ -5,5 +5,11 @@
     grid-column: full;
     background-color: var(--colour-light-1);
     color: var(--colour-dark-1);
+
+    .feature-content {
+      grid-column: 5 / 20;
+      background-color: yellow;
+      padding: 5rem;
+    }
   }
 }
