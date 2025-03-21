@@ -5,11 +5,28 @@
     grid-column: full;
     background-color: var(--colour-light-1);
     color: var(--colour-dark-1);
+    view-transition-name: attr(id type(<custom-ident>), none);
 
     .feature-content {
-      grid-column: 5 / 20;
-      background-color: yellow;
-      padding: 5rem;
+      grid-column: 2 / 20;
+      padding-block: 5rem;
+    }
+
+    .feature-nav {
+      grid-column: 22 / -1;
+      padding-block: 5rem;
+
+      & a {
+        color: var(--colour-dark-1);
+
+        &:hover {
+          color: var(--colour-dark-2);
+        }
+
+        &:active {
+          color: var(--colour-dark-3);
+        }
+      }
     }
   }
 }

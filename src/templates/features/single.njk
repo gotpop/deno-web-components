@@ -2,22 +2,27 @@
 
 {% block hero_left %}
     <h1 class="heading" id="heading-primary">{{ currentFeature.title }}</h1>
-    <p class="subheading" id="subheading">{{ currentFeature.description }}</p>
-{% endblock %}
-
-{% block hero_right %}
-    <article class="hero-content">
-        <p>Stuff</p>
-    </article>
 {% endblock %}
 
 {% block page_content %}
-    <div class="page-wrapper">
+    <div id="page-wrapper" class="page-wrapper">
         <style>
             {{"page-wrapper" | componentCss | importCss | safe}}
         </style>
-        <h1>{{ currentFeature.title }}</h1>
-        <p>{{ currentFeature.description }}</p>
-        <a href="/features">Back to Features</a>
+        <section class="feature-content">
+            <h1>{{ currentFeature.title }}</h1>
+            <p>{{ currentFeature.description }}</p>
+            <a href="/features">Back to Features</a>
+        </section>
+        <aside class="feature-nav">
+            <h2>Feature links</h2>
+            <ul>
+                {% for link in currentFeature.links %}
+                    <li>
+                        <a href="{{ link.link }}" class="link-{{ link.type }}">{{ link.label }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </aside>
     </div>
 {% endblock %}

@@ -2,7 +2,7 @@ import {
   getPageData,
   handleFeatureTemplate,
   handlePaths,
-} from "./get-page-data.ts"
+} from "./page-handler-logic.ts"
 
 import { serveFile } from "../../utils/fileServer.ts"
 import { templateConfig } from "../nunjucks/config.ts"
@@ -64,14 +64,19 @@ export async function handlePageRequest(
       }
     } else {
       pageData = getPageData(template)
+      // console.log("pageData :", pageData)
     }
 
-    const html = nunjucks.render(templateFile, {
+    const context = {
       title: template.charAt(0).toUpperCase() + template.slice(1),
       currentPage: template,
       componentPath: templateConfig.componentPath,
       ...pageData,
-    })
+    }
+
+    console.log("Final context being passed to template:", context)
+
+    const html = nunjucks.render(templateFile, context) // Use the context object directly
 
     return new Response(html, {
       headers: { "content-type": "text/html" },
