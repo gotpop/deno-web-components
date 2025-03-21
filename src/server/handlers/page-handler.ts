@@ -40,7 +40,7 @@ export async function handlePageRequest(
     return await serveFile(`${PUBLIC_DIR}${url.pathname}`)
   }
 
-  const validPages = ["index", "about", "contact", "features"]
+  const validPages = ["about", "contact", "features", "index", "success"]
   const isInvalidPage = pageName && !validPages.includes(pageName)
 
   if (isInvalidPage) {
@@ -74,9 +74,7 @@ export async function handlePageRequest(
       ...pageData,
     }
 
-    console.log("Final context being passed to template:", context)
-
-    const html = nunjucks.render(templateFile, context) // Use the context object directly
+    const html = nunjucks.render(templateFile, context)
 
     return new Response(html, {
       headers: { "content-type": "text/html" },
