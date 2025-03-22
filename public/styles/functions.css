@@ -10,7 +10,7 @@
 }
 
 @function --grid-row-base(--gap-one: 1rem, --gap-two: 2rem) {
-  result: [header] min-content [main] 1fr [gap] 4rem [footer] min-content;
+  result: [header] min-content [main] 1fr [gap] 10rem [footer] min-content;
 }
 
 @function --lighten(--color <color>, --factor <number>) returns <color> {

@@ -9,6 +9,8 @@ export const cssomFeaturesMap = new Map()
       rows: 1,
       "feature-start": 2,
       "feature-end": 10,
+      "row-start": 32,
+      "row-end": 40,
     },
     links: [
       {
@@ -36,6 +38,8 @@ export const cssomFeaturesMap = new Map()
       rows: 1,
       "feature-start": 2,
       "feature-end": 10,
+      "row-start": 32,
+      "row-end": 40,
     },
     links: [
       {

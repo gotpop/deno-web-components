@@ -39,7 +39,44 @@
     }
 
     aside {
+      view-transition-name: attr(id type(<custom-ident>), none);
       grid-column: span 6;
+
+      a {
+        color: var(--colour-light-1);
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 300;
+        display: inline-block;
+        margin-top: 1rem;
+        view-transition-name: attr(id type(<custom-ident>), none);
+        background-color: var(--colour-dark-1);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 0px 1px var(--colour-dark-1),
+          0px 0px 0px 2px var(--colour-dark-1),
+          0px 0px 0px 3px var(--colour-dark-1);
+        transition: background-color 0.3s ease-in-out,
+          box-shadow 0.3s ease-in-out;
+        &:hover {
+          background-color: var(--colour-light-1);
+          box-shadow: 0px 0px 0px 1px var(--colour-light-1),
+            0px 0px 0px 2px var(--colour-light-1),
+            0px 0px 0px 3px var(--colour-light-1);
+        }
+        &:active {
+          background-color: var(--colour-light-1);
+          box-shadow: 0px 0px 0px 1px var(--colour-light-1),
+            0px 0px 0px 2px var(--colour-light-1),
+            0px 0px 0px 3px var(--colour-light-1);
+        }
+        &:focus {
+          background-color: var(--colour-light-1);
+          box-shadow: 0px 0px 0px 1px var(--colour-light-1),
+            0px 0px 0px 2px var(--colour-light-1),
+            0px 0px 0px 3px var(--colour-light-1);
+        }
+      }
     }
   }
 }

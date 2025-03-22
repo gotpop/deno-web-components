@@ -33,7 +33,7 @@
 
   .logo-link {
     display: flex;
-    grid-column: content-start / span 3;
+    grid-column: gutter-start / span 5;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -51,14 +51,13 @@
     display: grid;
     grid-column: content;
     padding: 0;
-    grid-column: 15 / span 6;
+    grid-column: 25 / -2;
   }
 
   .menubar {
     display: flex;
     margin: 0;
     padding: 0;
-    width: 100%;
     padding: var(--padding);
     gap: var(--padding);
     justify-content: center;
@@ -67,6 +66,16 @@
   .menuitem {
     color: var(--colour-light-1);
     display: flex;
+
+    &:last-child {
+      margin-inline: auto 0;
+
+      a {
+        padding: 0;
+        display: flex;
+        align-items: center;
+      }
+    }
 
     a {
       text-align: center;

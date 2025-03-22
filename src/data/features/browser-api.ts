@@ -8,6 +8,8 @@ export const browserApiFeaturesMap = new Map()
       columns: 12,
       "feature-end": 10,
       "feature-start": 2,
+      "row-start": 50,
+      "row-end": 50,
       rows: 1,
     },
     links: [
@@ -30,6 +32,8 @@ export const browserApiFeaturesMap = new Map()
       "feature-end": 10,
       "feature-start": 2,
       rows: 1,
+      "row-start": 50,
+      "row-end": 50,
     },
     links: [
       {

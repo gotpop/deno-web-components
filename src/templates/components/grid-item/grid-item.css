@@ -3,31 +3,47 @@
     --grid-column: attr(data-start-column type(<integer>)) /
       attr(data-end-column type(<integer>));
 
-    background-color: oklch(from var(--colour-dark-1) l c h);
+    /* background-color: oklch(from var(--colour-dark-1) l c h); */
     color: var(--colour-light-1);
     display: grid;
     grid-column: span attr(data-columns type(<integer>));
-    grid-row: span attr(data-rows type(<integer>));
+    grid-row: attr(row-start type(<integer>)) / attr(row-end type(<integer>));
     grid-template-columns: subgrid;
-    padding-block: calc(var(--padding) * 5);
+    /* padding-block: calc(var(--padding) * 5); */
     view-transition-name: attr(id type(<custom-ident>), none);
     /* border: 3px dotted white; */
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    grid-template-rows: 6rem 1fr 6rem;
 
     &[data-card-type="css"] {
-      background-color: var(--colour-dark-5);
+      /* background-color: var(--colour-dark-5); */
     }
 
     &[data-card-type="cssom"] {
-      background-color: red;
+      /* background-color: red; */
     }
 
     &[data-card-type="bapi"] {
-      background-color: yellow;
+      /* background-color: yellow; */
+    }
+
+    p {
+      text-wrap: balance;
+    }
+
+    a {
+      color: var(--colour-light-1);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 1lh;
+      text-decoration-color: currentColor;
     }
 
     .feature {
       /* background-color: yellow; */
       grid-column: var(--grid-column);
+      grid-row: 2;
 
       &:has(:hover) {
         background-color: gray;

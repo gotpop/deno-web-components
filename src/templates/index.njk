@@ -6,27 +6,44 @@
 {% endblock %}
 
 {% block hero_right %}
-     <aside class="points">Sidebar content</aside>
+     <aside id="points" class="points">
+     <a href="#section-css">
+        CSS Features
+      </a>
+      <a href="#section-cssom">
+        CSS Object Model Features
+      </a>
+      <a href="#section-bapi">
+        Browser API Features
+      </a>
+     </aside>
 {% endblock %}
 
 {% block page_content %}
-  <div class="section-title">
+  <div id="section-css" class="section-title"  grid-columns="7" grid-rows-start="10" grid-rows-end="11">
     <style>{{"section-title" | componentCss | importCss | safe}}</style>
-    <h2 class="heading" id="heading-secondary">CSS Features</h2>
+    <div class="section-title">
+      <h2 class="heading" id="heading-secondary-1">CSS Features</h2>
+      </div>
+      </div>
   </div>
     {% for feature in features.cssFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
-  <div class="section-title">
+  <div id="section-cssom" class="section-title" grid-columns="34" grid-rows-start="31" grid-rows-end="32">
     <style>{{"section-title" | componentCss | importCss | safe}}</style>
-    <h2 class="heading" id="heading-secondary">CSS Object Model Features</h2>
+        <div class="section-title">
+    <h2 class="heading" id="heading-secondary-2">CSS Object Model Features</h2>
+      </div>
   </div>
     {% for feature in features.cssomFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
-  <div class="section-title">
+  <div id="section-bapi" class="section-title" grid-columns="34" grid-rows-start="40" grid-rows-end="41">
     <style>{{"section-title" | componentCss | importCss | safe}}</style>
-    <h2 class="heading" id="heading-secondary">Browser API Features</h2>
+        <div class="section-title">
+    <h2 class="heading" id="heading-secondary-3">Browser API Features</h2>
+      </div>
   </div>
     {% for feature in features.browserApiFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
