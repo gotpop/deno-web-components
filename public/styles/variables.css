@@ -124,8 +124,8 @@
   --font-scaled-xxl: calc(var(--font-scaled-size) * pow(1.5, 4));
 
   /* Font colour */
-  --heading-colour: var(--black);
-  --body-colour: var(--black);
+  --heading-colour: var(--colour-light-1);
+  --body-colour: var(--colour-light-1);
 
   /* Theming */
   --accent: var(--warning-base);
