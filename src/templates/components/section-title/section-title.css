@@ -13,6 +13,7 @@
     background-color: rgba(255 255, 255, 0.2);
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
+    display: none;
 
     .section-title {
       grid-column: content-start / span 19;
