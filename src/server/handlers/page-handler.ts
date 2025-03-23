@@ -8,7 +8,7 @@ import { serveFile } from "../../utils/fileServer.ts"
 import { templateConfig } from "../nunjucks/config.ts"
 
 const PUBLIC_DIR = "./public"
-const staticDirs = ["scripts", "styles"]
+const STATIC_DIRS = ["fonts", "images", "scripts", "styles"]
 
 interface PageContext {
   title: string
@@ -36,7 +36,10 @@ export async function handlePageRequest(
 ): Promise<Response> {
   const { pageName, subPage } = handlePaths(url)
 
-  if (staticDirs.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
+  if (STATIC_DIRS.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
+    console.log("dir :", STATIC_DIRS)
+    console.log("url :", url.pathname)
+
     return await serveFile(`${PUBLIC_DIR}${url.pathname}`)
   }
 
