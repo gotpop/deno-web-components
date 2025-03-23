@@ -7,7 +7,7 @@ export const cssomFeaturesMap = new Map()
     layout: {
       columns: 12,
       rows: 1,
-      "feature-start": 2,
+      "feature-start": 4,
       "feature-end": 10,
       "row-start": 32,
       "row-end": 40,

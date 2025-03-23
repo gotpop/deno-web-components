@@ -7,7 +7,7 @@ export const browserApiFeaturesMap = new Map()
     layout: {
       columns: 12,
       "feature-end": 10,
-      "feature-start": 2,
+      "feature-start": 4,
       "row-start": 50,
       "row-end": 50,
       rows: 1,

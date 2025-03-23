@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block page_content %}
-  <div id="section-css" class="section-title"  grid-columns="7" grid-rows-start="10" grid-rows-end="11">
+  <div id="section-css" class="section-title"  grid-columns="40" grid-rows-start="10" grid-rows-end="11">
     <style>{{"section-title" | componentCss | importCss | safe}}</style>
     <div class="section-title">
       <h2 class="heading" id="heading-secondary-1">CSS Features</h2>
@@ -30,7 +30,7 @@
     {% for feature in features.cssFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
-  <div id="section-cssom" class="section-title" grid-columns="34" grid-rows-start="31" grid-rows-end="32">
+  <div id="section-cssom" class="section-title" grid-columns="40" grid-rows-start="31" grid-rows-end="32">
     <style>{{"section-title" | componentCss | importCss | safe}}</style>
         <div class="section-title">
     <h2 class="heading" id="heading-secondary-2">CSS Object Model Features</h2>
@@ -39,7 +39,7 @@
     {% for feature in features.cssomFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
-  <div id="section-bapi" class="section-title" grid-columns="34" grid-rows-start="40" grid-rows-end="41">
+  <div id="section-bapi" class="section-title" grid-columns="40" grid-rows-start="40" grid-rows-end="41">
     <style>{{"section-title" | componentCss | importCss | safe}}</style>
         <div class="section-title">
     <h2 class="heading" id="heading-secondary-3">Browser API Features</h2>

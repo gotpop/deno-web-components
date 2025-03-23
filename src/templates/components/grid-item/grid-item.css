@@ -45,6 +45,12 @@
       grid-column: var(--grid-column);
       grid-row: 2;
 
+      h3 {
+        font-size: var(--font-scaled-lg);
+        font-weight: 400;
+        margin-block-end: var(--spacing-md);
+      }
+
       &:has(:hover) {
         background-color: gray;
         color: var(--colour-light-1);

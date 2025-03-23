@@ -84,6 +84,7 @@
       text-decoration: none;
       color: var(--colour-light-1);
       background-color: var(--colour-dark-1);
+      font-size: 13px;
 
       &:hover {
         color: var(--colour-primary);

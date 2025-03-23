@@ -12,35 +12,32 @@
     grid-row: span 4;
     grid-template-columns: subgrid;
     padding-block: calc(var(--padding) * 5);
-    text-align: center;
     view-transition-name: attr(id type(<custom-ident>), none);
 
-    article {
+    .hero-content {
       grid-column: content-start / span 19;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: grid;
     }
 
     .heading {
-      font-size: 7rem;
-      font-weight: 900;
       view-transition-name: attr(id type(<custom-ident>), none);
-      /* text-shadow: 0px -1px 0 rgba(255, 255, 255, 1); */
+      inset: auto auto auto -3px;
+      position: relative;
+      margin-block-end: var(--spacing-md);
+      font-size: var(--font-scaled-xxl);
+      padding-top: calc(5rem - 1cap);
+      line-height: 1.18;
     }
 
     .subheading {
-      font-size: 1.5rem;
-      font-weight: 300;
-      display: inline-block;
-      margin-top: 1rem;
       view-transition-name: attr(id type(<custom-ident>), none);
+      display: inline-block;
     }
 
-    aside {
+    .points {
       view-transition-name: attr(id type(<custom-ident>), none);
       grid-column: span 6;
+      display: none;
 
       a {
         color: var(--colour-light-1);
