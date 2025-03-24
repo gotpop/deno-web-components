@@ -5,11 +5,11 @@ export const browserApiFeaturesMap = new Map()
     description:
       "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
-      columns: 12,
-      "feature-end": 10,
+      columns: 13,
+      "feature-end": 11,
       "feature-start": 4,
-      "row-start": 50,
-      "row-end": 50,
+      "row-start": 6,
+      "row-end": 7,
       rows: 1,
     },
     links: [
@@ -30,10 +30,10 @@ export const browserApiFeaturesMap = new Map()
     layout: {
       columns: 12,
       "feature-end": 10,
-      "feature-start": 2,
+      "feature-start": 3,
       rows: 1,
-      "row-start": 50,
-      "row-end": 50,
+      "row-start": 6,
+      "row-end": 7,
     },
     links: [
       {
@@ -51,6 +51,35 @@ export const browserApiFeaturesMap = new Map()
     slug: "custom-elements",
     tags: ["browser-api"],
     title: "Custom elements",
+    type: "bapi",
+  })
+  .set("popover api", {
+    description:
+      "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    layout: {
+      columns: 15,
+      "feature-end": 10,
+      "feature-start": 3,
+      rows: 1,
+      "row-start": 6,
+      "row-end": 7,
+    },
+    links: [
+      {
+        label: "MDN Documentation",
+        link:
+          "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements",
+        type: "docs",
+      },
+      {
+        label: "Web Components Repository",
+        link: "https://github.com/WICG/webcomponents",
+        type: "github",
+      },
+    ],
+    slug: "popover api",
+    tags: ["browser-api"],
+    title: "Popover API",
     type: "bapi",
   })
 

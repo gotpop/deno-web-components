@@ -3,18 +3,14 @@
     --grid-column: attr(data-start-column type(<integer>)) /
       attr(data-end-column type(<integer>));
 
-    /* background-color: oklch(from var(--colour-dark-1) l c h); */
+    background-color: rgba(0, 0, 0, 0.5);
     color: var(--colour-light-1);
     display: grid;
     grid-column: span attr(data-columns type(<integer>));
     grid-row: attr(row-start type(<integer>)) / attr(row-end type(<integer>));
     grid-template-columns: subgrid;
-    /* padding-block: calc(var(--padding) * 5); */
-    view-transition-name: attr(id type(<custom-ident>), none);
-    /* border: 3px dotted white; */
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
     grid-template-rows: 6rem 1fr 6rem;
+    view-transition-name: attr(id type(<custom-ident>), none);
 
     &[data-card-type="css"] {
       /* background-color: var(--colour-dark-5); */

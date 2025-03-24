@@ -7,8 +7,8 @@ export const cssFeaturesMap = new Map()
     layout: {
       columns: 14,
       rows: 3,
-      "row-start": 11,
-      "row-end": 20,
+      "row-start": 2,
+      "row-end": 3,
       "feature-start": 4,
       "feature-end": 11,
     },
@@ -33,8 +33,8 @@ export const cssFeaturesMap = new Map()
 
       "feature-start": 2,
       "feature-end": 10,
-      "row-start": 11,
-      "row-end": 20,
+      "row-start": 2,
+      "row-end": 3,
     },
     links: [
       {
@@ -57,8 +57,8 @@ export const cssFeaturesMap = new Map()
       rows: 3,
       "feature-start": 2,
       "feature-end": 11,
-      "row-start": 11,
-      "row-end": 20,
+      "row-start": 2,
+      "row-end": 3,
     },
     links: [
       {
@@ -87,8 +87,8 @@ export const cssFeaturesMap = new Map()
       rows: 3,
       "feature-start": 4,
       "feature-end": 12,
-      "row-start": 20,
-      "row-end": 30,
+      "row-start": 4,
+      "row-end": 5,
     },
     links: [
       {
@@ -111,8 +111,8 @@ export const cssFeaturesMap = new Map()
       rows: 3,
       "feature-start": 2,
       "feature-end": 10,
-      "row-start": 20,
-      "row-end": 30,
+      "row-start": 4,
+      "row-end": 5,
     },
     links: [
       {

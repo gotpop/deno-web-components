@@ -5,12 +5,12 @@ export const cssomFeaturesMap = new Map()
     description:
       "The CSS Paint API allows developers to programmatically generate images that can be used as CSS backgrounds, borders, masks, and more, directly in JavaScript",
     layout: {
-      columns: 12,
+      columns: 13,
       rows: 1,
       "feature-start": 4,
-      "feature-end": 10,
-      "row-start": 32,
-      "row-end": 40,
+      "feature-end": 11,
+      "row-start": 7,
+      "row-end": 8,
     },
     links: [
       {
@@ -30,33 +30,56 @@ export const cssomFeaturesMap = new Map()
     title: "CSS Paint API",
     type: "cssom",
   })
-  .set("css-layout-api", {
+  .set("css-typed-om", {
     description:
-      "The CSS Layout API allows developers to create custom layout algorithms that can be used alongside CSS's built-in algorithms like flexbox and grid",
+      "Converting CSSOM value strings into meaningfully typed JavaScript representations and back can incur a significant performance overhead. This specification exposes CSS values as typed JavaScript objects, to make manipulating them both easier and more performant.",
     layout: {
       columns: 12,
       rows: 1,
-      "feature-start": 2,
+      "feature-start": 3,
       "feature-end": 10,
-      "row-start": 32,
-      "row-end": 40,
+      "row-start": 7,
+      "row-end": 8,
     },
     links: [
       {
-        label: "W3C Specification",
-        link: "https://drafts.css-houdini.org/css-layout-api/",
+        label: "W3C Draft Specification",
+        link: "https://drafts.css-houdini.org/css-typed-om",
+        type: "spec",
+      },
+    ],
+    slug: "css-typed-om",
+    tags: ["cssom"],
+    title: "CSS Typed OM",
+    type: "cssom",
+  })
+  .set("css-properties-values-api", {
+    description:
+      "This CSS module defines an API for registering new CSS properties. Properties registered using this API are provided with a parse syntax that defines a type, inheritance behaviour, and an initial value.",
+    layout: {
+      columns: 15,
+      rows: 1,
+      "feature-start": 3,
+      "feature-end": 10,
+      "row-start": 7,
+      "row-end": 8,
+    },
+    links: [
+      {
+        label: "W3C Draft Specification",
+        link: "https://drafts.css-houdini.org/css-properties-values-api",
         type: "spec",
       },
       {
-        label: "GitHub Repository",
+        label: "Web.dev Article",
         link:
-          "https://github.com/w3c/css-houdini-drafts/tree/main/css-layout-api",
+          "https://web.dev/articles/css-props-and-vals#css_properties_and_values_api_level_1",
         type: "github",
       },
     ],
-    slug: "css-layout-api",
+    slug: "css-properties-values-api",
     tags: ["cssom"],
-    title: "CSS Layout API",
+    title: "CSS Properties and Values API",
     type: "cssom",
   })
 
