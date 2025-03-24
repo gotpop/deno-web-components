@@ -11,6 +11,12 @@
     grid-template-columns: subgrid;
     grid-template-rows: 6rem 1fr 6rem;
     view-transition-name: attr(id type(<custom-ident>), none);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:has(:hover) {
+      background-color: rgba(0, 0, 0, 0.4);
+      color: var(--colour-light-1);
+    }
 
     &[data-card-type="css"] {
       /* background-color: var(--colour-dark-5); */
@@ -45,11 +51,6 @@
         font-size: var(--font-scaled-lg);
         font-weight: 400;
         margin-block-end: var(--spacing-md);
-      }
-
-      &:has(:hover) {
-        background-color: gray;
-        color: var(--colour-light-1);
       }
     }
   }

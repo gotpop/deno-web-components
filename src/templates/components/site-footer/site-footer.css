@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: subgrid;
     padding-block: var(--spacing-xl);
+    view-transition-name: attr(id type(<custom-ident>), none);
 
     .footer-content {
       grid-column: 4 / -4;

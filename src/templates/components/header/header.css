@@ -1,17 +1,55 @@
 @scope {
   & {
     --color-dark: var(--colour-dark-1);
+    --color-bg: yellow;
 
-    background-color: --lighten(var(--color-dark), 1.5);
+    /* background-color: --lighten(var(--color-dark), 1.5); */
     color: var(--colour-light-1);
     display: grid;
     grid-column: full;
     grid-row: header;
     grid-template-columns: subgrid;
+    container-type: scroll-state;
     position: sticky;
     top: 0;
     view-transition-name: attr(id type(<custom-ident>), none);
     z-index: 1;
+    /* background-color: var(--color-bg); */
+  }
+
+  .logo-link {
+    display: flex;
+    grid-column: gutter-start / span 5;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--colour-light-1);
+    font-size: 2rem;
+    font-weight: bold;
+    max-height: 80px;
+    transition: background-color 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--liam);
+      /* opacity: 0.5; */
+      z-index: -1;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    @container scroll-state(stuck: top) {
+      background-color: red;
+      --liam: orange;
+    }
+
+    &:hover {
+      fill: var(--colour-primary);
+    }
   }
 
   .logo {
@@ -22,22 +60,6 @@
     margin: 0;
     color: var(--colour-light-1);
     text-decoration: none;
-    font-size: 2rem;
-    font-weight: bold;
-    max-height: 80px;
-
-    &:hover {
-      fill: var(--colour-primary);
-    }
-  }
-
-  .logo-link {
-    display: flex;
-    grid-column: gutter-start / span 5;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--colour-light-1);
     font-size: 2rem;
     font-weight: bold;
     max-height: 80px;
