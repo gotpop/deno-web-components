@@ -54,3 +54,9 @@ export function handleFeatureTemplate(
     templateFile: "features/single.njk",
   }
 }
+
+export async function loadSiteData() {
+  const data = await Deno.readTextFile("./src/data/site-data.json")
+  console.log("JSON.parse(data) :", JSON.parse(data))
+  return JSON.parse(data)
+}
