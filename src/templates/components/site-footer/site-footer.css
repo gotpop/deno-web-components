@@ -2,12 +2,48 @@
   & {
     background-color: var(--colour-dark-1);
     color: var(--colour-light-1);
-    padding: var(--padding);
     grid-column: full;
     grid-row: footer;
-    text-align: center;
     min-height: 20rem;
     display: grid;
     grid-template-columns: subgrid;
+
+    .footer-content {
+      grid-column: 4 / -4;
+      padding-block: var(--padding);
+      text-align: center;
+    }
+
+    .footer-links {
+      grid-column: 4 / -4;
+      display: grid;
+      grid-template-columns: subgrid;
+      /* display: none; */
+
+      section {
+        grid-column: span 8;
+        /* display: grid; */
+
+        /* grid-template-columns: subgrid; */
+        padding-block: var(--spacing-md);
+        padding-inline: var(--spacing-lg);
+        text-align: center;
+        background-color: yellow;
+
+        h3 {
+          font-size: var(--font-scaled-lg);
+          font-weight: 400;
+          margin-block-end: var(--spacing-md);
+        }
+
+        a {
+          color: var(--colour-light-1);
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 1lh;
+          text-decoration-color: currentColor;
+        }
+      }
+    }
   }
 }
