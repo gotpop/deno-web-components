@@ -1,43 +1,53 @@
+{% set footerLinks = [
+  {
+    title: "CSS",
+    links: [
+      { text: "W3C CSS", url: "https://www.w3.org/Style/CSS/" },
+      { text: "MDN CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      { text: "CSS Cascade", url: "https://www.w3.org/TR/css-cascade-5/" }
+    ]
+  },
+  {
+    title: "JavaScript",
+    links: [
+      { text: "TC39", url: "https://tc39.es/" },
+      { text: "MDN JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { text: "ECMA International", url: "https://www.ecma-international.org/" }
+    ]
+  },
+  {
+    title: "HTML",
+    links: [
+      { text: "HTML Living Standard", url: "https://html.spec.whatwg.org/" },
+      { text: "MDN HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+      { text: "W3C HTML", url: "https://www.w3.org/TR/html/" }
+    ]
+  },
+  {
+    title: "Web Standards",
+    links: [
+      { text: "W3C", url: "https://www.w3.org/" },
+      { text: "WHATWG", url: "https://whatwg.org/" },
+      { text: "Web Standards Project", url: "https://www.webstandards.org/" }
+    ]
+  }
+] %}
+
 <site-footer id="footer" role="contentinfo" aria-label="Site footer">
   <style>
     {{"site-footer" | componentCss | importCss | safe}}
   </style>
     <div class="footer-links">
-      <section>
-        <h3>CSS</h3>
-        <ul>
-          <li><a href="https://www.w3.org/Style/CSS/">W3C CSS</a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN CSS</a></li>
-          <li><a href="https://www.w3.org/TR/css-cascade-5/">CSS Cascade</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>JavaScript</h3>
-        <ul>
-          <li><a href="https://tc39.es/">TC39</a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN JavaScript</a></li>
-          <li><a href="https://www.ecma-international.org/">ECMA International</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>HTML</h3>
-        <ul>
-          <li><a href="https://html.spec.whatwg.org/">HTML Living Standard</a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN HTML</a></li>
-          <li><a href="https://www.w3.org/TR/html/">W3C HTML</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Web Standards</h3>
-        <ul>
-          <li><a href="https://www.w3.org/">W3C</a></li>
-          <li><a href="https://whatwg.org/">WHATWG</a></li>
-          <li><a href="https://www.webstandards.org/">Web Standards Project</a></li>
-        </ul>
-      </section>
+      {% for section in footerLinks %}
+        <section>
+          <h3>{{ section.title }}</h3>
+          <ul>
+            {% for link in section.links %}
+              <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
     </div>
     <div class="footer-content">
       <small>&copy; 2025 Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a></small>
