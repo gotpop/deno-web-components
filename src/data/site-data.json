@@ -6,8 +6,12 @@
       "sections": [
         {
           "title": "CSS",
+          "layout": {
+            "column-start": 1,
+            "column-end": 8
+          },
           "links": [
-            { "text": "W3C CSS", "url": "https://www.w3.org/Style/CSS/" },
+            { "text": "W3C CSS", "url": "https://www.w3.org/Style/CSS" },
             {
               "text": "MDN CSS",
               "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
@@ -20,6 +24,10 @@
         },
         {
           "title": "JavaScript",
+          "layout": {
+            "column-start": 10,
+            "column-end": 17
+          },
           "links": [
             { "text": "TC39", "url": "https://tc39.es/" },
             {
@@ -34,6 +42,10 @@
         },
         {
           "title": "HTML",
+          "layout": {
+            "column-start": 19,
+            "column-end": 26
+          },
           "links": [
             {
               "text": "HTML Living Standard",
@@ -43,14 +55,18 @@
               "text": "MDN HTML",
               "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
             },
-            { "text": "W3C HTML", "url": "https://www.w3.org/TR/html/" }
+            { "text": "W3C HTML", "url": "https://www.w3.org/TR/html" }
           ]
         },
         {
           "title": "Web Standards",
+          "layout": {
+            "column-start": 28,
+            "column-end": 36
+          },
           "links": [
-            { "text": "W3C", "url": "https://www.w3.org/" },
-            { "text": "WHATWG", "url": "https://whatwg.org/" },
+            { "text": "W3C", "url": "https://www.w3.org" },
+            { "text": "WHATWG", "url": "https://whatwg.org" },
             {
               "text": "Web Standards Project",
               "url": "https://www.webstandards.org/"

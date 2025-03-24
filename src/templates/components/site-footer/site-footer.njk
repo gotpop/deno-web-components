@@ -4,7 +4,7 @@
   </style>
     <div class="footer-links">
       {% for section in site.footer.sections %}
-        <section>
+        <section class="footer-section" column-start="{{ section.layout['column-start'] }}" column-end="{{ section.layout['column-end'] }}">
           <h3>{{ section.title }}</h3>
           <ul>
             {% for link in section.links %}
