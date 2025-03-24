@@ -22,7 +22,6 @@
       /* display: none; */
 
       section {
-        grid-column: span 8;
         /* display: grid; */
 
         /* grid-template-columns: subgrid; */
