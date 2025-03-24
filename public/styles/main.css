@@ -54,6 +54,7 @@ body {
   color: var(--body-colour);
   font-family: var(--font-family-base);
   overflow: hidden auto;
+  height: 100dvh;
 }
 
 ::view-transition-old(page-wrapper) {
