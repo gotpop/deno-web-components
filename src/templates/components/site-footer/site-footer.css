@@ -24,10 +24,11 @@
     .footer-section {
       grid-column: attr(column-start type(<integer>)) /
         attr(column-end type(<integer>));
+      font-size: var(--font-scaled-sm);
 
       ul {
         display: grid;
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
         margin-block: unset;
         padding-inline-start: var(--spacing-sm);
       }
