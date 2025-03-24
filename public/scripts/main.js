@@ -47,6 +47,8 @@ export function initViewTransitions() {
     const link = e.target.closest("a")
     if (!link || link.target || !link.href) return
 
+    await document.fonts.ready
+
     const url = new URL(link.href)
 
     // Handle same-page anchor links
