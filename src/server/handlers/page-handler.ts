@@ -37,9 +37,6 @@ export async function handlePageRequest(
   const { pageName, subPage } = handlePaths(url)
 
   if (STATIC_DIRS.some((dir) => url.pathname.startsWith(`/${dir}/`))) {
-    console.log("dir :", STATIC_DIRS)
-    console.log("url :", url.pathname)
-
     return await serveFile(`${PUBLIC_DIR}${url.pathname}`)
   }
 
