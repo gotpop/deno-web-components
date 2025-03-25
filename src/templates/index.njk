@@ -1,53 +1,61 @@
 {% extends "base-hero.njk" %}
 
 {% block hero_left %}
-    <h1 class="heading" id="heading-primary">Deno Web Components</h1>
-    <p class="subheading" id="subheading">A demonstation of the latest in CSS and Web Compinents</p>
+  <h1 class="heading" id="heading-primary">Deno Web Components</h1>
+  <p class="subheading" id="subheading">A demonstation of the latest in CSS and Web Compinents</p>
 {% endblock %}
 
 {% block hero_right %}
-     <aside id="points" class="points">
-     <a href="#section-css">
+  <aside id="points" class="points">
+    <a href="#section-css">
         CSS Features
       </a>
-      <a href="#section-cssom">
+    <a href="#section-cssom">
         CSS Object Model Features
       </a>
-      <a href="#section-bapi">
+    <a href="#section-bapi">
         Browser API Features
       </a>
-     </aside>
+  </aside>
 {% endblock %}
 
 {% block page_content %}
-<div id="page-wrapper" class="page-wrapper">
-    <style>{{"page-wrapper" | componentCss | importCss | safe}}</style>
-  <div id="section-css" class="section-title"  grid-columns="40" grid-rows-start="10" grid-rows-end="11">
-    <style>{{"section-title" | componentCss | importCss | safe}}</style>
-    <div class="section-title">
-      <h2 class="heading" id="heading-secondary-1">CSS Features</h2>
+  <div id="page-wrapper" class="page-wrapper">
+    <style>
+      {{"page-wrapper" | componentCss | importCss | safe}}
+    </style>
+    <div id="section-css" class="section-title"  grid-columns="40" grid-rows-start="10" grid-rows-end="11">
+      <style>
+        {{"section-title" | componentCss | importCss | safe}}
+      </style>
+      <div class="section-title">
+        <h2 class="heading" id="heading-secondary-1">CSS Features</h2>
       </div>
-  </div>
+    </div>
     {% for feature in features.cssFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
-  <div id="section-cssom" class="section-title" grid-columns="40" grid-rows-start="31" grid-rows-end="32">
-    <style>{{"section-title" | componentCss | importCss | safe}}</style>
-        <div class="section-title">
-    <h2 class="heading" id="heading-secondary-2">CSS Object Model Features</h2>
+    <div id="section-cssom" class="section-title" grid-columns="40" grid-rows-start="31" grid-rows-end="32">
+      <style>
+        {{"section-title" | componentCss | importCss | safe}}
+      </style>
+      <div class="section-title">
+        <h2 class="heading" id="heading-secondary-2">CSS Object Model Features</h2>
       </div>
-  </div>
+    </div>
     {% for feature in features.cssomFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
-  <div id="section-bapi" class="section-title" grid-columns="40" grid-rows-start="40" grid-rows-end="41">
-    <style>{{"section-title" | componentCss | importCss | safe}}</style>
-        <div class="section-title">
-    <h2 class="heading" id="heading-secondary-3">Browser API Features</h2>
+    <div id="section-bapi" class="section-title" grid-columns="40" grid-rows-start="40" grid-rows-end="41">
+      <style>
+        {{"section-title" | componentCss | importCss | safe}}
+      </style>
+      <div class="section-title">
+        <h2 class="heading" id="heading-secondary-3">Browser API Features</h2>
       </div>
-  </div>
+    </div>
     {% for feature in features.browserApiFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
-    </div>
+  </div>
 {% endblock %}
