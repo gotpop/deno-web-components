@@ -20,6 +20,8 @@
 {% endblock %}
 
 {% block page_content %}
+<div id="page-wrapper" class="page-wrapper">
+    <style>{{"page-wrapper" | componentCss | importCss | safe}}</style>
   <div id="section-css" class="section-title"  grid-columns="40" grid-rows-start="10" grid-rows-end="11">
     <style>{{"section-title" | componentCss | importCss | safe}}</style>
     <div class="section-title">
@@ -47,4 +49,5 @@
     {% for feature in features.browserApiFeatures %}
       {% include "components/grid-item/grid-item.njk" %}
     {% endfor %}
+    </div>
 {% endblock %}

@@ -75,7 +75,7 @@ export const cssFeaturesMap = new Map()
     ],
     slug: "css-anchor-position-1",
     tags: ["css"],
-    title: "Anchor positioning",
+    title: "CSS Anchor positioning",
     type: "css",
   })
   .set("css-scoping", {

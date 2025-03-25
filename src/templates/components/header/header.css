@@ -27,7 +27,10 @@
     font-size: 2rem;
     font-weight: bold;
     max-height: 80px;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    --liam: blue;
+    --box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 
     &::before {
       content: "";
@@ -39,12 +42,13 @@
       background-color: var(--liam);
       /* opacity: 0.5; */
       z-index: -1;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+      box-shadow: var(--box-shadow);
     }
 
     @container scroll-state(stuck: top) {
       background-color: red;
       --liam: orange;
+      --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
     }
 
     &:hover {
@@ -95,6 +99,7 @@
       a {
         padding: 0;
         display: flex;
+        background-color: transparent;
         align-items: center;
       }
     }

@@ -16,8 +16,7 @@
   },
   "fmt": {
     "files": {
-      "include": ["public/scripts/"],
-      "exclude": ["*.njk"]
+      "include": ["public/scripts/"]
     },
     "options": {
       "useTabs": false,
