@@ -21,7 +21,7 @@
     }
 
     .footer-links {
-      grid-column: 16 / -4;
+      grid-column: 4 / -4;
       display: grid;
       grid-template-columns: subgrid;
     }

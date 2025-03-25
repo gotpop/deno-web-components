@@ -3,10 +3,11 @@
     --grid-column: attr(data-start-column type(<integer>)) /
       attr(data-end-column type(<integer>));
 
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     color: var(--colour-light-1);
     display: grid;
-    grid-column: span attr(data-columns type(<integer>));
+    grid-column: attr(column-start type(<integer>)) /
+      attr(column-end type(<integer>));
     grid-row: attr(row-start type(<integer>)) / attr(row-end type(<integer>));
     grid-template-columns: subgrid;
     grid-template-rows: 6rem 1fr 6rem;
@@ -16,7 +17,14 @@
     &:has(:hover) {
       background-color: rgba(0, 0, 0, 0.4);
       color: var(--colour-light-1);
+      z-index: 99999;
+      position: relative;
     }
+
+    /* &:nth-child(3n) {
+      grid-column: 13 / span 12 !important;
+      background-color: rgba(0, 0, 0, 0.4);
+    } */
 
     &[data-card-type="css"] {
       /* background-color: var(--colour-dark-5); */
@@ -46,6 +54,7 @@
       /* background-color: yellow; */
       grid-column: var(--grid-column);
       grid-row: 2;
+      /* background-color: grey; */
 
       h3 {
         font-size: var(--font-scaled-lg);

@@ -1,33 +1,34 @@
 <site-header id="header" class="header" role="banner" aria-label="Site header">
     <style>
-        {{ "header" | componentCss | importCss | safe }}
+        {{"header" | componentCss | importCss | safe}}
     </style>
-    
-        <a href="/" class="logo-link" aria-label="Home">
-          {% include "partials/icons/logo.njk" %}
-        </a>
-
+    <a href="/" class="logo-link" aria-label="Home">
+        {% include "partials/icons/logo.njk" %}
+    </a>
     <nav class="nav" aria-label="Primary navigation">
         <ul
             role="menubar"
             class="menubar"
             aria-orientation="horizontal"
             aria-label="Main">
-            <li class="menuitem" role="menuitem"><a href="/" class="{{ 'index' | isActive(currentPage) }}">Home</a></li>
-            <li class="menuitem" role="menuitem"><a href="/about" class="{{ 'about' | isActive(currentPage) }}">About</a></li>
-            <li class="menuitem" role="menuitem"><a href="/contact" class="{{ 'contact' | isActive(currentPage) }}">Contact</a></li>
-            <li class="menuitem" role="menuitem"><a href="/features" class="{{ 'features' | isActive(currentPage) }}">Features</a></li>
             <li class="menuitem" role="menuitem">
-            
-            <a href="https://github.com/gotpop/deno-web-components" class="{{ 'docs' | isActive(currentPage) }}" aria-label="GitHub" target="_blank" rel="noopener">
-                <span hidden>GitHub</span>
-            
-
-   {% include "partials/icons/github.njk" %}
-
-</a>
-
-</li>
+                <a href="/" class="{{ 'index' | isActive(currentPage) }}">Home</a>
+            </li>
+            <li class="menuitem" role="menuitem">
+                <a href="/about" class="{{ 'about' | isActive(currentPage) }}">About</a>
+            </li>
+            <li class="menuitem" role="menuitem">
+                <a href="/contact" class="{{ 'contact' | isActive(currentPage) }}">Contact</a>
+            </li>
+            <li class="menuitem" role="menuitem">
+                <a href="/features" class="{{ 'features' | isActive(currentPage) }}">Features</a>
+            </li>
+            <li class="menuitem" role="menuitem">
+                <a href="https://github.com/gotpop/deno-web-components" class="{{ 'docs' | isActive(currentPage) }}" aria-label="GitHub" target="_blank" rel="noopener">
+                    <span hidden>GitHub</span>
+                    {% include "partials/icons/github.njk" %}
+                </a>
+            </li>
         </ul>
     </nav>
 </site-header>
