@@ -90,6 +90,8 @@ export const cssFeaturesMap = new Map()
     label: "Title 6",
     layout: {
       columns: 14,
+      "column-start": 1,
+      "column-end": 14,
       rows: 3,
       "feature-start": 4,
       "feature-end": 12,
@@ -108,12 +110,14 @@ export const cssFeaturesMap = new Map()
     title: "@scope rule",
     type: "css",
   })
-  .set("css-scoping replace me", {
+  .set("css-scoping2", {
     description:
       "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     label: "Title 6",
     layout: {
       columns: 30,
+      "column-start": 13,
+      "column-end": 26,
       rows: 3,
       "feature-start": 2,
       "feature-end": 10,

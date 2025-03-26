@@ -1,5 +1,5 @@
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>{{ title }} - Deno Web Components</title>
 <meta
   name="description"
@@ -17,15 +17,22 @@
   type="font/woff2" 
   crossorigin="anonymous"
 >
-<link rel="preload" href="/styles/main.css" as="style" />
-<link rel="modulepreload" href="/scripts/main.js" />
+<link rel="preload" href="/styles/main.css" as="style"/>
+<link rel="modulepreload" href="/scripts/main.js"/>
 
 {# {% include "partials/speculation-rules.njk" %} #}
 {# {% include "partials/favicon-links.njk" %} #}
 
-<link rel="stylesheet" href="/styles/main.css" />
+<link rel="stylesheet" href="/styles/main.css"/>
 <script defer type="module" src="/scripts/main.js"></script>
 
-
- <script>CSS.paintWorklet.addModule('./scripts/worklets/worklet.grid.js');</script>
- <script>CSS.paintWorklet.addModule('./scripts/worklets/worklet.hero.js');</script>
+<script>
+  CSS
+    .paintWorklet
+    .addModule('./scripts/worklets/worklet.grid.js');
+</script>
+<script>
+  CSS
+    .paintWorklet
+    .addModule('./scripts/worklets/worklet.hero.js');
+</script>

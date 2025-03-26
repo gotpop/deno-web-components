@@ -12,7 +12,7 @@ if (typeof registerPaint !== "undefined") {
     }
 
     paint(ctx, geom, properties) {
-      const tileSize = parseInt(properties.get("--bytemare-tile-size")) || 20
+      const tileSize = parseInt(properties.get("--bytemare-tile-size")) || 16
       const gap = parseInt(properties.get("--bytemare-gap")) || 2
       const baseColor =
         properties.get("--bytemare-base-color").toString().trim() ||
