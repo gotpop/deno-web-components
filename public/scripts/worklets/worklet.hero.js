@@ -25,13 +25,16 @@ if (typeof registerPaint !== "undefined") {
       const offsetX = parseInt(properties.get("--bytemare-offset-x")) || 8
 
       // Calculate number of tiles needed to cover the canvas with overflow
-      const geomTileWidth = Math.ceil(geom.width / tileSize) + 4 // More tiles for overflow
-      const geomTileHeight = Math.ceil(geom.height / tileSize) + 4 // More tiles for overflow
+      const geomTileWidth = Math.ceil(geom.width / tileSize) + 6 // Increased for better overflow
+      const geomTileHeight = Math.ceil(geom.height / tileSize) + 6 // Increased for better overflow
 
-      // Calculate start positions to center the pattern with offset for grid alignment
-      const startX = -tileSize + (geom.width - (geomTileWidth * tileSize)) / 2 +
-        offsetX
-      const startY = -tileSize // Start above the canvas
+      // Calculate the modulo offset to ensure grid alignment
+      const modOffset = geom.width % tileSize
+
+      // Ensure the pattern aligns with the grid by adjusting the starting position
+      // The multiplier ensures we're consistently aligning to the same reference point
+      const startX = Math.floor((modOffset / 2) + offsetX) - (3 * tileSize)
+      const startY = -2 * tileSize // Start well above the canvas
 
       for (let y = 0; y < geomTileHeight; y++) {
         for (let x = 0; x < geomTileWidth; x++) {
