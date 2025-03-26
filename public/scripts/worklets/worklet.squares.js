@@ -18,10 +18,13 @@ if (typeof registerPaint !== "undefined") {
       const gridSize =
         parseInt(properties.get("--root-grid-size").toString()) || 16
 
+      const gridGap = parseInt(properties.get("--grid-gap").toString()) || 0
+
       const evenOdd = properties.get("--even-odd").toString().trim() || "even"
 
-      // Use the drawGrid utility function directly
+      // Draw both the grid lines and squares at intersections
       this.drawGrid(ctx, geom, gridSize, baseColor, evenOdd)
+      this.drawGridSquares(ctx, geom, gridSize, baseColor, evenOdd, gridGap)
     }
 
     // Utility functions directly included in the worklet
@@ -80,6 +83,51 @@ if (typeof registerPaint !== "undefined") {
         ctx.lineTo(geom.width, y)
         ctx.strokeStyle = baseColor
         ctx.stroke()
+      }
+    }
+
+    drawGridSquares(
+      ctx,
+      geom,
+      gridSize,
+      baseColor,
+      evenOdd = "even",
+      gridGap = 0,
+    ) {
+      // Calculate horizontal offset for grid - same as in drawGrid to maintain alignment
+      let offset = (geom.width % gridSize) / 2
+
+      // Calculate the number of vertical lines - same as in drawGrid
+      let numLinesX = Math.floor((geom.width - 2 * offset) / gridSize) + 1
+
+      // Determine desired parity (0 for even, 1 for odd) - same as in drawGrid
+      const desiredParity = evenOdd === "odd" ? 1 : 0
+
+      // Adjust offset if numLinesX parity doesn't match desiredParity - same as in drawGrid
+      if (numLinesX % 2 !== desiredParity) {
+        offset -= gridSize / 2
+        numLinesX = Math.floor((geom.width - 2 * offset) / gridSize) + 1
+      }
+
+      // Size of squares to draw at intersections
+      const squareSize = Math.max(2, gridSize / 3) // Adjust size as needed
+
+      // Draw squares at grid intersections
+      for (let y = 0; y <= geom.height; y += gridSize) {
+        for (let x = offset; x <= geom.width; x += gridSize) {
+          // Calculate the center position for the square
+          const centerX = x
+          const centerY = y
+
+          // Draw square centered at grid intersection
+          ctx.fillStyle = baseColor
+          ctx.fillRect(
+            centerX - squareSize / 2,
+            centerY - squareSize / 2,
+            squareSize,
+            squareSize,
+          )
+        }
       }
     }
   }
