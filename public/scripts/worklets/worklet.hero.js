@@ -8,6 +8,7 @@ if (typeof registerPaint !== "undefined") {
         "--bytemare-base-color",
         "--animation-progress",
         "--stagger-delay",
+        "--bytemare-offset-x",
       ]
     }
 
@@ -20,24 +21,33 @@ if (typeof registerPaint !== "undefined") {
       const animationProgress =
         parseFloat(properties.get("--animation-progress")) || 0
       const staggerDelay = parseFloat(properties.get("--stagger-delay")) || 0.02
+      // Get optional x offset or default to 8px for grid alignment
+      const offsetX = parseInt(properties.get("--bytemare-offset-x")) || 8
 
-      const geomTileWidth = Math.ceil(geom.width / tileSize)
-      const geomTileHeight = Math.ceil(geom.height / tileSize)
+      // Calculate number of tiles needed to cover the canvas with overflow
+      const geomTileWidth = Math.ceil(geom.width / tileSize) + 4 // More tiles for overflow
+      const geomTileHeight = Math.ceil(geom.height / tileSize) + 4 // More tiles for overflow
+
+      // Calculate start positions to center the pattern with offset for grid alignment
+      const startX = -tileSize + (geom.width - (geomTileWidth * tileSize)) / 2 +
+        offsetX
+      const startY = -tileSize // Start above the canvas
 
       for (let y = 0; y < geomTileHeight; y++) {
-        const yOffset = y * tileSize
-
-        for (let x = 0; x < geomTileWidth + 1; x++) {
-          const xOffset = x * tileSize - 16
+        for (let x = 0; x < geomTileWidth; x++) {
+          const currentX = startX + (x * tileSize)
+          const currentY = startY + (y * tileSize)
 
           const delay = (x + y) * staggerDelay
           const progress = (((animationProgress - delay) % 1) + 1) % 1
 
-          const xFactor = x / (geomTileWidth - 1)
-          const yFactor = y / (geomTileHeight - 1)
+          // Ensure we don't divide by zero for the first tile
+          const xFactor = geomTileWidth === 1 ? 0 : x / (geomTileWidth - 1)
+          const yFactor = geomTileHeight === 1 ? 0 : y / (geomTileHeight - 1)
           const darknessFactor = (xFactor + yFactor) / 2
 
-          const opacity = progress
+          // Ensure minimum opacity so first square is always visible
+          const opacity = Math.max(0.1, progress)
           const color = this.adjustColorBrightness(
             baseColor,
             1 - darknessFactor,
@@ -46,15 +56,14 @@ if (typeof registerPaint !== "undefined") {
 
           ctx.fillStyle = rgbaColor
           ctx.fillRect(
-            xOffset + gap / 2,
-            yOffset + gap / 2,
+            currentX + gap / 2,
+            currentY + gap / 2,
             tileSize - gap,
             tileSize - gap,
           )
         }
       }
     }
-
     rgbToRgba(rgb, alpha) {
       const rgbValues = rgb.match(/\d+/g)
 
