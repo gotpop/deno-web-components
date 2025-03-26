@@ -13,13 +13,14 @@
     grid-template-rows: 6rem 1fr 6rem;
     view-transition-name: attr(id type(<custom-ident>), none);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    /* background-image: paint(bytemare); */
 
     &:has(:hover) {
       background-color: rgba(0, 0, 0, 0.4);
       color: var(--colour-light-1);
       z-index: 99999;
       position: relative;
-      background-image: paint(bytemare);
+      /* background-image: paint(bytemare); */
     }
 
     /* &:nth-child(3n) {

@@ -12,6 +12,7 @@
     grid-template-columns: subgrid;
     padding-block: calc(var(--padding) * 5);
     view-transition-name: attr(id type(<custom-ident>), none);
+    background-image: paint(bytemare);
 
     .hero-content {
       grid-column: content-start / span 19;
