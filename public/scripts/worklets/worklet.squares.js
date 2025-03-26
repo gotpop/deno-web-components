@@ -1,5 +1,5 @@
 if (typeof registerPaint !== "undefined") {
-  class GridPainter {
+  class SquarePainter {
     static get inputProperties() {
       return [
         "--root-grid-size",
@@ -84,5 +84,5 @@ if (typeof registerPaint !== "undefined") {
     }
   }
 
-  registerPaint("grid", GridPainter)
+  registerPaint("squares", SquarePainter)
 }

@@ -22,7 +22,7 @@ if (typeof registerPaint !== "undefined") {
         parseFloat(properties.get("--animation-progress")) || 0
       const staggerDelay = parseFloat(properties.get("--stagger-delay")) || 0.02
       // Get optional x offset or default to 8px for grid alignment
-      const offsetX = parseInt(properties.get("--bytemare-offset-x")) || 8
+      const offsetX = parseInt(properties.get("--bytemare-offset-x")) || 16
 
       // Calculate number of tiles needed to cover the canvas with overflow
       const geomTileWidth = Math.ceil(geom.width / tileSize) + 6 // Increased for better overflow
