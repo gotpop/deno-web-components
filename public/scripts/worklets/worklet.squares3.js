@@ -13,11 +13,11 @@ if (typeof registerPaint !== "undefined") {
       const baseColor = properties.get("--square-color").toString().trim() ||
         "rgba(115, 92, 221, 0.4)"
 
-      // Get position properties or default to center
+      // Get position properties or default to top left (0,0)
       const posX = parseInt(properties.get("--square-position-x").toString()) ||
-        (geom.width / 2 - 16) // Default to center
+        0
       const posY = parseInt(properties.get("--square-position-y").toString()) ||
-        (geom.height / 2 - 16) // Default to center
+        0
 
       // Fixed square size
       const squareSize = 32
