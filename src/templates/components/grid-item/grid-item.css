@@ -66,11 +66,16 @@
           font-size: var(--font-scaled-md);
           font-weight: 400;
           margin-block-end: var(--spacing-md);
-          background-image: paint(squares3);
+          /* background-image: paint(squares2); */
+
+          --square-position-x: 100px;
+          --square-position-y: 100px;
+          background-image: paint(squares2, 64px, rgba(255, 0, 0, 0.6), 2, 1);
+
           position: absolute;
-          width: 100%;
-          height: 100%;
-          inset: 1px 0 0 -2rem;
+          width: 200%;
+          height: 300%;
+          inset: calc(-3rem + 1px) 0 0 -4rem;
           z-index: -1;
         }
       }
