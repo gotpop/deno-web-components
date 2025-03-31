@@ -26,14 +26,14 @@
   --site-header-height: 6rem;
   --columns-number: 12;
 
-  --site-background: linear-gradient(
+  /* --site-background: linear-gradient(
     to bottom right,
     var(--colour-1),
     var(--colour-2),
     var(--colour-3),
     var(--colour-4),
     var(--colour-5)
-  );
+  ); */
 
   /* Oklab colours */
   --white: oklch(1 0 0);
@@ -172,4 +172,13 @@
 
   /* Actions */
   --is-desktop: false;
+
+  --site-background: linear-gradient(
+    to bottom right,
+    var(--slate-100),
+    var(--slate-200),
+    var(--slate-300),
+    var(--slate-400),
+    var(--slate-500)
+  );
 }

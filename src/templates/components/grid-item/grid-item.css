@@ -37,6 +37,7 @@
 
     p {
       text-wrap: balance;
+      color: rgba(0, 0, 0, 0.8);
     }
 
     a {
@@ -59,6 +60,7 @@
         font-weight: 400;
         margin-block-end: var(--spacing-md);
         position: relative;
+        color: rgba(0, 0, 0, 0.8);
 
         &::before {
           content: "";
@@ -67,15 +69,21 @@
           font-weight: 400;
           margin-block-end: var(--spacing-md);
           /* background-image: paint(squares2); */
+          left: -21.5rem;
+          top: -14.5rem;
+          position: absolute;
+          height: 50rem;
+          width: 50rem;
+          pointer-events: none;
 
-          --square-position-x: 100px;
-          --square-position-y: 100px;
-          background-image: paint(squares2, 64px, rgba(255, 0, 0, 0.6), 2, 1);
+          --square-position-x: 200px;
+          --square-position-y: 200px;
+          background-image: paint(squares2, 128px, rgba(255, 0, 0, 0.1), 4, 2);
 
           position: absolute;
-          width: 200%;
-          height: 300%;
-          inset: calc(-3rem + 1px) 0 0 -4rem;
+          /* width: 200%;
+          height: 300%; */
+          /* inset: calc(-3rem + 1px) 0 0 -4rem; */
           z-index: -1;
         }
       }

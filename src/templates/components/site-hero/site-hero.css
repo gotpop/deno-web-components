@@ -14,9 +14,6 @@
     view-transition-name: attr(id type(<custom-ident>), none);
     position: relative;
     /* background-image: paint(squares2); */
-    --square-position-x: 42px;
-    --square-position-y: 49px;
-    background-image: paint(squares2, 128px, rgba(255, 0, 0, 0.3), 6, 2);
 
     /* &::before {
       content: "";
@@ -34,6 +31,21 @@
     .hero-content {
       grid-column: content-start / span 19;
       display: grid;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        left: -19.5rem;
+        top: -5rem;
+        height: 200%;
+        --square-position-x: 42px;
+        --square-position-y: 49px;
+        background-image: paint(squares2, 128px, rgba(255, 0, 0, 0.1), 6, 2);
+
+        z-index: -1;
+      }
     }
 
     .heading {
