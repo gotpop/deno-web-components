@@ -18,19 +18,19 @@
   }
 
   .logo-link {
+    --header-bg: rgba(0, 0, 0, 0.3);
+    --box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+
     display: flex;
     grid-column: gutter-start / span 5;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: var(--colour-light-1);
+    color: var(--colour-dark-1);
     font-size: 2rem;
     font-weight: bold;
     max-height: 80px;
     transition: all 0.3s ease-in-out;
-
-    --liam: blue;
-    --box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 
     &::before {
       content: "";
@@ -39,15 +39,14 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: var(--liam);
-      /* opacity: 0.5; */
+      background-color: var(--header-bg);
       z-index: -1;
       box-shadow: var(--box-shadow);
     }
 
     @container scroll-state(stuck: top) {
       background-color: red;
-      --liam: orange;
+      --header-bg: orange;
       --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
     }
 
@@ -62,7 +61,7 @@
     justify-content: center;
     padding: var(--padding);
     margin: 0;
-    color: var(--colour-light-1);
+    color: var(--colour-dark-1);
     text-decoration: none;
     font-size: 2rem;
     font-weight: bold;
@@ -92,6 +91,7 @@
   .menuitem {
     color: var(--colour-light-1);
     display: flex;
+    width: clamp(5rem, 6rem, 8rem);
 
     &:last-child {
       margin-inline: auto 0;
@@ -105,13 +105,17 @@
     }
 
     a {
+      width: 100%;
       text-align: center;
       padding: var(--padding);
-      background-color: var(--colour-dark-1);
       text-decoration: none;
-      color: var(--colour-light-1);
-      background-color: var(--colour-dark-1);
+      color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.3);
       font-size: 13px;
+
+      &:visited {
+        color: rgba(0, 0, 0, 0.8);
+      }
 
       &:hover {
         color: var(--colour-primary);

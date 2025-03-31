@@ -13,51 +13,49 @@
     view-transition-name: attr(id type(<custom-ident>), none);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
-    p {
+    .feature-content {
+      grid-column: var(--grid-column);
+      grid-row: 2;
+    }
+
+    .feature-title {
+      font-size: var(--font-scaled-lg);
+      font-weight: 400;
+      margin-block-end: var(--spacing-md);
+      position: relative;
+      color: rgba(0, 0, 0, 0.8);
+
+      &::before {
+        --square-position-x: 200px;
+        --square-position-y: 200px;
+
+        background-image: paint(tetris, 128px, rgba(255, 0, 0, 0.1), 4, 2);
+        content: "";
+        display: block;
+        font-size: var(--font-scaled-md);
+        font-weight: 400;
+        height: 50rem;
+        left: -21.5rem;
+        margin-block-end: var(--spacing-md);
+        pointer-events: none;
+        position: absolute;
+        top: -14.5rem;
+        width: 50rem;
+        z-index: -1;
+      }
+    }
+
+    .feature-body {
       text-wrap: balance;
       color: rgba(0, 0, 0, 0.8);
     }
 
-    a {
+    .feature-link {
       color: var(--colour-light-1);
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-underline-offset: 1lh;
       text-decoration-color: currentColor;
-    }
-
-    .feature {
-      grid-column: var(--grid-column);
-      grid-row: 2;
-
-      h3 {
-        font-size: var(--font-scaled-lg);
-        font-weight: 400;
-        margin-block-end: var(--spacing-md);
-        position: relative;
-        color: rgba(0, 0, 0, 0.8);
-
-        &::before {
-          content: "";
-          display: block;
-          font-size: var(--font-scaled-md);
-          font-weight: 400;
-          margin-block-end: var(--spacing-md);
-          left: -21.5rem;
-          top: -14.5rem;
-          position: absolute;
-          height: 50rem;
-          width: 50rem;
-          pointer-events: none;
-
-          --square-position-x: 200px;
-          --square-position-y: 200px;
-          background-image: paint(tetris, 128px, rgba(255, 0, 0, 0.1), 4, 2);
-
-          position: absolute;
-          z-index: -1;
-        }
-      }
     }
   }
 }

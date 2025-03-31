@@ -1,23 +1,24 @@
 <grid-item
-  id="{{ feature.slug }}"
-  role="region"
   aria-label="{{ feature.title }}"
+  class="feature-card"
+  column-end="{{ feature.layout['column-end'] }}"
+  column-start="{{ feature.layout['column-start'] }}"
+  data-card-type="{{ feature.type }}"
   data-columns="{{ feature.layout.columns }}"
+  data-end-column="{{ feature.layout['feature-end'] }}"
   data-rows="{{ feature.layout.rows }}"
   data-start-column="{{ feature.layout['feature-start'] }}"
-  data-end-column="{{ feature.layout['feature-end'] }}"
-  data-card-type="{{ feature.type }}"
-  row-start="{{ feature.layout['row-start'] }}"
+  id="{{ feature.slug }}"
+  role="region"
   row-end="{{ feature.layout['row-end'] }}"
-  column-start="{{ feature.layout['column-start'] }}"
-  column-end="{{ feature.layout['column-end'] }}"
+  row-start="{{ feature.layout['row-start'] }}"
   >
   <style>
     {{"grid-item" | componentCss | importCss | safe}}
   </style>
-  <article class="feature">
-    <h3>{{ feature.title }}</h3>
-    <p>{{ feature.description }}</p>
+  <article class="feature-content">
+    <h3 class="feature-title">{{ feature.title }}</h3>
+    <p class="feature-body">{{ feature.description }}</p>
     {# <a href="/features/{{ feature.slug }}">Read more</a> #}
   </article>
 </grid-item>
