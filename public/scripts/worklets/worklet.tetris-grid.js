@@ -1,5 +1,5 @@
 if (typeof registerPaint !== "undefined") {
-  class SquarePainter {
+  class TetrisGridPainter {
     static get inputProperties() {
       return [
         "--square-color",
@@ -135,5 +135,5 @@ if (typeof registerPaint !== "undefined") {
     }
   }
 
-  registerPaint("squares3", SquarePainter)
+  registerPaint("tetris-grid", TetrisGridPainter)
 }

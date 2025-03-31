@@ -2,7 +2,7 @@ import { FeatureDetect } from "./feature-detect.js"
 import { initLiveReload } from "./live-reload.js"
 import { initWebComponents } from "./define-web-components.js"
 
-const worklets = ["grid", "hero", "squares", "squares2", "squares3"].map(
+const worklets = ["grid", "tetris", "tetris-grid"].map(
   (name) => `./scripts/worklets/worklet.${name}.js`,
 )
 

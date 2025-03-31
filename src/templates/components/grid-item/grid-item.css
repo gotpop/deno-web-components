@@ -52,8 +52,6 @@
       /* background-color: yellow; */
       grid-column: var(--grid-column);
       grid-row: 2;
-      /* background-image: paint(squares2); */
-      /* background-color: grey; */
 
       h3 {
         font-size: var(--font-scaled-lg);
@@ -68,7 +66,6 @@
           font-size: var(--font-scaled-md);
           font-weight: 400;
           margin-block-end: var(--spacing-md);
-          /* background-image: paint(squares2); */
           left: -21.5rem;
           top: -14.5rem;
           position: absolute;
@@ -78,12 +75,9 @@
 
           --square-position-x: 200px;
           --square-position-y: 200px;
-          background-image: paint(squares2, 128px, rgba(255, 0, 0, 0.1), 4, 2);
+          background-image: paint(tetris, 128px, rgba(255, 0, 0, 0.1), 4, 2);
 
           position: absolute;
-          /* width: 200%;
-          height: 300%; */
-          /* inset: calc(-3rem + 1px) 0 0 -4rem; */
           z-index: -1;
         }
       }

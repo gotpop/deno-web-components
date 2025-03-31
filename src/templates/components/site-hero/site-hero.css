@@ -42,7 +42,7 @@
         height: 200%;
         --square-position-x: 42px;
         --square-position-y: 49px;
-        background-image: paint(squares2, 128px, rgba(255, 0, 0, 0.1), 6, 2);
+        background-image: paint(tetris, 128px, rgba(255, 0, 0, 0.1), 6, 2);
 
         z-index: -1;
       }
