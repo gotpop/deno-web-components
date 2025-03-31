@@ -3,7 +3,6 @@
     --grid-column: attr(data-start-column type(<integer>)) /
       attr(data-end-column type(<integer>));
 
-    /* background-color: rgba(0, 0, 0, 0.5); */
     color: var(--colour-light-1);
     display: grid;
     grid-column: attr(column-start type(<integer>)) /
@@ -13,27 +12,6 @@
     grid-template-rows: 6rem 1fr 6rem;
     view-transition-name: attr(id type(<custom-ident>), none);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    /* background-image: paint(bytemare); */
-
-    &:has(:hover) {
-      background-color: rgba(0, 0, 0, 0.4);
-      color: var(--colour-light-1);
-      z-index: 99999;
-      position: relative;
-      /* background-image: paint(bytemare); */
-    }
-
-    &[data-card-type="css"] {
-      /* background-color: var(--colour-dark-5); */
-    }
-
-    &[data-card-type="cssom"] {
-      /* background-color: red; */
-    }
-
-    &[data-card-type="bapi"] {
-      /* background-color: yellow; */
-    }
 
     p {
       text-wrap: balance;
@@ -49,7 +27,6 @@
     }
 
     .feature {
-      /* background-color: yellow; */
       grid-column: var(--grid-column);
       grid-row: 2;
 
