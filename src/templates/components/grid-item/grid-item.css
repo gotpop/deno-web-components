@@ -1,21 +1,53 @@
 @scope {
   & {
-    --grid-column: attr(data-start-column type(<integer>)) /
-      attr(data-end-column type(<integer>));
+    --grid-column: attr(content-start type(<integer>)) /
+      attr(content-end type(<integer>));
 
     color: var(--colour-light-1);
     display: grid;
-    grid-column: attr(column-start type(<integer>)) /
-      attr(column-end type(<integer>));
-    grid-row: attr(row-start type(<integer>)) / attr(row-end type(<integer>));
+    grid-column: attr(item-start type(<integer>)) /
+      attr(item-end type(<integer>));
+    grid-row: attr(row-position type(<integer>));
     grid-template-columns: subgrid;
-    grid-template-rows: 6rem 1fr 6rem;
+    grid-template-rows: 1fr;
     view-transition-name: attr(id type(<custom-ident>), none);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    position: relative;
+
+    &:nth-child(3 of .feature-card) {
+      /* background-color: var(--colour-light-1); */
+
+      .feature-content {
+        &::before {
+          --square-position-x: -32px;
+          --square-position-y: 64px;
+
+          --size: 32px;
+
+          /* background-color: yellow; */
+          background-image: paint(
+            tetris,
+            var(--size),
+            rgba(255, 0, 0, 0.1),
+            6,
+            1
+          );
+          content: "";
+          display: block;
+          height: 6rem;
+          left: 31rem;
+          pointer-events: none;
+          position: absolute;
+          top: 0rem;
+          width: 4rem;
+          z-index: -1;
+        }
+      }
+    }
 
     .feature-content {
       grid-column: var(--grid-column);
-      grid-row: 2;
+      /* grid-row: 2; */
     }
 
     .feature-title {
@@ -29,19 +61,55 @@
         --square-position-x: 200px;
         --square-position-y: 200px;
 
-        background-image: paint(tetris, 128px, rgba(255, 0, 0, 0.1), 4, 2);
+        --size: 32px;
+
+        background-image: paint(
+          tetris,
+          var(--size),
+          rgba(255, 0, 0, 0.1),
+          4,
+          0
+        );
         content: "";
         display: block;
-        font-size: var(--font-scaled-md);
-        font-weight: 400;
         height: 50rem;
-        left: -21.5rem;
+        left: -17.5rem;
         margin-block-end: var(--spacing-md);
         pointer-events: none;
         position: absolute;
-        top: -14.5rem;
+        top: -12.5rem;
         width: 50rem;
         z-index: -1;
+      }
+    }
+
+    &:nth-child(2n) {
+      .feature-title {
+        /* background-color: var(--colour-light-1); */
+        &::before {
+          --square-position-x: 200px;
+          --square-position-y: 200px;
+
+          --size: 32px;
+
+          background-image: paint(
+            tetris,
+            var(--size),
+            rgba(255, 0, 0, 0.1),
+            2,
+            3
+          );
+          content: "";
+          display: block;
+          height: 50rem;
+          left: -15.5rem;
+          margin-block-end: var(--spacing-md);
+          pointer-events: none;
+          position: absolute;
+          top: -16.5rem;
+          width: 50rem;
+          z-index: -1;
+        }
       }
     }
 

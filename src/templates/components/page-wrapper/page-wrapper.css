@@ -19,11 +19,12 @@
     color: var(--colour-dark-1);
     view-transition-name: attr(id type(<custom-ident>), none);
     min-height: 100dvh;
+    row-gap: 4rem;
 
-    .feature-content {
+    /* .feature-content {
       grid-column: 2 / 20;
       padding-block: 5rem;
-    }
+    } */
 
     .feature-nav {
       grid-column: 22 / -1;

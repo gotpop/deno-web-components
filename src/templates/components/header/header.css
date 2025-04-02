@@ -83,7 +83,7 @@
     display: flex;
     margin: 0;
     padding: 0;
-    padding: var(--padding);
+    padding-block: var(--padding);
     gap: var(--padding);
     justify-content: center;
   }
@@ -95,12 +95,18 @@
 
     &:last-child {
       margin-inline: auto 0;
+      width: 4rem;
 
       a {
-        padding: 0;
+        padding: 0 1rem;
         display: flex;
         background-color: transparent;
         align-items: center;
+
+        &:hover {
+          background-color: var(--colour-primary);
+          color: var(--colour-light-1);
+        }
       }
     }
 

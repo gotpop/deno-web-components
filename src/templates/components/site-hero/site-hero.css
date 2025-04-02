@@ -37,12 +37,13 @@
         content: "";
         position: absolute;
         inset: 0;
-        left: -19.5rem;
-        top: -5rem;
-        height: 200%;
-        --square-position-x: 42px;
-        --square-position-y: 49px;
-        background-image: paint(tetris, 128px, rgba(255, 0, 0, 0.1), 6, 2);
+        left: -5rem;
+        top: 11rem;
+        height: 4rem;
+        width: 6rem;
+        --square-position-x: 0px;
+        --square-position-y: 0px;
+        background-image: paint(tetris, 32px, rgba(255, 0, 0, 0.1), 6, 2);
 
         z-index: -1;
       }
@@ -62,6 +63,7 @@
     .subheading {
       view-transition-name: attr(id type(<custom-ident>), none);
       display: inline-block;
+      color: rgba(0, 0, 0, 0.9);
     }
 
     .points {

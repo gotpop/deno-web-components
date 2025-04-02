@@ -5,14 +5,11 @@ export const browserApiFeaturesMap = new Map()
     description:
       "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
-      columns: 13,
-      "column-start": 1,
-      "column-end": 14,
-      "feature-end": 11,
-      "feature-start": 4,
-      "row-start": 6,
-      "row-end": 7,
-      rows: 1,
+      "item-start": 1,
+      "item-end": 14,
+      "content-end": 11,
+      "content-start": 4,
+      "row-position": 7,
     },
     links: [
       {
@@ -30,14 +27,11 @@ export const browserApiFeaturesMap = new Map()
     description:
       "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
-      columns: 12,
-      "column-start": 13,
-      "column-end": 26,
-      "feature-end": 10,
-      "feature-start": 3,
-      rows: 1,
-      "row-start": 6,
-      "row-end": 7,
+      "content-end": 12,
+      "content-start": 4,
+      "item-end": 26,
+      "item-start": 13,
+      "row-position": 7,
     },
     links: [
       {
@@ -61,14 +55,11 @@ export const browserApiFeaturesMap = new Map()
     description:
       "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
-      columns: 15,
-      "column-start": 23,
-      "column-end": 41,
-      "feature-end": 10,
-      "feature-start": 3,
-      rows: 1,
-      "row-start": 6,
-      "row-end": 7,
+      "content-end": 13,
+      "content-start": 6,
+      "item-end": 41,
+      "item-start": 23,
+      "row-position": 7,
     },
     links: [
       {

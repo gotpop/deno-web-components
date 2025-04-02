@@ -1,17 +1,15 @@
 <grid-item
+  {# data-columns="{{ feature.layout.columns }}" #}
   aria-label="{{ feature.title }}"
   class="feature-card"
-  column-end="{{ feature.layout['column-end'] }}"
-  column-start="{{ feature.layout['column-start'] }}"
+  content-end="{{ feature.layout['content-end'] }}"
+  content-start="{{ feature.layout['content-start'] }}"
   data-card-type="{{ feature.type }}"
-  data-columns="{{ feature.layout.columns }}"
-  data-end-column="{{ feature.layout['feature-end'] }}"
-  data-rows="{{ feature.layout.rows }}"
-  data-start-column="{{ feature.layout['feature-start'] }}"
   id="{{ feature.slug }}"
+  item-end="{{ feature.layout['item-end'] }}"
+  item-start="{{ feature.layout['item-start'] }}"
   role="region"
-  row-end="{{ feature.layout['row-end'] }}"
-  row-start="{{ feature.layout['row-start'] }}"
+  row-position="{{ feature.layout['row-position'] }}"
   >
   <style>
     {{"grid-item" | componentCss | importCss | safe}}
