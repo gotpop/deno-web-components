@@ -35,11 +35,16 @@ export function initViewTransitions() {
       url.hash
     ) {
       e.preventDefault()
+
+      // Instead of using history.pushState, directly update the location.hash
+      // This triggers the browser's native target handling
+      location.hash = url.hash.substring(1)
+
+      // Smooth scroll to the element
       const element = document.querySelector(url.hash)
       if (element) {
         element.scrollIntoView({ behavior: "smooth" })
       }
-      history.pushState({}, "", url.hash)
       return
     }
 

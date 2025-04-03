@@ -1,5 +1,6 @@
 @scope {
   & {
+    --before-position: -1 / -1;
     --grid-column: attr(content-start type(<integer>)) /
       attr(content-end type(<integer>));
 
@@ -14,116 +15,60 @@
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     position: relative;
 
-    &:nth-child(3 of .feature-card) {
-      /* background-color: var(--colour-light-1); */
+    &::before {
+      --square-position-x: 32px;
+      --square-position-y: -64px;
+      --size: 32px;
+      --colour: rgba(255, 0, 0, 0.1);
+      --rotate: 3;
+      --shape: 2;
 
-      .feature-content {
-        &::before {
-          --square-position-x: -32px;
-          --square-position-y: 64px;
-
-          --size: 32px;
-
-          /* background-color: yellow; */
-          background-image: paint(
-            tetris,
-            var(--size),
-            rgba(255, 0, 0, 0.1),
-            6,
-            1
-          );
-          content: "";
-          display: block;
-          height: 6rem;
-          left: 31rem;
-          pointer-events: none;
-          position: absolute;
-          top: 0rem;
-          width: 4rem;
-          z-index: -1;
-        }
-      }
+      background-image: paint(
+        tetris,
+        var(--size),
+        var(--colour),
+        var(--shape),
+        var(--rotate)
+      );
+      content: "";
+      display: block;
+      grid-column: var(--before-position);
+      height: 6rem;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0rem;
+      width: 4rem;
+      z-index: -1;
     }
 
-    .feature-content {
-      grid-column: var(--grid-column);
-      /* grid-row: 2; */
+    &:nth-child(3n of .feature-card)::before {
+      --before-position: -5 / -5;
     }
+  }
 
-    .feature-title {
-      font-size: var(--font-scaled-lg);
-      font-weight: 400;
-      margin-block-end: var(--spacing-md);
-      position: relative;
-      color: rgba(0, 0, 0, 0.8);
+  .feature-content {
+    grid-column: var(--grid-column);
+  }
 
-      &::before {
-        --square-position-x: 200px;
-        --square-position-y: 200px;
+  .feature-title {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: var(--font-scaled-lg);
+    font-weight: 400;
+    margin-block-end: var(--spacing-md);
+    position: relative;
+  }
 
-        --size: 32px;
+  .feature-body {
+    color: rgba(0, 0, 0, 0.8);
+    text-wrap: balance;
+  }
 
-        background-image: paint(
-          tetris,
-          var(--size),
-          rgba(255, 0, 0, 0.1),
-          4,
-          0
-        );
-        content: "";
-        display: block;
-        height: 50rem;
-        left: -17.5rem;
-        margin-block-end: var(--spacing-md);
-        pointer-events: none;
-        position: absolute;
-        top: -12.5rem;
-        width: 50rem;
-        z-index: -1;
-      }
-    }
-
-    &:nth-child(2n) {
-      .feature-title {
-        /* background-color: var(--colour-light-1); */
-        &::before {
-          --square-position-x: 200px;
-          --square-position-y: 200px;
-
-          --size: 32px;
-
-          background-image: paint(
-            tetris,
-            var(--size),
-            rgba(255, 0, 0, 0.1),
-            2,
-            3
-          );
-          content: "";
-          display: block;
-          height: 50rem;
-          left: -15.5rem;
-          margin-block-end: var(--spacing-md);
-          pointer-events: none;
-          position: absolute;
-          top: -16.5rem;
-          width: 50rem;
-          z-index: -1;
-        }
-      }
-    }
-
-    .feature-body {
-      text-wrap: balance;
-      color: rgba(0, 0, 0, 0.8);
-    }
-
-    .feature-link {
-      color: var(--colour-light-1);
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 1lh;
-      text-decoration-color: currentColor;
-    }
+  .feature-link {
+    color: var(--colour-light-1);
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+    text-decoration: underline;
+    text-underline-offset: 1lh;
   }
 }

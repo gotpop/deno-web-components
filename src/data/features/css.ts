@@ -120,5 +120,28 @@ export const cssFeaturesMap = new Map()
     title: "@scope rule (replace me)",
     type: "css",
   })
+  .set("css-scoping3", {
+    description:
+      "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    label: "Title 6",
+    layout: {
+      "content-end": 13,
+      "content-start": 6,
+      "item-end": 41,
+      "item-start": 23,
+      "row-position": 3,
+    },
+    links: [
+      {
+        label: "CSS Working Group Draft",
+        link: "https://drafts.csswg.org/css-cascade-6/#scoped-styles",
+        type: "spec",
+      },
+    ],
+    slug: "css-scoping3",
+    tags: ["css"],
+    title: "@scope rule (replace me)",
+    type: "css",
+  })
 
 export const cssFeatures: Feature[] = Array.from(cssFeaturesMap.values())

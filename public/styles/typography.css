@@ -86,9 +86,9 @@ a {
     margin-block-end: 0;
   }
 
-  &[class]:visited {
+  /* &[class]:visited {
     color: inherit;
-  }
+  } */
 
   &:not([class]) {
     text-underline-offset: 0.3em;

@@ -1,11 +1,5 @@
 @scope {
   & {
-    /* background-color: var(--colour-dark-1); */
-    /* background-image: radial-gradient(
-      circle at center bottom,
-      var(--colour-dark-1),
-      transparent
-    ); */
     color: var(--colour-light-1);
     display: grid;
     grid-column: full;
@@ -13,99 +7,88 @@
     padding-block: calc(var(--padding) * 5);
     view-transition-name: attr(id type(<custom-ident>), none);
     position: relative;
-    /* background-image: paint(squares2); */
+  }
 
-    /* &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      backdrop-filter: blur(5px);
-      mask-image: radial-gradient(
-        circle at left top,
-        black 50%,
-        transparent 70%
-      );
-      z-index: -1;
-    } */
+  .hero-content {
+    grid-column: content-start / span 19;
+    display: grid;
+    position: relative;
+    grid-row: 1;
+  }
 
-    .hero-content {
-      grid-column: content-start / span 19;
-      display: grid;
-      position: relative;
+  .heading {
+    view-transition-name: attr(id type(<custom-ident>), none);
+    inset: auto auto auto -3px;
+    position: relative;
+    margin-block-end: var(--spacing-md);
+    font-size: var(--font-scaled-xxl);
+    padding-top: calc(5rem - 1cap);
+    line-height: 1.18;
+    color: #293939;
+  }
 
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        left: -5rem;
-        top: 11rem;
-        height: 4rem;
-        width: 6rem;
-        --square-position-x: 0px;
-        --square-position-y: 0px;
-        background-image: paint(tetris, 32px, rgba(255, 0, 0, 0.1), 6, 2);
+  .subheading {
+    view-transition-name: attr(id type(<custom-ident>), none);
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.9);
+  }
 
-        z-index: -1;
-      }
+  .points {
+    view-transition-name: attr(id type(<custom-ident>), none);
+    grid-column: 16 / -4;
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 2rem;
+    grid-row: 1;
+  }
+
+  .points-item {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+
+    font-weight: 300;
+    display: block;
+    view-transition-name: attr(id type(<custom-ident>), none);
+    background-color: rgba(255, 0, 0, 0.2);
+    text-align: center;
+    padding: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    max-width: 12rem;
+
+    &:nth-child(1n) {
+      background-color: rgba(0, 0, 0, 0.2);
+      margin-inline-start: 2rem;
     }
 
-    .heading {
-      view-transition-name: attr(id type(<custom-ident>), none);
-      inset: auto auto auto -3px;
-      position: relative;
-      margin-block-end: var(--spacing-md);
-      font-size: var(--font-scaled-xxl);
-      padding-top: calc(5rem - 1cap);
-      line-height: 1.18;
-      color: #293939;
+    &:nth-child(2n) {
+      background-color: rgba(0, 0, 0, 0.1);
+      margin-inline-start: 10rem;
+    }
+    &:nth-child(3n) {
+      background-color: rgba(0, 0, 0, 0.2);
+      margin-inline-start: 20rem;
     }
 
-    .subheading {
-      view-transition-name: attr(id type(<custom-ident>), none);
-      display: inline-block;
-      color: rgba(0, 0, 0, 0.9);
+    &:hover {
+      background-color: var(--colour-light-1);
     }
 
-    .points {
-      view-transition-name: attr(id type(<custom-ident>), none);
-      grid-column: span 6;
-      display: none;
-
-      a {
-        color: var(--colour-light-1);
-        text-decoration: none;
-        font-size: 1.5rem;
-        font-weight: 300;
-        display: inline-block;
-        margin-top: 1rem;
-        view-transition-name: attr(id type(<custom-ident>), none);
-        background-color: var(--colour-dark-1);
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0px 0px 0px 1px var(--colour-dark-1),
-          0px 0px 0px 2px var(--colour-dark-1),
-          0px 0px 0px 3px var(--colour-dark-1);
-        transition: background-color 0.3s ease-in-out,
-          box-shadow 0.3s ease-in-out;
-        &:hover {
-          background-color: var(--colour-light-1);
-          box-shadow: 0px 0px 0px 1px var(--colour-light-1),
-            0px 0px 0px 2px var(--colour-light-1),
-            0px 0px 0px 3px var(--colour-light-1);
-        }
-        &:active {
-          background-color: var(--colour-light-1);
-          box-shadow: 0px 0px 0px 1px var(--colour-light-1),
-            0px 0px 0px 2px var(--colour-light-1),
-            0px 0px 0px 3px var(--colour-light-1);
-        }
-        &:focus {
-          background-color: var(--colour-light-1);
-          box-shadow: 0px 0px 0px 1px var(--colour-light-1),
-            0px 0px 0px 2px var(--colour-light-1),
-            0px 0px 0px 3px var(--colour-light-1);
-        }
-      }
+    &:active {
+      background-color: var(--colour-light-2);
     }
+
+    &:focus {
+      background-color: var(--colour-light-1);
+    }
+  }
+
+  .points-text {
+    text-box-edge: cap alphabetic;
+    text-box-trim: trim-both;
+    display: block;
+    padding-block-start: calc(1rem - 1cap);
+    margin-block-end: 0rem;
+    font-size: 1rem;
+    font-weight: 400;
   }
 }

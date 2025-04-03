@@ -19,7 +19,7 @@
 }
 
 :target {
-  background-color: var(--error);
+  background-color: red;
   border-bottom: 2px solid var(--white);
 }
 
