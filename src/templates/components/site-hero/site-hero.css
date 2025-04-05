@@ -22,7 +22,7 @@
     position: relative;
     margin-block-end: var(--spacing-md);
     font-size: var(--font-scaled-xxl);
-    padding-top: calc(5rem - 1cap);
+    padding-top: calc(6rem - 1cap);
     line-height: 1.18;
     color: #293939;
   }
@@ -35,50 +35,55 @@
 
   .points {
     view-transition-name: attr(id type(<custom-ident>), none);
-    grid-column: 16 / -4;
+    grid-column: 19 / -4;
     display: flex;
     flex-direction: column;
-    margin-block-start: 2rem;
+    padding-block-start: 3rem;
     grid-row: 1;
+    position: relative;
+    /* border: 3px dotted yellow; */
+    box-sizing: border-box;
+    background: paint(tetris-grid, 48px);
   }
 
   .points-item {
     color: rgba(0, 0, 0, 0.8);
     text-decoration: none;
-
     font-weight: 300;
     display: block;
-    view-transition-name: attr(id type(<custom-ident>), none);
-    background-color: rgba(255, 0, 0, 0.2);
     text-align: center;
     padding: 1rem;
-    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    overflow: visible;
     max-width: 12rem;
 
     &:nth-child(1n) {
       background-color: rgba(0, 0, 0, 0.2);
-      margin-inline-start: 2rem;
+      margin-inline-start: 9rem;
     }
 
     &:nth-child(2n) {
       background-color: rgba(0, 0, 0, 0.1);
-      margin-inline-start: 10rem;
+      margin-inline-start: 15rem;
+      position: relative;
+      overflow: visible;
     }
+
     &:nth-child(3n) {
       background-color: rgba(0, 0, 0, 0.2);
-      margin-inline-start: 20rem;
+      margin-inline-start: 21rem;
     }
 
     &:hover {
-      background-color: var(--colour-light-1);
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
     &:active {
-      background-color: var(--colour-light-2);
+      background-color: rgba(0, 0, 0, 0.2);
     }
 
     &:focus {
-      background-color: var(--colour-light-1);
+      background-color: rgba(0, 0, 0, 0.2);
     }
   }
 
