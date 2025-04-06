@@ -25,6 +25,7 @@
     background: var(--site-background);
     view-transition-name: attr(id type(<custom-ident>), none);
     background-image: paint(grid);
+    contain: layout style;
     /* background-image: paint(bytemare); */
   }
 }

@@ -3,34 +3,25 @@
     grid-column: full;
     grid-row: attr(grid-rows-start type(<integer>)) /
       attr(grid-rows-end type(<integer>));
-    padding-block-end: 1rem;
     display: grid;
     grid-template-columns: subgrid;
-    background-color: rgba(255 255, 255, 0.1);
 
-    /* &:target::before {
-      font: 10rem sans-serif;
-      content: "►";
-      color: limegreen;
-      margin-right: 0.25em;
-    } */
+    &:target {
+      background-color: limegreen;
+    }
   }
 
   .section-title {
-    grid-column: content-start / -4;
-    /* background-color: red; */
-  }
-
-  .section-title:target {
-    background-color: red;
+    grid-column: center-start / -4;
+    height: 3rem;
+    padding-inline-start: 1rem;
+    background-color: rgba(255, 0, 0, 0.3);
+    clip-path: --tetris-shape-i(3rem);
   }
 
   .heading {
-    /* font-size: 3rem; */
-    /* font-weight: 400; */
     font-size: var(--font-scaled-md);
     view-transition-name: attr(id type(<custom-ident>), none);
-    /* text-shadow: 0px -1px 0 rgba(255, 255, 255, 1); */
     color: rgba(0, 0, 0, 0.6);
     text-align: left;
   }

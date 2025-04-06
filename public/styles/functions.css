@@ -24,3 +24,74 @@
 @function --hide-when-supported() {
   result: none;
 }
+
+/* T-shape pointing up (original) */
+@function --tetris-shape-up(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to calc(3 * var(--block-size)) 0%,
+    line to calc(3 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to var(--block-size) calc(2 * var(--block-size)),
+    line to var(--block-size) var(--block-size),
+    line to 0% var(--block-size),
+    close
+  );
+}
+
+/* T-shape pointing down */
+@function --tetris-shape-down(--block-size: 3rem) {
+  result: shape(
+    from 0% var(--block-size),
+    line to var(--block-size) var(--block-size),
+    line to var(--block-size) 0%,
+    line to calc(2 * var(--block-size)) 0%,
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to calc(3 * var(--block-size)) var(--block-size),
+    line to calc(3 * var(--block-size)) calc(2 * var(--block-size)),
+    line to 0% calc(2 * var(--block-size)),
+    close
+  );
+}
+
+/* T-shape pointing left */
+@function --tetris-shape-z(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to var(--block-size) 0%,
+    line to var(--block-size) var(--block-size),
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to calc(2 * var(--block-size)) calc(3 * var(--block-size)),
+    line to var(--block-size) calc(3 * var(--block-size)),
+    line to var(--block-size) calc(2 * var(--block-size)),
+    line to 0% calc(2 * var(--block-size)),
+    close
+  );
+}
+
+/* T-shape pointing right */
+@function --tetris-shape-right(--block-size: 3rem) {
+  result: shape(
+    from var(--block-size) 0%,
+    line to calc(2 * var(--block-size)) 0%,
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to calc(3 * var(--block-size)) calc(2 * var(--block-size)),
+    line to calc(3 * var(--block-size)) calc(3 * var(--block-size)),
+    line to calc(2 * var(--block-size)) calc(3 * var(--block-size)),
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to var(--block-size) var(--block-size),
+    close
+  );
+}
+
+/* I-block (straight line) */
+/* I-block (straight line) */
+/* I-block (straight line) */
+/* I-block (straight line) */
+/* I-block (straight line) */
+/* I-block (straight line) */
+/* I-block (straight line) */
+/* I-block (straight line) */
+/* I-block (straight line) */

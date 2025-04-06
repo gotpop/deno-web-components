@@ -1,0 +1,113 @@
+/* I-block (straight line) */
+@function --tetris-shape-i(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to calc(4 * var(--block-size)) 0%,
+    line to calc(4 * var(--block-size)) var(--block-size),
+    line to 0% var(--block-size),
+    close
+  );
+}
+
+/* O-block (square) */
+@function --tetris-shape-o(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to calc(2 * var(--block-size)) 0%,
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to 0% calc(2 * var(--block-size)),
+    close
+  );
+}
+
+/* T-block */
+@function --tetris-shape-t(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to calc(3 * var(--block-size)) 0%,
+    line to calc(3 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to var(--block-size) calc(2 * var(--block-size)),
+    line to var(--block-size) var(--block-size),
+    line to 0% var(--block-size),
+    close
+  );
+}
+
+/* J-block */
+@function --tetris-shape-j(--block-size: 3rem) {
+  result: shape(
+    from 0% calc(2 * var(--block-size)),
+    line to var(--block-size) calc(2 * var(--block-size)),
+    line to var(--block-size) 0%,
+    line to calc(2 * var(--block-size)) 0%,
+    line to calc(2 * var(--block-size)) calc(3 * var(--block-size)),
+    line to 0% calc(3 * var(--block-size)),
+    close
+  );
+}
+
+/* L-block */
+@function --tetris-shape-l(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to var(--block-size) 0%,
+    line to var(--block-size) calc(2 * var(--block-size)),
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to calc(2 * var(--block-size)) calc(3 * var(--block-size)),
+    line to 0% calc(3 * var(--block-size)),
+    close
+  );
+}
+
+/* S-block */
+@function --tetris-shape-s(--block-size: 3rem) {
+  result: shape(
+    from var(--block-size) 0%,
+    line to calc(3 * var(--block-size)) 0%,
+    line to calc(3 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to 0% calc(2 * var(--block-size)),
+    line to 0% var(--block-size),
+    line to var(--block-size) var(--block-size),
+    close
+  );
+}
+
+/* T-block */
+@function --tetris-shape-t(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to calc(3 * var(--block-size)) 0%,
+    line to calc(3 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to calc(2 * var(--block-size)) calc(2 * var(--block-size)),
+    line to var(--block-size) calc(2 * var(--block-size)),
+    line to var(--block-size) var(--block-size),
+    line to 0% var(--block-size),
+    close
+  );
+}
+
+/* Z-block */
+@function --tetris-shape-z(--block-size: 3rem) {
+  result: shape(
+    from 0% 0%,
+    line to calc(2 * var(--block-size)) 0%,
+    line to calc(2 * var(--block-size)) var(--block-size),
+    line to calc(3 * var(--block-size)) var(--block-size),
+    line to calc(3 * var(--block-size)) calc(2 * var(--block-size)),
+    line to var(--block-size) calc(2 * var(--block-size)),
+    line to var(--block-size) var(--block-size),
+    line to 0% var(--block-size),
+    close
+  );
+}
+
+@function {
+  result: if(style(--shape: t): yellow; else: blue ;);
+
+  @return result;
+}

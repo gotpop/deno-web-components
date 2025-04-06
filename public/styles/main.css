@@ -1,4 +1,5 @@
 @import "./functions.css";
+@import "./tetriminoes.css";
 @import "./typography.css";
 @import "./keyframes.css";
 @import "./variables.css";
@@ -18,10 +19,10 @@
   outline-color: var(--accent);
 }
 
-:target {
+/* :target {
   background-color: red;
   border-bottom: 2px solid var(--white);
-}
+} */
 
 ::selection {
   background-color: var(--accent);
