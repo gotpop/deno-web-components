@@ -7,8 +7,8 @@ export const browserApiFeaturesMap = new Map()
     layout: {
       "item-start": 1,
       "item-end": 14,
-      "content-end": 11,
-      "content-start": 4,
+      "content-end": 13,
+      "content-start": 2,
       "row-position": 7,
     },
     links: [
@@ -27,8 +27,8 @@ export const browserApiFeaturesMap = new Map()
     description:
       "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
-      "content-end": 12,
-      "content-start": 4,
+      "content-end": 13,
+      "content-start": 2,
       "item-end": 26,
       "item-start": 13,
       "row-position": 7,
@@ -56,9 +56,9 @@ export const browserApiFeaturesMap = new Map()
       "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
       "content-end": 13,
-      "content-start": 6,
+      "content-start": 2,
       "item-end": 41,
-      "item-start": 23,
+      "item-start": 25,
       "row-position": 7,
     },
     links: [

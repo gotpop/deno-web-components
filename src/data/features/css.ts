@@ -5,8 +5,8 @@ export const cssFeaturesMap = new Map()
     description:
       "CSS functions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
     layout: {
-      "content-end": 11,
-      "content-start": 4,
+      "content-end": 13,
+      "content-start": 2,
       "item-end": 14,
       "item-start": 1,
       "row-position": 2,
@@ -27,8 +27,8 @@ export const cssFeaturesMap = new Map()
     description:
       "Expanded attr() is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     layout: {
-      "content-end": 12,
-      "content-start": 4,
+      "content-end": 13,
+      "content-start": 2,
       "item-end": 26,
       "item-start": 13,
       "row-position": 2,
@@ -50,8 +50,8 @@ export const cssFeaturesMap = new Map()
       "Anchor positioning is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     label: "Title 4",
     layout: {
-      "content-end": 13,
-      "content-start": 6,
+      "content-end": 15,
+      "content-start": 4,
       "item-end": 41,
       "item-start": 23,
       "row-position": 2,
@@ -79,8 +79,8 @@ export const cssFeaturesMap = new Map()
       "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     label: "Title 6",
     layout: {
-      "content-end": 12,
-      "content-start": 4,
+      "content-end": 13,
+      "content-start": 2,
       "item-end": 14,
       "item-start": 1,
       "row-position": 3,
@@ -102,10 +102,10 @@ export const cssFeaturesMap = new Map()
       "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     label: "Title 6",
     layout: {
-      "content-end": 10,
+      "content-end": 13,
       "content-start": 2,
       "item-end": 26,
-      "item-start": 15,
+      "item-start": 13,
       "row-position": 3,
     },
     links: [
@@ -125,8 +125,8 @@ export const cssFeaturesMap = new Map()
       "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     label: "Title 6",
     layout: {
-      "content-end": 13,
-      "content-start": 6,
+      "content-end": 15,
+      "content-start": 4,
       "item-end": 41,
       "item-start": 23,
       "row-position": 3,

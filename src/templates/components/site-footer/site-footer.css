@@ -1,6 +1,7 @@
 @scope {
   & {
-    background-color: var(--colour-dark-1);
+    background-color: rgba(0, 0, 0, 0.5);
+
     color: var(--colour-light-1);
     grid-column: full;
     grid-row: footer;

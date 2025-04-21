@@ -14,11 +14,11 @@
     top: 0;
     view-transition-name: attr(id type(<custom-ident>), none);
     z-index: 1;
-    /* background-color: var(--color-bg); */
+    background-color: var(--color-bg);
   }
 
   .logo-link {
-    --header-bg: rgba(0, 0, 0, 0.3);
+    --header-bg: rgba(255, 255, 0, 0.3);
     --box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 
     display: flex;
@@ -31,8 +31,10 @@
     font-weight: bold;
     max-height: 80px;
     transition: all 0.3s ease-in-out;
+    display: inline-block;
+    width: 100%;
 
-    &::before {
+    /* &::before {
       content: "";
       position: absolute;
       top: 0;
@@ -42,7 +44,8 @@
       background-color: var(--header-bg);
       z-index: -1;
       box-shadow: var(--box-shadow);
-    }
+      display: none;
+    } */
 
     @container scroll-state(stuck: top) {
       background-color: red;
