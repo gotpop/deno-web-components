@@ -7,8 +7,8 @@
         {
           "title": "CSS",
           "layout": {
-            "column-start": 6,
-            "column-end": 10
+            "column-start": 9,
+            "column-end": 13
           },
           "links": [
             { "text": "W3C CSS", "url": "https://www.w3.org/Style/CSS" },
@@ -25,8 +25,8 @@
         {
           "title": "JavaScript",
           "layout": {
-            "column-start": 11,
-            "column-end": 16
+            "column-start": 15,
+            "column-end": 19
           },
           "links": [
             { "text": "TC39", "url": "https://tc39.es/" },
@@ -43,8 +43,8 @@
         {
           "title": "HTML",
           "layout": {
-            "column-start": 17,
-            "column-end": 22
+            "column-start": 21,
+            "column-end": 25
           },
           "links": [
             {
@@ -61,8 +61,8 @@
         {
           "title": "Web Standards",
           "layout": {
-            "column-start": 23,
-            "column-end": 28
+            "column-start": 27,
+            "column-end": 31
           },
           "links": [
             { "text": "W3C", "url": "https://www.w3.org" },
