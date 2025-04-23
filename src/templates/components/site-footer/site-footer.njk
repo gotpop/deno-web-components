@@ -2,8 +2,8 @@
   <style>
     {{"site-footer" | componentCss | importCss | safe}}
   </style>
-  <div class="footer-links">
-    <div class="footer-section" column-start="1" column-end="6">
+  <div class="footer-sections">
+    <div class="footer-section" column-start="" column-end="6">
       {# <h4 class="footer-title" hidden>Deno Web Components</h4> #}
       <a href="/" class="logo-link" aria-label="Home">
         {% include "partials/icons/logo.njk" %}
@@ -12,7 +12,7 @@
     {% for section in site.footer.sections %}
       <section class="footer-section" column-start="{{ section.layout['column-start'] }}" column-end="{{ section.layout['column-end'] }}">
         <h4 class="footer-title">{{ section.title }}</h4>
-        <ul>
+        <ul class="footer-list">
           {% for link in section.links %}
             <li>
               <a href="{{ link.url }}">{{ link.text }}</a>
