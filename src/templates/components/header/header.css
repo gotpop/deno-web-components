@@ -113,29 +113,30 @@
         }
       }
     }
+  }
 
-    a {
-      width: 100%;
-      text-align: center;
-      padding: var(--padding);
-      text-decoration: none;
+  .menu-item-link {
+    background-color: var(--secondary-800);
+    color: var(--light-100);
+    font-size: 13px;
+    padding: var(--padding);
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+    &.active {
+      color: var(--primary-200);
+      background-color: var(--secondary-900);
+      font-weight: 600;
+    }
+
+    &:visited {
       color: var(--light-100);
-      background-color: var(--secondary-800);
-      font-size: 13px;
+    }
 
-      &.active {
-        color: var(--primary-200);
-        background-color: var(--secondary-900);
-        font-weight: 600;
-      }
-
-      &:visited {
-        color: var(--light-100);
-      }
-
-      &:hover {
-        color: var(--colour-primary);
-      }
+    &:hover {
+      background-color: var(--secondary-900);
+      color: var(--light-100);
     }
   }
 }
