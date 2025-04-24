@@ -12,17 +12,18 @@
   }
 
   .section-title {
+    --shape-size: 3rem;
+
     grid-column: center-start / -4;
-    height: 3rem;
+    height: var(--shape-size);
     padding-inline-start: 1rem;
     background-color: var(--primary-200);
-    clip-path: --tetris-shape-i(3rem);
+    clip-path: --tetris-shape-i(var(--shape-size));
   }
 
   .heading {
     font-size: var(--font-scaled-md);
     view-transition-name: attr(id type(<custom-ident>), none);
     color: var(--dark-200);
-    text-align: left;
   }
 }

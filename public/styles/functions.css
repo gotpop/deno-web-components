@@ -12,9 +12,8 @@
 @function --grid-row-base(--gap-one: 1rem, --gap-two: 2rem) {
   result: [header] min-content [main] 1fr [gap] 10rem [footer] min-content;
 }
-
-@function --lighten(--color <color>, --factor <number>) returns <color> {
-  result: oklch(from var(--color) calc(l * var(--factor)) c h);
+@function --transparent(--color <color>, --opacity <number>) returns <color> {
+  result: oklch(from var(--color) l c h / var(--opacity));
 }
 
 @function --darken(--color <color>, --factor <number>) returns <color> {
