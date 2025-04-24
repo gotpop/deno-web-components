@@ -31,31 +31,27 @@
 
   .footer-list {
     margin-block: unset;
-    padding-inline-start: 1rem;
+    padding-inline-start: unset;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
   .footer-list-item {
-    list-style-type: none;
-    position: relative;
-    display: flex;
-    /* justify-content: center; */
-    gap: 1rem;
-    min-height: 1rem;
     align-items: center;
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    min-height: 1rem;
+    position: relative;
 
     &::before {
       --marker-size: 1rem;
 
-      background-color: var(--primary-100);
+      background-color: var(--secondary-400);
       content: "";
-      display: block;
+      display: flex;
       height: var(--marker-size);
-      /* margin-block-start: calc(1rem - 1cap); */
-      margin-inline-start: -1rem;
-      /* position: absolute; */
       width: var(--marker-size);
     }
   }
@@ -63,7 +59,6 @@
   .footer-link {
     color: white;
     font-size: var(--font-scaled-sm);
-    /* padding-block-start: calc(1rem - 1cap); */
     text-box-edge: cap alphabetic;
     text-box-trim: trim-both;
     text-decoration: underline;

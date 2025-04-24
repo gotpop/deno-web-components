@@ -33,7 +33,7 @@
     transition: all 0.3s ease-in-out;
     display: inline-block;
     width: 100%;
-    filter: invert(1);
+    /* filter: invert(1); */
 
     /* &::before {
       content: "";
@@ -50,7 +50,7 @@
     } */
 
     @container scroll-state(stuck: top) {
-      background-color: red;
+      background-color: var(--dark-400);
       --header-bg: orange;
       --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
     }
