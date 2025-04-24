@@ -1,7 +1,7 @@
 @scope {
   & {
     --color-dark: var(--colour-dark-1);
-    --color-bg: yellow;
+    --color-bg: var(--secondary-700);
 
     /* background-color: --lighten(var(--color-dark), 1.5); */
     color: var(--colour-light-1);
@@ -46,6 +46,7 @@
       z-index: -1;
       box-shadow: var(--box-shadow);
       display: none;
+      pointer-events: none;
     } */
 
     @container scroll-state(stuck: top) {
@@ -93,7 +94,6 @@
   }
 
   .menuitem {
-    color: var(--colour-light-1);
     display: flex;
     width: clamp(5rem, 6rem, 8rem);
 
@@ -119,12 +119,18 @@
       text-align: center;
       padding: var(--padding);
       text-decoration: none;
-      color: rgba(0, 0, 0, 0.8);
-      background-color: rgba(0, 0, 0, 0.3);
+      color: var(--light-100);
+      background-color: var(--secondary-800);
       font-size: 13px;
 
+      &.active {
+        color: var(--primary-200);
+        background-color: var(--secondary-900);
+        font-weight: 600;
+      }
+
       &:visited {
-        color: rgba(0, 0, 0, 0.8);
+        color: var(--light-100);
       }
 
       &:hover {

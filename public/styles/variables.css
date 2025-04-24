@@ -1,5 +1,5 @@
 :where(html) {
-  --base-colour: deeppink;
+  /* --base-colour: deeppink;
 
   --colour-1: var(--base-colour);
   --colour-2: oklch(from var(--base-colour) calc(l - 0.1) c calc(h - 10));
@@ -17,14 +17,9 @@
   --colour-dark-2: oklch(from var(--colour-5) calc(l * 0.05) c h);
   --colour-dark-3: oklch(from var(--colour-5) calc(l * 0.05) c h);
   --colour-dark-4: oklch(from var(--colour-5) calc(l * 0.05) c h);
-  --colour-dark-5: oklch(from var(--colour-5) calc(l * 1.5) c h);
+  --colour-dark-5: oklch(from var(--colour-5) calc(l * 1.5) c h); */
 
-  --colour-primary: var(--colour-1);
-
-  --padding: 1rem;
-  --site-max-width: 1200px;
-  --site-header-height: 6rem;
-  --columns-number: 12;
+  /* --colour-primary: var(--colour-1); */
 
   /* --site-background: linear-gradient(
     to bottom right,
@@ -34,11 +29,6 @@
     var(--colour-4),
     var(--colour-5)
   ); */
-
-  /* Oklab colours */
-  --white: oklch(1 0 0);
-  --black: oklch(0 0 0);
-  --transparent: oklch(0 0 0 / 0);
 
   /* Primary */
   --success-base: oklch(0.75 0.3 148.61);
@@ -105,6 +95,61 @@
   --slate-900: oklch(from var(--slate-base) 20% 5% h);
   --slate-1000: oklch(from var(--slate-base) 10% 5% h);
 
+  /* Base colors */
+  --color-primary: oklch(0.72 0.32 360); /* hotpink */
+  --color-secondary: oklch(0.9 0.2 195); /* aqua */
+
+  /* Primary color scale (hotpink) */
+  --primary-100: oklch(from var(--color-primary) 100% c h);
+  --primary-200: oklch(from var(--color-primary) 90% c h);
+  --primary-300: oklch(from var(--color-primary) 80% c h);
+  --primary-400: oklch(from var(--color-primary) 70% c h);
+  --primary-500: oklch(from var(--color-primary) 60% c h);
+  --primary-600: oklch(from var(--color-primary) 50% c h);
+  --primary-700: oklch(from var(--color-primary) 40% c h);
+  --primary-800: oklch(from var(--color-primary) 30% c h);
+  --primary-900: oklch(from var(--color-primary) 20% c h);
+
+  /* Secondary color scale (aqua) */
+  --secondary-100: oklch(from var(--color-secondary) 100% c h);
+  --secondary-200: oklch(from var(--color-secondary) 90% c h);
+  --secondary-300: oklch(from var(--color-secondary) 80% c h);
+  --secondary-400: oklch(from var(--color-secondary) 70% c h);
+  --secondary-500: oklch(from var(--color-secondary) 60% c h);
+  --secondary-600: oklch(from var(--color-secondary) 50% c h);
+  --secondary-700: oklch(from var(--color-secondary) 40% c h);
+  --secondary-800: oklch(from var(--color-secondary) 30% c h);
+  --secondary-900: oklch(from var(--color-secondary) 20% c h);
+
+  /* Light scale (white to grey) */
+  --light-100: oklch(1 0 0); /* white */
+  --light-200: oklch(0.95 0.01 0);
+  --light-300: oklch(0.9 0.01 0);
+  --light-400: oklch(0.85 0.01 0);
+  --light-500: oklch(0.8 0.01 0);
+  --light-600: oklch(0.75 0.01 0);
+  --light-700: oklch(0.7 0.01 0);
+
+  /* Dark scale (grey to black) */
+  --dark-100: oklch(0.55 0.01 0);
+  --dark-200: oklch(0.45 0.01 0);
+  --dark-300: oklch(0.35 0.01 0);
+  --dark-400: oklch(0.25 0.01 0);
+  --dark-500: oklch(0.15 0.01 0);
+  --dark-600: oklch(0.1 0.01 0);
+  --dark-700: oklch(0 0 0);
+
+  /* Oklab colours applied */
+  --white: var(--light-100);
+  --black: var(--dark-700);
+  --transparent: oklch(0 0 0 / 0);
+
+  /* Layout */
+  --site-max-width: 1200px;
+  --site-header-height: 6rem;
+  --columns-number: 12;
+  --padding: 1rem; /*  Used in header */
+
   /* Font stack */
   --font-stack-serif: "Times New Roman", Times, serif;
   --font-stack-sans-serif: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -145,13 +190,6 @@
   --spacing-lg: calc(var(--spacing-base) * 3);
   --spacing-xl: calc(var(--spacing-base) * 4);
   --spacing-xxl: calc(var(--spacing-base) * 5);
-
-  /* Radius */
-  --radius-base: 0.5rem;
-  --radius-sm: calc(var(--radius-base) * pow(1.5, -1));
-  --radius-md: calc(var(--radius-base) * pow(1.5, 0));
-  --radius-lg: calc(var(--radius-base) * pow(1.5, 1));
-  --radius-xl: calc(var(--radius-base) * pow(1.5, 2));
 
   /* Tranitions */
   --transition: background-color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);

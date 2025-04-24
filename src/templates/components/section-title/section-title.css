@@ -15,14 +15,14 @@
     grid-column: center-start / -4;
     height: 3rem;
     padding-inline-start: 1rem;
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: var(--primary-200);
     clip-path: --tetris-shape-i(3rem);
   }
 
   .heading {
     font-size: var(--font-scaled-md);
     view-transition-name: attr(id type(<custom-ident>), none);
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--dark-200);
     text-align: left;
   }
 }
