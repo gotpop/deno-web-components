@@ -16,14 +16,14 @@
 
     grid-column: center-start / -4;
     height: var(--shape-size);
-    padding-inline-start: 1rem;
-    background-color: var(--primary-200);
+    padding-inline-start: var(--spacing-base);
+    background-color: var(--secondary-200);
     clip-path: --tetris-shape-i(var(--shape-size));
   }
 
   .heading {
     font-size: var(--font-scaled-md);
     view-transition-name: attr(id type(<custom-ident>), none);
-    color: var(--dark-200);
+    color: var(--light-200);
   }
 }
