@@ -1,14 +1,13 @@
 {% extends "base.njk" %}
 
 {% block content %}
-      <site-hero id="hero">
-    <style>
-        {{"site-hero" | componentCss | importCss | safe}}
-    </style>
-    <article class="hero-content">
-        {% block hero_left %}{% endblock %}
-    </article>
-        {% block hero_right %}{% endblock %}
-  </site-hero>
+    <site-hero id="hero">
+        <style>
+            {{"site-hero" | componentCss | importCss | safe}}
+        </style>
+        <article class="hero-content">
+            {% block hero %}{% endblock %}
+        </article>
+    </site-hero>
     {% block page_content %}{% endblock %}
 {% endblock %}

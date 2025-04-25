@@ -1,12 +1,10 @@
 @scope {
   & {
     --animation: none;
-    --start: attr(grid-rows-start type(<integer>));
-    --end: attr(grid-rows-end type(<integer>));
 
     display: grid;
     grid-column: full;
-    grid-row: var(--start) / var(--end);
+    grid-row: attr(grid-row type(<integer>));
     grid-template-columns: subgrid;
 
     &:target {
