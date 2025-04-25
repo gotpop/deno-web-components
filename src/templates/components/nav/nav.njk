@@ -1,0 +1,32 @@
+{% set menuItems = [
+  { name: "Home", href: "/", key: "index" },
+  { name: "About", href: "/about", key: "about" },
+  { name: "Contact", href: "/contact", key: "contact" },
+  { name: "Features", href: "/features", key: "features" },
+  { name: "GitHub", href: "https://github.com/gotpop/deno-web-components", key: "docs", isExternal: true }
+] %}
+
+<nav class="nav" aria-label="Primary navigation">
+  <style>
+    {{"nav" | componentCss | importCss | safe}}
+  </style>
+  <ul
+      role="menubar"
+      class="menu-bar"
+      aria-orientation="horizontal"
+      aria-label="Main">
+    {% for item in menuItems %}
+      <li class="menu-item {% if item.isExternal %}menu-item-social{% endif %}" role="menuitem">
+        <a class="{{ item.key | isActive(currentPage) }} {% if item.isExternal %}menu-item-link-social{% else %}menu-item-link{% endif %}" href="{{ item.href }}" 
+             {% if item.isExternal %}aria-label="{{ item.name }}" target="_blank" rel="noopener"{% endif %}>
+          {% if item.isExternal %}
+            <span hidden>{{ item.name }}</span>
+            {% include "partials/icons/github.njk" %}
+          {% else %}
+            {{ item.name }}
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,20 +1,16 @@
 @scope {
   & {
-    --color-dark: var(--colour-dark-1);
-    --color-bg: var(--secondary-700);
-
-    /* background-color: --lighten(var(--color-dark), 1.5); */
+    background-color: --transparent(var(--secondary-700), 0.8);
     color: var(--colour-light-1);
+    container-type: scroll-state;
     display: grid;
     grid-column: full;
     grid-row: header;
     grid-template-columns: subgrid;
-    container-type: scroll-state;
     position: sticky;
     top: 0;
     view-transition-name: attr(id type(<custom-ident>), none);
     z-index: 1;
-    background-color: var(--color-bg);
   }
 
   .logo-link {
@@ -33,7 +29,6 @@
     transition: all 0.3s ease-in-out;
     display: inline-block;
     width: 100%;
-    /* filter: invert(1); */
 
     /* &::before {
       content: "";
@@ -74,69 +69,6 @@
 
     &:hover {
       fill: var(--colour-primary);
-    }
-  }
-
-  .nav {
-    display: grid;
-    grid-column: content;
-    padding: 0;
-    grid-column: 25 / -2;
-  }
-
-  .menubar {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    padding-block: var(--padding);
-    gap: var(--padding);
-    justify-content: center;
-  }
-
-  .menu-item {
-    display: flex;
-    width: clamp(5rem, 6rem, 8rem);
-  }
-
-  .menu-item-social {
-    margin-inline: auto 0;
-    width: 4rem;
-
-    a {
-      padding: 0 1rem;
-      display: flex;
-      background-color: transparent;
-      align-items: center;
-
-      &:hover {
-        background-color: var(--colour-primary);
-        color: var(--colour-light-1);
-      }
-    }
-  }
-
-  .menu-item-link {
-    background-color: var(--secondary-800);
-    color: var(--light-100);
-    font-size: 13px;
-    padding: var(--padding);
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-
-    &.active {
-      color: var(--primary-200);
-      background-color: var(--secondary-900);
-      font-weight: 600;
-    }
-
-    &:visited {
-      color: var(--light-100);
-    }
-
-    &:hover {
-      background-color: var(--secondary-900);
-      color: var(--light-100);
     }
   }
 }

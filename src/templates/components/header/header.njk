@@ -5,32 +5,5 @@
     <a href="{{ env.SITE_URL }}" class="logo-link" aria-label="Home">
         {% include "partials/icons/logo.njk" %}
     </a>
-    <nav class="nav" aria-label="Primary navigation">
-        {% set menuItems = [
-            { name: "Home", href: "/", key: "index" },
-            { name: "About", href: "/about", key: "about" },
-            { name: "Contact", href: "/contact", key: "contact" },
-            { name: "Features", href: "/features", key: "features" },
-            { name: "GitHub", href: "https://github.com/gotpop/deno-web-components", key: "docs", isExternal: true }
-        ] %}
-        <ul
-            role="menubar"
-            class="menubar"
-            aria-orientation="horizontal"
-            aria-label="Main">
-            {% for item in menuItems %}
-                <li class="menu-item {% if item.isExternal %}menu-item-social{% endif %}" role="menuitem">
-                    <a class="menu-item-link {{ item.key | isActive(currentPage) }}" href="{{ item.href }}" 
-                   {% if item.isExternal %}aria-label="{{ item.name }}" target="_blank" rel="noopener"{% endif %}>
-                        {% if item.isExternal %}
-                            <span hidden>{{ item.name }}</span>
-                            {% include "partials/icons/github.njk" %}
-                        {% else %}
-                            {{ item.name }}
-                        {% endif %}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
+    {% include "components/nav/nav.njk" %}
 </site-header>
