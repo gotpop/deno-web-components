@@ -43,7 +43,7 @@
     text-align: center;
     width: clamp(5rem, 6rem, 8rem);
 
-    &.active {
+    &[data-active] {
       --background-colour: var(--secondary-900);
       --colour: var(--primary-200);
     }

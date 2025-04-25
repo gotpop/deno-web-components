@@ -17,7 +17,7 @@
       aria-label="Main">
     {% for item in menuItems %}
       <li class="menu-item {% if item.isExternal %}menu-item-social{% endif %}" role="menuitem">
-        <a class="{{ item.key | isActive(currentPage) }} {% if item.isExternal %}menu-item-link-social{% else %}menu-item-link{% endif %}" href="{{ item.href }}" 
+        <a {{ item.key | isActive(currentPage) }} class="{% if item.isExternal %}menu-item-link-social{% else %}menu-item-link{% endif %}" href="{{ item.href }}" 
              {% if item.isExternal %}aria-label="{{ item.name }}" target="_blank" rel="noopener"{% endif %}>
           {% if item.isExternal %}
             <span hidden>{{ item.name }}</span>
