@@ -1,29 +1,43 @@
 @scope {
   & {
-    grid-column: full;
-    grid-row: attr(grid-rows-start type(<integer>)) /
-      attr(grid-rows-end type(<integer>));
+    --animation: none;
+    --start: attr(grid-rows-start type(<integer>));
+    --end: attr(grid-rows-end type(<integer>));
+
     display: grid;
+    grid-column: full;
+    grid-row: var(--start) / var(--end);
     grid-template-columns: subgrid;
 
     &:target {
-      background-color: limegreen;
+      --animation: color-flash 0.5s 0.5s ease-in-out forwards;
     }
   }
 
   .section-title {
     --shape-size: 3rem;
 
+    animation: var(--animation);
+    background-color: var(--secondary-900);
+    clip-path: --tetris-shape-i(var(--shape-size));
     grid-column: center-start / -4;
     height: var(--shape-size);
     padding-inline-start: var(--spacing-base);
-    background-color: var(--secondary-200);
-    clip-path: --tetris-shape-i(var(--shape-size));
   }
 
   .heading {
-    font-size: var(--font-scaled-md);
-    view-transition-name: attr(id type(<custom-ident>), none);
     color: var(--light-200);
+    font-size: var(--font-scaled-md);
+  }
+}
+
+@keyframes color-flash {
+  from,
+  to {
+    background-color: var(--secondary-900);
+  }
+
+  50% {
+    background-color: var(--secondary-200);
   }
 }
