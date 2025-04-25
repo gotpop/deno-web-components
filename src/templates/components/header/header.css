@@ -1,7 +1,5 @@
 @scope {
   & {
-    background-color: --transparent(var(--secondary-700), 0.8);
-    color: var(--colour-light-1);
     container-type: scroll-state;
     display: grid;
     grid-column: full;
@@ -14,61 +12,34 @@
   }
 
   .logo-link {
-    --header-bg: rgba(255, 255, 0, 0.3);
-    --box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    --opacity: 0.8;
+    --background-colour: var(--secondary-300);
 
-    display: flex;
+    background-color: var(--background-colour);
+    display: inline flex;
     grid-column: gutter-start / span 5;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--colour-dark-1);
-    font-size: 2rem;
-    font-weight: bold;
-    max-height: 80px;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-    width: 100%;
+    transition: background-color 0.3s ease-in-out;
 
-    /* &::before {
+    &::before {
+      background-color: --transparent(var(--secondary-700), var(--opacity));
       content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: var(--header-bg);
-      z-index: -1;
-      box-shadow: var(--box-shadow);
-      display: none;
+      inset: 0;
       pointer-events: none;
-    } */
+      position: absolute;
+      transition: background-color 0.3s ease-in-out;
+      z-index: -1;
+    }
 
     @container scroll-state(stuck: top) {
-      background-color: var(--dark-400);
-      --header-bg: orange;
-      --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+      --opacity: 1;
     }
 
     &:hover {
-      fill: var(--colour-primary);
+      --background-colour: var(--secondary-600);
     }
   }
 
   .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding);
-    margin: 0;
-    color: var(--colour-dark-1);
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: bold;
-    max-height: 80px;
-
-    &:hover {
-      fill: var(--colour-primary);
-    }
+    padding: var(--spacing-base);
   }
 }
