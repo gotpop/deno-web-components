@@ -70,5 +70,11 @@
       text-decoration: underline;
       text-underline-offset: 1lh;
     }
+
+    .feature-link {
+      &:hover {
+        text-decoration-color: var(--colour-light-1);
+      }
+    }
   }
 }

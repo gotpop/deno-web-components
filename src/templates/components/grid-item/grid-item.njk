@@ -1,5 +1,4 @@
 <grid-item
-  {# data-columns="{{ feature.layout.columns }}" #}
   aria-label="{{ feature.title }}"
   class="feature-card"
   content-end="{{ feature.layout['content-end'] }}"
@@ -17,6 +16,6 @@
   <article class="feature-content">
     <h3 class="feature-title">{{ feature.title }}</h3>
     <p class="feature-body">{{ feature.description }}</p>
-    {# <a href="/features/{{ feature.slug }}">Read more</a> #}
+    <a class="feature-link" href="/features/{{ feature.slug }}">Read more</a>
   </article>
 </grid-item>

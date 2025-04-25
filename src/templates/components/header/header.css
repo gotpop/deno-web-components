@@ -93,24 +93,24 @@
     justify-content: center;
   }
 
-  .menuitem {
+  .menu-item {
     display: flex;
     width: clamp(5rem, 6rem, 8rem);
+  }
 
-    &:last-child {
-      margin-inline: auto 0;
-      width: 4rem;
+  .menu-item-social {
+    margin-inline: auto 0;
+    width: 4rem;
 
-      a {
-        padding: 0 1rem;
-        display: flex;
-        background-color: transparent;
-        align-items: center;
+    a {
+      padding: 0 1rem;
+      display: flex;
+      background-color: transparent;
+      align-items: center;
 
-        &:hover {
-          background-color: var(--colour-primary);
-          color: var(--colour-light-1);
-        }
+      &:hover {
+        background-color: var(--colour-primary);
+        color: var(--colour-light-1);
       }
     }
   }
