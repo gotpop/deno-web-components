@@ -2,8 +2,10 @@ import { Feature } from "./data-types.ts"
 
 export const browserApiFeaturesMap = new Map()
   .set("css-view-transitions-2", {
-    description:
-      "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    ],
     layout: {
       "item-start": 1,
       "item-end": 14,
@@ -24,8 +26,10 @@ export const browserApiFeaturesMap = new Map()
     type: "bapi",
   })
   .set("custom-elements", {
-    description:
-      "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "Custom elements are a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    ],
     layout: {
       "content-end": 13,
       "content-start": 2,
@@ -52,8 +56,10 @@ export const browserApiFeaturesMap = new Map()
     type: "bapi",
   })
   .set("popover api", {
-    description:
-      "Custom elements are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "Custom elements are a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    ],
     layout: {
       "content-end": 13,
       "content-start": 2,

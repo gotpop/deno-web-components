@@ -2,8 +2,10 @@ import { Feature } from "./data-types.ts"
 
 export const cssFeaturesMap = new Map()
   .set("css-mixins", {
-    description:
-      "CSS functions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    description: [
+      "CSS functions are a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    ],
     layout: {
       "content-end": 13,
       "content-start": 2,
@@ -24,8 +26,10 @@ export const cssFeaturesMap = new Map()
     type: "css",
   })
   .set("css-values-5", {
-    description:
-      "Expanded attr() is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "Expanded attr() is a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    ],
     layout: {
       "content-end": 13,
       "content-start": 2,
@@ -46,8 +50,10 @@ export const cssFeaturesMap = new Map()
     type: "css",
   })
   .set("css-anchor-position-1", {
-    description:
-      "Anchor positioning is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "Anchor positioning is a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    ],
     label: "Title 4",
     layout: {
       "content-end": 15,
@@ -75,8 +81,10 @@ export const cssFeaturesMap = new Map()
     type: "css",
   })
   .set("css-scoping", {
-    description:
-      "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "@scope rule is a powerful tool for creating dynamic and reusable styles.",
+      " They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    ],
     label: "Title 6",
     layout: {
       "content-end": 13,
@@ -98,8 +106,10 @@ export const cssFeaturesMap = new Map()
     type: "css",
   })
   .set("css-scoping2", {
-    description:
-      "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "@scope rule is a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    ],
     label: "Title 6",
     layout: {
       "content-end": 13,
@@ -121,8 +131,10 @@ export const cssFeaturesMap = new Map()
     type: "css",
   })
   .set("css-scoping3", {
-    description:
-      "@scope rule is a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
+    description: [
+      "@scope rule is a powerful tool for creating dynamic and reusable styles.",
+      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    ],
     label: "Title 6",
     layout: {
       "content-end": 15,

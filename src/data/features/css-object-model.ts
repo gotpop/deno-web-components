@@ -2,8 +2,9 @@ import { Feature } from "./data-types.ts"
 
 export const cssomFeaturesMap = new Map()
   .set("css-paint-api", {
-    description:
+    description: [
       "The CSS Paint API allows developers to programmatically generate images that can be used as CSS backgrounds, borders, masks, and more, directly in JavaScript",
+    ],
     layout: {
       "content-end": 13,
       "content-start": 2,
@@ -30,8 +31,10 @@ export const cssomFeaturesMap = new Map()
     type: "cssom",
   })
   .set("css-typed-om", {
-    description:
-      "Converting CSSOM value strings into meaningfully typed JavaScript representations and back can incur a significant performance overhead. This specification exposes CSS values as typed JavaScript objects, to make manipulating them both easier and more performant.",
+    description: [
+      "Converting CSSOM value strings into meaningfully typed JavaScript representations and back can incur a significant performance overhead.",
+      "This specification exposes CSS values as typed JavaScript objects, to make manipulating them both easier and more performant.",
+    ],
     layout: {
       "content-end": 13,
       "content-start": 2,
@@ -52,8 +55,10 @@ export const cssomFeaturesMap = new Map()
     type: "cssom",
   })
   .set("css-properties-values-api", {
-    description:
-      "This CSS module defines an API for registering new CSS properties. Properties registered using this API are provided with a parse syntax that defines a type, inheritance behaviour, and an initial value.",
+    description: [
+      "This CSS module defines an API for registering new CSS properties.",
+      "Properties registered using this API are provided with a parse syntax that defines a type, inheritance behaviour, and an initial value.",
+    ],
     layout: {
       "content-end": 13,
       "content-start": 2,

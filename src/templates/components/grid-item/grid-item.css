@@ -14,73 +14,48 @@
     view-transition-name: attr(id type(<custom-ident>), none);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     position: relative;
+  }
 
-    &::before {
-      background-color: rgba(255, 255, 255, 0.3);
-      clip-path: --tetris-shape-t(3rem);
-      content: "";
-      display: block;
-      grid-column: var(--before-position);
-      height: 6rem;
-      inset: 1.5rem -0.5rem auto auto;
-      pointer-events: none;
-      position: absolute;
-      rotate: 90deg;
-      width: 9rem;
-      z-index: 1;
-      --shade-4: rgba(249, 168, 37, 0.3);
-      display: none;
-      /* background-image: repeating-linear-gradient(
-        to left,
-        var(--shade-4) 0,
-        var(--shade-4) 1rem,
-        transparent 1rem,
-        transparent 2rem
-      ); */
+  .feature-content {
+    grid-column: var(--grid-column);
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2rem;
+  }
+
+  .feature-title {
+    color: var(--dark-300);
+    font-size: var(--font-scaled-lg);
+    font-weight: 500;
+    margin-block-end: var(--spacing-md);
+    position: relative;
+  }
+
+  .feature-body {
+    color: var(--dark-300);
+    text-wrap: pretty;
+    font-size: var(--font-scaled-base);
+
+    & + & {
+      margin-block-start: var(--spacing-base);
     }
+  }
 
-    &:nth-child(3n of .feature-card)::before {
-      --before-position: -3 / -3;
-      right: 0.5rem;
-    }
+  .feature-link {
+    --padding: 1rem;
 
-    .feature-content {
-      grid-column: var(--grid-column);
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: 2rem;
-    }
+    color: var(--colour-light-1);
+    /* text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+    text-decoration: underline;
+    text-underline-offset: 1rem; */
+    float: right;
+    padding-block: calc(calc(1rem - 1cap) + var(--padding)) var(--padding);
+    padding-inline: var(--padding);
+    background-color: var(--secondary-400);
 
-    .feature-title {
-      color: rgba(0, 0, 0, 0.8);
-      font-size: var(--font-scaled-lg);
-      font-weight: 400;
-      margin-block-end: var(--spacing-md);
-      position: relative;
-    }
-
-    .feature-body {
-      color: var(--colour-dark-500);
-      text-wrap: pretty;
-
-      & + & {
-        margin-block-end: var(--spacing-md);
-        background-color: yellow;
-      }
-    }
-
-    .feature-link {
-      color: var(--colour-light-1);
-      text-decoration-color: currentColor;
-      text-decoration-thickness: 2px;
-      text-decoration: underline;
-      text-underline-offset: 1rem;
-      float: right;
-      padding-top: calc(1rem - 1cap);
-
-      &:hover {
-        text-decoration-color: var(--colour-light-1);
-        background-color: yellow;
-      }
+    &:hover {
+      /* text-decoration-color: var(--colour-light-1); */
+      background-color: yellow;
     }
   }
 }

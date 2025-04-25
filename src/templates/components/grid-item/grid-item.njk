@@ -15,7 +15,9 @@
   </style>
   <article class="feature-content">
     <h3 class="feature-title">{{ feature.title }}</h3>
-    <p class="feature-body">{{ feature.description }}</p>
+    {% for description in feature.description %}
+      <p class="feature-body">{{ description }}</p>
+    {% endfor %}
     <a class="feature-link" href="/features/{{ feature.slug }}">Read more</a>
   </article>
 </grid-item>
