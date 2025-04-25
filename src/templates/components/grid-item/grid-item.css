@@ -59,8 +59,13 @@
     }
 
     .feature-body {
-      color: rgba(0, 0, 0, 0.8);
+      color: var(--colour-dark-500);
       text-wrap: pretty;
+
+      & + & {
+        margin-block-end: var(--spacing-md);
+        background-color: yellow;
+      }
     }
 
     .feature-link {
@@ -68,12 +73,13 @@
       text-decoration-color: currentColor;
       text-decoration-thickness: 2px;
       text-decoration: underline;
-      text-underline-offset: 1lh;
-    }
+      text-underline-offset: 1rem;
+      float: right;
+      padding-top: calc(1rem - 1cap);
 
-    .feature-link {
       &:hover {
         text-decoration-color: var(--colour-light-1);
+        background-color: yellow;
       }
     }
   }
