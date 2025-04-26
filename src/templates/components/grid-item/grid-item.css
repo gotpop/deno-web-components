@@ -20,13 +20,18 @@
     grid-column: var(--grid-column);
     background-color: rgba(255, 255, 255, 0.4);
     padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    grid-template-rows: auto 1fr max-content;
   }
 
   .feature-title {
     color: var(--dark-300);
     font-size: var(--font-scaled-lg);
     font-weight: 500;
-    margin-block-end: var(--spacing-md);
+    margin-block: 0 var(--spacing-md);
+    margin-top: 0;
     position: relative;
   }
 
@@ -34,10 +39,7 @@
     color: var(--dark-300);
     text-wrap: pretty;
     font-size: var(--font-scaled-base);
-
-    & + & {
-      margin-block-start: var(--spacing-base);
-    }
+    margin-block-end: var(--spacing-md);
   }
 
   .feature-link {
@@ -48,10 +50,19 @@
     text-decoration-thickness: 2px;
     text-decoration: underline;
     text-underline-offset: 1rem; */
-    float: right;
-    padding-block: calc(calc(1rem - 1cap) + var(--padding)) var(--padding);
-    padding-inline: var(--padding);
-    background-color: var(--secondary-400);
+    /* float: right; */
+    padding-inline: 1rem;
+    /* padding-block: calc(1rem + calc(1rem - 1cap)); */
+    padding-block: 1rem;
+    font-size: var(--font-scaled-base);
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    display: inline flex;
+    background-color: var(--light-400);
+    align-self: right;
+    margin-inline: auto 0;
+    height: 3rem;
 
     &:hover {
       /* text-decoration-color: var(--colour-light-1); */

@@ -21,13 +21,16 @@
   }
 
   .menu-item-link-social {
+    --background-color: var(--secondary-700);
+
     align-items: center;
     display: flex;
     padding-inline: var(--spacing-base);
     transition: background-color 0.4s ease-in-out;
+    background-color: var(--background-color);
 
     &:hover {
-      background-color: var(--secondary-900);
+      --background-color: var(--secondary-900);
     }
   }
 
