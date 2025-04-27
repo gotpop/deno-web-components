@@ -1,6 +1,11 @@
 @scope {
   & {
-    grid-column: span 20;
-    padding: calc(var(--padding) * 2);
+    grid-column: 13 / span 19;
+    padding: calc(var(--spacing-base) * 2);
+    background-color: --transparent(var(--light-100), 0.4);
+  }
+
+  h2 {
+    padding-block-start: calc(3rem - 1cap);
   }
 }
