@@ -18,6 +18,7 @@
     {% for description in feature.description %}
       <p class="feature-body">{{ description }}</p>
     {% endfor %}
-    <a class="feature-link" href="/features/{{ feature.slug }}">Read more</a>
+    <a class="feature-link" href="/features/{{ feature.slug }}">
+      <span>Read more</span></a>
   </article>
 </grid-item>
