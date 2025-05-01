@@ -1,4 +1,4 @@
-import { baseFeatures } from "./baseFeatures.ts"
+import { allFeatures } from "./features/index.ts"
 export interface Feature {
   id: string
   title: string
@@ -9,20 +9,5 @@ export interface Feature {
 export const featuresData = {
   title: "Features",
   description: "Explore our features",
-  features: baseFeatures,
+  features: allFeatures,
 }
-
-export const featuresDataW3 = {
-  title: "Features",
-  description: "Explore our features",
-  features: [
-    {
-      title: "CSS Container Queries",
-      slug: "container-queries",
-      cssFeature: "properties/container", // This should match MDN's API path
-      description: "Responsive design at the component level",
-    },
-  ],
-}
-
-// css-contain-3/
