@@ -10,33 +10,37 @@
             {{"page-wrapper" | componentCss | importCss | safe}}
         </style>
         <layout-item
-            aria-label="{{ currentFeature.title }}"
             class="layout-item"
-            type="{{ currentFeature.type }}"
             id="{{ currentFeature.slug }}"
             end="15"
             start="4"
             role="region"
-            row="1"
             >
             <style>
                 {{"layout-item" | componentCss | importCss | safe}}
             </style>
-            <article variant="light" size="large" class="surface">
+            <article variant="light" size="large" class="surface" aria-label="{{ currentFeature.title }}">
                 <p>{{ currentFeature.description }}</p>
                 <a href="/features">Back to Features</a>
             </article>
         </layout-item>
-
-        <aside class="feature-nav">
-            <h2>Feature links</h2>
-            <ul>
-                {% for link in currentFeature.links %}
-                    <li>
-                        <a href="{{ link.link }}" class="link-{{ link.type }}">{{ link.label }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </aside>
+        <layout-item
+            class="layout-item"
+            end="32"
+            id="{{ currentFeature.slug }}"
+            role="region"
+            start="17"
+            >
+            <aside variant="light" size="large" class="surface" aria-label="{{ currentFeature.title }}">
+                <h2>Feature links</h2>
+                <ul>
+                    {% for link in currentFeature.links %}
+                        <li>
+                            <a href="{{ link.link }}" class="link-{{ link.type }}">{{ link.label }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </aside>
+        </layout-item>
     </div>
 {% endblock %}

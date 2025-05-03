@@ -1,3 +1,21 @@
+.layout-item {
+  --size-attr: attr(size type(<custom-ident>));
+
+  /* prettier-ignore */
+  --padding-size: if(
+      style(--size-attr: large): 3rem; 
+      style(--size-attr: medium): 2rem; 
+      style(--size-attr: small): 1rem; 
+      else: 0rem /* Default padding */
+    );
+
+  display: grid;
+  grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
+  grid-row: attr(row type(<integer>));
+  grid-template-columns: subgrid;
+  align-content: start;
+}
+
 .surface {
   --light-scheme: --transparent(var(--light-100), 0.4);
   --dark-scheme: darkgreen;
