@@ -42,8 +42,9 @@
   margin-trim: block-end;
 }
 
+/* h2 { */
 /* prettier-ignore */
-h2 {
+:where(h1, h2, h3, h4, h5, h6):not([class]) {
   --variant: attr(variant type(<custom-ident>));
   --padding-block-start: calc(var(--padding-start) - 1cap);
   --font-size: if(
@@ -90,7 +91,7 @@ h2 {
 }
 
 /* prettier-ignore */
-a:not([class]) {
+/* a:not([class]) {
   padding-top: calc(4rem - 1cap);
   margin-bottom: 2rem;
-}
+} */
