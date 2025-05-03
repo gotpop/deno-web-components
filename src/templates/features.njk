@@ -6,8 +6,14 @@
 {% endblock %}
 
 {% block page_content %}
-  {% for feature in features %}
-    {# {{ feature.layout | dump }} #}
-    {% include "components/grid-item/grid-item.njk" %}
-  {% endfor %}
+  <div id="page-wrapper" class="page-wrapper">
+    <style>
+      {{"page-wrapper" | componentCss | importCss | safe}}
+    </style>
+
+    {% for feature in features %}
+      {% include "components/grid-item/grid-item.njk" %}
+    {% endfor %}
+
+  </div>
 {% endblock %}
