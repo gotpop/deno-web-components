@@ -1,6 +1,6 @@
 @scope {
   & {
-    --light-scheme: pink;
+    /* --light-scheme: pink;
     --dark-scheme: darkgreen;
     --scheme-from-attr: attr(variant type(<custom-ident>));
 
@@ -32,6 +32,6 @@
     padding: var(--padding-size); /* Apply the calculated padding */
     /* grid-template-rows: 1fr; */
     view-transition-name: attr(id type(<custom-ident>), none);
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; */
   }
 }
