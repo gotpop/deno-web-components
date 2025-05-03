@@ -5,14 +5,33 @@
 {% endblock %}
 
 {% block page_content %}
-    <div id="page-wrapper" class="page-wrapper" variant="light">
+    <div id="page-wrapper" class="page-wrapper">
         <style>
             {{"page-wrapper" | componentCss | importCss | safe}}
         </style>
-        <section class="feature-content">
-            <p>{{ currentFeature.description }}</p>
-            <a href="/features">Back to Features</a>
-        </section>
+        <layout-item
+            aria-label="{{ currentFeature.title }}"
+            class="layout-item"
+            type="{{ currentFeature.type }}"
+            id="{{ currentFeature.slug }}"
+            end="15"
+            start="4"
+            role="region"
+            row="1"
+            variant="dark"
+            >
+            <style>
+                {{"layout-item" | componentCss | importCss | safe}}
+            </style>
+            <article variant="dark" size="large" class="feature-card">
+                <style>
+                    {{"surface-item" | componentCss | importCss | safe}}
+                </style>
+                <p>{{ currentFeature.description }}</p>
+                <a href="/features">Back to Features</a>
+            </article>
+        </layout-item>
+
         <aside class="feature-nav">
             <h2>Feature links</h2>
             <ul>

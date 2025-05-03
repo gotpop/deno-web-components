@@ -1,0 +1,37 @@
+@scope {
+  & {
+    --light-scheme: pink;
+    --dark-scheme: darkgreen;
+    --scheme-from-attr: attr(variant type(<custom-ident>));
+
+    /* prettier-ignore */
+    --scheme: if(
+      style(--scheme-from-attr: dark): var(--dark-scheme); 
+      style(--scheme-from-attr: light): var(--light-scheme); 
+
+      else: transparent
+    );
+
+    --size-attr: attr(size type(<custom-ident>));
+
+    /* prettier-ignore */
+    --padding-size: if(
+      style(--size-attr: large): 3rem; 
+      style(--size-attr: medium): 2rem; 
+      style(--size-attr: small): 1rem; 
+      else: 1rem /* Default padding */
+    );
+
+    display: grid;
+    background-color: var(--scheme);
+    grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
+    grid-row: attr(row type(<integer>));
+    grid-template-columns: subgrid;
+    grid-template-columns: auto;
+    align-content: start;
+    padding: var(--padding-size); /* Apply the calculated padding */
+    /* grid-template-rows: 1fr; */
+    view-transition-name: attr(id type(<custom-ident>), none);
+    grid-column: 1 / -1;
+  }
+}

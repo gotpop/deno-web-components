@@ -18,7 +18,7 @@
     background-color: var(--scheme);
     color: var(--colour-dark-1);
     view-transition-name: attr(id type(<custom-ident>), none);
-    min-height: 100dvh;
+    /* min-height: 100dvh; */
     row-gap: 4rem;
 
     /* .feature-content {

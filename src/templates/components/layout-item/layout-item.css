@@ -1,0 +1,10 @@
+@scope {
+  & {
+    display: grid;
+    background-color: var(--scheme);
+    grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
+    grid-row: attr(row type(<integer>));
+    grid-template-columns: subgrid;
+    align-content: start;
+  }
+}

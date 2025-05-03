@@ -1,0 +1,17 @@
+{# {% macro layoutItem(feature) %}
+  <layout-item
+  aria-label="{{ feature.title }}"
+  class="feature-card"
+  data-card-type="{{ feature.type }}"
+  id="{{ feature.slug }}"
+  item-end="{{ feature.layout['item-end'] }}"
+  item-start="{{ feature.layout['item-start'] }}"
+  role="region"
+  row="{{ feature.layout['row-position'] }}"
+  >
+    <style>
+      {{"layout-item" | componentCss | importCss | safe}}
+    </style>
+    {{ caller() | safe }}
+  </layout-item>
+{% endmacro %} #}
