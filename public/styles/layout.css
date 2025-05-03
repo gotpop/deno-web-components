@@ -1,14 +1,5 @@
+/* prettier-ignore */
 .layout-item {
-  --size-attr: attr(size type(<custom-ident>));
-
-  /* prettier-ignore */
-  --padding-size: if(
-      style(--size-attr: large): 3rem; 
-      style(--size-attr: medium): 2rem; 
-      style(--size-attr: small): 1rem; 
-      else: 0rem /* Default padding */
-    );
-
   display: grid;
   grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
   grid-row: attr(row type(<integer>));
@@ -16,13 +7,13 @@
   align-content: start;
 }
 
+/* prettier-ignore */
 .surface {
   --light-scheme: --transparent(var(--light-100), 0.4);
   --dark-scheme: darkgreen;
   --variant: attr(variant type(<custom-ident>));
   --size-attr: attr(size type(<custom-ident>));
 
-  /* prettier-ignore */
   --scheme: if(
       style(--variant: dark): var(--dark-scheme); 
       style(--variant: light): var(--light-scheme); 
@@ -30,7 +21,6 @@
       else: transparent
     );
 
-  /* prettier-ignore */
   --padding-size: if(
       style(--size-attr: large): 3rem; 
       style(--size-attr: medium): 2rem; 
@@ -49,4 +39,58 @@
   /* grid-template-columns: subgrid; */
   padding: var(--padding-size);
   view-transition-name: attr(id type(<custom-ident>), none);
+  margin-trim: block-end;
+}
+
+/* prettier-ignore */
+h2 {
+  --variant: attr(variant type(<custom-ident>));
+  --padding-block-start: calc(var(--padding-start) - 1cap);
+  --font-size: if(
+      style(--variant: sm): var(--font-scaled-sm); 
+      style(--variant: base): var(--font-scaled-base); 
+      style(--variant: md): var(--font-scaled-md);
+      style(--variant: lg): var(--font-scaled-lg);
+      style(--variant: xl): var(--font-scaled-xl);
+      style(--variant: xxl): var(--font-scaled-xxl);
+
+      else: var(--font-scaled-base)
+    );
+
+  --font-weight: if(
+      style(--variant: sm): var(--font-weight-light); 
+      style(--variant: base): var(--font-weight-regular); 
+      style(--variant: md): var(--font-weight-medium);
+      style(--variant: lg): var(--font-weight-semibold);
+      style(--variant: xl): var(--font-weight-bold);
+      style(--variant: xxl): var(--font-weight-black);
+
+      else: var(--font-weight-medium)
+    );
+
+  --padding-start: if(
+      style(--variant: sm): 2rem; 
+      style(--variant: base): 2rem; 
+      style(--variant: md): 3rem;
+      style(--variant: lg): 3rem;
+      style(--variant: xl): 4rem;
+      style(--variant: xxl): 5rem;
+
+      else: 3rem
+    );
+
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  margin-block-end: 2rem;
+  padding-block-start: var(--padding-block-start);
+
+  &:first-child {
+    --padding-block-start: calc(3rem - 1cap);
+  }
+}
+
+/* prettier-ignore */
+a:not([class]) {
+  padding-top: calc(4rem - 1cap);
+  margin-bottom: 2rem;
 }
