@@ -13,7 +13,7 @@ export function setupNunjucks() {
   // Configure Nunjucks
   const nunjucks = configure(TEMPLATES_DIR, {
     autoescape: true,
-    noCache: true, // Disable cache for development
+    noCache: Deno.env.get("ENVIRONMENT") === "development", // Use env var for cache control
   })
 
   // Add filters
@@ -24,6 +24,10 @@ export function setupNunjucks() {
   nunjucks.addFilter("debug", function (obj) {
     return JSON.stringify(obj, null, 2)
   })
+
+  // Add Globals
+  // Add BASE_URL from environment variables
+  nunjucks.addGlobal("BASE_URL", Deno.env.get("BASE_URL") || "")
 
   nunjucks.addGlobal(
     "loadData",
