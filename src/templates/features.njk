@@ -9,10 +9,12 @@
   <grid-auto>
     {% for feature in features %}
       <article class="surface" variant="light" size="large">
-        <h3 variant="lg">{{ feature.title }}</h3>
-        {% for description in feature.description %}
-          <p>{{ description }}</p>
-        {% endfor %}
+        <div>
+          <h3 variant="lg">{{ feature.title }}</h3>
+          {% for description in feature.description %}
+            <p>{{ description }}</p>
+          {% endfor %}
+        </div>
         <a class="feature-link" href="/features/{{ feature.slug }}">
           <span>Read more</span></a>
       </article>
