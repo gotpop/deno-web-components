@@ -1,5 +1,5 @@
 /* prettier-ignore */
-.layout-item {
+layout-item {
   display: grid;
   grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
   grid-row: attr(row type(<integer>));
