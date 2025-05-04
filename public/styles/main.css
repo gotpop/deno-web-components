@@ -58,22 +58,6 @@ body {
   overflow: hidden auto;
 }
 
-/* ::view-transition-old(page-wrapper) {
-  animation: 300ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
-}
-
-::view-transition-new(page-wrapper) {
-  animation: 300ms cubic-bezier(0, 0, 0.2, 1) both fade-in;
-} */
-
-::view-transition-old(points) {
-  animation: 200ms ease both slide-out-from-left;
-}
-
-::view-transition-new(points) {
-  animation: 200ms ease both slide-in-from-right;
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
