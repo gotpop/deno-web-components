@@ -15,6 +15,15 @@
       {{"page-wrapper" | componentCss | importCss | safe}}
     </style>
     {% include "components/page-nav/page-nav.njk" %}
-    {% include "components/page-content/page-content.njk" %}
+    <layout-item
+            end="30"
+            start="13"
+            >
+      <article variant="light" size="large" class="surface">
+        {% for item in bodyMarkupData %}
+          {{ heading.render(item.tag, item.content, item.id) }}
+        {% endfor %}
+      </article>
+    </layout-item>
   </div>
 {% endblock %}
