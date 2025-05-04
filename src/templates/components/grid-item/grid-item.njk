@@ -1,24 +1,18 @@
-<grid-item
+<layout-item
   aria-label="{{ feature.title }}"
-  class="feature-card"
-  content-end="{{ feature.layout['content-end'] }}"
-  content-start="{{ feature.layout['content-start'] }}"
   data-card-type="{{ feature.type }}"
   id="{{ feature.slug }}"
-  item-end="{{ feature.layout['item-end'] }}"
-  item-start="{{ feature.layout['item-start'] }}"
+  end="{{ feature.layout['item-end'] }}"
+  start="{{ feature.layout['item-start'] }}"
   role="region"
-  row-position="{{ feature.layout['row-position'] }}"
+  row="{{ feature.layout['row-position'] }}"
   >
-  <style>
-    {{"grid-item" | componentCss | importCss | safe}}
-  </style>
-  <article class="feature-content">
-    <h3 class="feature-title">{{ feature.title }}</h3>
+  <article class="surface" variant="light" size="large">
+    <h3 variant="lg">{{ feature.title }}</h3>
     {% for description in feature.description %}
-      <p class="feature-body">{{ description }}</p>
+      <p>{{ description }}</p>
     {% endfor %}
     <a class="feature-link" href="/features/{{ feature.slug }}">
       <span>Read more</span></a>
   </article>
-</grid-item>
+</layout-item>

@@ -6,14 +6,16 @@
 {% endblock %}
 
 {% block page_content %}
-  <div id="page-wrapper" class="page-wrapper">
-    <style>
-      {{"page-wrapper" | componentCss | importCss | safe}}
-    </style>
-
+  <grid-auto>
     {% for feature in features %}
-      {% include "components/grid-item/grid-item.njk" %}
+      <article class="surface" variant="light" size="large">
+        <h3 variant="lg">{{ feature.title }}</h3>
+        {% for description in feature.description %}
+          <p>{{ description }}</p>
+        {% endfor %}
+        <a class="feature-link" href="/features/{{ feature.slug }}">
+          <span>Read more</span></a>
+      </article>
     {% endfor %}
-
-  </div>
+  </grid-auto>
 {% endblock %}

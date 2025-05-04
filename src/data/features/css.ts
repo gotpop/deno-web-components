@@ -7,10 +7,8 @@ export const cssFeaturesMap = new Map()
       "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
     ],
     layout: {
-      "content-end": 13,
-      "content-start": 2,
       "item-end": 14,
-      "item-start": 1,
+      "item-start": 2,
       "row-position": 2,
     },
     links: [
@@ -31,10 +29,8 @@ export const cssFeaturesMap = new Map()
       "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
     ],
     layout: {
-      "content-end": 13,
-      "content-start": 2,
+      "item-start": 16,
       "item-end": 26,
-      "item-start": 13,
       "row-position": 2,
     },
     links: [
@@ -56,10 +52,8 @@ export const cssFeaturesMap = new Map()
     ],
     label: "Title 4",
     layout: {
-      "content-end": 15,
-      "content-start": 4,
-      "item-end": 41,
-      "item-start": 23,
+      "item-end": 38,
+      "item-start": 28,
       "row-position": 2,
     },
     links: [
@@ -87,10 +81,8 @@ export const cssFeaturesMap = new Map()
     ],
     label: "Title 6",
     layout: {
-      "content-end": 13,
-      "content-start": 2,
       "item-end": 14,
-      "item-start": 1,
+      "item-start": 2,
       "row-position": 3,
     },
     links: [
@@ -102,7 +94,7 @@ export const cssFeaturesMap = new Map()
     ],
     slug: "css-scoping",
     tags: ["css"],
-    title: "@scope rule new text",
+    title: "@scope rule new text 1",
     type: "css",
   })
   .set("css-scoping2", {
@@ -112,10 +104,8 @@ export const cssFeaturesMap = new Map()
     ],
     label: "Title 6",
     layout: {
-      "content-end": 13,
-      "content-start": 2,
+      "item-start": 16,
       "item-end": 26,
-      "item-start": 13,
       "row-position": 3,
     },
     links: [
@@ -137,10 +127,8 @@ export const cssFeaturesMap = new Map()
     ],
     label: "Title 6",
     layout: {
-      "content-end": 15,
-      "content-start": 4,
-      "item-end": 41,
-      "item-start": 23,
+      "item-end": 38,
+      "item-start": 28,
       "row-position": 3,
     },
     links: [

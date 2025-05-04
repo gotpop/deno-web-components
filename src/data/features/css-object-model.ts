@@ -6,10 +6,8 @@ export const cssomFeaturesMap = new Map()
       "The CSS Paint API allows developers to programmatically generate images that can be used as CSS backgrounds, borders, masks, and more, directly in JavaScript",
     ],
     layout: {
-      "content-end": 13,
-      "content-start": 2,
       "item-end": 14,
-      "item-start": 1,
+      "item-start": 2,
       "row-position": 5,
     },
     links: [
@@ -36,10 +34,8 @@ export const cssomFeaturesMap = new Map()
       "This specification exposes CSS values as typed JavaScript objects, to make manipulating them both easier and more performant.",
     ],
     layout: {
-      "content-end": 13,
-      "content-start": 2,
+      "item-start": 16,
       "item-end": 26,
-      "item-start": 13,
       "row-position": 5,
     },
     links: [
@@ -60,10 +56,8 @@ export const cssomFeaturesMap = new Map()
       "Properties registered using this API are provided with a parse syntax that defines a type, inheritance behaviour, and an initial value.",
     ],
     layout: {
-      "content-end": 13,
-      "content-start": 2,
-      "item-end": 41,
-      "item-start": 25,
+      "item-end": 38,
+      "item-start": 28,
       "row-position": 5,
     },
     links: [
