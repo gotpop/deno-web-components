@@ -33,13 +33,10 @@
             >
             <aside variant="light" size="large" class="surface" aria-label="{{ currentFeature.title }}">
                 <h2 variant="xl">Feature links</h2>
-                <ul>
-                    {% for link in currentFeature.links %}
-                        <li>
-                            <a href="{{ link.link }}" class="link-{{ link.type }}">{{ link.label }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
+                {% for link in currentFeature.links %}
+                    <a href="{{ link.link }}">
+                        <span>{{ link.label }}</span></a>
+                {% endfor %}
             </aside>
         </layout-item>
     </div>

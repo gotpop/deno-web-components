@@ -100,7 +100,6 @@
 
   .hero-content {
     background-color: --transparent(var(--light-100), 0.5);
-    display: grid;
     grid-column: center-start / -10;
     padding: 3rem 3rem 4rem 3rem;
   }
@@ -114,6 +113,7 @@
     padding-top: calc(4rem - 1cap);
     position: relative;
     view-transition-name: attr(id type(<custom-ident>), none);
+    background-color: var(--light-400);
   }
 
   .subheading {

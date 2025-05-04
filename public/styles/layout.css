@@ -40,6 +40,7 @@
   padding: var(--padding-size);
   view-transition-name: attr(id type(<custom-ident>), none);
   margin-trim: block-end;
+  align-content: start;
 }
 
 /* h2 { */
@@ -86,12 +87,24 @@
   padding-block-start: var(--padding-block-start);
 
   &:first-child {
-    --padding-block-start: calc(3rem - 1cap);
+    --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);
   }
 }
 
-/* prettier-ignore */
-/* a:not([class]) {
-  padding-top: calc(4rem - 1cap);
+a:not([class]) {
+  padding: 1rem;
   margin-bottom: 2rem;
-} */
+  display: flex;
+  align-self: self-start;
+  background-color: var(--secondary-500);
+  width: max-content;
+  color: var(--light-100);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  span {
+    padding-top: calc(1rem - 1cap);
+  }
+}

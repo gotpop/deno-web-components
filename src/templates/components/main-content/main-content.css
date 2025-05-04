@@ -4,5 +4,7 @@
     grid-column: full;
     grid-row: main;
     grid-template-columns: subgrid;
+    align-items: start;
+    grid-auto-rows: min-content;
   }
 }
