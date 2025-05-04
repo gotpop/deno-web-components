@@ -5,6 +5,7 @@ layout-item {
   grid-row: attr(row type(<integer>));
   grid-template-columns: subgrid;
   align-content: start;
+  row-gap: attr(row-gap rem, unset);
 }
 
 /* prettier-ignore */
