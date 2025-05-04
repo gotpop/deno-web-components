@@ -1,8 +1,10 @@
-<section class="page-content">
-    <style>
-    {{"page-content" | componentCss | importCss | safe}}
-    </style>
-    {% for item in bodyMarkupData %}
-        {{ heading.render(item.tag, item.content, item.id) }}
-    {% endfor %}
-</section>
+<layout-item
+            end="30"
+            start="13"
+            >
+    <article variant="light" size="large" class="surface">
+        {% for item in bodyMarkupData %}
+            {{ heading.render(item.tag, item.content, item.id) }}
+        {% endfor %}
+    </article>
+</layout-item>

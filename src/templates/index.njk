@@ -20,7 +20,7 @@
     {% include "components/section-title/section-title.njk" %}
 
     {% for feature in features.cssFeatures %}
-      {% include "components/grid-item/grid-item.njk" %}
+      {% include "components/grid-item.njk" %}
     {% endfor %}
 
     {% set sectionTitle = {
@@ -32,7 +32,7 @@
     {% include "components/section-title/section-title.njk" %}
 
     {% for feature in features.cssomFeatures %}
-      {% include "components/grid-item/grid-item.njk" %}
+      {% include "components/grid-item.njk" %}
     {% endfor %}
 
     {% set sectionTitle = {
@@ -44,7 +44,7 @@
     {% include "components/section-title/section-title.njk" %}
 
     {% for feature in features.browserApiFeatures %}
-      {% include "components/grid-item/grid-item.njk" %}
+      {% include "components/grid-item.njk" %}
     {% endfor %}
   </div>
 {% endblock %}

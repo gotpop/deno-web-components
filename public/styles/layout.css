@@ -33,12 +33,14 @@ layout-item {
   background-color: var(--scheme);
   display: grid;
   /* grid-column: attr(start type(<integer>)) / attr(end type(<integer>)); */
-  /* grid-column: 1 / -1; */
+  grid-column: 1 / -1;
   grid-row: attr(row type(<integer>));
   grid-template-columns: auto;
   padding: var(--padding-size);
   view-transition-name: attr(id type(<custom-ident>), none);
   align-content: start;
+  /* width: min(min-content, 100%); */
+  width: 100%;
 }
 
 /* h2 { */
@@ -143,4 +145,17 @@ grid-auto {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   row-gap: 8rem;
   width: 100%;
+
+  > .surface {
+    grid-column: auto;
+  }
+}
+
+main-content {
+  display: grid;
+  grid-column: full;
+  grid-row: main;
+  grid-template-columns: subgrid;
+  align-items: start;
+  grid-auto-rows: min-content;
 }
