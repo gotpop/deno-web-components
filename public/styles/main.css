@@ -1,5 +1,7 @@
 @import "./functions.css";
+@import "./functions/typographic.css";
 @import "./tetriminoes.css";
+@import "./global.css";
 @import "./typography.css";
 @import "./layout.css";
 @import "./keyframes.css";
@@ -7,96 +9,3 @@
 @import "./reset.css";
 @import "./feature-detect-dialog.css";
 @import "./fonts.css";
-
-@view-transition {
-  navigation: auto;
-}
-
-:root {
-  accent-color: var(--accent);
-}
-
-:focus-visible {
-  outline-color: var(--accent);
-}
-
-/* :target {
-  background-color: red;
-  border-bottom: 2px solid var(--white);
-} */
-
-::selection {
-  background-color: var(--accent);
-}
-
-::marker {
-  color: var(--accent);
-}
-
-:is(
-    ::-webkit-calendar-picker-indicator,
-    ::-webkit-clear-button,
-    ::-webkit-inner-spin-button,
-    ::-webkit-outer-spin-button
-  ) {
-  color: var(--accent);
-}
-
-html {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-gutter: stable;
-  scroll-padding-top: 6rem;
-  background-image: var(--site-background);
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  margin: unset;
-  color: var(--body-colour);
-  font-family: var(--font-family-base);
-  overflow: hidden auto;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    translate: 0 100%;
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    translate: 0 0;
-  }
-  to {
-    opacity: 0;
-    translate: 0 100%;
-  }
-}
-@keyframes slide-in-from-right {
-  from {
-    opacity: 0;
-    translate: 100% 0;
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
-
-@keyframes slide-out-from-left {
-  from {
-    opacity: 0;
-    translate: 0 0;
-  }
-  to {
-    opacity: 1;
-    translate: 100% 0;
-  }
-}

@@ -118,55 +118,15 @@ button {
 }
 
 /* prettier-ignore */
-@function --get-font-size(--variant <custom-ident>) returns <length> {
-  result: if(
-      style(--variant: sm): var(--font-scaled-sm); 
-      style(--variant: base): var(--font-scaled-base); 
-      style(--variant: md): var(--font-scaled-md);
-      style(--variant: lg): var(--font-scaled-lg);
-      style(--variant: xl): var(--font-scaled-xl);
-      style(--variant: xxl): var(--font-scaled-xxl);
-
-      else: var(--font-scaled-base)
-  )
-}
-
-/* prettier-ignore */
 :where(h1, h2, h3, h4, h5, h6, p):not([class]) {
   --variant: attr(variant type(<custom-ident>));
   --flow: attr(flow type(<custom-ident>), unset);
+  --padding-start: --get-padding-start(var(--variant));
   --padding-block-start: calc(var(--padding-start) - 1cap);
-
-  --font-weight: if(
-      style(--variant: sm): var(--font-weight-light); 
-      style(--variant: base): var(--font-weight-regular); 
-      /* style(--variant: base): var(--font-weight-regular);  */
-      style(--variant: md): var(--font-weight-medium);
-      style(--variant: lg): var(--font-weight-semibold);
-      style(--variant: xl): var(--font-weight-bold);
-      style(--variant: xxl): var(--font-weight-black);
-
-      else: var(--font-weight-medium)
-    );
-
-  --padding-start: if(
-      style(--variant: sm): 2rem; 
-      style(--variant: base): 2rem; 
-      style(--variant: md): 3rem;
-      style(--variant: lg): 3rem;
-      style(--variant: xl): 4rem;
-      style(--variant: xxl): 5rem;
-
-      else: 3rem
-    );
-
-  --flow-spacing: if(
-      style(--flow: body): var(--padding-block-start);
-      else: 0
-    );
+  --flow-spacing: --get-flow-spacing(var(--flow), var(--padding-block-start));
 
   font-size: --get-font-size(var(--variant));
-  font-weight: var(--font-weight);
+  font-weight: --get-font-weight(var(--variant));
   margin-block-end: if(style(--flow: body): 2rem; else: 0);
   padding-block-start: var(--flow-spacing);
 
