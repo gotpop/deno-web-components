@@ -3,71 +3,6 @@
   text-box-trim: trim-both;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-colour);
-  font-family: var(--font-family-heading);
-  margin-block: unset;
-  padding-block-start: calc(var(--spacing-md) - 1cap);
-  scroll-margin-top: var(--spacing-lg);
-  text-wrap: balance;
-}
-
-h1 {
-  font-weight: 1000;
-  font-size: var(--font-scaled-xxl);
-}
-
-h2 {
-  font-size: var(--font-scaled-xl);
-  font-weight: 700;
-}
-
-h3 {
-  font-size: var(--font-scaled-lg);
-  font-weight: 600;
-  line-height: 3rem;
-}
-
-h4 {
-  font-size: var(--font-scaled-md);
-}
-
-h5 {
-  font-size: var(--font-scaled-base);
-}
-
-h6 {
-  font-size: var(--font-scaled-sm);
-}
-
-p {
-  color: var(--body-colour);
-  font-size: var(--font-scaled-base);
-  letter-spacing: 0.015em;
-  line-height: 2rem;
-  margin-block-start: unset;
-  max-width: 60ch;
-  padding-top: calc(var(--spacing-base) - 1cap);
-  text-wrap: pretty;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &:has(+ p) {
-    margin-block-end: var(--spacing-md);
-  }
-
-  &:has(+ a > :is(h1, h2, h3, h4, h5, h6)) {
-    margin-block-end: var(--spacing-xl);
-  }
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -118,7 +53,7 @@ button {
 }
 
 /* prettier-ignore */
-:where(h1, h2, h3, h4, h5, h6, p):not([class]) {
+:where(h1, h2, h3, h4, h5, h6):not([class]) {
   --variant: attr(variant type(<custom-ident>));
   --flow: attr(flow type(<custom-ident>), unset);
   --padding-start: --get-padding-start(var(--variant));
@@ -129,6 +64,46 @@ button {
   font-weight: --get-font-weight(var(--variant));
   margin-block-end: if(style(--flow: body): 2rem; else: 0);
   padding-block-start: var(--flow-spacing);
+  margin-block-start: 0;
+    text-wrap: balance;
+
+  &:first-child {
+    --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);
+  }
+}
+
+p:not([class]) {
+  --variant: attr(variant type(<custom-ident>));
+  --flow: attr(flow type(<custom-ident>), unset);
+  --padding-start: --get-padding-start(var(--variant));
+  --padding-block-start: calc(var(--padding-start) - 1cap);
+  --flow-spacing: --get-flow-spacing(var(--flow), var(--padding-block-start));
+
+  font-size: --get-font-size(var(--variant));
+  font-weight: --get-font-weight(var(--variant));
+  margin-block-end: if(style(--flow: body): 2rem; else: 0);
+  padding-block-start: var(--flow-spacing);
+
+  color: var(--body-colour);
+  font-size: var(--font-scaled-base);
+  letter-spacing: 0.015em;
+  line-height: 2rem;
+  margin-block-start: unset;
+  max-width: 60ch;
+  padding-top: calc(var(--spacing-base) - 1cap);
+  text-wrap: pretty;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:has(+ p) {
+    margin-block-end: var(--spacing-md);
+  }
+
+  &:has(+ a > :is(h1, h2, h3, h4, h5, h6)) {
+    margin-block-end: var(--spacing-xl);
+  }
 
   &:first-child {
     --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);
