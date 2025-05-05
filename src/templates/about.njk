@@ -1,9 +1,5 @@
 {% extends "base-hero.njk" %}
 
-{# Note this is being used in page content maybe remove later #}
-{% import "components/heading/heading.njk" as heading %}
-{# Note this is being used in page content maybe remove later #}
-
 {% block hero %}
   <h1 class="heading" id="heading-primary">About page</h1>
   <p class="subheading" id="subheading">A demonstration of the latest in CSS and Web Components</p>
@@ -12,12 +8,26 @@
 {% block page_content %}
   {% include "partials/page-nav/page-nav.njk" %}
   <layout-item
-            end="30"
-            start="13"
-            >
+    start="14"
+    end="31"
+    >
     <article variant="light" size="large" class="surface">
       {% for item in bodyMarkupData %}
-        {{ heading.render(item.tag, item.content, item.id) }}
+        {% if item.tag == "h2" %}
+          <h2 variant="xl" flow="body" id="{{ item.id }}">{{ item.content }}</h2>
+        {% elif item.tag == "h3" %}
+          <h3 variant="lg" flow="body" id="{{ item.id }}">{{ item.content }}</h3>
+        {% elif item.tag == "p" %}
+          <p>{{ item.content }}</p>
+        {% elif item.tag == "ul" %}
+          <ul>
+            {% for listItem in item.items %}
+              <li>{{ listItem }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <{{ item.tag }} {% if item.id %}id="{{ item.id }}"{% endif %}>{{ item.content }}</{{ item.tag }}>
+        {% endif %}
       {% endfor %}
     </article>
   </layout-item>
