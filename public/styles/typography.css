@@ -55,45 +55,53 @@ button {
 /* prettier-ignore */
 :where(h1, h2, h3, h4, h5, h6):not([class]) {
   --variant: attr(variant type(<custom-ident>));
-  --flow: attr(flow type(<custom-ident>), unset);
-  --padding-start: --get-padding-start(var(--variant));
-  --padding-block-start: calc(var(--padding-start) - 1cap);
-  --flow-spacing: --get-flow-spacing(var(--flow), var(--padding-block-start));
+  --line-height-ratio: if(
+    style(--variant: xxl): 1.2;
+    style(--variant: xl): 1.3;
+    style(--variant: lg): 1.4;
+    style(--variant: md): 1.5;
+    style(--variant: base): 1.5;
+    style(--variant: sm): 1.7;
+    else: 1.5
+  );
 
   font-size: --get-font-size(var(--variant));
   font-weight: --get-font-weight(var(--variant));
-  margin-block-end: if(style(--flow: body): 2rem; else: 0);
-  padding-block-start: var(--flow-spacing);
-  margin-block-start: 0;
-    text-wrap: balance;
+  line-height: var(--line-height-ratio);
+  margin-block: 0 attr(bottom rem, unset);
+  padding-block-start: calc(attr(top rem, unset) - 1cap);
+  text-wrap: balance;
 
   &:first-child {
     --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);
   }
 }
 
+/* prettier-ignore */
 p:not([class]) {
-  --variant: attr(variant type(<custom-ident>));
-  --flow: attr(flow type(<custom-ident>), unset);
-  --padding-start: --get-padding-start(var(--variant));
-  --padding-block-start: calc(var(--padding-start) - 1cap);
-  --flow-spacing: --get-flow-spacing(var(--flow), var(--padding-block-start));
+  --variant: attr(variant type(<custom-ident>), base);
+  --line-height-ratio: if(
+    style(--variant: xxl): 1.183;
+    style(--variant: xl): 1.18;
+    style(--variant: lg): 1.77;
+    style(--variant: md): 2;
+    style(--variant: base): 2;
+    style(--variant: sm): 1.45;
 
-  font-size: --get-font-size(var(--variant));
+    else: 2.2
+  );
+
   font-weight: --get-font-weight(var(--variant));
-  margin-block-end: if(style(--flow: body): 2rem; else: 0);
-  padding-block-start: var(--flow-spacing);
-
   color: var(--body-colour);
-  font-size: var(--font-scaled-base);
+  font-size: --get-font-size(var(--variant));
   letter-spacing: 0.015em;
-  line-height: 2rem;
-  margin-block-start: unset;
+  line-height: var(--line-height-ratio);
+  margin-block: 0 attr(bottom rem, unset);
   max-width: 60ch;
-  padding-top: calc(var(--spacing-base) - 1cap);
+  padding-block-start: calc(attr(top rem, unset) - 1cap);
   text-wrap: pretty;
 
-  &:last-child {
+  /* &:last-child {
     margin-bottom: 0;
   }
 
@@ -107,5 +115,5 @@ p:not([class]) {
 
   &:first-child {
     --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);
-  }
+  } */
 }

@@ -1,8 +1,8 @@
 {% extends "base-hero.njk" %}
 
 {% block hero %}
-  <h1 variant="xxl" flow="body" id="heading-primary">Web Platform Features Showcase</h1>
-  <p  variant="xl" id="subheading" >A collection of modern web features using <a class="jump-link" href="#section-css">CSS</a>, <a class="jump-link" href="#section-cssom">Houdini Paint API</a>, and Web Platform APIs. Examples include layout techniques, custom paint worklets, and <a class="jump-link" href="#section-bapi">browser APIs</a> working together.</p>
+  <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Web Platform Features Showcase</h1>
+  <p  variant="lg" id="subheading" top="4">A collection of modern web features using <a class="jump-link" href="#section-css">CSS</a>, <a class="jump-link" href="#section-cssom">Houdini Paint API</a>, and Web Platform APIs. Examples include layout techniques, custom paint worklets, and <a class="jump-link" href="#section-bapi">browser APIs</a> working together.</p>
 {% endblock %}
 
 {% block page_content %}
@@ -31,9 +31,9 @@
         >
         <article class="surface" variant="light" size="large">
           <div>
-            <h3 variant="lg" flow="body">{{ feature.title }}</h3>
+            <h3 variant="lg" top="0" bottom="3">{{ feature.title }}</h3>
             {% for description in feature.description %}
-              <p spacing-bottom="3" flow="body">{{ description }}</p>
+              <p top="1" bottom="2">{{ description }}</p>
             {% endfor %}
           </div>
           <a class="feature-link" href="/features/{{ feature.slug }}">
