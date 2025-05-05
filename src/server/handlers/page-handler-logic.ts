@@ -51,7 +51,7 @@ export function handleFeatureTemplate(
       ...featuresData,
       currentFeature: feature,
     },
-    templateFile: "features/single.njk",
+    templateFile: "feature.njk",
   }
 }
 
