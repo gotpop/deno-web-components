@@ -6,20 +6,19 @@
 {% endblock %}
 
 {% block page_content %}
-
   <layout-item
-  end="-1"
-  start="1"
-  row-gap="3"
-  >
+    end="-1"
+    start="1"
+    row-gap="3"
+    >
 
-    {% set sectionTitle = {
-      title: "CSS Features",
-      id: "section-css",
-      gridRow: 1,
-      headingId: "heading-secondary-1"
-    } %}
-    {% include "components/section-title/section-title.njk" %}
+    <layout-item start="2" end="8" row="1">
+      <div class="surface" variant="dark" size="small">
+        <a href="#section-css">
+          <h2 variant="md" id="section-css" >CSS Features</h2>
+        </a>
+      </div>
+    </layout-item>
 
     {% for feature in features.cssFeatures %}
       {% include "components/grid-item.njk" %}

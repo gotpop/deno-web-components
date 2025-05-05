@@ -11,7 +11,7 @@ layout-item {
 /* prettier-ignore */
 .surface {
   --light-scheme: --transparent(var(--light-100), 0.4);
-  --dark-scheme: darkgreen;
+  --dark-scheme: var(--secondary-400);
   --variant: attr(variant type(<custom-ident>));
   --size-attr: attr(size type(<custom-ident>));
 
