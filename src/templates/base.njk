@@ -10,13 +10,11 @@
       role="application"
       aria-label="application"
     >
-      <style>
-        {{"app-shell" | componentCss | importCss | safe}}
-      </style>
       {% include "components/header/header.njk" %}
       <main-content id="main" role="main" aria-label="Main content">
         {% block content %}{% endblock %}
       </main-content>
+
       {% include "components/site-footer/site-footer.njk" %}
     </app-shell>
     {% include "components/feature-detect-popover/feature-detect-popover.njk" %}

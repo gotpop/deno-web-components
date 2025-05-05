@@ -1,7 +1,0 @@
-{% macro render(tag, content, id) %}
-  {% if id and tag.startsWith('h') %}
-    <a href="#{{ id }}"><{{ tag }} id="{{ id }}">{{ content }}</{{ tag }}></a>
-  {% else %}
-    <{{ tag }}{% if id %} id="{{ id }}"{% endif %}>{{ content }}</{{ tag }}>
-  {% endif %}
-{% endmacro %}
