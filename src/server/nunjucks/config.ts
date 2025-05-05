@@ -6,7 +6,7 @@ import { isActive } from "./filters/is-active.ts"
 const TEMPLATES_DIR = "./src/templates"
 
 export const templateConfig = {
-  componentPath: "/src/templates/components",
+  componentPath: "/src/templates/partials",
 }
 
 export function setupNunjucks() {

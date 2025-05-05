@@ -10,13 +10,13 @@
       role="application"
       aria-label="application"
     >
-      {% include "components/header/header.njk" %}
+      {% include "partials/header/header.njk" %}
       <main-content id="main" role="main" aria-label="Main content">
         {% block content %}{% endblock %}
       </main-content>
 
-      {% include "components/site-footer/site-footer.njk" %}
+      {% include "partials/site-footer/site-footer.njk" %}
     </app-shell>
-    {% include "components/feature-detect-popover/feature-detect-popover.njk" %}
+    {% include "partials/feature-detect-popover/feature-detect-popover.njk" %}
   </body>
 </html>
