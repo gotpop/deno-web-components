@@ -1,13 +1,10 @@
 {% extends "base.njk" %}
 
 {% block content %}
-    <site-hero id="hero">
-        <style>
-            {{"site-hero" | componentCss | importCss | safe}}
-        </style>
-        <article class="hero-content">
+    <layout-item start="2" end="27" row="1">
+        <div id="hero" class="surface" variant="light" size="large" role="banner">
             {% block hero %}{% endblock %}
-        </article>
-    </site-hero>
+        </div>
+    </layout-item>
     {% block page_content %}{% endblock %}
 {% endblock %}

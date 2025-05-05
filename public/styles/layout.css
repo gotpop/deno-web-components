@@ -40,59 +40,6 @@ layout-item {
   view-transition-name: attr(id type(<custom-ident>), none);
 }
 
-/* prettier-ignore */
-:where(h1, h2, h3, h4, h5, h6):not([class]) {
-  --variant: attr(variant type(<custom-ident>));
-  --flow: attr(flow type(<custom-ident>), unset);
-  --padding-block-start: calc(var(--padding-start) - 1cap);
-  --font-size: if(
-      style(--variant: sm): var(--font-scaled-sm); 
-      style(--variant: base): var(--font-scaled-base); 
-      style(--variant: md): var(--font-scaled-md);
-      style(--variant: lg): var(--font-scaled-lg);
-      style(--variant: xl): var(--font-scaled-xl);
-      style(--variant: xxl): var(--font-scaled-xxl);
-
-      else: var(--font-scaled-base)
-    );
-
-  --font-weight: if(
-      style(--variant: sm): var(--font-weight-light); 
-      style(--variant: base): var(--font-weight-regular); 
-      style(--variant: md): var(--font-weight-medium);
-      style(--variant: lg): var(--font-weight-semibold);
-      style(--variant: xl): var(--font-weight-bold);
-      style(--variant: xxl): var(--font-weight-black);
-
-      else: var(--font-weight-medium)
-    );
-
-  --padding-start: if(
-      style(--variant: sm): 2rem; 
-      style(--variant: base): 2rem; 
-      style(--variant: md): 3rem;
-      style(--variant: lg): 3rem;
-      style(--variant: xl): 4rem;
-      style(--variant: xxl): 5rem;
-
-      else: 3rem
-    );
-
-  --flow-spacing: if(
-      style(--flow: body): var(--padding-block-start);
-      else: 0
-    );
-
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  margin-block-end: if(style(--flow: body): 2rem; else: 0);
-  padding-block-start: var(--flow-spacing);
-
-  &:first-child {
-    --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);
-  }
-}
-
 a:not([class]) {
   padding: 1rem;
   margin-bottom: 2rem;
@@ -191,4 +138,57 @@ app-shell {
   background-image: paint(grid);
   contain: layout style;
   /* background-image: paint(bytemare); */
+}
+
+.jump-link {
+  color: hotpink;
+  text-decoration: underline;
+  text-underline-offset: calc(0.5em - 4px);
+  text-decoration-color: aqua;
+}
+
+site-hero {
+  color: var(--colour-light-1);
+  display: grid;
+  grid-column: full;
+  grid-template-columns: subgrid;
+  padding-block-start: calc(var(--padding) * 5);
+  padding-block-end: calc(var(--padding) * 3);
+  view-transition-name: attr(id type(<custom-ident>), none);
+  position: relative;
+
+  p {
+    text-wrap: balance;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: var(--font-scaled-lg);
+    font-weight: 400;
+    margin-block-end: 1rem;
+    line-height: 3.2lh;
+    padding-block-start: calc(2rem - 1cap);
+  }
+
+  .hero-content {
+    background-color: --transparent(var(--light-100), 0.5);
+    grid-column: center-start / -10;
+    padding: 3rem 3rem 4rem 3rem;
+  }
+
+  .heading {
+    color: var(--dark-400);
+    font-size: var(--font-scaled-xxl);
+    inset: auto auto auto -3px;
+    line-height: calc(1lh + 1cap);
+    margin-block-end: round(calc(1lh / 2), 1rem);
+    padding-top: calc(4rem - 1cap);
+    position: relative;
+    view-transition-name: attr(id type(<custom-ident>), none);
+    background-color: var(--light-400);
+  }
+
+  .subheading {
+    view-transition-name: attr(id type(<custom-ident>), none);
+    display: inline-block;
+    color: var(--dark-300);
+    padding-block-start: calc(2rem - 1cap);
+  }
 }
