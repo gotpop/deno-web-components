@@ -40,10 +40,10 @@ layout-item {
   view-transition-name: attr(id type(<custom-ident>), none);
 }
 
-/* h2 { */
 /* prettier-ignore */
 :where(h1, h2, h3, h4, h5, h6):not([class]) {
   --variant: attr(variant type(<custom-ident>));
+  --flow: attr(flow type(<custom-ident>), unset);
   --padding-block-start: calc(var(--padding-start) - 1cap);
   --font-size: if(
       style(--variant: sm): var(--font-scaled-sm); 
@@ -78,10 +78,15 @@ layout-item {
       else: 3rem
     );
 
+  --flow-spacing: if(
+      style(--flow: body): var(--padding-block-start);
+      else: 0
+    );
+
   font-size: var(--font-size);
   font-weight: var(--font-weight);
-  margin-block-end: 2rem;
-  padding-block-start: var(--padding-block-start);
+  margin-block-end: if(style(--flow: body): 2rem; else: 0);
+  padding-block-start: var(--flow-spacing);
 
   &:first-child {
     --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);

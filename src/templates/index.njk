@@ -11,7 +11,6 @@
     start="1"
     row-gap="3"
     >
-
     <layout-item start="2" end="8" row="1">
       <div class="surface" variant="dark" size="small">
         <a href="#section-css">
@@ -24,29 +23,28 @@
       {% include "components/grid-item.njk" %}
     {% endfor %}
 
-    {% set sectionTitle = {
-      title: "CSSOM",
-      id: "section-cssom",
-      gridRow: 4,
-      headingId: "heading-secondary-2"
-    } %}
-    {% include "components/section-title/section-title.njk" %}
+    <layout-item start="2" end="8" row="4">
+      <div class="surface" variant="dark" size="small">
+        <a href="#section-cssom">
+          <h2 variant="md" id="section-cssom" >CSSOM</h2>
+        </a>
+      </div>
+    </layout-item>
 
     {% for feature in features.cssomFeatures %}
       {% include "components/grid-item.njk" %}
     {% endfor %}
 
-    {% set sectionTitle = {
-      title: "Browser API",
-      id: "section-bapi",
-      gridRow: 6,
-      headingId: "heading-secondary-3"
-    } %}
-    {% include "components/section-title/section-title.njk" %}
+    <layout-item start="2" end="8" row="6">
+      <div class="surface" variant="dark" size="small">
+        <a href="#section-bapi">
+          <h2 variant="md" id="section-bapi">Browser APIs</h2>
+        </a>
+      </div>
+    </layout-item>
 
     {% for feature in features.browserApiFeatures %}
       {% include "components/grid-item.njk" %}
     {% endfor %}
-
   </layout-item>
 {% endblock %}
