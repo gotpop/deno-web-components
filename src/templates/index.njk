@@ -20,7 +20,26 @@
     </layout-item>
 
     {% for feature in features.cssFeatures %}
-      {% include "components/grid-item.njk" %}
+      <layout-item
+        aria-label="{{ feature.title }}"
+        data-card-type="{{ feature.type }}"
+        id="{{ feature.slug }}"
+        end="{{ feature.layout['item-end'] }}"
+        start="{{ feature.layout['item-start'] }}"
+        role="region"
+        row="{{ feature.layout['row-position'] }}"
+        >
+        <article class="surface" variant="light" size="large">
+          <div>
+            <h3 variant="lg" flow="body">{{ feature.title }}</h3>
+            {% for description in feature.description %}
+              <p>{{ description }}</p>
+            {% endfor %}
+          </div>
+          <a class="feature-link" href="/features/{{ feature.slug }}">
+            <span>Read more</span></a>
+        </article>
+      </layout-item>
     {% endfor %}
 
     <layout-item start="2" end="8" row="4">
@@ -32,7 +51,26 @@
     </layout-item>
 
     {% for feature in features.cssomFeatures %}
-      {% include "components/grid-item.njk" %}
+      <layout-item
+        aria-label="{{ feature.title }}"
+        data-card-type="{{ feature.type }}"
+        id="{{ feature.slug }}"
+        end="{{ feature.layout['item-end'] }}"
+        start="{{ feature.layout['item-start'] }}"
+        role="region"
+        row="{{ feature.layout['row-position'] }}"
+        >
+        <article class="surface" variant="light" size="large">
+          <div>
+            <h3 variant="lg" flow="body">{{ feature.title }}</h3>
+            {% for description in feature.description %}
+              <p>{{ description }}</p>
+            {% endfor %}
+          </div>
+          <a class="feature-link" href="/features/{{ feature.slug }}">
+            <span>Read more</span></a>
+        </article>
+      </layout-item>
     {% endfor %}
 
     <layout-item start="2" end="8" row="6">
@@ -44,7 +82,26 @@
     </layout-item>
 
     {% for feature in features.browserApiFeatures %}
-      {% include "components/grid-item.njk" %}
+      <layout-item
+        aria-label="{{ feature.title }}"
+        data-card-type="{{ feature.type }}"
+        id="{{ feature.slug }}"
+        end="{{ feature.layout['item-end'] }}"
+        start="{{ feature.layout['item-start'] }}"
+        role="region"
+        row="{{ feature.layout['row-position'] }}"
+        >
+        <article class="surface" variant="light" size="large">
+          <div>
+            <h3 variant="lg" flow="body">{{ feature.title }}</h3>
+            {% for description in feature.description %}
+              <p>{{ description }}</p>
+            {% endfor %}
+          </div>
+          <a class="feature-link" href="/features/{{ feature.slug }}">
+            <span>Read more</span></a>
+        </article>
+      </layout-item>
     {% endfor %}
   </layout-item>
 {% endblock %}
