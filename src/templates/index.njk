@@ -62,9 +62,9 @@
         >
         <article class="surface" variant="light" size="large">
           <div>
-            <h3 variant="lg" flow="body">{{ feature.title }}</h3>
+            <h3 variant="lg" top="0" bottom="3">{{ feature.title }}</h3>
             {% for description in feature.description %}
-              <p>{{ description }}</p>
+              <p top="1" bottom="2">{{ description }}</p>
             {% endfor %}
           </div>
           <a class="feature-link" href="/features/{{ feature.slug }}">
@@ -93,9 +93,9 @@
         >
         <article class="surface" variant="light" size="large">
           <div>
-            <h3 variant="lg" flow="body">{{ feature.title }}</h3>
+            <h3 variant="lg" top="0" bottom="3">{{ feature.title }}</h3>
             {% for description in feature.description %}
-              <p>{{ description }}</p>
+              <p top="1" bottom="2">{{ description }}</p>
             {% endfor %}
           </div>
           <a class="feature-link" href="/features/{{ feature.slug }}">
