@@ -17,16 +17,14 @@ a:not([class]) {
 }
 
 .feature-link {
-  color: var(--colour-light-1);
+  color: var(--dark-600);
   display: inline flex;
   font-size: var(--font-scaled-base);
-  margin-inline: auto 0;
+  margin: 0 0 auto auto;
   max-width: max-content;
   padding-block-start: calc(1rem - 1cap);
   text-decoration: underline 2px var(--secondary-200);
   text-underline-offset: var(--spacing-base);
-  margin-block-start: auto; /* Pushes the link to the bottom */
-  margin-block-end: 0; /* Removes bottom margin */
 
   &:hover {
     background-color: var(--light-600);
@@ -34,8 +32,8 @@ a:not([class]) {
 }
 
 .jump-link {
-  color: hotpink;
+  color: var(--primary-500);
   text-decoration: underline;
   text-underline-offset: calc(0.5em - 4px);
-  text-decoration-color: aqua;
+  text-decoration-color: var(--secondary-500);
 }
