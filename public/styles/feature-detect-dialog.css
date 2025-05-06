@@ -1,20 +1,20 @@
 #feature-detect-popover {
-  background-color: var(--colour-dark-1);
+  backdrop-filter: blur(50px);
   background-color: red;
+  background-color: var(--colour-dark-1);
+  border-radius: 0.5rem;
+  border: unset;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   color: var(--colour-light-1);
+  display: block;
+  gap: 1rem;
   grid-column: content;
   grid-row: span 1;
   grid-template-columns: subgrid;
   padding: calc(var(--padding) * 2);
+  position: fixed;
   text-align: center;
   width: min(calc(100% - 2rem), 30rem);
-  border: unset;
-  gap: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(50px);
-  display: block;
-  position: fixed;
 
   &:popover-open {
     display: block;

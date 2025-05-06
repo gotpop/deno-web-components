@@ -11,7 +11,7 @@
     start="14"
     end="31"
     >
-    <article variant="light" size="large" class="surface">
+    <surface-item variant="light" size="large">
       {% for item in bodyMarkupData %}
         {% if item.tag == "h2" %}
           <h2 variant="xl" flow="body" id="{{ item.id }}">{{ item.content }}</h2>
@@ -29,6 +29,6 @@
           <{{ item.tag }} {% if item.id %}id="{{ item.id }}"{% endif %}>{{ item.content }}</{{ item.tag }}>
         {% endif %}
       {% endfor %}
-    </article>
+    </surface-item>
   </layout-item>
 {% endblock %}

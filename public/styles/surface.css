@@ -1,31 +1,34 @@
 /* prettier-ignore */
-.surface {
-  --light-scheme: --transparent(var(--light-100), 0.4);
-  --dark-scheme: var(--secondary-400);
-  --variant: attr(variant type(<custom-ident>));
-  --size-attr: attr(size type(<custom-ident>));
-
-  --scheme: if(
-      style(--variant: dark): var(--dark-scheme); 
-      style(--variant: light): var(--light-scheme); 
-
+@function --get-scheme(--variant <custom-ident>) returns <color> {
+    result: if(
+      style(--variant: dark): var(--dark-scheme);
+      style(--variant: light): var(--light-scheme);
+      
       else: transparent
-    );
+    )
+  }
 
-  --padding-size: if(
-      style(--size-attr: large): 3rem; 
-      style(--size-attr: medium): 2rem; 
-      style(--size-attr: small): 1rem; 
+/* prettier-ignore */
+@function --get-padding-size(--size-attr <custom-ident>) returns <length> {
+    result: if(
+      style(--size-attr: large): 3rem;
+      style(--size-attr: medium): 2rem;
+      style(--size-attr: small): 1rem;
+      
       else: 0rem /* Default padding */
-    );
+    )
+  }
+
+surface-item {
+  --dark-scheme: var(--secondary-400);
+  --light-scheme: --transparent(var(--light-100), 0.4);
 
   align-content: space-between;
-  background-color: var(--scheme);
-  color: var(--dark-500);
+  background-color: --get-scheme(attr(variant type(<custom-ident>), light));
   display: grid;
   grid-column: 1 / -1;
   grid-row: attr(row type(<integer>));
   grid-template-columns: auto;
-  padding: var(--padding-size);
+  padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
   view-transition-name: attr(id type(<custom-ident>), none);
 }

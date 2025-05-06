@@ -12,11 +12,11 @@
     row-gap="3"
     >
     <layout-item start="2" end="8" row="1">
-      <div class="surface" variant="dark" size="small">
+      <surface-item variant="dark" size="small">
         <a href="#section-css">
           <h2 variant="md" id="section-css" >CSS Features</h2>
         </a>
-      </div>
+      </surface-item>
     </layout-item>
 
     {% for feature in features.cssFeatures %}
@@ -29,7 +29,7 @@
         role="region"
         row="{{ feature.layout['row-position'] }}"
         >
-        <article class="surface" variant="light" size="large">
+        <surface-item variant="light" size="large">
           <div>
             <h3 variant="lg" top="0" bottom="3">{{ feature.title }}</h3>
             {% for description in feature.description %}
@@ -38,16 +38,16 @@
           </div>
           <a class="feature-link" href="/features/{{ feature.slug }}">
             <span>Read more</span></a>
-        </article>
+        </surface-item>
       </layout-item>
     {% endfor %}
 
     <layout-item start="2" end="8" row="4">
-      <div class="surface" variant="dark" size="small">
+      <surface-item variant="dark" size="small">
         <a href="#section-cssom">
           <h2 variant="md" id="section-cssom" >CSSOM</h2>
         </a>
-      </div>
+      </surface-item>
     </layout-item>
 
     {% for feature in features.cssomFeatures %}
@@ -60,7 +60,7 @@
         role="region"
         row="{{ feature.layout['row-position'] }}"
         >
-        <article class="surface" variant="light" size="large">
+        <surface-item variant="light" size="large">
           <div>
             <h3 variant="lg" top="0" bottom="3">{{ feature.title }}</h3>
             {% for description in feature.description %}
@@ -69,16 +69,16 @@
           </div>
           <a class="feature-link" href="/features/{{ feature.slug }}">
             <span>Read more</span></a>
-        </article>
+        </surface-item>
       </layout-item>
     {% endfor %}
 
     <layout-item start="2" end="8" row="6">
-      <div class="surface" variant="dark" size="small">
+      <surface-item variant="dark" size="small">
         <a href="#section-bapi">
           <h2 variant="md" id="section-bapi">Browser APIs</h2>
         </a>
-      </div>
+      </surface-item>
     </layout-item>
 
     {% for feature in features.browserApiFeatures %}
@@ -91,7 +91,7 @@
         role="region"
         row="{{ feature.layout['row-position'] }}"
         >
-        <article class="surface" variant="light" size="large">
+        <surface-item variant="light" size="large">
           <div>
             <h3 variant="lg" top="0" bottom="3">{{ feature.title }}</h3>
             {% for description in feature.description %}
@@ -100,7 +100,7 @@
           </div>
           <a class="feature-link" href="/features/{{ feature.slug }}">
             <span>Read more</span></a>
-        </article>
+        </surface-item>
       </layout-item>
     {% endfor %}
   </layout-item>

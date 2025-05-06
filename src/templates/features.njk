@@ -8,7 +8,7 @@
 {% block page_content %}
   <grid-auto>
     {% for feature in features %}
-      <article class="surface" variant="light" size="large">
+      <surface-item variant="light" size="large">
         <div>
           <h3 variant="lg">{{ feature.title }}</h3>
           {% for description in feature.description %}
@@ -17,7 +17,7 @@
         </div>
         <a class="feature-link" href="/features/{{ feature.slug }}">
           <span>Read more</span></a>
-      </article>
+      </surface-item>
     {% endfor %}
   </grid-auto>
 {% endblock %}
