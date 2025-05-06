@@ -1,17 +1,3 @@
-@function --grid(--site-max-width <length>, --columns-number <integer>) {
-  result: [full-start margin-start] minmax(1rem, 1fr) [margin-end content-start]
-    repeat(
-      12,
-      [col-start]
-        minmax(auto, calc(var(--site-max-width) / var(--columns-number)))
-        [col-end]
-    )
-    [content-end margin-start] minmax(1rem, 1fr) [margin-end full-end];
-}
-
-@function --grid-row-base(--gap-one: 1rem, --gap-two: 2rem) {
-  result: [header] min-content [main] 1fr [gap] 10rem [footer] min-content;
-}
 @function --transparent(--color <color>, --opacity <number>) returns <color> {
   result: oklch(from var(--color) l c h / var(--opacity));
 }

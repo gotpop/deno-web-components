@@ -1,90 +1,10 @@
-/* prettier-ignore */
-layout-item {
+app-shell {
+  background-color: var(--site-background);
+  background-image: paint(grid);
   display: grid;
-  grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
-  grid-row: attr(row type(<integer>));
-  grid-template-columns: subgrid;
-  align-content: attr(align type(<custom-ident>), normal);
-  row-gap: attr(row-gap rem, unset);
-}
-
-/* prettier-ignore */
-.surface {
-  --light-scheme: --transparent(var(--light-100), 0.4);
-  --dark-scheme: var(--secondary-400);
-  --variant: attr(variant type(<custom-ident>));
-  --size-attr: attr(size type(<custom-ident>));
-
-  --scheme: if(
-      style(--variant: dark): var(--dark-scheme); 
-      style(--variant: light): var(--light-scheme); 
-
-      else: transparent
-    );
-
-  --padding-size: if(
-      style(--size-attr: large): 3rem; 
-      style(--size-attr: medium): 2rem; 
-      style(--size-attr: small): 1rem; 
-      else: 0rem /* Default padding */
-    );
-
-  align-content: space-between;
-  background-color: var(--scheme);
-  color: var(--dark-500);
-  display: grid;
-  grid-column: 1 / -1;
-  grid-row: attr(row type(<integer>));
-  grid-template-columns: auto;
-  padding: var(--padding-size);
-  view-transition-name: attr(id type(<custom-ident>), none);
-}
-
-a:not([class]) {
-  padding: 1rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-self: self-start;
-  background-color: var(--secondary-500);
-  width: max-content;
-  color: var(--light-100);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  span {
-    padding-top: calc(1rem - 1cap);
-  }
-}
-
-.feature-link {
-  color: var(--colour-light-1);
-  display: inline flex;
-  font-size: var(--font-scaled-base);
-  margin-inline: auto 0;
-  max-width: max-content;
-  padding-block-start: calc(1rem - 1cap);
-  text-decoration: underline 2px var(--secondary-200);
-  text-underline-offset: var(--spacing-base);
-  margin-block-start: auto; /* Pushes the link to the bottom */
-  margin-block-end: 0; /* Removes bottom margin */
-
-  &:hover {
-    background-color: var(--light-600);
-  }
-}
-
-@function --responsive(--mobile, --tablet, --desktop) {
-  result: var(--mobile);
-
-  @media screen and (width >= 768px) {
-    result: var(--tablet);
-  }
-
-  @media screen and (width >= 1024px) {
-    result: var(--desktop);
-  }
+  grid-template-columns: --grid(12);
+  grid-template-rows: --grid-row-base(5rem, 10rem);
+  min-height: 100dvh;
 }
 
 grid-auto {
@@ -101,6 +21,15 @@ grid-auto {
   }
 }
 
+layout-item {
+  display: grid;
+  grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
+  grid-row: attr(row type(<integer>));
+  grid-template-columns: subgrid;
+  align-content: attr(align type(<custom-ident>), normal);
+  row-gap: attr(row-gap rem, unset);
+}
+
 main-content {
   display: grid;
   grid-column: full;
@@ -108,43 +37,7 @@ main-content {
   grid-template-columns: subgrid;
   align-items: start;
   grid-auto-rows: min-content;
-}
-
-@property --gutter-columns {
-  syntax: "*";
-  initial-value: 0.5rem;
-  inherits: false;
-}
-
-app-shell {
-  display: grid;
-  grid-template-rows: --grid-row-base();
-  grid-template-columns: --grid(1200px, 12);
-
-  grid-template-columns:
-    [full-start] minmax(2rem, 1fr)
-    [center-start] repeat(
-      12,
-      [gutter-start] var(--gutter-columns) var(--gutter-columns) [gutter-end
-        content-start] clamp(1rem, round(5.5vw, 2rem), 6rem) [content-end]
-    )
-    [gutter-start] var(--gutter-columns) var(--gutter-columns)
-    [center-end gutter-end] minmax(2rem, 1fr)
-    [full-end];
-
-  min-height: 100dvh;
-  background: var(--site-background);
-  view-transition-name: attr(id type(<custom-ident>), none);
-  background-image: paint(grid);
-  contain: layout style;
-  /* background-image: paint(bytemare); */
-}
-
-.jump-link {
-  color: hotpink;
-  text-decoration: underline;
-  text-underline-offset: calc(0.5em - 4px);
-  text-decoration-color: aqua;
+  row-gap: attr(row-gap rem, 5rem);
 }
 
 site-hero {

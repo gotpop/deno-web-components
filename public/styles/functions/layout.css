@@ -1,0 +1,27 @@
+@function --grid-row-base(--gap-one: 5rem, --gap-two: 10rem) {
+  result: [header] min-content [gap] var(--gap-one) [main] 1fr [gap]
+    var(--gap-two) [footer] min-content;
+}
+
+@function --grid(--columns-number <integer>) {
+  result: [full-start] minmax(2rem, 1fr) [center-start]
+    repeat(
+      var(--columns-number),
+      [gutter-start] var(--gutter-columns) var(--gutter-columns) [gutter-end
+        content-start] clamp(1rem, round(5.5vw, 2rem), 6rem) [content-end]
+    )
+    [gutter-start] var(--gutter-columns) var(--gutter-columns) [center-end
+    gutter-end] minmax(2rem, 1fr) [full-end];
+}
+
+@function --responsive(--mobile, --tablet, --desktop) {
+  result: var(--mobile);
+
+  @media screen and (width >= 768px) {
+    result: var(--tablet);
+  }
+
+  @media screen and (width >= 1024px) {
+    result: var(--desktop);
+  }
+}

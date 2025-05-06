@@ -1,0 +1,31 @@
+/* prettier-ignore */
+.surface {
+  --light-scheme: --transparent(var(--light-100), 0.4);
+  --dark-scheme: var(--secondary-400);
+  --variant: attr(variant type(<custom-ident>));
+  --size-attr: attr(size type(<custom-ident>));
+
+  --scheme: if(
+      style(--variant: dark): var(--dark-scheme); 
+      style(--variant: light): var(--light-scheme); 
+
+      else: transparent
+    );
+
+  --padding-size: if(
+      style(--size-attr: large): 3rem; 
+      style(--size-attr: medium): 2rem; 
+      style(--size-attr: small): 1rem; 
+      else: 0rem /* Default padding */
+    );
+
+  align-content: space-between;
+  background-color: var(--scheme);
+  color: var(--dark-500);
+  display: grid;
+  grid-column: 1 / -1;
+  grid-row: attr(row type(<integer>));
+  grid-template-columns: auto;
+  padding: var(--padding-size);
+  view-transition-name: attr(id type(<custom-ident>), none);
+}
