@@ -1,8 +1,8 @@
 {% extends "base-hero.njk" %}
 
 {% block hero %}
-  <h1 class="heading" id="heading-primary">Features</h1>
-  <p class="subheading" id="subheading">A demonstation of the latest in CSS and Web Components</p>
+  <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Features</h1>
+  <p variant="lg" id="subheading" top="4">A collection of the latest in CSS and Web Components</p>
 {% endblock %}
 
 {% block page_content %}
@@ -10,9 +10,9 @@
     {% for feature in features %}
       <surface-item variant="light" size="large">
         <div>
-          <h3 variant="lg">{{ feature.title }}</h3>
+          <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
           {% for description in feature.description %}
-            <p>{{ description }}</p>
+            <p top="1" bottom="2">{{ description }}</p>
           {% endfor %}
         </div>
         <a class="feature-link" href="/features/{{ feature.slug }}">
