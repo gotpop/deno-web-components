@@ -7,8 +7,8 @@ export const cssFeaturesMap = new Map()
       "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
     ],
     layout: {
-      "item-end": 14,
-      "item-start": 2,
+      "item-end": 13,
+      "item-start": 4,
       "row-position": 2,
     },
     links: [
@@ -20,7 +20,7 @@ export const cssFeaturesMap = new Map()
     ],
     slug: "css-mixins",
     tags: ["css"],
-    title: "CSS Functions & Mixins Module",
+    title: "Functions & Mixins Module",
     type: "css",
   })
   .set("css-values-5", {
@@ -30,7 +30,7 @@ export const cssFeaturesMap = new Map()
     ],
     layout: {
       "item-start": 16,
-      "item-end": 26,
+      "item-end": 25,
       "row-position": 2,
     },
     links: [
@@ -52,7 +52,7 @@ export const cssFeaturesMap = new Map()
     ],
     label: "Title 4",
     layout: {
-      "item-end": 38,
+      "item-end": 37,
       "item-start": 28,
       "row-position": 2,
     },
@@ -81,8 +81,8 @@ export const cssFeaturesMap = new Map()
     ],
     label: "Title 6",
     layout: {
-      "item-end": 14,
-      "item-start": 2,
+      "item-end": 13,
+      "item-start": 4,
       "row-position": 3,
     },
     links: [
@@ -105,7 +105,7 @@ export const cssFeaturesMap = new Map()
     label: "Title 6",
     layout: {
       "item-start": 16,
-      "item-end": 26,
+      "item-end": 25,
       "row-position": 3,
     },
     links: [
@@ -127,7 +127,7 @@ export const cssFeaturesMap = new Map()
     ],
     label: "Title 6",
     layout: {
-      "item-end": 38,
+      "item-end": 37,
       "item-start": 28,
       "row-position": 3,
     },

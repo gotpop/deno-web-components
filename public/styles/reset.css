@@ -4,10 +4,14 @@ body {
 
 * {
   box-sizing: border-box;
+  text-box-edge: cap alphabetic;
+  text-box-trim: trim-both;
 
   &:before,
   &:after {
     box-sizing: inherit;
+    text-box-edge: inherit;
+    text-box-trim: inherit;
   }
 }
 

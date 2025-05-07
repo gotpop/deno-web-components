@@ -1,39 +1,25 @@
 a:not([class]) {
-  padding: 1rem;
-  margin-bottom: 2rem;
-  display: flex;
   align-self: self-start;
   background-color: var(--secondary-500);
-  width: max-content;
   color: var(--light-100);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  display: flex;
+  padding: 1rem;
+  width: max-content;
 
   span {
     padding-top: calc(1rem - 1cap);
   }
 }
 
-.feature-link {
-  color: var(--dark-600);
-  display: inline flex;
-  font-size: var(--font-scaled-base);
-  margin: 0 0 auto auto;
-  max-width: max-content;
-  padding-block-start: calc(1rem - 1cap);
-  text-decoration: underline 2px var(--secondary-200);
-  text-underline-offset: var(--spacing-base);
-
-  &:hover {
-    background-color: var(--light-600);
-  }
-}
-
 .jump-link {
   color: var(--primary-500);
-  text-decoration: underline;
-  text-underline-offset: calc(0.5em - 4px);
-  text-decoration-color: var(--secondary-500);
+  text-decoration: underline 0.1em var(--secondary-500);
+  text-underline-offset: calc(var(--spacing-base) - 0.1em);
+}
+
+.feature-link {
+  margin-inline: auto 0;
+  padding-block-start: calc(2rem - 1cap);
+  text-decoration: underline 0.1em var(--secondary-200);
+  text-underline-offset: calc(var(--spacing-base) - 0.1em);
 }

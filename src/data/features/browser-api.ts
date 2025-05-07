@@ -7,8 +7,8 @@ export const browserApiFeaturesMap = new Map()
       "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     ],
     layout: {
-      "item-end": 14,
-      "item-start": 2,
+      "item-end": 13,
+      "item-start": 4,
       "row-position": 7,
     },
     links: [
@@ -30,7 +30,7 @@ export const browserApiFeaturesMap = new Map()
     ],
     layout: {
       "item-start": 16,
-      "item-end": 26,
+      "item-end": 25,
       "row-position": 7,
     },
     links: [
@@ -57,7 +57,7 @@ export const browserApiFeaturesMap = new Map()
       "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     ],
     layout: {
-      "item-end": 38,
+      "item-end": 37,
       "item-start": 28,
       "row-position": 7,
     },
