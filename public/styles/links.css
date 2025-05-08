@@ -27,7 +27,7 @@ a:not([class]) {
   color: var(--light-100);
   display: flex;
   padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
-  text-decoration: if(style(--variant: button): none; else: underline);
+  text-decoration-line: if(style(--variant: button): none; else: underline);
 
   span {
     padding-top: calc(1rem - 1cap);
