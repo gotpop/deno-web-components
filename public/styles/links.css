@@ -28,10 +28,15 @@ a:not([class]) {
   display: flex;
   padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
   text-decoration-line: if(style(--variant: button): none; else: underline);
+  padding-block: calc(1rem - calc(1cap / 2));
 
   span {
     padding-top: calc(1rem - 1cap);
     background: red;
+  }
+
+  h2 {
+    /* background: blue; */
   }
 }
 
