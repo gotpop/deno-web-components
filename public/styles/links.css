@@ -1,10 +1,32 @@
+/* prettier-ignore */
+@function --get-type(--variant <custom-ident>) returns <color> {
+    result: if(
+      style(--variant: button): var(--dark-scheme);
+      
+      else: transparent
+    )
+  }
+
+/* prettier-ignore */
+@function --get-padding-size2(--size-attr <custom-ident>) returns <length> {
+    result: if(
+      style(--size-attr: large): 3rem;
+      style(--size-attr: medium): 2rem;
+      style(--size-attr: small): 1rem;
+      
+      else: 0rem /* Default padding */
+    )
+  }
+
 a:not([class]) {
+  --dark-scheme: var(--secondary-600);
+  --light-scheme: --transparent(var(--light-100), 0.4);
+
   align-self: self-start;
-  background-color: var(--secondary-500);
+  background-color: --get-type(attr(variant type(<custom-ident>), link));
   color: var(--light-100);
   display: flex;
-  padding: 1rem;
-  width: max-content;
+  padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
 
   span {
     padding-top: calc(1rem - 1cap);
