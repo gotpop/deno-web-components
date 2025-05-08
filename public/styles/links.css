@@ -21,12 +21,13 @@
 a:not([class]) {
   --dark-scheme: var(--secondary-600);
   --light-scheme: --transparent(var(--light-100), 0.4);
+  --variant: attr(variant type(<custom-ident>), link);
 
-  align-self: self-start;
-  background-color: --get-type(attr(variant type(<custom-ident>), link));
+  background-color: --get-type(var(--variant));
   color: var(--light-100);
   display: flex;
   padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
+  text-decoration: if(style(--variant: button): none; else: underline);
 
   span {
     padding-top: calc(1rem - 1cap);
