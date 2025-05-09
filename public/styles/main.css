@@ -1,6 +1,7 @@
 @import "./properties.css";
 @import "./variables.css";
 @import "./functions.css";
+@import "./mixins.css";
 @import "./fonts.css";
 @import "./functions/typographic.css";
 @import "./functions/layout.css";

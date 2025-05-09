@@ -8,7 +8,7 @@
 {% block page_content %}
   <grid-auto>
     {% for feature in features %}
-      <surface-item variant="light" size="large">
+      <surface-item variant="light" class="btn" size="large" start="auto" end="auto" aria-label="{{ feature.title }}" data-card-type="{{ feature.type }}" id="{{ feature.slug }}" role="region">
         <div>
           <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
           {% for description in feature.description %}

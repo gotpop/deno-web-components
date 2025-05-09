@@ -23,10 +23,13 @@ surface-item {
   --dark-scheme: var(--secondary-400);
   --light-scheme: --transparent(var(--light-100), 0.4);
 
+  --start: attr(start type(<integer> | <custom-ident>), 1);
+  --end: attr(end type(<integer> | <custom-ident>), -1);
+
   align-content: space-between;
   background-color: --get-scheme(attr(variant type(<custom-ident>), light));
   display: grid;
-  grid-column: 1 / -1;
+  grid-column: var(--start) / var(--end);
   grid-row: attr(row type(<integer>));
   grid-template-columns: auto;
   padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));

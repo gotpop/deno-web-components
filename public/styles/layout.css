@@ -17,17 +17,17 @@ app-shell {
 }
 
 grid-auto {
-  column-gap: --responsive(0rem, 3rem, 5rem);
-  display: grid;
-  grid-auto-flow: row;
-  grid-column: 2 / -2;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  row-gap: 8rem;
-  width: 100%;
+  --start: attr(start type(<integer> | <custom-ident>), 2);
+  --end: attr(end type(<integer> | <custom-ident>), -2);
 
-  > surface-item {
-    grid-column: auto;
-  }
+  /* column-gap: --responsive(0rem, 3rem, 5rem); */
+  column-gap: 2rem;
+  display: grid;
+  grid-column: var(--start) / var(--end);
+  row-gap: 8rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+  /* @apply --box; */
 }
 
 main-content {
@@ -40,15 +40,20 @@ main-content {
   row-gap: attr(row-gap rem, 5rem);
 }
 
+/* prettier-ignore */
 layout-item {
   --variant: attr(variant type(<custom-ident>), row);
+  --grid: if(
+    style(--variant: column): 1fr; 
+    style(--variant: row): subgrid; 
+    
+    else: auto
+  );
 
   align-content: attr(align type(<custom-ident>), normal);
   display: grid;
   grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
-  grid-row: attr(row type(<integer>));
-  grid-template-columns: if(
-    style(--variant: column): 1fr; style(--variant: row): subgrid; else: auto
-  );
+  grid-row: attr(row type(<integer>), auto);
+  grid-template-columns: var(--grid);
   row-gap: attr(row-gap rem, unset);
 }
