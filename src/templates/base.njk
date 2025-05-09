@@ -11,9 +11,10 @@
       aria-label="application"
     >
       {% include "partials/header/header.njk" %}
-      <main-content id="main" role="main" aria-label="Main content" row-gap="5">
+
+      <layout-item id="main" role="main" aria-label="Main content" row="main" row-gap="5" start="1" end="-1">
         {% block content %}{% endblock %}
-      </main-content>
+      </layout-item>
 
       {% include "partials/site-footer/site-footer.njk" %}
     </app-shell>

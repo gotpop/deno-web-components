@@ -1,0 +1,7 @@
+main-content {
+  display: grid;
+  grid-column: full;
+  grid-row: main;
+  grid-template-columns: subgrid;
+  row-gap: attr(row-gap rem, 5rem);
+}

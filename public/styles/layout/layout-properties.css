@@ -1,0 +1,17 @@
+@property --min-content {
+  syntax: "*";
+  inherits: false;
+  initial-value: 20rem;
+}
+
+@property --begin {
+  syntax: "*";
+  inherits: false;
+  initial-value: 2;
+}
+
+@property --gap {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1rem;
+}

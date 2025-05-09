@@ -1,0 +1,8 @@
+app-shell {
+  background-color: var(--site-background);
+  background-image: paint(grid);
+  display: grid;
+  grid-template-columns: --grid(12);
+  grid-template-rows: --grid-row-base(5rem, 10rem);
+  min-height: 100dvh;
+}
