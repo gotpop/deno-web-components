@@ -3,3 +3,9 @@
   initial-value: 0.5rem;
   inherits: false;
 }
+
+@property --end {
+  syntax: "*";
+  inherits: false;
+  initial-value: 2;
+}

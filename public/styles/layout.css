@@ -16,20 +16,6 @@ app-shell {
   min-height: 100dvh;
 }
 
-grid-auto {
-  --start: attr(start type(<integer> | <custom-ident>), 2);
-  --end: attr(end type(<integer> | <custom-ident>), -2);
-
-  /* column-gap: --responsive(0rem, 3rem, 5rem); */
-  column-gap: 2rem;
-  display: grid;
-  grid-column: var(--start) / var(--end);
-  row-gap: 8rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-
-  /* @apply --box; */
-}
-
 main-content {
   align-items: start;
   display: grid;

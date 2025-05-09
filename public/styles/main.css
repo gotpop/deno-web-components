@@ -8,6 +8,7 @@
 @import "./functions/tetriminoes.css";
 @import "./global.css";
 @import "./typography.css";
+@import "./grid-auto.css";
 @import "./layout.css";
 @import "./keyframes.css";
 @import "./reset.css";
