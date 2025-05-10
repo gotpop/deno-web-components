@@ -1,13 +1,12 @@
-<aside class="page-nav">
-    <style>
-      {{"page-nav" | componentCss | importCss | safe}}
-    </style>
-    <h2>On this page</h2>
+<surface-item variant="light" size="large" start="2" end="13">
+    <h3 variant="md">On this page</h2>
     <nav>
         {% for item in bodyMarkupData %}
-            {% if item.tag.startsWith('h') %}
-                <a href="#{{ item.id }}">{{ item.content }}</a>
+            {% if item
+                .tag
+                .startsWith('h') %}
+                <a href="#{{ item.id }}" class="jump-link">{{ item.content }}</a>
             {% endif %}
         {% endfor %}
     </nav>
-</aside>
+</surface-item>

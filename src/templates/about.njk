@@ -7,12 +7,8 @@
 
 {% block page_content %}
   {% include "partials/page-nav/page-nav.njk" %}
-  <layout-item
-    start="14"
-    end="31"
-    >
-    <surface-item variant="light" size="large">
-      {% include "partials/body-markup-renderer.njk" %}
-    </surface-item>
-  </layout-item>
+  <surface-item variant="light" size="large" start="14"
+    end="31">
+    {% include "partials/body-markup-renderer.njk" %}
+  </surface-item>
 {% endblock %}
