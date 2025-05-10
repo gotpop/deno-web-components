@@ -1,0 +1,20 @@
+{% macro featureCard(feature) %}
+  <surface-item 
+    aria-label="{{ feature.title }}"
+    end="auto"
+    id="{{ feature.slug }}"
+    role="region"
+    start="auto"
+    variant="light" size="large"
+    >
+    <div>
+      <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
+      {% for description in feature.description %}
+        <p top="1" bottom="2">{{ description }}</p>
+      {% endfor %}
+    </div>
+    <a class="feature-link" href="/features/{{ feature.slug }}">
+      <span>Read more</span>
+    </a>
+  </surface-item>
+{% endmacro %}

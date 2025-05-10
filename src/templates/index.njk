@@ -1,4 +1,5 @@
 {% extends "base-hero.njk" %}
+{% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
   <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Web Platform Features Showcase</h1>
@@ -11,91 +12,37 @@
     start="1"
     row-gap="3"
     >
-    <layout-item start="4" end="-5" variant="column">
+    <layout-item start="4" end="10" variant="column">
       <a href="#section-css" variant="button" size="small">
         <h2 variant="base" id="section-css" >CSS Features</h2>
       </a>
     </layout-item>
+    <grid-auto>
+      {% for feature in features.cssFeatures %}
+        {{ featureComponents.featureCard(feature) }}
+      {% endfor %}
+    </grid-auto>
 
-    {% for feature in features.cssFeatures %}
-      <layout-item
-        aria-label="{{ feature.title }}"
-        data-card-type="{{ feature.type }}"
-        id="{{ feature.slug }}"
-        end="{{ feature.layout['item-end'] }}"
-        start="{{ feature.layout['item-start'] }}"
-        role="region"
-        row="{{ feature.layout['row-position'] }}"
-        >
-        <surface-item variant="light" size="medium">
-          <div>
-            <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
-            {% for description in feature.description %}
-              <p top="1" bottom="2">{{ description }}</p>
-            {% endfor %}
-          </div>
-          <a class="feature-link" href="/features/{{ feature.slug }}">
-            <span>Read more</span></a>
-        </surface-item>
-      </layout-item>
-    {% endfor %}
-
-    <layout-item start="4" end="-5" row="4" variant="column">
+    <layout-item start="4" end="10" row="4" variant="column">
       <a href="#section-cssom" variant="button" size="small">
         <h2 variant="base" id="section-cssom" >CSSOM</h2>
       </a>
     </layout-item>
+    <grid-auto>
+      {% for feature in features.cssomFeatures %}
+        {{ featureComponents.featureCard(feature) }}
+      {% endfor %}
+    </grid-auto>
 
-    {% for feature in features.cssomFeatures %}
-      <layout-item
-        aria-label="{{ feature.title }}"
-        data-card-type="{{ feature.type }}"
-        id="{{ feature.slug }}"
-        end="{{ feature.layout['item-end'] }}"
-        start="{{ feature.layout['item-start'] }}"
-        role="region"
-        row="{{ feature.layout['row-position'] }}"
-        >
-        <surface-item variant="light" size="large">
-          <div>
-            <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
-            {% for description in feature.description %}
-              <p top="1" bottom="2">{{ description }}</p>
-            {% endfor %}
-          </div>
-          <a class="feature-link" href="/features/{{ feature.slug }}">
-            <span>Read more</span></a>
-        </surface-item>
-      </layout-item>
-    {% endfor %}
-
-    <layout-item start="4" end="-5" row="6" variant="column">
+    <layout-item start="4" end="10" row="6" variant="column">
       <a href="#section-bapi" variant="button" size="small">
         <h2 variant="base" id="section-bapi">Browser APIs</h2>
       </a>
     </layout-item>
-
-    {% for feature in features.browserApiFeatures %}
-      <layout-item
-        aria-label="{{ feature.title }}"
-        data-card-type="{{ feature.type }}"
-        id="{{ feature.slug }}"
-        end="{{ feature.layout['item-end'] }}"
-        start="{{ feature.layout['item-start'] }}"
-        role="region"
-        row="{{ feature.layout['row-position'] }}"
-        >
-        <surface-item variant="light" size="large">
-          <div>
-            <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
-            {% for description in feature.description %}
-              <p top="1" bottom="2">{{ description }}</p>
-            {% endfor %}
-          </div>
-          <a class="feature-link" href="/features/{{ feature.slug }}">
-            <span>Read more</span></a>
-        </surface-item>
-      </layout-item>
-    {% endfor %}
+    <grid-auto>
+      {% for feature in features.browserApiFeatures %}
+        {{ featureComponents.featureCard(feature) }}
+      {% endfor %}
+    </grid-auto>
   </layout-item>
 {% endblock %}
