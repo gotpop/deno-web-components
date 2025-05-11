@@ -11,22 +11,13 @@
     {{"nav" | componentCss | importCss | safe}}
   </style>
   <ul
-      role="menubar"
-      class="menu-bar"
+      aria-label="Main"
       aria-orientation="horizontal"
-      aria-label="Main">
+      class="menu-bar"
+      role="menubar"
+      >
     {% for item in menuItems %}
-      <li class="menu-item {% if item.isExternal %}menu-item-social{% endif %}" role="menuitem">
-        <a {{ item.key | isActive(currentPage) }} class="{% if item.isExternal %}menu-item-link-social{% else %}menu-item-link{% endif %}" href="{{ item.href }}" 
-             {% if item.isExternal %}aria-label="{{ item.name }}" target="_blank" rel="noopener"{% endif %}>
-          {% if item.isExternal %}
-            <span hidden>{{ item.name }}</span>
-            {% include "partials/icons/github.njk" %}
-          {% else %}
-            {{ item.name }}
-          {% endif %}
-        </a>
-      </li>
+      {% include "partials/nav/menu-item.njk" %}
     {% endfor %}
   </ul>
 </nav>

@@ -19,6 +19,18 @@
     )
   }
 
+.sticky {
+  position: sticky;
+  top: var(--site-header-height);
+  height: max-content;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
 surface-item {
   --dark-scheme: var(--secondary-400);
   --light-scheme: --transparent(var(--light-100), 0.4);
