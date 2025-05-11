@@ -1,22 +1,14 @@
-{# 
-  bodyMarkupRenderer.njk - Reusable component for rendering content blocks
-#}
-
 {% for item in bodyMarkupData %}
   {% if item.tag == "h2" %}
-    {# Main section headings #}
     <h2 variant="xl" top="2" bottom="4" id="{{ item.id }}">{{ item.content }}</h2>
 
   {% elif item.tag == "h3" %}
-    {# Sub-section headings #}
     <h3 variant="lg" top="4" bottom="3" id="{{ item.id }}">{{ item.content }}</h3>
 
   {% elif item.tag == "p" %}
-    {# Paragraphs #}
     <p top="1" bottom="2">{{ item.content }}</p>
 
   {% elif item.tag == "ul" %}
-    {# Unordered lists #}
     <ul>
       {% for listItem in item.items %}
         <li>{{ listItem }}</li>
@@ -24,7 +16,6 @@
     </ul>
 
   {% else %}
-    {# Generic fallback for other HTML tags #}
     <{{ item.tag }} {% if item.id %}id="{{ item.id }}"{% endif %}>
       {{ item.content }}
     </{{ item.tag }}>
