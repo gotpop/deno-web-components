@@ -13,20 +13,25 @@
         <a href="{{ BASE_URL }}" class="logo-link" aria-label="Home">
           {% include "partials/icons/logo.njk" %}
         </a>
-        <layout-item 
-          class="menu-bar"
+        <grid-auto
           end="-2"
+          row-sm="1"
+          row-md="1"
+          row-lg="1"
+          col-sm="1"
+          col-md="1"
+          col-lg="1"
+          min-content="6"
           role="menubar"
           row="2"
           start="25"
           aria-label="Primary navigation"  
           aria-orientation="horizontal"
-          role="navigation" 
         >
           {% for item in navigationData.menuItems %}
             {% include "partials/menu-item.njk" %}
           {% endfor %}
-        </layout-item>
+        </grid-auto>
       </header>
 
       <layout-item id="main" role="main" aria-label="Main content" row="main" row-gap="5" start="1" end="-1">
