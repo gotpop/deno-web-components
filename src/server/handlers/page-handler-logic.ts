@@ -56,7 +56,19 @@ export function handleFeatureTemplate(
 }
 
 export async function loadSiteData() {
-  const data = await Deno.readTextFile("./src/data/site-data.json")
-  console.log("JSON.parse(data) :", JSON.parse(data))
-  return JSON.parse(data)
+  const siteDataPromise = Deno.readTextFile("./src/data/site-data.json")
+  const navigationDataPromise = Deno.readTextFile("./src/data/navigation.json")
+
+  const [siteData, navigationData] = await Promise.all([
+    siteDataPromise,
+    navigationDataPromise,
+  ])
+
+  const parsedSiteData = JSON.parse(siteData)
+  const parsedNavigationData = JSON.parse(navigationData)
+
+  return {
+    siteData: parsedSiteData,
+    navigationData: parsedNavigationData,
+  }
 }
