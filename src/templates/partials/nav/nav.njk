@@ -1,11 +1,3 @@
-{% set menuItems = [
-  { name: "Home", href: "/", key: "index" },
-  { name: "About", href: "/about", key: "about" },
-  { name: "Contact", href: "/contact", key: "contact" },
-  { name: "Features", href: "/features", key: "features" },
-  { name: "GitHub", href: "https://github.com/gotpop/deno-web-components", key: "docs", isExternal: true }
-] %}
-
 <nav class="nav" aria-label="Primary navigation">
   <style>
     {{"nav" | componentCss | importCss | safe}}
@@ -16,7 +8,7 @@
       class="menu-bar"
       role="menubar"
       >
-    {% for item in menuItems %}
+    {% for item in navigationData.menuItems %}
       {% include "partials/nav/menu-item.njk" %}
     {% endfor %}
   </ul>
