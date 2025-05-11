@@ -9,24 +9,33 @@
       id="app-shell"
       role="application"
     >
-      <header id="header" class="header" role="banner" aria-label="Site header">
-        <a href="{{ BASE_URL }}" class="logo-link" aria-label="Home">
+      <header 
+        aria-label="Site header"
+        class="header" 
+        id="header" 
+        role="banner" 
+      >
+        <a 
+        aria-label="Home"
+        class="logo-link" 
+        href="{{ BASE_URL }}" 
+        >
           {% include "partials/icons/logo.njk" %}
         </a>
         <grid-auto
-          end="-2"
-          row-sm="1"
-          row-md="1"
-          row-lg="1"
-          col-sm="1"
-          col-md="1"
-          col-lg="1"
-          min-content="6"
-          role="menubar"
-          row="2"
-          start="25"
           aria-label="Primary navigation"  
           aria-orientation="horizontal"
+          col-lg="1"
+          col-md="1"
+          col-sm="1"
+          end="-2"
+          min-content="6"
+          role="menubar"
+          row-lg="1"
+          row-md="1"
+          row-sm="1"
+          row="2"
+          start="25"
         >
           {% for item in navigationData.menuItems %}
             {% include "partials/menu-item.njk" %}
@@ -34,7 +43,15 @@
         </grid-auto>
       </header>
 
-      <layout-item id="main" role="main" aria-label="Main content" row="main" row-gap="5" start="1" end="-1">
+      <layout-item 
+        aria-label="Main content" 
+        end="-1"
+        id="main" 
+        role="main" 
+        row-gap="5" 
+        row="main" 
+        start="1" 
+      >
         {% block content %}{% endblock %}
       </layout-item>
 
