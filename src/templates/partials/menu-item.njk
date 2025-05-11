@@ -1,0 +1,18 @@
+<a 
+  role="menuitem" 
+  class="{{ 'menu-item-link-social' if item.isExternal else 'menu-item-link' }}"
+  href="{{ item.href }}"
+  {{ item.key | isActive(currentPage) }}
+  {% if item.isExternal %}
+    aria-label="{{ item.name }}"
+    target="_blank"
+    rel="noopener"
+  {% endif %}
+  >
+  {% if item.isExternal %}
+    <span hidden>{{ item.name }}</span>
+    {% include "partials/icons/github.njk" %}
+  {% else %}
+    {{ item.name }}
+  {% endif %}
+</a>

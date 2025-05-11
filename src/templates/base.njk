@@ -5,12 +5,29 @@
   </head>
   <body>
     <app-shell
-      id="app-shell"
-      class="application"
-      role="application"
       aria-label="application"
+      id="app-shell"
+      role="application"
     >
-      {% include "partials/header/header.njk" %}
+      <header id="header" class="header" role="banner" aria-label="Site header">
+        <a href="{{ BASE_URL }}" class="logo-link" aria-label="Home">
+          {% include "partials/icons/logo.njk" %}
+        </a>
+        <layout-item 
+          class="menu-bar"
+          end="-2"
+          role="menubar"
+          row="2"
+          start="25"
+          aria-label="Primary navigation"  
+          aria-orientation="horizontal"
+          role="navigation" 
+        >
+          {% for item in navigationData.menuItems %}
+            {% include "partials/menu-item.njk" %}
+          {% endfor %}
+        </layout-item>
+      </header>
 
       <layout-item id="main" role="main" aria-label="Main content" row="main" row-gap="5" start="1" end="-1">
         {% block content %}{% endblock %}

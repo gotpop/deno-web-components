@@ -1,0 +1,13 @@
+header {
+  background-color: --transparent(var(--secondary-700), 1);
+  container-type: scroll-state;
+  display: grid;
+  grid-column: full;
+  grid-row: header;
+  grid-template-columns: subgrid;
+  grid-template-rows: 1rem min-content 1rem;
+  position: sticky;
+  top: 0;
+  view-transition-name: attr(id type(<custom-ident>), none);
+  z-index: 1;
+}

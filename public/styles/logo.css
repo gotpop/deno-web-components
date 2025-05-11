@@ -1,0 +1,22 @@
+.logo-link {
+  --opacity: 0.8;
+  --background-colour: var(--secondary-300);
+
+  background-color: var(--background-colour);
+  display: inline flex;
+  grid-column: gutter-start / span 5;
+  transition: background-color 0.3s ease-in-out;
+  grid-row: 1 / -1;
+
+  @container scroll-state(stuck: top) {
+    --opacity: 1;
+  }
+
+  &:hover {
+    --background-colour: var(--secondary-600);
+  }
+
+  .logo {
+    padding: var(--spacing-base);
+  }
+}
