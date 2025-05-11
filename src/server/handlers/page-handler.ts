@@ -31,7 +31,7 @@ type NunjucksRenderer = {
   render: (template: string, context: PageContext & PageData) => string
 }
 
-const siteData = await loadSiteData()
+const { siteData, navigationData } = await loadSiteData()
 
 export async function handlePageRequest(
   url: URL,
@@ -67,16 +67,15 @@ export async function handlePageRequest(
       }
     } else {
       pageData = getPageData(template)
-      // console.log("pageData :", pageData)
     }
-    console.log("..siteData, :", siteData)
 
     const context = {
       title: template.charAt(0).toUpperCase() + template.slice(1),
       currentPage: template,
       componentPath: templateConfig.componentPath,
       ...pageData,
-      ...siteData,
+      siteData,
+      navigationData,
     }
 
     const html = nunjucks.render(templateFile, context)
