@@ -1,34 +1,19 @@
-<site-footer id="footer" role="contentinfo" aria-label="Site footer">
+<footer id="footer" role="contentinfo" aria-label="Site footer">
   <style>
     {{"site-footer" | componentCss | importCss | safe}}
   </style>
   <div class="footer-sections">
     <div class="footer-section" column-start="3" column-end="6">
-      {# <h4 class="footer-title" hidden>Deno Web Components</h4> #}
       <a href="/" class="logo-link" aria-label="Home">
         {% include "partials/icons/logo.njk" %}
       </a>
     </div>
-    {% for section in site.footer.sections %}
-      <section class="footer-section" column-start="{{ section.layout['column-start'] }}" column-end="{{ section.layout['column-end'] }}">
-        <h4 class="footer-title">{{ section.title }}</h4>
-        <ul class="footer-list">
-          {% for link in section.links %}
-            <li class="footer-list-item">
-              {% if link.icon %}
-                <span class="footer-icon">
-                  {% include "partials/icons/" + link.icon + ".njk" %}
-                </span>
-              {% endif %}
-              <a class="footer-link" href="{{ link.url }}">{{ link.text }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
+    {% for section in siteData.site.footer.sections %}
+      {% include "partials/site-footer/footer-section.njk" %}
     {% endfor %}
   </div>
   <div class="footer-content">
     <small>&copy; 2025 Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
     </small>
   </div>
-</site-footer>
+</footer>
