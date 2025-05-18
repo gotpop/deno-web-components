@@ -1,0 +1,12 @@
+footer {
+  background-color: --transparent(var(--secondary-900), 0.8);
+  color: var(--colour-light-1);
+  display: grid;
+  grid-column: full;
+  grid-row: footer;
+  grid-template-columns: subgrid;
+  min-height: 20rem;
+  padding-block: var(--spacing-xl);
+  view-transition-name: attr(id type(<custom-ident>), none);
+  gap: 4rem 0;
+}
