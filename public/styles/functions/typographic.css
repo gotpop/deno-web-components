@@ -13,6 +13,15 @@
 }
 
 /* prettier-ignore */
+@function --get-font-colour(--theme <custom-ident>) returns <color> {
+  result: if(
+      style(--theme: dark): white; 
+
+      else: black
+  )
+}
+
+/* prettier-ignore */
 @function --get-font-weight(--variant <custom-ident>) returns <number> {
   result: if(
       style(--variant: sm): var(--font-weight-light); 
@@ -44,6 +53,7 @@
 @function --get-flow-spacing(--flow <custom-ident>, --padding-block-start <length>) returns <length> {
   result: if(
       style(--flow: body): var(--padding-block-start);
+      
       else: 0
   )
 }

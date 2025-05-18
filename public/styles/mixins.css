@@ -1,5 +1,9 @@
 /* @mixin --box {
   background-color: red;
+}
+
+.header {
+  @apply --box;
 } */
 
 /* grid-auto {

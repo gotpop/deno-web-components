@@ -4,9 +4,8 @@
 
   background-color: var(--background-colour);
   display: inline flex;
-  grid-column: gutter-start / span 5;
   transition: background-color 0.3s ease-in-out;
-  grid-row: 1 / -1;
+  /* max-width: 10rem; */
 
   @container scroll-state(stuck: top) {
     --opacity: 1;

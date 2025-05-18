@@ -1,19 +1,36 @@
-<footer id="footer" role="contentinfo" aria-label="Site footer">
+<footer id="footer" role="contentinfo" aria-label="Site footer" variant="dark">
   <style>
     {{"site-footer" | componentCss | importCss | safe}}
   </style>
-  <div class="footer-sections">
-    <div class="footer-section" column-start="3" column-end="6">
+
+  <grid-auto 
+    col-lg="3"
+    col-md="1"
+    col-sm="1"
+    end="-4"
+    min-content="3"
+    row-lg="1"
+    row-md="1"
+    row-sm="1"
+    start="2" 
+  >
+    <layout-item start="1" end="2" variant="column" align="start">
       <a href="/" class="logo-link" aria-label="Home">
         {% include "partials/icons/logo.njk" %}
       </a>
-    </div>
+    </layout-item>
     {% for section in siteData.site.footer.sections %}
-      {% include "partials/site-footer/footer-section.njk" %}
+      <layout-item start="auto" end="auto" variant="column" row-gap="1">
+        <h4 variant="md" top="1" bottom="1">{{ section.title }}</h4>
+        {% for link in section.links %}
+          <a class="footer-link" href="{{ link.url }}">{{ link.text }}</a>
+        {% endfor %}
+      </layout-item>
     {% endfor %}
-  </div>
-  <div class="footer-content">
+  </grid-auto>
+
+  <layout-item start="4" end="-4" variant="column">
     <small>&copy; 2025 Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
     </small>
-  </div>
+  </layout-item>
 </footer>

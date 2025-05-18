@@ -52,3 +52,23 @@ a:not([class]) {
   text-decoration: underline 0.1em var(--secondary-200);
   text-underline-offset: calc(var(--spacing-base) - 0.1em);
 }
+
+.footer-link {
+  color: var(--light-100);
+  display: inline flex;
+  font-size: var(--font-scaled-sm);
+  gap: var(--spacing-base);
+  text-decoration-thickness: 0.1em;
+  text-decoration: underline;
+  text-underline-offset: 0.4em;
+
+  &::before {
+    --marker-size: var(--spacing-base);
+
+    background-color: var(--secondary-400);
+    content: "";
+    display: inline flex;
+    height: var(--marker-size);
+    width: var(--marker-size);
+  }
+}

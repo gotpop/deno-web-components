@@ -8,11 +8,20 @@
   )
 }
 
+/* prettier-ignore */
+@function --get-row(--row) {
+  result: if(
+      style(--row: full): 1 / -1; 
+      
+      else: var(--row)
+  )
+}
+
 layout-item {
   align-content: attr(align type(<custom-ident>), normal);
   display: grid;
   grid-column: attr(start type(<integer>)) / attr(end type(<integer>));
-  grid-row: attr(row type(<integer> | <custom-ident>), auto);
+  grid-row: --get-row(attr(row type(<integer> | <custom-ident>), auto));
   grid-template-columns: --get-grid(attr(variant type(<custom-ident>), row));
   row-gap: attr(row-gap rem, unset);
 }

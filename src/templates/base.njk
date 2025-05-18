@@ -15,13 +15,20 @@
         id="header" 
         role="banner" 
       >
-        <a 
-        aria-label="Home"
-        class="logo-link" 
-        href="{{ BASE_URL }}" 
+        <layout-item 
+          end="5"
+          start="4"
+          variant="column"
+          row="full"
         >
-          {% include "partials/icons/logo.njk" %}
-        </a>
+          <a 
+            aria-label="Home"
+            class="logo-link" 
+            href="{{ BASE_URL }}" 
+          >
+            {% include "partials/icons/logo.njk" %}
+          </a>
+        </layout-item>
         <grid-auto
           aria-label="Primary navigation"  
           aria-orientation="horizontal"
