@@ -1,22 +1,58 @@
-<footer id="footer" role="contentinfo" aria-label="Site footer" variant="dark">
+<footer 
+  aria-label="Site footer" 
+  id="footer" 
+  role="contentinfo" 
+  variant="dark"
+>
   <grid-auto-fill>
-    <grid-auto-fill-item span="2" variant="column" align="start">
-      <a href="/" class="logo-link" aria-label="Home">
+    <grid-auto-fill-item 
+      align="start"
+      span="2" 
+      variant="column" 
+    >
+      <a 
+        href="/" 
+        class="logo-link" 
+        aria-label="Home"
+      >
         {% include "partials/icons/logo.njk" %}
       </a>
     </grid-auto-fill-item>
     {% for section in siteData.site.footer.sections %}
-      <grid-auto-fill-item span="4" variant="column" gap="1">
-        <h4 variant="md" top="1" bottom="1">{{ section.title }}</h4>
+      <grid-auto-fill-item 
+        gap="1"
+        span="4" 
+        variant="column" 
+      >
+        <h4 
+          bottom="1"
+          top="1" 
+          variant="md" 
+        >{{ section.title }}</h4>
         {% for link in section.links %}
-          <a class="footer-link" href="{{ link.url }}">{{ link.text }}</a>
+          <a 
+            class="footer-link" 
+            href="{{ link.url }}"
+          >{{ link.text }}</a>
         {% endfor %}
       </grid-auto-fill-item>
     {% endfor %}
   </grid-auto-fill>
 
-  <layout-item start="4" end="-4" variant="column">
-    <small>&copy; 2025 Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
-    </small>
+  <layout-item 
+    end="-4" 
+    start="4" 
+    variant="column"
+  >
+    <p 
+      variant="sm"
+      top="1"
+      bottom="1"
+    >
+      &copy; {{ siteData.site.footer.copyrightYear }}
+      {{ siteData.site.footer.copyrightHolder }}. All rights reserved.
+
+    Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
+    </p>
   </layout-item>
 </footer>

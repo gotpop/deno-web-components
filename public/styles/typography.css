@@ -45,6 +45,7 @@ button {
 /* prettier-ignore */
 p:not([class]) {
   --variant: attr(variant type(<custom-ident>), base);
+  --theme: light;
   --line-height-ratio: if(
     style(--variant: xxl): 1.183;
     style(--variant: xl): 1.18;
@@ -56,29 +57,17 @@ p:not([class]) {
     else: 2.2
   );
 
-  font-weight: --get-font-weight(var(--variant));
-  color: var(--body-colour);
+  :is([variant="dark"], [variant="button"]) & {
+    --theme: dark;
+  }
+
+  color: --get-font-colour(var(--theme));
   font-size: --get-font-size(var(--variant));
+  font-weight: --get-font-weight(var(--variant));
   letter-spacing: 0.015em;
   line-height: var(--line-height-ratio);
   margin-block: 0 attr(bottom rem, unset);
   max-width: 60ch;
   padding-block-start: calc(attr(top rem, unset) - 1cap);
   text-wrap: pretty;
-
-  /* &:last-child {
-    margin-bottom: 0;
-  }
-
-  &:has(+ p) {
-    margin-block-end: var(--spacing-md);
-  }
-
-  &:has(+ a > :is(h1, h2, h3, h4, h5, h6)) {
-    margin-block-end: var(--spacing-xl);
-  }
-
-  &:first-child {
-    --padding-block-start: calc(calc(var(--padding-start) - 1rem) - 1cap);
-  } */
 }
