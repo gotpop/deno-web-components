@@ -182,7 +182,7 @@
   --body-colour: var(--colour-light-1);
 
   /* Theming */
-  --accent: var(--warning-base);
+  --accent: var(--color-primary);
   --colour-bg-site: var(--grey-100);
   --root-font-size: clamp(12px, 1.5vw, 16px);
   --color-scheme: only light;

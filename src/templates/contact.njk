@@ -7,17 +7,17 @@
 
 {% block page_content %}
   <surface-item 
-    end="-15" 
-    start="2" 
+    end="-14" 
+    start="4" 
     variant="light"
     size="large"
   >
     <form action="/api/contact" method="POST">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <input autocomplete="true" type="text" id="name" name="name" required placeholder="Your name" minlength="2" maxlength="50"/>
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input autocomplete="true" type="email" id="email" name="email" required placeholder="Your email address"></input>
 
       <label for="message">Message</label>
       <textarea name="message" id="message" cols="30" rows="10" placeholder="Get typing" required></textarea>
