@@ -1,12 +1,12 @@
 <footer id="footer" role="contentinfo" aria-label="Site footer" variant="dark">
   <grid-auto-fill>
-    <grid-auto-fill-item>
+    <grid-auto-fill-item span="2" variant="column" align="start">
       <a href="/" class="logo-link" aria-label="Home">
         {% include "partials/icons/logo.njk" %}
       </a>
     </grid-auto-fill-item>
     {% for section in siteData.site.footer.sections %}
-      <grid-auto-fill-item>
+      <grid-auto-fill-item span="4" variant="column" gap="1">
         <h4 variant="md" top="1" bottom="1">{{ section.title }}</h4>
         {% for link in section.links %}
           <a class="footer-link" href="{{ link.url }}">{{ link.text }}</a>

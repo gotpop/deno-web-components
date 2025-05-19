@@ -29,13 +29,8 @@ grid-auto-fill {
 }
 
 grid-auto-fill-item {
-  grid-column: span 4;
-  background-color: aqua;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  &:first-child {
-    grid-column: span 2;
-  }
+  align-content: attr(align type(<custom-ident>), normal);
+  display: grid;
+  gap: attr(gap rem, auto);
+  grid-column: span attr(span type(<integer> | <custom-ident>), auto);
 }
