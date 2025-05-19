@@ -34,14 +34,16 @@ textarea {
   resize: horizontal;
   display: block;
   padding: 1rem;
+  field-sizing: content;
 }
 
 button {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: calc(1rem - 1cap) 1rem;
   border-radius: var(--border-radius);
   background-color: var(--color-primary);
-  color: var(--color-text-on-primary);
+  color: white;
   border: none;
   cursor: pointer;
+  width: min-content;
 }
