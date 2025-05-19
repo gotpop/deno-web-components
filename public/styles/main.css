@@ -24,3 +24,24 @@
 @import "./logo.css";
 @import "./header.css";
 @import "./footer.css";
+
+form {
+  display: grid;
+  gap: 2rem;
+}
+
+textarea {
+  resize: horizontal;
+  display: block;
+  padding: 1rem;
+}
+
+button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border: none;
+  cursor: pointer;
+}
