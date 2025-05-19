@@ -40,19 +40,19 @@
   </grid-auto-fill>
 
   <layout-item 
-    end="-4" 
-    start="4" 
+    end="-15" 
+    start="15" 
     variant="column"
   >
     <p 
-      variant="sm"
-      top="1"
       bottom="1"
+      top="1"
+      variant="sm"
+      align="center"
     >
-      &copy; {{ siteData.site.footer.copyrightYear }}
-      {{ siteData.site.footer.copyrightHolder }}. All rights reserved.
-
-    Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
+      {{ siteData.site.footer.copyright }}
+      All rights reserved.
+      Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
     </p>
   </layout-item>
 </footer>

@@ -3,6 +3,7 @@
     "title": "GotPop Platform",
     "description": "A modern web components platform",
     "footer": {
+      "copyright": "© 2024 GotPop Platform.",
       "sections": [
         {
           "title": "CSS",
