@@ -67,15 +67,20 @@ input {
   border-radius: 0;
   min-width: 15rem;
   max-width: 100%;
+  margin-block-end: 1rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-primary);
+  }
+
+  &:valid {
+    border-right: green solid 1rem;
+  }
 
   &:user-invalid {
-    border-right: red dotted 1rem;
+    border-right: red solid 1rem;
   }
-}
-
-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary);
 }
 
 textarea {
@@ -87,6 +92,19 @@ textarea {
   margin-block-end: 2rem;
   width: 100%;
   min-height: 3rem;
+
+  &:valid {
+    border-right: green solid 1rem;
+  }
+
+  &:user-invalid {
+    border-right: red solid 1rem;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-primary);
+  }
 }
 
 button {
@@ -100,6 +118,7 @@ button {
   border: none;
   cursor: pointer;
   width: calc-size(min-content, round(size, 1rem));
+  justify-self: end;
 }
 
 /* Style the button when the form is invalid */

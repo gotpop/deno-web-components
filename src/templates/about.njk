@@ -6,20 +6,21 @@
 {% endblock %}
 
 {% block page_content %}
-  <surface-item class="sticky" variant="light" size="large" start="2" end="13">
-    <h3 variant="md" bottom="2">On this page</h2>
-    <layout-item row-gap="3" role="navigation">
+  <surface-item class="sticky" variant="light" size="large" start="4" end="10">
+    {# <h3 variant="md" bottom="2">On this page</h2> #}
+    <layout-item row-gap="1" role="navigation">
       {% for item in bodyMarkupData %}
         {% if item
           .tag
           .startsWith('h') %}
-          <a href="#{{ item.id }}" class="jump-link">{{ item.content }}</a>
+          <a href="#{{ item.id }}" class="link-simple">
+            <span>{{ item.content }}</span></a>
         {% endif %}
       {% endfor %}
     </layout-item>
   </surface-item>
-  <surface-item variant="light" size="large" start="14"
-    end="31">
+  <surface-item variant="light" size="large" start="11"
+    end="-8">
     {% include "partials/body-markup-renderer.njk" %}
   </surface-item>
 {% endblock %}

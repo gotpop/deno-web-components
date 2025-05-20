@@ -67,3 +67,19 @@ a:not([class]) {
     width: var(--marker-size);
   }
 }
+
+.link-simple {
+  color: black;
+  text-decoration: none;
+  /* text-decoration: underline 0.1em var(--secondary-500); */
+  /* text-underline-offset: calc(var(--spacing-base) - 0.1em); */
+  width: calc-size(max-content, round(up, size, 1rem));
+  padding-block-start: calc(1rem - 1cap);
+
+  &:focus {
+    outline: none;
+    /* box-shadow: 0 0 0 2px var(--color-primary);
+    box-shadow: 4px 0 0 0 rgba(0, 0, 0, 1); Right side shadow */
+    color: var(--color-primary);
+  }
+}

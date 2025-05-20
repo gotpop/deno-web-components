@@ -7,7 +7,7 @@
 
 {% block page_content %}
   <surface-item 
-    end="-14" 
+    end="-26" 
     start="4" 
     variant="light"
     size="large"
@@ -19,7 +19,18 @@
 
       <label for="email">
         <span>Email</span></label>
-      <input type="text" autocomplete="true" type="email" id="email" name="email" minlength="2" maxlength="50" required placeholder="Your email address"></input>
+      <input 
+        autocomplete="true" 
+        id="email" 
+        maxlength="50" 
+        minlength="2" 
+        name="email" 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        placeholder="Your email address"
+        required 
+        title="Please enter a valid email address"
+        type="email" 
+      >
 
       <label for="message">
         <span>Message</span></label>
