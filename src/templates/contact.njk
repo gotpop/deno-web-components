@@ -13,14 +13,17 @@
     size="large"
   >
     <form action="/api/contact" method="POST">
-      <label for="name">Name</label>
-      <input autocomplete="true" type="text" id="name" name="name" required placeholder="Your name" minlength="2" maxlength="50"/>
+      <label for="name">
+        <span>Name</span></label>
+      <input type="text" autocomplete="true" type="text" id="name" name="name" required placeholder="Your name" minlength="2" maxlength="50"/>
 
-      <label for="email">Email</label>
-      <input autocomplete="true" type="email" id="email" name="email" required placeholder="Your email address"></input>
+      <label for="email">
+        <span>Email</span></label>
+      <input type="text" autocomplete="true" type="email" id="email" name="email" minlength="2" maxlength="50" required placeholder="Your email address"></input>
 
-      <label for="message">Message</label>
-      <textarea name="message" id="message" cols="30" rows="10" placeholder="Get typing" required></textarea>
+      <label for="message">
+        <span>Message</span></label>
+      <textarea minlength="2" name="message" id="message" cols="30" rows="10" placeholder="Get typing" required></textarea>
 
       <button type="submit">Send</button>
     </form>
