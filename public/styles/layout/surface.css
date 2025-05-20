@@ -9,13 +9,23 @@
   }
 
 /* prettier-ignore */
+@function --get-scheme(--variant <custom-ident>) returns <color> {
+    result: if(
+      style(--variant: dark): var(--dark-scheme);
+      style(--variant: light): var(--light-scheme);
+      
+      else: transparent
+    )
+  }
+
+/* prettier-ignore */
 @function --get-padding-size(--size-attr <custom-ident>) returns <length> {
     result: if(
       style(--size-attr: large): 3rem;
       style(--size-attr: medium): 2rem;
       style(--size-attr: small): 1rem;
       
-      else: 0rem /* Default padding */
+      else: 0rem 
     )
   }
 
@@ -32,11 +42,11 @@ nav {
 }
 
 surface-item {
-  --dark-scheme: var(--secondary-400);
-  --light-scheme: --transparent(var(--light-100), 0.4);
-
-  --start: attr(start type(<integer> | <custom-ident>), 1);
+  --dark-scheme: --transparent(var(--secondary-400), var(--opacity));
   --end: attr(end type(<integer> | <custom-ident>), -1);
+  --light-scheme: --transparent(var(--light-100), var(--opacity));
+  --opacity: attr(opacity type(<number>), 0.4);
+  --start: attr(start type(<integer> | <custom-ident>), 1);
 
   align-content: space-between;
   background-color: --get-scheme(attr(variant type(<custom-ident>), light));

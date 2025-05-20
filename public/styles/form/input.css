@@ -1,0 +1,59 @@
+@property --gradient-position {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: grey;
+}
+
+input {
+  --w: calc(100% - 1rem);
+  --grad: linear-gradient(
+    to right,
+    var(--light-700) var(--w),
+    var(--color) var(--w)
+  );
+
+  background-color: --transparent(var(--light-100), 0.5);
+  border-image: var(--grad) 16;
+  border-right-width: 1rem;
+  color: var(--dark-500);
+  display: block;
+  field-sizing: content;
+  margin-block-end: 1rem;
+  max-width: 100%;
+  min-width: 15rem;
+  padding: 0 1rem;
+  transition: --color 0.4s ease-in-out;
+  font-size: var(--font-scaled-base);
+  font-family: var(--font-family-base);
+  height: 3rem;
+  line-height: 3rem;
+
+  &::placeholder {
+    color: var(--dark-200);
+    font-size: var(--font-scaled-base);
+    font-family: var(--font-family-base);
+  }
+
+  &:focus {
+    --color: var(--color-primary);
+    /* outline: none; */
+    border-radius: 0;
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-width: medium;
+  }
+
+  &:valid {
+    --color: var(--success-base);
+  }
+
+  &:user-invalid {
+    --color: var(--error-base);
+  }
+}
