@@ -1,40 +1,73 @@
 {% extends "base-hero.njk" %}
 
 {% block hero %}
-  <h1 variant="xl" top="2" bottom="2" id="heading-primary">Contact</h1>
-  <p variant="md" top="3" bottom="2" id="subheading">Get in contact.</p>
+  <h1 
+    bottom="2"
+    id="heading-primary"
+    top="2"
+    variant="xl"
+  >Contact</h1>
+  <p 
+    bottom="2"
+    id="subheading"
+    top="3"
+    variant="md"
+  >Get in contact.</p>
 {% endblock %}
 
 {% block page_content %}
   <surface-item 
-    end="-26" 
-    start="4" 
-    variant="light"
+    end="-26"
     size="large"
+    start="4"
+    variant="light"
   >
-    <form action="/api/contact" method="POST">
+    <form 
+      action="/api/contact"
+      method="POST"
+    >
       <label for="name">
-        <span>Name</span></label>
-      <input type="text" autocomplete="true" type="text" id="name" name="name" required placeholder="Your name" minlength="2" maxlength="50"/>
+        <span>Name</span>
+      </label>
+      <input 
+        autocomplete="true"
+        id="name"
+        maxlength="50"
+        minlength="2"
+        name="name"
+        placeholder="Your name"
+        required
+        type="text"
+/>
 
       <label for="email">
-        <span>Email</span></label>
+        <span>Email</span>
+      </label>
       <input 
-        autocomplete="true" 
-        id="email" 
-        maxlength="50" 
-        minlength="2" 
-        name="email" 
+        autocomplete="true"
+        id="email"
+        maxlength="50"
+        minlength="2"
+        name="email"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         placeholder="Your email address"
-        required 
+        required
         title="Please enter a valid email address"
-        type="email" 
+        type="email"
       >
 
       <label for="message">
-        <span>Message</span></label>
-      <textarea minlength="2" name="message" id="message" cols="30" rows="10" placeholder="Get typing" required></textarea>
+        <span>Message</span>
+      </label>
+      <textarea 
+        cols="30"
+        id="message"
+        minlength="2"
+        name="message"
+        placeholder="Get typing"
+        required
+        rows="10"
+      ></textarea>
 
       <button type="submit">Send</button>
     </form>

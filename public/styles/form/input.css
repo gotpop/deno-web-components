@@ -57,3 +57,13 @@ input {
     --color: var(--error-base);
   }
 }
+
+/* Optional: Add a custom message using the title attribute */
+input:invalid:focus::after,
+textarea:invalid:focus::after {
+  content: attr(title);
+  color: red;
+  font-size: 0.9em;
+  position: absolute;
+  margin-top: 5px;
+}
