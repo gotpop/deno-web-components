@@ -78,16 +78,13 @@ a:not([class]) {
 }
 
 .link-feature {
+  box-shadow: 0 0 0 0 transparent;
   margin-inline: auto 0;
-  padding-block-start: calc(2rem - 1cap);
+  outline: none;
+  padding: calc(2rem - 1cap) 1rem 1rem 1rem;
   text-decoration: underline 2px var(--secondary-200);
   text-underline-offset: calc(var(--spacing-base) - 0.1em);
-
-  transition: all 0.4s ease-in-out;
-  box-shadow: 0 0 0 0 transparent; /* Initial state */
-  outline: none; /* Remove outline */
-
-  padding: calc(2rem - 1cap) 1rem 1rem 1rem;
+  transition: all 0.2s ease-in-out;
 
   &:link {
     color: var(--secondary-500);
@@ -97,13 +94,15 @@ a:not([class]) {
     color: var(--secondary-200);
   }
 
-  a:hover {
+  &:hover {
     color: var(--primary-700);
-    text-decoration: underline;
+    background-color: var(--primary-100);
   }
 
   &:focus-visible {
     box-shadow: inset 0 0 0 2px var(--primary-500); /* Focus state */
+    text-underline-offset: calc(var(--spacing-base) - 0.55em);
+    padding: 1rem 1rem calc(2rem - 1cap) 1rem;
   }
 
   &:active {
