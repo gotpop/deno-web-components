@@ -1,4 +1,5 @@
 {% extends "base-hero.njk" %}
+{% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
   <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Features</h1>
@@ -8,16 +9,7 @@
 {% block page_content %}
   <grid-auto>
     {% for feature in features %}
-      <surface-item variant="light" class="btn" size="large" start="auto" end="auto" aria-label="{{ feature.title }}" data-card-type="{{ feature.type }}" id="{{ feature.slug }}" role="region">
-        <div>
-          <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
-          {% for description in feature.description %}
-            <p top="1" bottom="2">{{ description }}</p>
-          {% endfor %}
-        </div>
-        <a class="feature-link" href="/features/{{ feature.slug }}">
-          <span>Read more</span></a>
-      </surface-item>
+      {{ featureComponents.featureCard(feature) }}
     {% endfor %}
   </grid-auto>
 {% endblock %}

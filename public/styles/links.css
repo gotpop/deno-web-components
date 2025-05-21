@@ -41,13 +41,6 @@ a:not([class]) {
   text-underline-offset: calc(var(--spacing-base) - 0.1em);
 }
 
-.feature-link {
-  margin-inline: auto 0;
-  padding-block-start: calc(2rem - 1cap);
-  text-decoration: underline 0.1em var(--secondary-200);
-  text-underline-offset: calc(var(--spacing-base) - 0.1em);
-}
-
 .footer-link {
   color: var(--light-100);
   display: inline flex;
@@ -82,4 +75,11 @@ a:not([class]) {
     box-shadow: 4px 0 0 0 rgba(0, 0, 0, 1); Right side shadow */
     color: var(--color-primary);
   }
+}
+
+.link-feature {
+  margin-inline: auto 0;
+  padding-block-start: calc(2rem - 1cap);
+  text-decoration: underline 0.1em var(--secondary-200);
+  text-underline-offset: calc(var(--spacing-base) - 0.1em);
 }
