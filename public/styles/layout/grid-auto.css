@@ -1,6 +1,6 @@
 grid-auto {
-  --begin: attr(start type(<integer> | <custom-ident>), 2);
-  --end: attr(end type(<integer> | <custom-ident>), -2);
+  --begin: attr(start type(<integer> | <custom-ident>), 4);
+  --end: attr(end type(<integer> | <custom-ident>), -4);
   --min-content: attr(min-content rem, 20rem);
   --gap: --responsive(
       attr(row-sm rem, 1rem),
@@ -10,7 +10,7 @@ grid-auto {
     --responsive(
       attr(col-sm rem, 1rem),
       attr(col-md rem, 5rem),
-      attr(col-lg rem, 5rem)
+      attr(col-lg rem, 7rem)
     );
 
   display: grid;
