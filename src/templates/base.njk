@@ -29,25 +29,19 @@
             {% include "partials/icons/logo.njk" %}
           </a>
         </layout-item>
-        <grid-auto
+        <grid-auto-fill
           aria-label="Primary navigation"  
           aria-orientation="horizontal"
-          col-lg="1"
-          col-md="1"
-          col-sm="1"
           end="-2"
           min-content="6"
           role="menubar"
-          row-lg="1"
-          row-md="1"
-          row-sm="1"
           row="2"
           start="25"
         >
           {% for item in navigationData.menuItems %}
             {% include "partials/menu-item.njk" %}
           {% endfor %}
-        </grid-auto>
+        </grid-auto-fill>
       </header>
 
       <layout-item 

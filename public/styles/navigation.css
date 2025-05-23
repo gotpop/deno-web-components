@@ -15,13 +15,24 @@
 }
 
 .menu-item-link-social {
-  --background-color: var(--secondary-700);
+  --background-color: var(--secondary-900);
 
-  align-items: center;
+  align-items: end;
   display: flex;
-  padding-inline: var(--spacing-base);
+  /* padding-inline: var(--spacing-base); */
   transition: background-color 0.4s ease-in-out;
   background-color: var(--background-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 3rem;
+
+  color: --transparent(var(--light-100), 0.6);
+  align-items: end;
+
+  svg {
+    width: 27px;
+  }
 
   &:hover {
     --background-color: var(--secondary-900);
@@ -41,6 +52,8 @@
   width: clamp(5rem, 6rem, 8rem);
   padding-block: calc(1rem - calc(1cap / 2));
   text-decoration: none;
+  width: 100%;
+  display: flex;
 
   &[data-active] {
     --background-colour: var(--secondary-900);

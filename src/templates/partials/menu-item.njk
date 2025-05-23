@@ -1,4 +1,13 @@
-<a 
+<grid-auto-fill-item 
+    aria-label="{{ item.name }}"
+      {% if item.isExternal %}
+    justify="center"
+
+  {% endif %}
+    span="{{ '2' if item.isExternal else '3' }}"
+    variant="column" 
+  >
+  <a 
   role="menuitem" 
   class="{{ 'menu-item-link-social' if item.isExternal else 'menu-item-link' }}"
   href="{{ item.href }}"
@@ -9,10 +18,12 @@
     rel="noopener"
   {% endif %}
   >
-  {% if item.isExternal %}
-    <span hidden>{{ item.name }}</span>
-    {% include "partials/icons/github.njk" %}
-  {% else %}
-    {{ item.name }}
-  {% endif %}
-</a>
+    {% if item.isExternal %}
+      <span hidden>{{ item.name }}</span>
+      {% include "partials/icons/github-inverse.njk" %}
+    {% else %}
+      <span>{{ item.name }}</span>
+
+    {% endif %}
+  </a>
+</grid-auto-fill-item>

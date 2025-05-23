@@ -22,14 +22,18 @@ grid-auto {
 
 grid-auto-fill {
   display: grid;
-  gap: 2rem;
-  grid-column: 2 / -2;
-  grid-template-columns: repeat(auto-fill, minmax(2rem, max-content));
-  grid-row: 1;
+  gap: 1rem;
+  grid-column: 28 / -4;
+  /* grid-column: 2 / -2; */
+  grid-row: 2;
+  grid-template-columns: repeat(auto-fill, 1rem);
+  /* grid-row: 1; */
+  /* background-color: aqua; */
 }
 
 grid-auto-fill-item {
   align-content: attr(align type(<custom-ident>), normal);
+  justify-content: attr(justify type(<custom-ident>), normal);
   display: grid;
   gap: attr(gap rem, auto);
   grid-column: span attr(span type(<integer> | <custom-ident>), auto);
