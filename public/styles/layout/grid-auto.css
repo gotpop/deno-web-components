@@ -22,13 +22,12 @@ grid-auto {
 
 grid-auto-fill {
   display: grid;
-  gap: 1rem;
-  grid-column: 28 / -4;
-  /* grid-column: 2 / -2; */
-  grid-row: 2;
+  row-gap: attr(gap-row rem, 1rem);
+  column-gap: attr(gap-column rem, 1rem);
+  grid-column: attr(begin type(<integer> | <custom-ident>), 28) /
+    attr(end type(<integer> | <custom-ident>), -4);
+  grid-row: attr(row type(<integer> | <custom-ident>), auto);
   grid-template-columns: repeat(auto-fill, 1rem);
-  /* grid-row: 1; */
-  /* background-color: aqua; */
 }
 
 grid-auto-fill-item {
