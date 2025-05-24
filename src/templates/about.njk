@@ -6,8 +6,11 @@
 {% endblock %}
 
 {% block page_content %}
-  <surface-item class="sticky" variant="light" size="large" start="4" end="10" opacity="1">
-    {# <h3 variant="md" bottom="2">On this page</h2> #}
+  <surface-item variant="light" size="large" start="4"
+    end="23" aria-label="About page content">
+    {% include "partials/body-markup-renderer.njk" %}
+  </surface-item>
+  <surface-item class="sticky" variant="light" size="large" start="25" end="-8" opacity="1">
     <layout-item row-gap="1" role="navigation">
       {% for item in bodyMarkupData %}
         {% if item
@@ -18,9 +21,5 @@
         {% endif %}
       {% endfor %}
     </layout-item>
-  </surface-item>
-  <surface-item variant="light" size="large" start="11"
-    end="-8">
-    {% include "partials/body-markup-renderer.njk" %}
   </surface-item>
 {% endblock %}
