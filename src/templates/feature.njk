@@ -11,51 +11,43 @@
         variant="lg" 
         id="subheading" 
         top="3"
-    >A collection of the latest in CSS and Web Components</p>
+    >{{ currentFeature.description }}</p>
 {% endblock %}
 
 {% block page_content %}
-    <layout-item
+    <surface-item 
+        aria-label="{{ currentFeature.title }}"
+        size="large" 
+        variant="light"
         end="22"
         start="4"
-    >
-        <surface-item 
-            aria-label="{{ currentFeature.title }}"
-            size="large" 
-            variant="light" 
         >
-            <p 
-                variant="md" 
-                top="2" 
-                bottom="2"
-            >{{ currentFeature.description }}</p>
-            <a 
-                class="link-feature" 
-                href="/features"
-            >
-                <span>Back to Features</span></a>
-        </surface-item>
-    </layout-item>
-    <surface-item   
-        end="34"
-        start="23" 
-        variant="light" 
-        size="medium" 
-        aria-label="{{ currentFeature.title }}"
-    >
-        <h2 
-            variant="lg" 
+        <p 
+            variant="base" 
             top="1" 
             bottom="2"
-        >Feature links</h2>
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-            {% for link in currentFeature.links %}
-                <a 
-                class="link-feature" 
+            >{{ currentFeature.description }}</p>
+        {% include "partials/code.njk" %}
+        <a 
+            class="link-feature" 
+            href="/features">
+            <span>Back to Features</span></a>
+    </surface-item>
+    <surface-item   
+        align="start"
+        aria-label="{{ currentFeature.title }}"
+        end="34"
+        size="medium" 
+        start="23" 
+        variant="light" 
+    >
+        {% for link in currentFeature.links %}
+            <a 
+                class="link-feature"
+                justify="left"
                 href="{{ link.link }}"
             >
-                    <span>{{ link.label }}</span></a>
-            {% endfor %}
-        </div>
+                <span>{{ link.label }}</span></a>
+        {% endfor %}
     </surface-item>
 {% endblock %}

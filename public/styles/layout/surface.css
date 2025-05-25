@@ -48,7 +48,7 @@ surface-item {
   --opacity: attr(opacity type(<number>), 0.4);
   --start: attr(start type(<integer> | <custom-ident>), 1);
 
-  align-content: space-between;
+  align-content: attr(align type(<custom-ident>), space-between);
   background-color: --get-scheme(attr(variant type(<custom-ident>), light));
   display: grid;
   grid-column: var(--start) / var(--end);
@@ -56,4 +56,5 @@ surface-item {
   grid-template-columns: auto;
   padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
   view-transition-name: attr(id type(<custom-ident>), none);
+  height: calc-size(100%, round(size, 1rem));
 }

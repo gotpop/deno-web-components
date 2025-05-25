@@ -79,13 +79,16 @@ a:not([class]) {
 }
 
 .link-feature {
+  --justify: attr(justify type(<custom-ident>), right);
+
   box-shadow: 0 0 0 0 transparent;
-  margin-inline: auto 0;
+  margin-inline: if(style(--justify: left): 0 auto; else: auto 0);
   outline: none;
   padding: calc(2rem - 1cap) 1rem 1rem 1rem;
   text-decoration: underline 2px var(--secondary-200);
   text-underline-offset: calc(var(--spacing-base) - 0.1em);
   transition: all 0.2s ease-in-out;
+  margin-block-end: 1rem;
 
   &:link {
     color: var(--secondary-500);

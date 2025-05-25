@@ -71,7 +71,7 @@ export function initViewTransitions() {
           ...newDoc.documentElement.childNodes,
         )
         await waitForStylesheets(document)
-        // window.scrollTo(0, 0)
+        window.scrollTo(0, 0) // Ensure the page scrolls to the top
       }).finished
 
       history.pushState({}, "", url)
