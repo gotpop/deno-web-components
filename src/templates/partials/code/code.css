@@ -1,13 +1,9 @@
 @scope {
-  :scope {
-    --code-language: html;
-  }
-}
-@scope {
   & {
     --font-palette: --kung-fury;
     --font-color: var(--slate-100);
     --background-code: var(--slate-400);
+    --code-language: html;
 
     display: grid;
   }
@@ -15,7 +11,8 @@
   figure {
     margin-inline: 0;
     margin-block: 2rem;
-    height: calc-size(max-content, round(up, size, 1rem));
+    height: calc-size(max-content, round(down, size, 1rem));
+    display: grid;
   }
 
   figcaption {
@@ -44,7 +41,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     display: flex;
-    height: calc-size(max-content, round(up, size, 1rem));
+    height: calc-size(max-content, round(down, size, 1rem));
 
     @container style(--code-language: bash) {
       align-items: center;

@@ -4,7 +4,6 @@ export const browserApiFeaturesMap = new Map()
   .set("css-view-transitions-2", {
     description: [
       "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles.",
-      "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     ],
     bodyMarkupData: [
       {
@@ -31,6 +30,21 @@ export const browserApiFeaturesMap = new Map()
         tag: "p",
         content:
           "If you have a project that you would like to discuss with us, please feel free to reach out to us. We would love to hear from you and see how we can help.",
+      },
+      {
+        tag: "codeblock",
+        language: "CSS",
+        code: `@function --responsive(--mobile, --tablet, --desktop) {
+  result: var(--mobile);
+
+  @media screen and (width >= 768px) {
+    result: var(--tablet);
+  }
+
+  @media screen and (width >= 1024px) {
+    result: var(--desktop);
+  }
+}`,
       },
       {
         tag: "h3",
