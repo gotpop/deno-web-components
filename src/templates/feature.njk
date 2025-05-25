@@ -1,4 +1,5 @@
 {% extends "base-hero.njk" %}
+{% from "partials/code/code-block.njk" import codeBlock %}
 
 {% block hero %}
     <h1 
@@ -27,7 +28,8 @@
             top="1" 
             bottom="2"
             >{{ currentFeature.description }}</p>
-        {% include "partials/code/code.njk" %}
+
+        {{ codeBlock("html", '<button variant="large">Click me!</Button>') }}
         <a 
             class="link-feature" 
             href="/features">
