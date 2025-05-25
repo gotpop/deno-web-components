@@ -23,6 +23,11 @@ export const browserApiFeaturesMap = new Map()
           "Our goal is to provide our clients with the best possible solutions for their needs. We take pride in our work and strive to deliver the best possible results on every project.",
       },
       {
+        tag: "codeblock",
+        language: "html",
+        code: `<button variant="md">Click me!</button>`,
+      },
+      {
         tag: "p",
         content:
           "If you have a project that you would like to discuss with us, please feel free to reach out to us. We would love to hear from you and see how we can help.",

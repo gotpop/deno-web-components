@@ -40,18 +40,15 @@
                     {% endfor %}
                 </ul>
 
+            {% elif item.tag == "codeblock" %}
+                {{ codeBlock(item.language, item.code) }}
+
             {% else %}
                 <{{ item.tag }} {% if item.id %}id="{{ item.id }}"{% endif %}>
                     {{ item.content }}
                 </{{ item.tag }}>
             {% endif %}
         {% endfor %}
-        <p 
-            variant="base" 
-            top="1" 
-            bottom="2"
-            >{{ currentFeature.description }}</p>
-        {{ codeBlock("html", currentFeature.code) }}
         <a 
             class="link-feature" 
             href="/features">
