@@ -6,6 +6,7 @@ export const browserApiFeaturesMap = new Map()
       "Cross-document view transitions are a powerful tool for creating dynamic and reusable styles.",
       "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
     ],
+    code: `<button variant="md">Click me!</button>`,
     layout: {
       "item-end": 13,
       "item-start": 4,
