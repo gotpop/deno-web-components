@@ -23,7 +23,29 @@
         end="22"
         start="4"
         >
-        {% include "partials/body-markup-renderer.njk" %}
+        {% for item in currentFeature.bodyMarkupData %}
+            {% if item.tag == "h2" %}
+                <h2 variant="xl" top="2" bottom="4" id="{{ item.id }}">{{ item.content }}</h2>
+
+            {% elif item.tag == "h3" %}
+                <h3 variant="lg" top="4" bottom="3" id="{{ item.id }}">{{ item.content }}</h3>
+
+            {% elif item.tag == "p" %}
+                <p top="1" bottom="2">{{ item.content }}</p>
+
+            {% elif item.tag == "ul" %}
+                <ul>
+                    {% for listItem in item.items %}
+                        <li>{{ listItem }}</li>
+                    {% endfor %}
+                </ul>
+
+            {% else %}
+                <{{ item.tag }} {% if item.id %}id="{{ item.id }}"{% endif %}>
+                    {{ item.content }}
+                </{{ item.tag }}>
+            {% endif %}
+        {% endfor %}
         <p 
             variant="base" 
             top="1" 
