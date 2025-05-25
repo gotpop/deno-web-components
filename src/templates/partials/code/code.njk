@@ -1,0 +1,32 @@
+<div data-language="html" class="code-block">
+  <style>
+    {{"code" | componentCss | importCss | safe}}
+  </style>
+  <figure class="code-block">
+    <figcaption>HTML
+        <button class="copy-button" onclick="copyCode(this)">
+      Copy
+      <span class="copy-feedback" hidden>Copied!</span>
+      </button>
+    </figcaption>
+    <pre>
+    <code>{{ '<Button ignore="true">Click me!!</Button>' | escapeHtml }}</code>
+  </pre>
+  </figure>
+  <script>
+    function copyCode(button) {
+      const code = button
+        .closest('figure')
+        .querySelector('code')
+        .textContent;
+      navigator
+        .clipboard
+        .writeText(code);
+
+      // Show feedback
+      const feedback = button.querySelector('.copy-feedback');
+      feedback.hidden = false;
+      setTimeout(() => feedback.hidden = true, 2000);
+    }
+  </script>
+</div>

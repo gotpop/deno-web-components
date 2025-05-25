@@ -1,0 +1,67 @@
+@scope {
+  :scope {
+    --code-language: html;
+  }
+}
+@scope {
+  & {
+    --font-palette: --kung-fury;
+    --font-color: var(--slate-100);
+    --background-code: var(--slate-400);
+
+    display: grid;
+  }
+
+  figure {
+    margin: 0;
+    margin-block: 2rem;
+  }
+
+  pre {
+    font-size: var(--font-scaled-base);
+    padding: var(--spacing-md);
+    margin-block: unset var(--spacing-md);
+    overflow: hiiden auto;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    @container style(--code-language: bash) {
+      align-items: center;
+
+      color: var(--white);
+      display: flex;
+      font-palette: --bash;
+      gap: var(--spacing-sm);
+
+      &::before {
+        content: "$";
+        display: block;
+      }
+    }
+
+    @container style(--code-language: html) {
+      background-color: var(--slate-700);
+      color: var(--white);
+      font-palette: --css;
+    }
+
+    @container style(--code-language: css) {
+      background-color: var(--slate-700);
+      color: var(--white);
+      font-palette: --css;
+    }
+
+    @container style(--code-language: js) {
+      background-color: var(--slate-500);
+      color: var(--white);
+      font-palette: --javascript;
+    }
+  }
+
+  code {
+    color: inherit;
+    font-family: var(--font-familiy-code);
+    font-size: inherit;
+  }
+}

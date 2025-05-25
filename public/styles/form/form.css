@@ -37,7 +37,7 @@ textarea {
   }
 }
 
-button {
+button:not([class]) {
   display: inline-block;
   padding: calc(2rem - 1cap) 3rem;
   border-radius: var(--border-radius);

@@ -1,5 +1,6 @@
 import { componentCss } from "./filters/component-css.ts"
 import { configure } from "https://esm.sh/nunjucks@3.2.4"
+import { escapeHtml } from "../../utils/escapeHtml.ts"
 import { importCss } from "./filters/import-css.ts"
 import { isActive } from "./filters/is-active.ts"
 
@@ -20,6 +21,7 @@ export function setupNunjucks() {
   nunjucks.addFilter("importCss", importCss)
   nunjucks.addFilter("componentCss", componentCss)
   nunjucks.addFilter("isActive", isActive)
+  nunjucks.addFilter("escapeHtml", escapeHtml)
 
   nunjucks.addFilter("debug", function (obj) {
     return JSON.stringify(obj, null, 2)
