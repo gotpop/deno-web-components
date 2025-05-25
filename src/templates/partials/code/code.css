@@ -15,11 +15,13 @@
   figure {
     margin-inline: 0;
     margin-block: 2rem;
+    height: calc-size(max-content, round(up, size, 1rem));
   }
 
   figcaption {
     display: flex;
     justify-content: space-between;
+    height: calc-size(max-content, round(up, size, 1rem));
   }
 
   button {
@@ -42,6 +44,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     display: flex;
+    height: calc-size(max-content, round(up, size, 1rem));
 
     @container style(--code-language: bash) {
       align-items: center;

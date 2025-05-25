@@ -100,7 +100,7 @@ a:not([class]) {
 
   &:hover {
     color: var(--primary-700);
-    background-color: var(--primary-100);
+    background-color: var(--light-100);
   }
 
   &:focus-visible {
