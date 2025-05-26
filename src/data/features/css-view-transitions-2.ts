@@ -63,11 +63,6 @@ export const cssViewTransitions2Feature = {
     },
   ],
   code: `<button variant="md">Click me!</button>`,
-  //   layout: {
-  //     "item-end": 13,
-  //     "item-start": 4,
-  //     "row-position": 7,
-  //   },
   links: [
     {
       label: "W3C Specification",

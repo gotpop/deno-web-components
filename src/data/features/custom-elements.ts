@@ -3,11 +3,6 @@ export const customElementsFeature = {
     "Custom elements are a powerful tool for creating dynamic and reusable styles.",
     "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
   ],
-  //   layout: {
-  //     "item-start": 16,
-  //     "item-end": 25,
-  //     "row-position": 7,
-  //   },
   links: [
     {
       label: "MDN Documentation",
