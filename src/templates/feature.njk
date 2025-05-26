@@ -13,6 +13,19 @@
         id="subheading" 
         top="3"
     >{{ currentFeature.description }}</p>
+    <div class="navigation-bar">
+        {% if navigation.previous %}
+            <a variant="button" href="/features/{{ navigation.previous.slug }}">
+                &larr; {{ navigation.previous.name }}
+            </a>
+        {% endif %}
+
+        {% if navigation.next %}
+            <a variant="button" href="/features/{{ navigation.next.slug }}">
+                {{ navigation.next.name }} &rarr;
+            </a>
+        {% endif %}
+    </div>
 {% endblock %}
 
 {% block page_content %}
@@ -23,6 +36,7 @@
         end="22"
         start="4"
         >
+
         {% for item in currentFeature.bodyMarkupData %}
             {% if item.tag == "h2" %}
                 <h2 variant="xl" top="2" bottom="4" id="{{ item.id }}">{{ item.content }}</h2>
@@ -53,6 +67,7 @@
             class="link-feature" 
             href="/features">
             <span>Back to Features</span></a>
+
     </surface-item>
     <surface-item   
         align="start"
@@ -72,4 +87,5 @@
                 <span>{{ link.label }}</span></a>
         {% endfor %}
     </surface-item>
+
 {% endblock %}

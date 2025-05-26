@@ -46,10 +46,16 @@ export function handleFeatureTemplate(
     throw new Error("Feature not found")
   }
 
+  const { previous, next } = getPreviousAndNextFeatures(feature.slug)
+
   return {
     pageData: {
-      ...featuresData,
+      // ...featuresData,
       currentFeature: feature,
+      navigation: {
+        previous,
+        next,
+      },
     },
     templateFile: "feature.njk",
   }
@@ -70,5 +76,28 @@ export async function loadSiteData() {
   return {
     siteData: parsedSiteData,
     navigationData: parsedNavigationData,
+  }
+}
+
+export function getPreviousAndNextFeatures(currentSlug: string) {
+  const features = featuresData.features
+  const currentIndex = features.findIndex(
+    (feature) => feature.slug === currentSlug,
+  )
+
+  if (currentIndex === -1) {
+    throw new Error("Feature not found")
+  }
+
+  const previousFeature = features[currentIndex - 1] || null
+  const nextFeature = features[currentIndex + 1] || null
+
+  return {
+    previous: previousFeature
+      ? { slug: previousFeature.slug, name: previousFeature.title }
+      : null,
+    next: nextFeature
+      ? { slug: nextFeature.slug, name: nextFeature.title }
+      : null,
   }
 }
