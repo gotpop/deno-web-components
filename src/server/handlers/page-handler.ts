@@ -20,6 +20,7 @@ interface PageContext {
 
 type FeatureData = Feature & {
   slug: string
+  tags: string[]
   [key: string]: unknown
 }
 
@@ -65,8 +66,6 @@ export async function handlePageRequest(
 
         if (filter) {
           const filteredFeatures = featureData.features?.filter((feature) => {
-            feature.tags.includes(filter) &&
-              console.log("feature :", feature.slug)
             return feature.tags.includes(filter)
           })
 
