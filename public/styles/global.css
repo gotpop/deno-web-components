@@ -46,3 +46,19 @@ body {
   margin: unset;
   overflow: hidden auto;
 }
+
+nav.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  a {
+    padding: calc(1rem - calc(1cap / 2)) 2rem;
+    width: calc-size(max-content, round(size, 1rem));
+    text-align: center;
+
+    span {
+      padding: 0;
+    }
+  }
+}

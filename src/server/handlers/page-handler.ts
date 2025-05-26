@@ -4,6 +4,7 @@ import {
   handlePaths,
 } from "./page-handler-logic.ts"
 
+import type { Feature } from "../../data/features.ts"
 import { loadSiteData } from "./page-handler-logic.ts"
 import { serveFile } from "../../utils/fileServer.ts"
 import { templateConfig } from "../nunjucks/config.ts"
@@ -17,7 +18,7 @@ interface PageContext {
   componentPath: string
 }
 
-type FeatureData = {
+type FeatureData = Feature & {
   slug: string
   [key: string]: unknown
 }
@@ -57,10 +58,25 @@ export async function handlePageRequest(
 
     if (template === "features") {
       try {
+        const filter = url.searchParams.get("filter")
+
         const { pageData: featureData, templateFile: featureTemplate } =
           handleFeatureTemplate(subPage)
 
-        pageData = featureData
+        if (filter) {
+          const filteredFeatures = featureData.features?.filter((feature) => {
+            feature.tags.includes(filter) &&
+              console.log("feature :", feature.slug)
+            return feature.tags.includes(filter)
+          })
+
+          pageData.features = filteredFeatures
+        } else {
+          pageData.features = featureData.features
+        }
+
+        // Ensure pageData is not overwritten
+        pageData = { ...featureData, features: pageData.features }
         templateFile = featureTemplate
       } catch (_error) {
         return new Response("Not Found", { status: 404 })

@@ -4,14 +4,21 @@
 {% block hero %}
   <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Features</h1>
   <p variant="lg" id="subheading" top="4">A collection of the latest in CSS and Web Components</p>
-  <nav style="display: flex; gap: 1rem; margin-top: 1rem; width: 100%; flex-wrap: wrap;">
-    <a  variant="button" href="?filter=browser-api">Browser API</a>
-    <a  variant="button" href="?filter=css">CSS</a>
-    <a  variant="button" href="?filter=cssom">CSSOM</a>
-  </nav>
 {% endblock %}
 
 {% block page_content %}
+  <grid-auto start="4" end="-4" top="4" bottom="4">
+    <nav class="button-group" aria-label="Filter features">
+      <a variant="button" href="?filter=browser-api">
+        <span>Browser API</span></a>
+      <a variant="button" href="?filter=css">
+        <span>CSS</span></a>
+      <a variant="button" href="?filter=cssom">
+        <span>CSSOM</span></a>
+      <a variant="button" href="/features">
+        <span>All</span></a>
+    </nav>
+  </grid-auto>
   <grid-auto>
     {% for feature in features %}
       {{ featureComponents.featureCard(feature) }}
