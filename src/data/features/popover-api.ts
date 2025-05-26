@@ -1,13 +1,13 @@
-const popoverApi = {
+export const popoverApiFeature = {
   description: [
     "Custom elements are a powerful tool for creating dynamic and reusable styles.",
     "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs",
   ],
-  layout: {
-    "item-end": 37,
-    "item-start": 28,
-    "row-position": 7,
-  },
+  //   layout: {
+  //     "item-end": 37,
+  //     "item-start": 28,
+  //     "row-position": 7,
+  //   },
   links: [
     {
       label: "MDN Documentation",
@@ -26,7 +26,3 @@ const popoverApi = {
   title: "Popover API",
   type: "bapi",
 }
-
-// Ensure the feature definition is properly exported.
-
-export const popoverApiFeature = popoverApi

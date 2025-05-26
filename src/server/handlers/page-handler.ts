@@ -78,8 +78,6 @@ export async function handlePageRequest(
       navigationData,
     }
 
-    console.log("Context passed to Nunjucks:", context)
-
     const html = nunjucks.render(templateFile, context)
 
     return new Response(html, {

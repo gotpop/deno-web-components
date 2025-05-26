@@ -1,4 +1,4 @@
-const cssViewTransitions2 = {
+export const cssViewTransitions2Feature = {
   description: [
     "View transitions enable seamless animations between different states of a web application.",
   ],
@@ -63,11 +63,11 @@ const cssViewTransitions2 = {
     },
   ],
   code: `<button variant="md">Click me!</button>`,
-  layout: {
-    "item-end": 13,
-    "item-start": 4,
-    "row-position": 7,
-  },
+  //   layout: {
+  //     "item-end": 13,
+  //     "item-start": 4,
+  //     "row-position": 7,
+  //   },
   links: [
     {
       label: "W3C Specification",
@@ -80,7 +80,3 @@ const cssViewTransitions2 = {
   title: "Cross document view transitions",
   type: "bapi",
 }
-
-// Ensure the feature definition is properly exported.
-
-export const cssViewTransitions2Feature = cssViewTransitions2

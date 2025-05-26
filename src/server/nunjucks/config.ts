@@ -35,7 +35,7 @@ export function setupNunjucks() {
     "loadData",
     async (filepath: string, exportName: string) => {
       const module = await import(filepath)
-      console.log("module :", module)
+
       return module[exportName]
     },
   )
@@ -44,7 +44,7 @@ export function setupNunjucks() {
   nunjucks.addGlobal("getJsonData", async (path: string) => {
     try {
       const data = await Deno.readTextFile(path)
-      console.log("data :", data)
+      // console.log("data :", data)
       return JSON.parse(data)
     } catch (error) {
       console.error("Error reading JSON data:", error)
