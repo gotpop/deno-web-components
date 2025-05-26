@@ -89,15 +89,12 @@ export function getPreviousAndNextFeatures(currentSlug: string) {
     throw new Error("Feature not found")
   }
 
-  const previousFeature = features[currentIndex - 1] || null
-  const nextFeature = features[currentIndex + 1] || null
+  const previousFeature =
+    features[(currentIndex - 1 + features.length) % features.length]
+  const nextFeature = features[(currentIndex + 1) % features.length]
 
   return {
-    previous: previousFeature
-      ? { slug: previousFeature.slug, name: previousFeature.title }
-      : null,
-    next: nextFeature
-      ? { slug: nextFeature.slug, name: nextFeature.title }
-      : null,
+    previous: { slug: previousFeature.slug, name: previousFeature.title },
+    next: { slug: nextFeature.slug, name: nextFeature.title },
   }
 }
