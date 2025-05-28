@@ -75,13 +75,18 @@ nav.button-group {
 
   :has(.navigation-bar) & {
     background-color: --transparent(var(--white), 0.4);
+
+    & + form {
+      grid-column: 17 / -1;
+      display: flex;
+    }
   }
 
   a {
     padding-inline: 1rem !important;
     padding: 1rem;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
     /* display: grid !important; */
     gap: 1rem;
     view-transition-name: attr(id type(<custom-ident>), none);

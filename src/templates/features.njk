@@ -7,26 +7,38 @@
 {% endblock %}
 
 {% block page_content %}
-  <grid-auto start="4" end="-4" top="4" bottom="4">
-    <nav class="button-group" aria-label="Filter features">
+
+  <layout-item 
+        start="4" 
+        end="-4"
+        id="navigation-bar"
+        >
+
+    <nav class="navigation-bar" id="navigation-bar">
       <a variant="button" href="?filter=browser-api">
-        <span>Browser API</span></a>
+        <b>Browser API</b>
+      </a>
       <a variant="button" href="?filter=css">
-        <span>CSS</span></a>
+        <b>CSS</b>
+      </a>
       <a variant="button" href="?filter=cssom">
-        <span>CSSOM</span></a>
+        <b>CSSOM</b>
+      </a>
       <a variant="button" href="/features">
-        <span>All</span></a>
+        <b>All</b>
+      </a>
     </nav>
-    <form method="GET" action="">
-      <label for="order">Order:</label>
-      <select class="custom-select" id="order" name="order" onchange="this.form.action = updateQueryString(this); this.form.submit();">
-        <option value="">All</option>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
-    </form>
-  </grid-auto>
+    <surface-item>
+      <form method="GET" action="">
+        <label for="order">Order:</label>
+        <select class="custom-select" id="order" name="order" onchange="this.form.action = updateQueryString(this); this.form.submit();">
+          <option value="">All</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </form>
+    </surface-item>
+  </layout-item>
   <grid-auto>
     {% for feature in features %}
       {{ featureComponents.featureCard(feature) }}
