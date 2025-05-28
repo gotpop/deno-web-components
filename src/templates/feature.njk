@@ -13,22 +13,31 @@
         id="subheading" 
         top="3"
     >{{ currentFeature.description }}</p>
-    <div class="navigation-bar">
-        {% if navigation.previous %}
-            <a variant="button" href="/features/{{ navigation.previous.slug }}">
-                &larr; {{ navigation.previous.name }}
-            </a>
-        {% endif %}
-
-        {% if navigation.next %}
-            <a variant="button" href="/features/{{ navigation.next.slug }}">
-                {{ navigation.next.name }} &rarr;
-            </a>
-        {% endif %}
-    </div>
 {% endblock %}
 
 {% block page_content %}
+    <layout-item 
+        start="4" 
+        end="-4"
+        id="navigation-bar"
+        >
+        <nav class="navigation-bar" id="navigation-bar">
+            {% if navigation.previous %}
+                <a id="previous" variant="button" href="/features/{{ navigation.previous.slug }}">
+                    <i>&larr;</i>
+                    <b>{{ navigation.previous.name }}</b>
+                </a>
+            {% endif %}
+
+            {% if navigation.next %}
+                <a id="next" variant="button" href="/features/{{ navigation.next.slug }}">
+                    <b>{{ navigation.next.name }}</b>
+                    <i>&rarr;</i>
+                </a>
+            {% endif %}
+        </nav>
+
+    </layout-item>
     <surface-item 
         aria-label="{{ currentFeature.title }}"
         size="large" 
