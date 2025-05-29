@@ -63,6 +63,7 @@ form:has(:invalid) button {
   border-radius: 0;
   border: none;
   width: calc-size(min-content, round(up, size, 1rem));
+  height: calc-size(max-content, round(down, size, 1rem));
   padding: calc(1rem - calc(1cap / 2)) 2rem;
 
   span {
