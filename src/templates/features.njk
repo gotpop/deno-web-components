@@ -8,7 +8,7 @@
 
 {% block page_content %}
 
-  <layout-item 
+  <flex-items 
         start="4" 
         end="-4"
         id="navigation-bar"
@@ -28,16 +28,13 @@
         <b>All</b>
       </a>
     </nav>
-    <surface-item
-      start="31"
-      end="-1"
-      size="small"
-      variant="light"
+    <flex-item
       aria-label="Order features"
       id="order-selector" 
     >
       <form class="order" method="GET" action="">
-        <label for="order">Order:</label>
+        <label for="order">
+          <span>Order:</span></label>
         <select class="custom-select" id="order" name="order" onchange="this.form.action = updateQueryString(this); this.form.submit();">
           <option value="">
             <span>All</span></option>
@@ -45,8 +42,8 @@
           <option value="desc">Descending</option>
         </select>
       </form>
-    </surface-item>
-  </layout-item>
+    </flex-item>
+  </flex-items>
   <grid-auto>
     {% for feature in features %}
       {{ featureComponents.featureCard(feature) }}
@@ -56,6 +53,7 @@
 
 <script>
   function updateQueryString(selectElement) {
+    console.log("Updating query string for:", selectElement.name, "with value:", selectElement.value);
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
 

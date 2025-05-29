@@ -63,8 +63,36 @@ form:has(:invalid) button {
   border-radius: 0;
   border: none;
   width: calc-size(min-content, round(up, size, 1rem));
-  height: calc-size(max-content, round(down, size, 1rem));
-  padding: calc(1rem - calc(1cap / 2)) 2rem;
+  height: calc-size(max-content, round(up, size, 1rem));
+  /* padding: calc(1rem - calc(1cap / 2)) 2rem; */
+  line-height: 1.5;
+  font-weight: 700;
+
+  :has(~ &) & {
+    background-color: red;
+  }
+
+  option {
+    line-height: 3rem;
+    height: 3rem;
+    border: none;
+    /* border: 2px solid red !important; */
+  }
+
+  &::picker(select) {
+    border: none;
+    /* top: calc(anchor(bottom) + 1px); */
+    right: anchor(right);
+  }
+
+  &::picker-icon {
+    color: #999;
+    transition: 0.4s rotate;
+  }
+
+  &:open::picker-icon {
+    rotate: 180deg;
+  }
 
   span {
     background-color: yellow;
@@ -80,7 +108,7 @@ form.order {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 
   /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
   /* background-color: var(--color-secondary); */

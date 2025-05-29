@@ -5,3 +5,22 @@ main-content {
   grid-template-columns: subgrid;
   row-gap: attr(row-gap rem, 5rem);
 }
+
+flex-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 4 / -4;
+}
+
+flex-item {
+  flex: 1 1 calc-size(max-content, round(up, size, 20rem));
+  width: calc-size(max-content, round(up, size, 1rem));
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius);
+  background-color: --transparent(var(--white), 0.4);
+}
