@@ -28,11 +28,19 @@
         <b>All</b>
       </a>
     </nav>
-    <surface-item>
-      <form method="GET" action="">
+    <surface-item
+      start="31"
+      end="-1"
+      size="small"
+      variant="light"
+      aria-label="Order features"
+      id="order-selector" 
+    >
+      <form class="order" method="GET" action="">
         <label for="order">Order:</label>
         <select class="custom-select" id="order" name="order" onchange="this.form.action = updateQueryString(this); this.form.submit();">
-          <option value="">All</option>
+          <option value="">
+            <span>All</span></option>
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
@@ -46,7 +54,7 @@
   </grid-auto>
 {% endblock %}
 
-<script type="module">
+<script>
   function updateQueryString(selectElement) {
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);

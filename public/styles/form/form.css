@@ -59,4 +59,28 @@ form:has(:invalid) button {
 
 .custom-select {
   background: var(--color-secondary);
+  color: white;
+  border-radius: 0;
+  border: none;
+  width: calc-size(min-content, round(up, size, 1rem));
+  padding: calc(1rem - calc(1cap / 2)) 2rem;
+
+  span {
+    background-color: yellow;
+  }
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+form.order {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+
+  /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+  /* background-color: var(--color-secondary); */
 }
