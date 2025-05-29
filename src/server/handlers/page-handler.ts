@@ -60,21 +60,41 @@ export async function handlePageRequest(
     if (template === "features") {
       try {
         const filter = url.searchParams.get("filter")
+        const order = url.searchParams.get("order") // Get the order parameter
 
         const { pageData: featureData, templateFile: featureTemplate } =
           handleFeatureTemplate(subPage)
 
+        let featuresToDisplay = featureData.features
+
         if (filter) {
-          const filteredFeatures = featureData.features?.filter((feature) => {
+          featuresToDisplay = featuresToDisplay?.filter((feature) => {
             return feature.tags.includes(filter)
           })
-
-          pageData.features = filteredFeatures
-        } else {
-          pageData.features = featureData.features
         }
 
-        // Ensure pageData is not overwritten
+        // Sort features if order parameter is present
+        if (order && featuresToDisplay) {
+          featuresToDisplay.sort((a, b) => {
+            const titleA = a.title.toLowerCase() // Assuming 'title' property
+            const titleB = b.title.toLowerCase() // Assuming 'title' property
+
+            if (order === "asc") {
+              if (titleA < titleB) return -1
+              if (titleA > titleB) return 1
+              return 0
+            } else if (order === "desc") {
+              if (titleA > titleB) return -1
+              if (titleA < titleB) return 1
+              return 0
+            }
+            return 0
+          })
+        }
+
+        pageData.features = featuresToDisplay
+
+        // Ensure pageData is not overwritten if featureData had other properties
         pageData = { ...featureData, features: pageData.features }
         templateFile = featureTemplate
       } catch (_error) {

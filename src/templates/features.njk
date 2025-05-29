@@ -35,7 +35,7 @@
       <form class="order" method="GET" action="">
         <label for="order">
           <span>Order:</span></label>
-        <select class="custom-select" id="order" name="order" onchange="this.form.action = updateQueryString(this); this.form.submit();">
+        <select class="custom-select" id="order" name="order">
           <option value="">
             <span>All</span></option>
           <option value="asc">Ascending</option>
@@ -50,23 +50,3 @@
     {% endfor %}
   </grid-auto>
 {% endblock %}
-
-<script>
-  function updateQueryString(selectElement) {
-    console.log("Updating query string for:", selectElement.name, "with value:", selectElement.value);
-    const url = new URL(window.location.href);
-    const params = new URLSearchParams(url.search);
-
-    // Update or add the selected value to the query string
-    if (selectElement.value) {
-      params.set(selectElement.name, selectElement.value);
-    } else {
-      params.delete(selectElement.name);
-    }
-
-    // Return the updated query string
-    return `${url
-      .pathname}?${params
-      .toString()}`;
-  }
-</script>
