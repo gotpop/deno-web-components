@@ -62,10 +62,12 @@ export async function handlePageRequest(
         const filter = url.searchParams.get("filter")
         const order = url.searchParams.get("order") // Get the order parameter
 
-        const { pageData: featureData, templateFile: featureTemplate } =
-          handleFeatureTemplate(subPage)
+        const {
+          pageData: featureDataFromHandler,
+          templateFile: featureTemplateFile,
+        } = await handleFeatureTemplate(subPage)
 
-        let featuresToDisplay = featureData.features
+        let featuresToDisplay = featureDataFromHandler.features
 
         if (filter) {
           featuresToDisplay = featuresToDisplay?.filter((feature) => {
@@ -92,12 +94,14 @@ export async function handlePageRequest(
           })
         }
 
-        pageData.features = featuresToDisplay
-
-        // Ensure pageData is not overwritten if featureData had other properties
-        pageData = { ...featureData, features: pageData.features }
-        templateFile = featureTemplate
+        pageData = {
+          ...featureDataFromHandler,
+          features: featuresToDisplay,
+          orderQuery: order, // Pass the order query parameter to the template
+        }
+        templateFile = featureTemplateFile
       } catch (_error) {
+        console.error(`Error handling /features route: ${_error}`)
         return new Response("Not Found", { status: 404 })
       }
     } else {

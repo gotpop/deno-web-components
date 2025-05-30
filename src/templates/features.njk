@@ -36,8 +36,8 @@
         <label for="order">
           <span>Order:</span></label>
         <select class="custom-select" id="order" name="order">
-          <option selected value="asc">Ascending</option>
-          <option value="desc">Descending</option>
+          <option value="asc"{% if orderQuery == "asc" %} selected{% endif %}>Ascending</option>
+          <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
         </select>
       </form>
     </flex-item>
