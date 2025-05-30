@@ -60,7 +60,8 @@ export async function handlePageRequest(
     if (template === "features") {
       try {
         const filter = url.searchParams.get("filter")
-        const order = url.searchParams.get("order") // Get the order parameter
+        const orderParam = url.searchParams.get("order") // Get the order parameter from URL
+        const currentOrder = orderParam || "asc" // Default to "asc" if orderParam is null/empty
 
         const {
           pageData: featureDataFromHandler,
@@ -75,20 +76,18 @@ export async function handlePageRequest(
           })
         }
 
-        // Sort features if order parameter is present
-        if (order && featuresToDisplay) {
+        // Sort features based on currentOrder
+        if (featuresToDisplay) {
           featuresToDisplay.sort((a, b) => {
-            const titleA = a.title.toLowerCase() // Assuming 'title' property
-            const titleB = b.title.toLowerCase() // Assuming 'title' property
+            const titleA = a.title.toLowerCase()
+            const titleB = b.title.toLowerCase()
 
-            if (order === "asc") {
+            if (currentOrder === "asc") {
               if (titleA < titleB) return -1
               if (titleA > titleB) return 1
-              return 0
-            } else if (order === "desc") {
+            } else { // currentOrder must be "desc"
               if (titleA > titleB) return -1
               if (titleA < titleB) return 1
-              return 0
             }
             return 0
           })
@@ -97,7 +96,7 @@ export async function handlePageRequest(
         pageData = {
           ...featureDataFromHandler,
           features: featuresToDisplay,
-          orderQuery: order, // Pass the order query parameter to the template
+          orderQuery: currentOrder, // Pass the defaulted currentOrder to the template
         }
         templateFile = featureTemplateFile
       } catch (_error) {

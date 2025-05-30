@@ -13,16 +13,16 @@
       id="navigation-bar"
     >
     <nav class="navigation-bar" id="navigation-bar">
-      <a variant="button" href="?filter=browser-api">
+      <a variant="button" href="?filter=browser-api&order={{ orderQuery }}">
         <b>Browser API</b>
       </a>
-      <a variant="button" href="?filter=css">
+      <a variant="button" href="?filter=css&order={{ orderQuery }}">
         <b>CSS</b>
       </a>
-      <a variant="button" href="?filter=cssom">
+      <a variant="button" href="?filter=cssom&order={{ orderQuery }}">
         <b>CSSOM</b>
       </a>
-      <a variant="button" href="/features">
+      <a variant="button" href="/features?order={{ orderQuery }}">
         <b>All</b>
       </a>
     </nav>
@@ -34,7 +34,7 @@
         <label for="order">
           <span>Order:</span></label>
         <select class="custom-select" id="order" name="order">
-          <option value="asc"{% if orderQuery == "asc" %} selected{% endif %}>Ascending</option>
+          <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
           <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
         </select>
       </form>
