@@ -27,28 +27,51 @@ if (window.location.hostname === "localhost") {
   initLiveReload()
 }
 
-initViewTransitions()
+const viewTransitionManager = initViewTransitions()
 
-// const orderSelect = document.getElementById("order")
+function initializeOrderSelect() {
+  const orderSelect = document.getElementById("order")
+  console.log("Initializing order select. Found element:", orderSelect)
 
-// console.log("Order select element:", orderSelect)
+  if (orderSelect) {
+    // Remove existing event listener to prevent duplicates if re-initializing
+    // A more robust way would be to store the handler and remove it specifically,
+    // but for this case, replacing the element or a simple flag might be enough.
+    // For now, we'll rely on the fact that a new element is fetched or this is a first init.
 
-// if (orderSelect) {
-//   orderSelect.addEventListener("change", function () {
-//     const url = new URL(window.location.href)
-//     const params = new URLSearchParams(url.search)
+    orderSelect.addEventListener("change", function () {
+      const url = new URL(window.location.href)
+      const params = new URLSearchParams(url.search)
 
-//     console.log("Order changed to:", this.value)
+      if (this.value) {
+        params.set(this.name, this.value)
+      } else {
+        params.delete(this.name)
+      }
 
-//     // Update or add the selected value to the query string
-//     if (this.value) {
-//       params.set(this.name, this.value)
-//     } else {
-//       params.delete(this.name)
-//     }
+      const newUrl = new URL(
+        `${url.pathname}?${params.toString()}`,
+        window.location.origin,
+      )
+      console.log("[main.js] Order select changed. Navigating to:", newUrl.href)
+      if (viewTransitionManager && viewTransitionManager.navigate) {
+        viewTransitionManager.navigate(newUrl)
+      } else {
+        window.location.href = newUrl.href
+      }
+    })
+  } else {
+    console.log("[main.js] Order select element not found on this page.")
+  }
+}
 
-//     // Navigate to the new URL directly
-//     const newUrl = `${url.pathname}?${params.toString()}`
-//     window.location.href = newUrl
-//   })
-// }
+// Initial setup
+document.addEventListener("DOMContentLoaded", initializeOrderSelect)
+
+// Re-initialize after custom navigation event
+document.addEventListener("app:navigationend", function () {
+  console.log(
+    "[main.js] app:navigationend event received. Re-initializing order select.",
+  )
+  initializeOrderSelect()
+})
