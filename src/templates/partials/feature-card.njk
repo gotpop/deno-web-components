@@ -9,9 +9,7 @@
     >
     <div>
       <h3 variant="lg" top="1" bottom="3">{{ feature.title }}</h3>
-      {% for description in feature.description %}
-        <p top="1" bottom="2">{{ description }}</p>
-      {% endfor %}
+      <p top="1" bottom="2">{{ feature.blurb }}</p>
     </div>
     <a class="link-feature" href="/features/{{ feature.slug }}">
       <span>Read more</span>

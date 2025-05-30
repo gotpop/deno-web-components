@@ -1,4 +1,9 @@
-export const cssAnchorPositionFeature = {
+import type { Feature } from "../index.ts"
+
+export const cssAnchorPositionFeature: Feature = {
+  id: "css-anchor-position-1",
+  blurb:
+    "CSS Anchor Positioning allows elements to be tethered to other elements, with dynamic adjustments based on proximity and overflow.",
   description: [
     "Anchor positioning is a powerful tool for creating dynamic and reusable styles.",
     "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",

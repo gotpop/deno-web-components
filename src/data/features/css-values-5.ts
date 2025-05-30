@@ -1,7 +1,11 @@
-export const cssValues5Feature = {
+import type { Feature } from "../index.ts"
+
+export const cssValues5Feature: Feature = {
+  id: "css-values-5",
+  blurb:
+    "CSS Values and Units Module Level 5 introduces new CSS value types and units, enhancing the expressiveness of CSS.",
   description: [
-    "CSS Values and Units Module Level 5 introduces new units and functions, enhancing the flexibility and power of CSS for sizing, spacing, and calculations.",
-    "This includes additions like trigonometric functions, step-value functions, and potentially new viewport units.",
+    "CSS Values and Units Module Level 5 introduces new ways to specify values and units in CSS, building upon previous levels. It aims to provide more flexibility and precision for web authors when defining lengths, frequencies, angles, times, and other common CSS data types.",
   ],
   bodyMarkupData: [
     {
@@ -95,6 +99,6 @@ export const cssValues5Feature = {
   ],
   slug: "css-values-5",
   tags: ["css"],
-  title: "CSS Values and Units Level 5",
+  title: "CSS Values & Units Level 5",
   type: "css",
 }

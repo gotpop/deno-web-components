@@ -1,6 +1,11 @@
-export const customElementsFeature = {
+import type { Feature } from "../index.ts"
+
+export const customElementsFeature: Feature = {
+  id: "custom-elements",
+  blurb:
+    "Custom Elements allow authors to define their own HTML tags, encapsulating structure and behavior for reusable web components.",
   description: [
-    "Custom elements let you create new HTML tags with encapsulated functionality and styling.",
+    "Custom Elements are a key part of the Web Components standard that allow developers to define their own HTML tags with custom templates, styles, and behaviors. This promotes reusability and modularity in web development.",
   ],
   bodyMarkupData: [
     {
@@ -95,6 +100,6 @@ customElements.define('greeting-element', GreetingElement);`,
   ],
   slug: "custom-elements",
   tags: ["browser-api"],
-  title: "Custom elements",
+  title: "Custom Elements",
   type: "bapi",
 }

@@ -1,6 +1,11 @@
-export const popoverApiFeature = {
+import type { Feature } from "../index.ts"
+
+export const popoverApiFeature: Feature = {
+  id: "popover-api",
+  blurb:
+    "The Popover API provides a built-in mechanism for displaying popover content, such as menus, tooltips, and dialogs, without complex JavaScript.",
   description: [
-    "The Popover API allows developers to create lightweight, context-aware UI elements that can be displayed on demand, such as tooltips, menus, or other overlays.",
+    "The Popover API provides a native HTML way to create and manage popover content, such as menus, custom tooltips, and dialog-like interfaces, without requiring complex JavaScript for visibility and positioning.",
   ],
   bodyMarkupData: [
     {
@@ -79,6 +84,6 @@ button.addEventListener('click', () => {
   ],
   slug: "popover-api",
   tags: ["browser-api"],
-  title: "Popover API",
+  title: "HTML Popover API",
   type: "bapi",
 }

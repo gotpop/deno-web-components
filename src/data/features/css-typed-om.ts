@@ -1,7 +1,11 @@
-export const cssTypedOmFeature = {
+import type { Feature } from "../index.ts"
+
+export const cssTypedOmFeature: Feature = {
+  id: "css-typed-om",
+  blurb:
+    "The CSS Typed Object Model (OM) provides a JavaScript interface to CSS values that is more performant and easier to use than string-based manipulation.",
   description: [
-    "The CSS Typed Object Model (OM) API provides a way to manipulate CSS values in JavaScript as typed objects rather than strings.",
-    "This can lead to more performant and less error-prone CSS manipulation.",
+    "The CSS Typed Object Model (OM) API provides a more typed and structured way to interact with CSS values in JavaScript, as opposed to the traditional string-based approach of `element.style`. It offers better performance and more robust handling of CSS properties and their values.",
   ],
   bodyMarkupData: [
     {
@@ -89,6 +93,6 @@ if (element.attributeStyleMap) {
   ],
   slug: "css-typed-om",
   tags: ["cssom"],
-  title: "CSS Typed OM",
+  title: "CSS Typed Object Model",
   type: "cssom",
 }

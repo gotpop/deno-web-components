@@ -1,7 +1,11 @@
-export const cssMixinsFeature = {
+import type { Feature } from "../index.ts"
+
+export const cssMixinsFeature: Feature = {
+  id: "css-mixins",
+  blurb:
+    "CSS Mixins allow authors to define custom properties that represent a block of styles, which can be applied to other rules.",
   description: [
-    "CSS functions are a powerful tool for creating dynamic and reusable styles.",
-    "They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
+    "CSS functions are a powerful tool for creating dynamic and reusable styles. They allow you to define styles based on the context in which they are used, making it easier to create responsive and flexible designs.",
   ],
   bodyMarkupData: [
     {

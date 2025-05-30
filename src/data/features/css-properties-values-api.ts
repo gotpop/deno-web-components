@@ -1,7 +1,11 @@
-export const cssPropertiesValuesApiFeature = {
+import type { Feature } from "../index.ts"
+
+export const cssPropertiesValuesApiFeature: Feature = {
+  id: "css-properties-values-api",
+  blurb:
+    "The CSS Properties and Values API allows developers to register custom CSS properties, defining their syntax, initial value, and inheritance behavior.",
   description: [
-    "This CSS module defines an API for registering new CSS properties.",
-    "Properties registered using this API are provided with a parse syntax that defines a type, inheritance behaviour, and an initial value.",
+    "The CSS Properties and Values API is part of the CSS Houdini umbrella of APIs. It allows developers to explicitly define their CSS custom properties, including specifying a type (syntax), an initial value, and whether the property inherits.",
   ],
   bodyMarkupData: [
     {

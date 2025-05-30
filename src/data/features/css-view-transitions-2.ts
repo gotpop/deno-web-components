@@ -1,4 +1,9 @@
-export const cssViewTransitions2Feature = {
+import type { Feature } from "../index.ts"
+
+export const cssViewTransitions2Feature: Feature = {
+  id: "css-view-transitions-2",
+  blurb:
+    "CSS View Transitions Level 2 expands the capabilities of smooth transitions between different DOM states, offering more control over animations.",
   description: [
     "View transitions enable seamless animations between different states of a web application.",
   ],
@@ -72,6 +77,6 @@ export const cssViewTransitions2Feature = {
   ],
   slug: "css-view-transitions-2",
   tags: ["browser-api"],
-  title: "Cross document view transitions",
+  title: "Document view transitions",
   type: "bapi",
 }
