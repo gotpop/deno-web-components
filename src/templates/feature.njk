@@ -5,11 +5,11 @@
     <h1 
         bottom="2" 
         id="heading-primary"
-        top="3" 
-        variant="xl" 
+        top="2" 
+        variant="lg" 
     >{{ currentFeature.title }}</h1>
     <p 
-        variant="lg" 
+        variant="md" 
         id="subheading" 
         top="3"
     >{{ currentFeature.description }}</p>
@@ -17,9 +17,10 @@
 
 {% block page_content %}
     <layout-item 
-        start="4" 
+        start="29" 
         end="-4"
         id="navigation-bar"
+        row="1"
         >
         <nav class="navigation-bar" id="navigation-bar">
             {% if navigation.previous %}
@@ -35,20 +36,29 @@
                     <i>&rarr;</i>
                 </a>
             {% endif %}
+            {% for link in currentFeature.links %}
+                <a 
+                class="link-feature"
+                justify="left"
+                href="{{ link.link }}"
+            >
+                    <span>{{ link.label }}</span></a>
+            {% endfor %}
         </nav>
-
     </layout-item>
+
     <surface-item 
         aria-label="{{ currentFeature.title }}"
+        id="{{ currentFeature.slug }}"
         size="large" 
         variant="light"
-        end="22"
+        end="-14"
         start="4"
         >
 
         {% for item in currentFeature.bodyMarkupData %}
             {% if item.tag == "h2" %}
-                <h2 variant="xl" top="2" bottom="4" id="{{ item.id }}">{{ item.content }}</h2>
+                <h2 variant="lg" top="2" bottom="3" id="{{ item.id }}">{{ item.content }}</h2>
 
             {% elif item.tag == "h3" %}
                 <h3 variant="lg" top="4" bottom="3" id="{{ item.id }}">{{ item.content }}</h3>
@@ -78,11 +88,12 @@
             <span>Back to Features</span></a>
 
     </surface-item>
-    <surface-item   
+    {# <surface-item   
         align="start"
         align-self="start"
         aria-label="{{ currentFeature.title }}"
-        end="34"
+        id="links"
+        end="36"
         size="medium" 
         start="23" 
         variant="light" 
@@ -95,6 +106,6 @@
             >
                 <span>{{ link.label }}</span></a>
         {% endfor %}
-    </surface-item>
+    </surface-item> #}
 
 {% endblock %}

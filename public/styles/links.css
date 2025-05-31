@@ -89,6 +89,9 @@ a:not([class]) {
   text-underline-offset: calc(var(--spacing-base) - 0.1em);
   transition: all 0.2s ease-in-out;
   margin-block-end: 1rem;
+  line-height: 2.6;
+  justify-self: if(style(--justify: left): start; else: end);
+  text-align: if(style(--justify: left): left; else: right);
 
   &:link {
     color: var(--secondary-500);
