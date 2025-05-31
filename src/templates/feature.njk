@@ -2,17 +2,19 @@
 {% from "partials/code/code-block.njk" import codeBlock %}
 
 {% block hero %}
-    <h1 
+    <surface-item start="4" end="28" row="1" id="hero" variant="light" size="large" role="banner">
+        <h1 
         bottom="2" 
         id="heading-primary"
         top="2" 
         variant="lg" 
     >{{ currentFeature.title }}</h1>
-    <p 
+        <p 
         variant="md" 
         id="subheading" 
         top="3"
     >{{ currentFeature.description }}</p>
+    </surface-item>
 {% endblock %}
 
 {% block page_content %}

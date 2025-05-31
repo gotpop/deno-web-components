@@ -2,8 +2,10 @@
 {% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
-  <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Features</h1>
-  <p variant="lg" id="subheading" top="4">A collection of the latest in CSS and Web Components</p>
+  <surface-item start="4" end="28" row="1" id="hero" variant="light" size="large" role="banner">
+    <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Features</h1>
+    <p variant="lg" id="subheading" top="4">A collection of the latest in CSS and Web Components</p>
+  </surface-item>
 {% endblock %}
 
 {% block page_content %}

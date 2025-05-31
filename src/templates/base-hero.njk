@@ -1,8 +1,6 @@
 {% extends "base.njk" %}
 
 {% block content %}
-    <surface-item start="4" end="28" row="1" id="hero" variant="light" size="large" role="banner">
-        {% block hero %}{% endblock %}
-    </surface-item>
+    {% block hero %}{% endblock %}
     {% block page_content %}{% endblock %}
 {% endblock %}
