@@ -2,7 +2,7 @@
 {% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
-  <surface-item start="4" end="28" row="1" id="hero" variant="light" size="large" role="banner">
+  <surface-item start="4" end="26" row="1" id="hero" variant="light" size="large" role="banner">
     <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Features</h1>
     <p variant="lg" id="subheading" top="4">A collection of the latest in CSS and Web Components</p>
   </surface-item>
@@ -33,8 +33,6 @@
       id="order-selector" 
     >
       <form class="order" method="GET" action="">
-        <label for="order">
-          <span>Order:</span></label>
         <select class="custom-select" id="order" name="order">
           <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
           <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>

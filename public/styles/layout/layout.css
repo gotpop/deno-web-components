@@ -19,9 +19,9 @@ flex-items {
 flex-item {
   /* flex: 1 1 calc-size(max-content, round(up, size, 20rem)); */
   width: calc-size(max-content, round(up, size, 1rem));
-  padding: 1rem;
+  /* padding: 1rem; */
   background-color: var(--color-secondary);
   border-radius: var(--border-radius);
-  background-color: --transparent(var(--white), 0.4);
+  /* background-color: --transparent(var(--white), 0.4); */
   view-transition-name: attr(id type(<custom-ident>), none);
 }

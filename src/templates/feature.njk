@@ -2,53 +2,55 @@
 {% from "partials/code/code-block.njk" import codeBlock %}
 
 {% block hero %}
-    <surface-item start="4" end="28" row="1" id="hero" variant="light" size="large" role="banner">
-        <h1 
-        bottom="2" 
+    <section class="hero-section" id="hero-section">
+        <layout-item start="1" end="22" row="1" id="hero" variant="light" size="large" role="banner">
+            <h1 
+        bottom="1" 
         id="heading-primary"
-        top="2" 
+        top="1" 
         variant="lg" 
     >{{ currentFeature.title }}</h1>
-        <p 
+            <p 
         variant="md" 
         id="subheading" 
         top="3"
     >{{ currentFeature.description }}</p>
-    </surface-item>
-{% endblock %}
-
-{% block page_content %}
-    <layout-item 
-        start="29" 
-        end="-4"
+        </layout-item>
+        <layout-item 
+        start="16" 
+        end="-1"
         id="navigation-bar"
         row="1"
         >
-        <nav class="navigation-bar" id="navigation-bar">
-            {% if navigation.previous %}
-                <a id="previous" variant="button" href="/features/{{ navigation.previous.slug }}">
-                    <i>&larr;</i>
-                    <b>{{ navigation.previous.name }}</b>
-                </a>
-            {% endif %}
+            <nav class="navigation-bar" id="navigation-bar">
+                {% if navigation.previous %}
+                    <a id="previous" variant="button" href="/features/{{ navigation.previous.slug }}">
+                        <i>&larr;</i>
+                        <b>{{ navigation.previous.name }}</b>
+                    </a>
+                {% endif %}
 
-            {% if navigation.next %}
-                <a id="next" variant="button" href="/features/{{ navigation.next.slug }}">
-                    <b>{{ navigation.next.name }}</b>
-                    <i>&rarr;</i>
-                </a>
-            {% endif %}
-            {% for link in currentFeature.links %}
-                <a 
+                {% if navigation.next %}
+                    <a id="next" variant="button" href="/features/{{ navigation.next.slug }}">
+                        <b>{{ navigation.next.name }}</b>
+                        <i>&rarr;</i>
+                    </a>
+                {% endif %}
+                {# {% for link in currentFeature.links %}
+                    <a 
                 class="link-feature"
                 justify="left"
                 href="{{ link.link }}"
             >
-                    <span>{{ link.label }}</span></a>
-            {% endfor %}
-        </nav>
-    </layout-item>
+                        <span>{{ link.label }}</span></a>
+                {% endfor %} #}
+            </nav>
+        </layout-item>
+    </section>
 
+{% endblock %}
+
+{% block page_content %}
     <surface-item 
         aria-label="{{ currentFeature.title }}"
         id="{{ currentFeature.slug }}"

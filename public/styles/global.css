@@ -65,17 +65,17 @@ nav.button-group {
 
 .navigation-bar {
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  flex-direction: row;
+  justify-content: end;
   align-items: start;
-  padding: 1rem;
+  padding: 0rem;
   gap: 1rem;
   /* width: calc-size(max-content, round(up, size, 1rem)); */
   grid-column: 1 / -1;
   view-transition-name: attr(id type(<custom-ident>), none);
 
   :has(.navigation-bar) & {
-    background-color: --transparent(var(--white), 0.4);
+    /* background-color: --transparent(var(--white), 0.4); */
 
     & + form {
       /* grid-column: 17 / -1; */
@@ -92,4 +92,12 @@ nav.button-group {
     gap: 1rem;
     view-transition-name: attr(id type(<custom-ident>), none);
   }
+}
+
+.hero-section {
+  grid-column: 4 / -4;
+  display: grid;
+  grid-template-columns: subgrid;
+  padding: 2rem;
+  background-color: --transparent(var(--white), 0.4);
 }
