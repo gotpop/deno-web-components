@@ -97,18 +97,18 @@ export const cssMixinsFeature: Feature = {
   ],
   links: [
     {
-      label: "Original @apply Proposal (Chrome Status)",
+      label: "Chrome Status",
       link: "https://chromestatus.com/feature/5753701012602880",
       type: "spec",
     },
     {
-      label: "Discussion on CSS Mixins (CSSWG)",
+      label: "CSS Mixins (CSSWG)",
       link: "https://github.com/w3c/csswg-drafts/issues/323",
       type: "github",
     },
   ],
   slug: "css-mixins",
   tags: ["css"],
-  title: "CSS Mixins (@apply)",
+  title: "CSS Mixins",
   type: "css",
 }

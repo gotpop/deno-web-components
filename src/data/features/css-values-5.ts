@@ -91,7 +91,7 @@ export const cssValues5Feature: Feature = {
       type: "spec",
     },
     {
-      label: "MDN Documentation (General Values & Units)",
+      label: "MDN Documentation",
       link:
         "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units",
       type: "docs",

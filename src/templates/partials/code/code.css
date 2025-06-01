@@ -6,6 +6,7 @@
     --code-language: html;
 
     display: grid;
+    width: calc-size(max-content, round(up, size, 1rem));
   }
 
   figure {
@@ -21,7 +22,7 @@
     height: calc-size(max-content, round(up, size, 1rem));
   }
 
-  button {
+  .button-copy {
     font-size: var(--font-scaled-base);
     font-weight: var(--font-weight-bold);
     color: var(--white);
@@ -82,3 +83,11 @@
     font-size: inherit;
   }
 }
+
+/* .code-block {
+  display: flex;
+  flex-direction: column;
+  width: calc-size(max-content, round(up, size, 1rem));
+  white-space: pre-wrap;
+  view-transition-name: attr(id type(<custom-ident>), none);
+} */

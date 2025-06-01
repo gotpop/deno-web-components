@@ -3,9 +3,10 @@
     <style>
       {{"code" | componentCss | importCss | safe}}
     </style>
-    <figure class="code-block">
-      <figcaption>{{ language | upper }}
-        <button class="copy-button" onclick="copyCode(this)">
+    <figure class="code-block-figure">
+      <figcaption>
+        <span class="text-language">{{ language | upper }}</span>
+        <button class="button-copy" onclick="copyCode(this)">
       Copy
       <span class="copy-feedback" hidden>Copied!</span>
         </button>

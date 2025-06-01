@@ -11,10 +11,13 @@
         variant="lg" 
     >{{ currentFeature.title }}</h1>
             <p 
-        variant="md" 
-        id="subheading" 
-        top="3"
-    >{{ currentFeature.description }}</p>
+                    variant="md" 
+                    id="subheading-{{ loop.index }}" 
+                    top="3">
+                {% for desc in currentFeature.description %}
+                    {{ desc }}
+                {% endfor %}
+            </p>
         </layout-item>
         <layout-item 
         start="16" 
@@ -36,15 +39,18 @@
                         <i>&rarr;</i>
                     </a>
                 {% endif %}
-                {# {% for link in currentFeature.links %}
+            </nav>
+            <aside class="aside-links" id="links">
+                <h4 variant="md" top="1" bottom="1">Links</h2>
+                {% for link in currentFeature.links %}
                     <a 
                 class="link-feature"
                 justify="left"
                 href="{{ link.link }}"
             >
                         <span>{{ link.label }}</span></a>
-                {% endfor %} #}
-            </nav>
+                {% endfor %}
+            </aside>
         </layout-item>
     </section>
 
@@ -56,7 +62,7 @@
         id="{{ currentFeature.slug }}"
         size="large" 
         variant="light"
-        end="-14"
+        end="-4"
         start="4"
         >
 
