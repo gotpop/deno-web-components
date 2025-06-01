@@ -17,7 +17,7 @@
   /* background: red !important; */
 }
 
-html:active-view-transition-type(forwards, backwards) {
+/* html:active-view-transition-type(forwards, backwards) {
   :root {
     view-transition-name: none;
   }
@@ -27,7 +27,7 @@ html:active-view-transition-type(forwards, backwards) {
   .pagination {
     view-transition-name: pagination;
   }
-}
+} */
 
 /* Animation styles for forwards type only */
 html:active-view-transition-type(forwards) {
