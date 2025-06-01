@@ -20,6 +20,7 @@
 @import "./form/form.css";
 
 @import "./keyframes.css";
+@import "./view-transitions.css";
 @import "./reset.css";
 @import "./feature-detect-dialog.css";
 @import "./links.css";
