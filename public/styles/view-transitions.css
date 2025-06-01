@@ -2,17 +2,6 @@
   navigation: auto;
 }
 
-/* 
-::view-transition-old(feature-content) {
-  animation: slide-out-to-left 250ms cubic-bezier(0.4, 0, 1, 1) 500ms forwards,
-    scale-down 250ms cubic-bezier(0.4, 0, 1, 1) 500ms forwards;
-}
-
-::view-transition-new(feature-content) {
-  animation: slide-in-from-right 300ms cubic-bezier(0, 0, 0.2, 1) 600ms both,
-    scale-up 300ms cubic-bezier(0, 0, 0.2, 1) 600ms both;
-} */
-
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root),
@@ -42,21 +31,29 @@ html:active-view-transition-type(forwards, backwards) {
 
 /* Animation styles for forwards type only */
 html:active-view-transition-type(forwards) {
-  &::view-transition-old(content) {
+  &::view-transition-old(feature-content) {
     animation-name: slide-out-to-left;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
   }
-  &::view-transition-new(content) {
+  &::view-transition-new(feature-content) {
     animation-name: slide-in-from-right;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 /* Animation styles for backwards type only */
 html:active-view-transition-type(backwards) {
-  &::view-transition-old(content) {
+  &::view-transition-old(feature-content) {
     animation-name: slide-out-to-right;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
   }
-  &::view-transition-new(content) {
+  &::view-transition-new(feature-content) {
     animation-name: slide-in-from-left;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
@@ -64,9 +61,27 @@ html:active-view-transition-type(backwards) {
 html:active-view-transition-type(reload) {
   &::view-transition-old(root) {
     animation-name: fade-out, scale-down;
+    animation-duration: 250ms;
+    animation-timing-function: ease-out;
   }
   &::view-transition-new(root) {
-    animation-delay: 0.25s;
+    animation-delay: 150ms;
     animation-name: fade-in, scale-up;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+/* Animation styles for unknown type - fallback to simple fade */
+html:active-view-transition-type(unknown) {
+  &::view-transition-old(root) {
+    animation-name: fade-out;
+    animation-duration: 200ms;
+    animation-timing-function: ease-out;
+  }
+  &::view-transition-new(root) {
+    animation-name: fade-in;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
   }
 }

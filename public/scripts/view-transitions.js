@@ -1,14 +1,63 @@
+// Feature ordering based on the allFeatures array from features/index.ts
+const FEATURE_ORDER = [
+  "css-anchor-position-1",
+  "css-mixins",
+  "css-paint-api",
+  "css-properties-values-api",
+  "css-typed-om",
+  "css-values-5",
+  "css-view-transitions-2",
+  "custom-elements",
+  "popover-api",
+]
+
+function extractPageIndexFromPath(pathname) {
+  // Handle main pages with a base index
+  if (pathname === "/" || pathname === "/index") return 0
+  if (pathname === "/about") return 100
+  if (pathname === "/contact") return 200
+  if (pathname === "/features") return 300
+
+  // Handle individual feature pages
+  const featureMatch = pathname.match(/^\/features\/(.+)$/)
+  if (featureMatch) {
+    const featureSlug = featureMatch[1]
+    const featureIndex = FEATURE_ORDER.indexOf(featureSlug)
+    // Features start at index 400 to avoid conflicts with main pages
+    return featureIndex !== -1 ? 400 + featureIndex : 999
+  }
+
+  return 999 // Unknown pages get highest index
+}
+
+const determineTransitionType = (fromNavigationEntry, toNavigationEntry) => {
+  const currentURL = new URL(fromNavigationEntry.url)
+  const destinationURL = new URL(toNavigationEntry.url)
+
+  const currentPathname = currentURL.pathname
+  const destinationPathname = destinationURL.pathname
+
+  if (currentPathname === destinationPathname) {
+    return "reload"
+  } else {
+    const currentPageIndex = extractPageIndexFromPath(currentPathname)
+    const destinationPageIndex = extractPageIndexFromPath(destinationPathname)
+
+    if (currentPageIndex > destinationPageIndex) {
+      return "backwards"
+    }
+    if (currentPageIndex < destinationPageIndex) {
+      return "forwards"
+    }
+
+    return "unknown"
+  }
+}
+
 export function initViewTransitions() {
   if (!document.startViewTransition) {
-    console.log(
-      "[view-transitions.js] View Transitions API not supported. Falling back to standard navigation.",
-    )
     return {
       navigate: (urlObject) => {
-        console.log(
-          "[view-transitions.js] Fallback navigate to:",
-          urlObject.href,
-        )
         window.location.href = urlObject.href
       },
     }
@@ -35,10 +84,8 @@ export function initViewTransitions() {
   }
 
   async function performNavigation(url) {
-    console.log(`[ViewTransitions] performNavigation START for: ${url.href}`)
     try {
       await document.fonts.ready
-      console.log(`[ViewTransitions] Fonts ready for: ${url.href}`)
 
       const response = await fetch(url, {
         cache: "no-store",
@@ -47,53 +94,39 @@ export function initViewTransitions() {
           "Cache-Control": "no-cache",
         },
       })
-      console.log(
-        `[ViewTransitions] Fetch response status: ${response.status} for: ${url.href}`,
-      )
       if (!response.ok) throw Error(`HTTP ${response.status}`)
 
       const html = await response.text()
       const newDoc = new DOMParser().parseFromString(html, "text/html")
-      console.log(`[ViewTransitions] HTML parsed for: ${url.href}`)
+
+      // Determine transition type
+      const fromEntry = { url: window.location.href }
+      const toEntry = { url: url.href }
+      const transitionType = determineTransitionType(fromEntry, toEntry)
+      console.log("transitionType :", transitionType)
 
       const transition = document.startViewTransition(async () => {
-        console.log(
-          `[ViewTransitions] ViewTransition: update DOM START for: ${url.href}`,
-        )
         document.documentElement.replaceChildren(
           ...newDoc.documentElement.childNodes,
         )
         await waitForStylesheets(document)
-        console.log(
-          `[ViewTransitions] ViewTransition: update DOM END & stylesheets loaded for: ${url.href}`,
-        )
         window.scrollTo(0, 0)
       })
 
-      await transition.finished
-      console.log(`[ViewTransitions] ViewTransition: FINISHED for: ${url.href}`)
-
-      history.pushState({}, "", url.href)
-      console.log(
-        `[ViewTransitions] history.pushState CALLED for: ${url.href}. Current window.location.href: ${window.location.href}`,
-      )
-      // Check if URL actually changed
-      if (window.location.href !== url.href) {
-        console.warn(
-          `[ViewTransitions] WARNING: window.location.href (${window.location.href}) did NOT update to target (${url.href}) after pushState.`,
-        )
+      // Set the transition type on the document element
+      if (transitionType !== "unknown") {
+        transition.types.add(transitionType)
       }
 
+      await transition.finished
+
+      history.pushState({}, "", url.href)
+
       // Dispatch custom event to signal navigation completion and DOM update
-      console.log("[ViewTransitions] Dispatching app:navigationend event")
       document.dispatchEvent(
         new CustomEvent("app:navigationend", { bubbles: true, composed: true }),
       )
     } catch (err) {
-      console.error(
-        `[ViewTransitions] performNavigation FAILED for: ${url.href}`,
-        err,
-      )
       window.location.href = url.href // Fallback
     }
   }
@@ -126,7 +159,7 @@ export function initViewTransitions() {
     // Cross-origin links will be handled by the browser by default
   })
 
-  window.addEventListener("popstate", (e) => {
+  window.addEventListener("popstate", async (e) => {
     // Handle hash changes without reload
     if (window.location.hash) {
       const element = document.querySelector(window.location.hash)
@@ -136,9 +169,13 @@ export function initViewTransitions() {
       e.preventDefault()
       return
     }
-    // For non-hash popstate, consider if a full reload or performNavigation is needed
-    // For simplicity, keeping reload, but performNavigation(new URL(location.href)) could be an option.
-    location.reload()
+
+    // Use performNavigation for browser back/forward to get proper transitions
+    if (document.startViewTransition) {
+      await performNavigation(new URL(location.href))
+    } else {
+      location.reload()
+    }
   })
 
   return { navigate: performNavigation }
