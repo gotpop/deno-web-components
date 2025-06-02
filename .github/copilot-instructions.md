@@ -13,3 +13,5 @@ Browser support is not an issue
 This project uses Deno 2.3
 
 Keep things simple
+
+Always predict raw html tags first

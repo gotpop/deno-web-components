@@ -67,12 +67,8 @@
         class="feature-content"
         >
 
-        <layout-item
-        start="1"
-        end="10"
-        id="feature-image"
-        size="large"
-        variant="column"
+        <section
+        class="left"
         >
 
             {% for item in currentFeature.bodyMarkupData %}
@@ -105,7 +101,18 @@
             class="link-feature" 
             href="/features">
                 <span>Back to Features</span></a>
-        </layout-item>
+        </section>
+        <aside class="right">
+            <h4 variant="md" top="1" bottom="1">Links</h4>
+            {% for link in currentFeature.links %}
+                <a 
+                    class="link-feature"
+                    justify="left"
+                    href="{{ link.link }}"
+                >
+                    <span>{{ link.label }}</span></a>
+            {% endfor %}
+        </aside>
 
     </surface-item>
     {# <surface-item   
