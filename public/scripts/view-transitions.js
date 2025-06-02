@@ -6,8 +6,8 @@ const FEATURE_ORDER = [
   "css-properties-values-api",
   "css-typed-om",
   "css-values-5",
-  "css-view-transitions-2",
   "custom-elements",
+  "css-view-transitions-2",
   "popover-api",
 ]
 
@@ -17,6 +17,7 @@ function extractPageIndexFromPath(pathname) {
   if (pathname === "/about") return 100
   if (pathname === "/contact") return 200
   if (pathname === "/features") return 300
+  if (pathname === "/test") return 350
 
   // Handle individual feature pages
   const featureMatch = pathname.match(/^\/features\/(.+)$/)
@@ -41,8 +42,40 @@ const determineTransitionType = (fromNavigationEntry, toNavigationEntry) => {
     return "reload"
   } else {
     const currentPageIndex = extractPageIndexFromPath(currentPathname)
+    console.log("currentPageIndex :", currentPageIndex)
     const destinationPageIndex = extractPageIndexFromPath(destinationPathname)
+    console.log("destinationPageIndex :", destinationPageIndex)
 
+    // Handle circular navigation for features
+    const isCurrentFeature = currentPageIndex >= 400 && currentPageIndex < 999
+    const isDestinationFeature = destinationPageIndex >= 400 &&
+      destinationPageIndex < 999
+
+    if (isCurrentFeature && isDestinationFeature) {
+      const currentFeatureIndex = currentPageIndex - 400
+      const destinationFeatureIndex = destinationPageIndex - 400
+      const totalFeatures = FEATURE_ORDER.length
+
+      // Calculate the shortest path considering circular navigation
+      const forwardDistance =
+        (destinationFeatureIndex - currentFeatureIndex + totalFeatures) %
+        totalFeatures
+      const backwardDistance =
+        (currentFeatureIndex - destinationFeatureIndex + totalFeatures) %
+        totalFeatures
+
+      console.log("forwardDistance :", forwardDistance)
+      console.log("backwardDistance :", backwardDistance)
+
+      // If forward distance is shorter or equal, go forwards; otherwise go backwards
+      if (forwardDistance <= backwardDistance) {
+        return "forwards"
+      } else {
+        return "backwards"
+      }
+    }
+
+    // Handle regular navigation (non-circular)
     if (currentPageIndex > destinationPageIndex) {
       return "backwards"
     }
