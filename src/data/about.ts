@@ -8,12 +8,12 @@ export const aboutData = {
     {
       tag: "p",
       content:
-        "We are a small team of developers who are passionate about creating high-quality software. We specialize in web development and are always looking for new projects to work on.",
+        "We are a small team of developers who are passionate about creating high-quality software. We specialize in web development using modern technologies like `TypeScript`, `Deno`, and `CSS Grid`.",
     },
     {
       tag: "p",
       content:
-        "Our goal is to provide our clients with the best possible solutions for their needs. We take pride in our work and strive to deliver the best possible results on every project.",
+        "Our goal is to provide our clients with the best possible solutions for their needs. We take pride in our work and strive to deliver the best possible results on every project using tools like `git` and `VS Code`.",
     },
     {
       tag: "p",
@@ -99,6 +99,26 @@ export const aboutData = {
       tag: "p",
       content:
         "We embrace collaboration and believe that the best results come from diverse perspectives working together. Quality is non-negotiable - we thoroughly test and refine our work to meet the highest standards.",
+    },
+    {
+      tag: "h3",
+      content: "Our Tech Stack",
+      id: "our-tech-stack",
+    },
+    {
+      tag: "p",
+      content:
+        "We work with modern web technologies to build fast, secure, and scalable applications:",
+    },
+    {
+      tag: "ul",
+      items: [
+        "Frontend development with `TypeScript` and modern `CSS` features",
+        "Server-side development using `Deno` runtime environment",
+        "Version control with `git` and collaborative workflows",
+        "Testing frameworks including `Deno.test()` for unit testing",
+        "Build tools like `esbuild` and `vite` for optimization",
+      ],
     },
   ],
 }
