@@ -10,7 +10,7 @@ export const cssMixinsFeature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "CSS Mixins (@apply)",
+      content: "Getting Started",
       id: "css-mixins",
     },
     {

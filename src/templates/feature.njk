@@ -67,36 +67,45 @@
         class="feature-content"
         >
 
-        {% for item in currentFeature.bodyMarkupData %}
-            {% if item.tag == "h2" %}
-                <h2 variant="lg" top="2" bottom="3" id="{{ item.id }}">{{ item.content }}</h2>
+        <layout-item
+        start="1"
+        end="10"
+        id="feature-image"
+        size="large"
+        variant="column"
+        >
 
-            {% elif item.tag == "h3" %}
-                <h3 variant="lg" top="4" bottom="3" id="{{ item.id }}">{{ item.content }}</h3>
+            {% for item in currentFeature.bodyMarkupData %}
+                {% if item.tag == "h2" %}
+                    <h2 variant="lg" top="1" bottom="3" id="{{ item.id }}">{{ item.content }}</h2>
 
-            {% elif item.tag == "p" %}
-                <p top="1" bottom="2">{{ item.content }}</p>
+                {% elif item.tag == "h3" %}
+                    <h3 variant="lg" top="4" bottom="3" id="{{ item.id }}">{{ item.content }}</h3>
 
-            {% elif item.tag == "ul" %}
-                <ul>
-                    {% for listItem in item.items %}
-                        <li>{{ listItem }}</li>
-                    {% endfor %}
-                </ul>
+                {% elif item.tag == "p" %}
+                    <p top="1" bottom="2">{{ item.content }}</p>
 
-            {% elif item.tag == "codeblock" %}
-                {{ codeBlock(item.language, item.code) }}
+                {% elif item.tag == "ul" %}
+                    <ul>
+                        {% for listItem in item.items %}
+                            <li>{{ listItem }}</li>
+                        {% endfor %}
+                    </ul>
 
-            {% else %}
-                <{{ item.tag }} {% if item.id %}id="{{ item.id }}"{% endif %}>
-                    {{ item.content }}
-                </{{ item.tag }}>
-            {% endif %}
-        {% endfor %}
-        <a 
+                {% elif item.tag == "codeblock" %}
+                    {{ codeBlock(item.language, item.code) }}
+
+                {% else %}
+                    <{{ item.tag }} {% if item.id %}id="{{ item.id }}"{% endif %}>
+                        {{ item.content }}
+                    </{{ item.tag }}>
+                {% endif %}
+            {% endfor %}
+            <a 
             class="link-feature" 
             href="/features">
-            <span>Back to Features</span></a>
+                <span>Back to Features</span></a>
+        </layout-item>
 
     </surface-item>
     {# <surface-item   

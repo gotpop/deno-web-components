@@ -71,7 +71,8 @@ nav.button-group {
   view-transition-name: attr(id type(<custom-ident>), none);
   max-height: 7rem;
   padding: 1rem;
-  background-color: var(--white);
+  /* background-color: var(--white); */
+  background-color: --transparent(var(--white), 0.4);
 
   :has(.navigation-bar) & {
     /* background-color: --transparent(var(--white), 0.4); */
@@ -130,7 +131,7 @@ nav.button-group {
   grid-column: 4 / -4;
   display: grid;
   grid-template-columns: subgrid;
-  padding: 2rem;
+  padding: 3rem;
   background-color: --transparent(var(--white), 0.4);
   align-items: start;
 }
