@@ -15,7 +15,7 @@
                     id="subheading-{{ loop.index }}" 
                     top="3">
                 {% for desc in currentFeature.description %}
-                    {{ desc }}
+                    {{ desc | codeBackticks | safe }}
                 {% endfor %}
             </p>
         </layout-item>
@@ -83,12 +83,12 @@
                     <h3 variant="lg" top="4" bottom="3" id="{{ item.id }}">{{ item.content }}</h3>
 
                 {% elif item.tag == "p" %}
-                    <p top="1" bottom="2">{{ item.content }}</p>
+                    <p top="1" bottom="2">{{ item.content | codeBackticks | safe }}</p>
 
                 {% elif item.tag == "ul" %}
                     <ul>
                         {% for listItem in item.items %}
-                            <li>{{ listItem }}</li>
+                            <li>{{ listItem | codeBackticks | safe }}</li>
                         {% endfor %}
                     </ul>
 

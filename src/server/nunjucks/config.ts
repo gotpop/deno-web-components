@@ -1,3 +1,4 @@
+import { codeBackticks } from "./filters/code-backticks.ts"
 import { componentCss } from "./filters/component-css.ts"
 import { configure } from "https://esm.sh/nunjucks@3.2.4"
 import { escapeHtml } from "../../utils/escapeHtml.ts"
@@ -22,6 +23,7 @@ export function setupNunjucks() {
   nunjucks.addFilter("componentCss", componentCss)
   nunjucks.addFilter("isActive", isActive)
   nunjucks.addFilter("escapeHtml", escapeHtml)
+  nunjucks.addFilter("codeBackticks", codeBackticks)
 
   nunjucks.addFilter("debug", function (obj) {
     return JSON.stringify(obj, null, 2)
