@@ -1,4 +1,4 @@
-import { initNavigationHandler } from "./navigation-handler.js"
+import { initNavigationHandler } from "../navigation-handler.js"
 
 export function initViewTransitions() {
   if (!document.startViewTransition || !window.navigation) {

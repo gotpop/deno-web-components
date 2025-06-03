@@ -1,6 +1,6 @@
 import { FeatureDetect } from "./feature-detect.js"
 import { initLiveReload } from "./live-reload.js"
-import { initViewTransitions } from "./view-transitions.js"
+import { initViewTransitions } from "./view-transitions/init.js"
 import { initWebComponents } from "./define-web-components.js"
 
 const worklets = ["grid", "tetris", "tetris-grid"].map(
