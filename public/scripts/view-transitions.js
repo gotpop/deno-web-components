@@ -46,11 +46,25 @@ const determineTransitionType = (fromNavigationEntry, toNavigationEntry) => {
     const destinationPageIndex = extractPageIndexFromPath(destinationPathname)
     console.log("destinationPageIndex :", destinationPageIndex)
 
-    // Handle circular navigation for features
+    // Check for entering/exiting subpages
+    const isCurrentMainPage = currentPageIndex < 400 || currentPageIndex === 999
+    const isDestinationMainPage = destinationPageIndex < 400 ||
+      destinationPageIndex === 999
     const isCurrentFeature = currentPageIndex >= 400 && currentPageIndex < 999
     const isDestinationFeature = destinationPageIndex >= 400 &&
       destinationPageIndex < 999
 
+    // Entering a subpage (going from main page to feature)
+    if (isCurrentMainPage && isDestinationFeature) {
+      return "enter-subpage"
+    }
+
+    // Exiting a subpage (going from feature to main page)
+    if (isCurrentFeature && isDestinationMainPage) {
+      return "exit-subpage"
+    }
+
+    // Handle circular navigation for features
     if (isCurrentFeature && isDestinationFeature) {
       const currentFeatureIndex = currentPageIndex - 400
       const destinationFeatureIndex = destinationPageIndex - 400
@@ -136,6 +150,7 @@ export function initViewTransitions() {
       const fromEntry = { url: window.location.href }
       const toEntry = { url: url.href }
       const transitionType = determineTransitionType(fromEntry, toEntry)
+      // const transitionType = "none"
       console.log("transitionType :", transitionType)
 
       const transition = document.startViewTransition(async () => {

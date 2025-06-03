@@ -2,7 +2,6 @@
   navigation: auto;
 }
 
-/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root),
   ::view-transition-new(root),
@@ -12,41 +11,40 @@
   }
 }
 
-.feature-content {
-  view-transition-name: feature-content;
-  /* background: red !important; */
-}
-
 html:active-view-transition-type(forwards, backwards) {
+  .feature-content {
+    view-transition-name: feature-content;
+  }
+
   :root {
     view-transition-name: none;
   }
+
+  &::view-transition-image-pair(feature-content) {
+    animation-duration: 300ms;
+  }
 }
 
-/* Animation styles for forwards type only */
 html:active-view-transition-type(forwards) {
   &::view-transition-old(feature-content) {
     animation-name: slide-out-to-left;
-    animation-duration: 300ms;
     animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
   }
+
   &::view-transition-new(feature-content) {
     animation-name: slide-in-from-right;
-    animation-duration: 300ms;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
-/* Animation styles for backwards type only */
 html:active-view-transition-type(backwards) {
   &::view-transition-old(feature-content) {
     animation-name: slide-out-to-right;
-    animation-duration: 300ms;
     animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
   }
+
   &::view-transition-new(feature-content) {
     animation-name: slide-in-from-left;
-    animation-duration: 300ms;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
