@@ -1,5 +1,5 @@
-import { determineTransitionType } from "./utils/transition-type.js"
-import { waitForStylesheets } from "./utils/stylesheet-loader.js"
+import { determineTransitionType } from "./transition-type.js"
+import { waitForStylesheets } from "./stylesheet-loader.js"
 
 export function initNavigationHandler() {
   if (!window.navigation) {
