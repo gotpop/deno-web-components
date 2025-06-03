@@ -48,32 +48,3 @@ html:active-view-transition-type(backwards) {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
-
-/* Animation styles for reload type only */
-/* html:active-view-transition-type(reload) {
-  &::view-transition-old(root) {
-    animation-name: fade-out, scale-down;
-    animation-duration: 250ms;
-    animation-timing-function: ease-out;
-  }
-  &::view-transition-new(root) {
-    animation-delay: 150ms;
-    animation-name: fade-in, scale-up;
-    animation-duration: 300ms;
-    animation-timing-function: ease-in-out;
-  }
-} */
-
-/* Animation styles for unknown type - fallback to simple fade */
-/* html:active-view-transition-type(unknown) {
-  &::view-transition-old(root) {
-    animation-name: fade-out;
-    animation-duration: 200ms;
-    animation-timing-function: ease-out;
-  }
-  &::view-transition-new(root) {
-    animation-name: fade-in;
-    animation-duration: 200ms;
-    animation-timing-function: ease-in;
-  }
-} */
