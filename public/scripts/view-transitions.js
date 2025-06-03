@@ -134,6 +134,9 @@ export function initViewTransitions() {
     try {
       await document.fonts.ready
 
+      // Capture the current URL BEFORE any navigation starts
+      const currentUrl = window.location.href
+
       const response = await fetch(url, {
         cache: "no-store",
         headers: {
@@ -146,11 +149,12 @@ export function initViewTransitions() {
       const html = await response.text()
       const newDoc = new DOMParser().parseFromString(html, "text/html")
 
-      // Determine transition type
-      const fromEntry = { url: window.location.href }
+      // Determine transition type using the captured current URL
+      const fromEntry = { url: currentUrl }
       const toEntry = { url: url.href }
       const transitionType = determineTransitionType(fromEntry, toEntry)
-      // const transitionType = "none"
+      console.log("from:", currentUrl)
+      console.log("to:", url.href)
       console.log("transitionType :", transitionType)
 
       const transition = document.startViewTransition(async () => {
