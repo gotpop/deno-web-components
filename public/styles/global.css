@@ -181,7 +181,7 @@ nav.button-group {
 }
 
 .left {
-  grid-column: 1 / 52;
+  grid-column: 1 / 50;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -191,7 +191,7 @@ nav.button-group {
 }
 
 .right {
-  grid-column: 54 / -1;
+  grid-column: 52 / -1;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -235,21 +235,44 @@ nav.button-group {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: var(--accent);
+    color: var(--light-100, #ffffff);
     transition: color 0.3s ease-in-out;
     background-color: var(--warning-800);
     justify-content: space-between;
     padding: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out;
 
-    &:hover {
-      color: var(--accent-hover, #005f99);
+    span {
+      padding-inline-start: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    &[data-brand="github"] {
+      --brand-colour: #333;
+
+      background-color: var(--brand-colour);
+
+      &:hover {
+        background-color: oklch(from var(--brand-colour) calc(l * 0.75) c h);
+      }
+    }
+
+    &[data-brand="linkedin"] {
+      --brand-colour: #1da1f2;
+
+      background-color: var(--brand-colour);
+
+      &:hover {
+        background-color: oklch(from var(--brand-colour) calc(l * 1.25) c h);
+      }
     }
   }
 
   svg {
     width: 2rem;
     height: 2rem;
-    fill: var(--accent);
+    fill: var(--light-100, #ffffff);
     transition: fill 0.3s ease-in-out;
 
     &:hover {
@@ -267,6 +290,7 @@ nav.button-group {
 .form-contact {
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
   /* grid-column: 40 / -1; */
   /* padding: 3rem; */
   /* background-color: --transparent(var(--white), 0.4); */
