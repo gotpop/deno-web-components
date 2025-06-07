@@ -24,4 +24,5 @@ layout-item {
   grid-row: --get-row(attr(row type(<integer> | <custom-ident>), auto));
   grid-template-columns: --get-grid(attr(variant type(<custom-ident>), row));
   row-gap: attr(row-gap rem, unset);
+  align-self: attr(align-self type(<custom-ident>), normal);
 }
