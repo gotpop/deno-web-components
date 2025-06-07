@@ -296,3 +296,12 @@ nav.button-group {
   /* background-color: --transparent(var(--white), 0.4); */
   align-items: start;
 }
+
+.wrapper-index {
+  grid-column: 4 / -4;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  padding: 3rem;
+  row-gap: 3rem;
+  background-color: --transparent(var(--white), 0.3);
+}

@@ -9,42 +9,45 @@
 {% endblock %}
 
 {% block page_content %}
-  <layout-item
+  <section class="wrapper-index" id="about-page">
+    <layout-item
     end="-1"
     start="1"
     row-gap="3"
     >
-    <layout-item start="4" end="10" variant="column">
-      <a href="#section-css" variant="button" size="small">
-        <h2 variant="base" id="section-css" >CSS Features</h2>
-      </a>
-    </layout-item>
-    <grid-auto>
-      {% for feature in features.cssFeatures %}
-        {{ featureComponents.featureCard(feature) }}
-      {% endfor %}
-    </grid-auto>
+      <layout-item start="4" end="20" variant="column">
+        <a href="#section-css" variant="button" size="small">
+          <h2 variant="base" id="section-css" >CSS Features</h2>
+        </a>
+      </layout-item>
+      <grid-auto>
+        {% for feature in features.cssFeatures %}
+          {{ featureComponents.featureCard(feature) }}
+        {% endfor %}
+      </grid-auto>
 
-    <layout-item start="4" end="10" row="3" variant="column">
-      <a href="#section-cssom" variant="button" size="small">
-        <h2 variant="base" id="section-cssom" >CSSOM</h2>
-      </a>
-    </layout-item>
-    <grid-auto>
-      {% for feature in features.cssomFeatures %}
-        {{ featureComponents.featureCard(feature) }}
-      {% endfor %}
-    </grid-auto>
+      <layout-item start="4" end="20"  variant="column">
+        <a href="#section-cssom" variant="button" size="small">
+          <h2 variant="base" id="section-cssom" >CSSOM</h2>
+        </a>
+      </layout-item>
+      <grid-auto>
+        {% for feature in features.cssomFeatures %}
+          {{ featureComponents.featureCard(feature) }}
+        {% endfor %}
+      </grid-auto>
 
-    <layout-item start="4" end="10" row="5" variant="column">
-      <a href="#section-bapi" variant="button" size="small">
-        <h2 variant="base" id="section-bapi">Browser APIs</h2>
-      </a>
+      <layout-item start="4" end="20" variant="column">
+        <a href="#section-bapi" variant="button" size="small">
+          <h2 variant="base" id="section-bapi">Browser APIs</h2>
+        </a>
+      </layout-item>
+      <grid-auto>
+        {% for feature in features.browserApiFeatures %}
+          {{ featureComponents.featureCard(feature) }}
+        {% endfor %}
+      </grid-auto>
     </layout-item>
-    <grid-auto>
-      {% for feature in features.browserApiFeatures %}
-        {{ featureComponents.featureCard(feature) }}
-      {% endfor %}
-    </grid-auto>
-  </layout-item>
+
+  </section>
 {% endblock %}
