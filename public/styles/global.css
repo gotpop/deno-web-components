@@ -158,7 +158,7 @@ nav.button-group {
 }
 
 /* Inline code styling */
-p > code {
+:where(p, li) > code {
   background-color: var(--light-200, #f4f4f4);
   color: var(--accent, #007acc);
   padding: 0.2em 0.4em;

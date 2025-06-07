@@ -10,7 +10,7 @@ export const cssPropertiesValuesApiFeature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "CSS Properties & Values API",
+      content: "Getting Started",
       id: "css-properties-values-api",
     },
     {

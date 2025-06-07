@@ -10,7 +10,7 @@ export const customElementsFeature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "HTML Custom Elements",
+      content: "Getting Started",
       id: "html-custom-elements",
     },
     {

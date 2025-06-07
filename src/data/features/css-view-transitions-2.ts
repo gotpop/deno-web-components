@@ -10,7 +10,7 @@ export const cssViewTransitions2Feature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "View Transitions",
+      content: "Getting Started",
       id: "view-transitions",
     },
     {

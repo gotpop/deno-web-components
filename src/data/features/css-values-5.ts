@@ -10,7 +10,7 @@ export const cssValues5Feature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "CSS Values and Units Level 5",
+      content: "Getting Started",
       id: "css-values-5",
     },
     {

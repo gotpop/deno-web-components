@@ -11,7 +11,7 @@ export const cssAnchorPositionFeature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "CSS Anchor Positioning",
+      content: "Getting Started",
       id: "css-anchor-positioning",
     },
     {

@@ -10,7 +10,7 @@ export const cssTypedOmFeature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "CSS Typed Object Model (Typed OM)",
+      content: "Getting Started",
       id: "css-typed-om",
     },
     {

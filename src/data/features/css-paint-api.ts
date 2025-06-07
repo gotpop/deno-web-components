@@ -5,12 +5,12 @@ export const cssPaintApiFeature: Feature = {
   blurb:
     "The CSS Paint API allows developers to generate an image in JavaScript that can be drawn directly to an element, similar to a CSS gradient or image.",
   description: [
-    "The CSS Paint API, part of the Houdini project, allows developers to create custom CSS paint functions. These functions are JavaScript worklets that can generate an image for a CSS property that expects an image, like `background-image` or `border-image`.",
+    "The CSS Paint API, part of the Houdini project, allows developers to create custom CSS paint functions. These functions are JavaScript worklets that can generate an image for a CSS properties, like `background-image`.",
   ],
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "CSS Paint API (Houdini)",
+      content: "Getting Started",
       id: "css-paint-api",
     },
     {

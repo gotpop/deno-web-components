@@ -10,7 +10,7 @@ export const popoverApiFeature: Feature = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "Popover API",
+      content: "Getting Started",
       id: "popover-api",
     },
     {
