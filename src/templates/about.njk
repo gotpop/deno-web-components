@@ -8,12 +8,14 @@
 {% endblock %}
 
 {% block page_content %}
-  <surface-item variant="light" size="large" start="4"
-    end="23" aria-label="About page content">
-    {% include "partials/body-markup-renderer.njk" %}
-  </surface-item>
-  <surface-item class="sticky" variant="light" size="large" start="25" end="-8" opacity="1">
-    <layout-item row-gap="1" role="navigation">
+  <div class="page" id="about-page">
+    <section
+        class="left"
+        >
+      {% include "partials/body-markup-renderer.njk" %}
+    </section>
+    <aside class="right">
+      <h4 variant="md" top="1" bottom="1">On this page</h4>
       {% for item in bodyMarkupData %}
         {% if item
           .tag
@@ -22,6 +24,6 @@
             <span>{{ item.content }}</span></a>
         {% endif %}
       {% endfor %}
-    </layout-item>
-  </surface-item>
+    </aside>
+  </div>
 {% endblock %}

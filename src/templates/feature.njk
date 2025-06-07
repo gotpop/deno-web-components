@@ -40,17 +40,6 @@
                     </a>
                 {% endif %}
             </nav>
-            {# <aside class="aside-links" id="links">
-                <h4 variant="md" top="1" bottom="1">Links</h2>
-                {% for link in currentFeature.links %}
-                    <a 
-                class="link-feature"
-                justify="left"
-                href="{{ link.link }}"
-            >
-                        <span>{{ link.label }}</span></a>
-                {% endfor %}
-            </aside> #}
         </layout-item>
     </section>
 
@@ -107,24 +96,4 @@
         </aside>
 
     </div>
-    {# <surface-item   
-        align="start"
-        align-self="start"
-        aria-label="{{ currentFeature.title }}"
-        id="links"
-        end="36"
-        size="medium" 
-        start="23" 
-        variant="light" 
-    >
-        {% for link in currentFeature.links %}
-            <a 
-                class="link-feature"
-                justify="left"
-                href="{{ link.link }}"
-            >
-                <span>{{ link.label }}</span></a>
-        {% endfor %}
-    </surface-item> #}
-
 {% endblock %}
