@@ -285,6 +285,10 @@ nav.button-group {
   background-color: --transparent(var(--white), 0.4);
   grid-column: 4 / -4;
   padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
 }
 
 .form-contact {
