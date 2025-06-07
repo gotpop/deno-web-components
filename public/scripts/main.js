@@ -2,6 +2,7 @@ import { FeatureDetect } from "./feature-detect.js"
 import { initLiveReload } from "./live-reload.js"
 import { initViewTransitions } from "./view-transitions/init.js"
 import { initWebComponents } from "./define-web-components.js"
+import { performanceOptimizer } from "./utils/performance-optimizer.js"
 
 const worklets = ["grid", "tetris", "tetris-grid"].map(
   (name) => `/scripts/worklets/worklet.${name}.js`,
@@ -65,8 +66,30 @@ function initializeOrderSelect() {
   }
 }
 
+// Initialize performance-aware link preloading
+function initPerformanceAwarePreloading() {
+  if (performanceOptimizer.deviceCapabilities.isLowEnd) {
+    // Skip preloading on low-end devices to save bandwidth and CPU
+    return
+  }
+
+  // Preload links on hover for better perceived performance
+  document.addEventListener("mouseover", (e) => {
+    const link = e.target.closest("a[href]")
+    if (link && link.hostname === location.hostname) {
+      const url = new URL(link.href)
+      if (url.pathname !== location.pathname) {
+        performanceOptimizer.preloadNextPage(url.href)
+      }
+    }
+  })
+}
+
 // Initial setup
-document.addEventListener("DOMContentLoaded", initializeOrderSelect)
+document.addEventListener("DOMContentLoaded", () => {
+  initializeOrderSelect()
+  initPerformanceAwarePreloading()
+})
 
 // Re-initialize after custom navigation event
 document.addEventListener("app:navigationend", function () {

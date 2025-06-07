@@ -1,10 +1,14 @@
 import { determineTransitionType } from "./transition-type.js"
+import { performanceOptimizer } from "../utils/performance-optimizer.js"
 import { waitForStylesheets } from "./stylesheet-loader.js"
 
 export function initNavigationHandler() {
   if (!window.navigation) {
     return null
   }
+
+  // Initialize device optimization and performance monitoring
+  performanceOptimizer.monitorTransitionPerformance()
 
   navigation.addEventListener("navigate", (e) => {
     const url = new URL(e.destination.url)
@@ -44,7 +48,18 @@ export function initNavigationHandler() {
         console.log("to:", url.href)
         console.log("transitionType :", transitionType)
 
+        // Enable performance mode for the transition
+        performanceOptimizer.enablePerformanceMode()
+
         const transition = document.startViewTransition(async () => {
+          // Pre-optimize for performance
+          const pageElement = document.querySelector(".page")
+          if (
+            pageElement && !performanceOptimizer.deviceCapabilities.isLowEnd
+          ) {
+            pageElement.classList.add("gpu-accelerated")
+          }
+
           document.documentElement.replaceChildren(
             ...newDoc.documentElement.childNodes,
           )
