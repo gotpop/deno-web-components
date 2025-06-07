@@ -201,3 +201,59 @@ nav.button-group {
   background-color: --transparent(var(--white), 0.4);
   max-height: calc-size(max-content, round(up, size, 1rem));
 }
+
+.hero-about {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1rem);
+  grid-column: 4 / -4;
+  padding: 3rem;
+  background-color: --transparent(var(--white), 0.4);
+  align-items: start;
+}
+
+.hero-about-content {
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, 1fr); */
+  grid-column: 1 / 50;
+  /* padding: 3rem; */
+  /* background-color: --transparent(var(--white), 0.4); */
+  align-items: start;
+}
+
+.links-social {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 1rem;
+  padding: 2rem;
+  background-color: --transparent(var(--white), 0.4);
+  grid-column: 52 / -1;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--accent);
+    transition: color 0.3s ease-in-out;
+    background-color: var(--warning-800);
+    justify-content: space-between;
+    padding: 1rem;
+
+    &:hover {
+      color: var(--accent-hover, #005f99);
+    }
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--accent);
+    transition: fill 0.3s ease-in-out;
+
+    &:hover {
+      fill: var(--accent-hover, #005f99);
+    }
+  }
+}

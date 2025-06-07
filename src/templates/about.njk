@@ -1,10 +1,22 @@
 {% extends "base-hero.njk" %}
 
 {% block hero %}
-  <surface-item start="4" end="28" row="1" id="hero" variant="light" size="large" role="banner">
-    <h1 variant="xxl" top="4" bottom="2" id="heading-primary">About</h1>
-    <p variant="lg" id="subheading" top="4">A collection of the latest in CSS and Web Components</p>
-  </surface-item>
+  <section id="hero" class="hero-about" role="banner">
+    <article class="hero-about-content">
+      <h1 variant="xxl" top="3" bottom="2" id="heading-primary">About</h1>
+      <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components.</p>
+    </article>
+    <aside class="links-social">
+      <a href="/" class="links-social-item" aria-label="Publication">
+        <span>LinkedIn</span>
+        {% include "partials/icons/linkedin.njk" %}
+      </a>
+      <a href="/" class="links-social-item" aria-label="Publication">
+        <span>GitHub</span>
+        {% include "partials/icons/github.njk" %}
+      </a>
+    </aside>
+  </section>
 {% endblock %}
 
 {% block page_content %}
