@@ -15,3 +15,5 @@ This project uses Deno 2.3
 Keep things simple
 
 Always predict raw html tags first
+
+Please do not suggest more than one line at a time 

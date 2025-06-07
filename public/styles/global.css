@@ -257,3 +257,18 @@ nav.button-group {
     }
   }
 }
+
+.wrapper-features {
+  background-color: --transparent(var(--white), 0.4);
+  grid-column: 4 / -4;
+  padding: 3rem;
+}
+
+.form-contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-column: 40 / -1; */
+  /* padding: 3rem; */
+  /* background-color: --transparent(var(--white), 0.4); */
+  align-items: start;
+}

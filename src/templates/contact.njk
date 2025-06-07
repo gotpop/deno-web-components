@@ -21,14 +21,23 @@
 
 {% block page_content %}
   <div class="page" id="about-page">
-    <form 
+    <section
+      class="left"
+      >
+      <h2 variant="lg" top="1" bottom="3" id="contact-heading">Get in Touch</h2>
+      <p top="1">Have a question, suggestion, or just want to say hello? Fill out the form below and I'll get back to you as soon as possible.</p>
+
+    </section>
+    <div class="right">
+      <form 
       action="/api/contact"
+      class="form-contact"
       method="POST"
     >
-      <label for="name">
-        <span>Name</span>
-      </label>
-      <input 
+        <label for="name">
+          <span>Name</span>
+        </label>
+        <input 
         autocomplete="true"
         id="name"
         maxlength="50"
@@ -39,10 +48,10 @@
         type="text"
 />
 
-      <label for="email">
-        <span>Email</span>
-      </label>
-      <input 
+        <label for="email">
+          <span>Email</span>
+        </label>
+        <input 
         autocomplete="true"
         id="email"
         maxlength="50"
@@ -55,10 +64,10 @@
         type="email"
       >
 
-      <label for="message">
-        <span>Message</span>
-      </label>
-      <textarea 
+        <label for="message">
+          <span>Message</span>
+        </label>
+        <textarea 
         cols="30"
         id="message"
         minlength="2"
@@ -68,7 +77,10 @@
         rows="10"
       ></textarea>
 
-      <button type="submit">Send</button>
+        <button type="submit">Send</button>
+      </form>
+
     </div>
-  </surface-item>
+  </div>
+</surface-item>
 {% endblock %}

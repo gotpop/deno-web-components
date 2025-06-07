@@ -45,9 +45,13 @@
 
 {% block page_content %}
 
-  <grid-auto>
-    {% for feature in features %}
-      {{ featureComponents.featureCard(feature) }}
-    {% endfor %}
-  </grid-auto>
+  <section class="wrapper-features">
+    <layout-item start="1" end="-1" row="1" id="features-list">
+      <grid-auto>
+        {% for feature in features %}
+          {{ featureComponents.featureCard(feature) }}
+        {% endfor %}
+      </grid-auto>
+    </layout-item>
+  </section>
 {% endblock %}
