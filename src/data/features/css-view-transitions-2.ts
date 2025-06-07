@@ -5,7 +5,7 @@ export const cssViewTransitions2Feature: Feature = {
   blurb:
     "CSS View Transitions Level 2 expands the capabilities of smooth transitions between different DOM states, offering more control over animations.",
   description: [
-    "View transitions enable seamless animations between different states of a web application.",
+    "View transitions enable seamless animations between different states of a web application. They enhance user experience by providing visual continuity during navigation or state changes.",
   ],
   bodyMarkupData: [
     {

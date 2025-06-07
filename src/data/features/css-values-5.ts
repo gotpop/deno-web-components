@@ -5,7 +5,7 @@ export const cssValues5Feature: Feature = {
   blurb:
     "CSS Values and Units Module Level 5 introduces new CSS value types and units, enhancing the expressiveness of CSS.",
   description: [
-    "CSS Values and Units Module Level 5 introduces new ways to specify values and units in CSS, building upon previous levels. It aims to provide more flexibility and precision for web authors when defining lengths, frequencies, angles, times, and other common CSS data types.",
+    "CSS Values and Units Module Level 5 introduces new ways to specify values and units in CSS, building upon previous levels. It aims to provide more flexibility and precision for web authors when defining lengths, frequencies, angles & times.",
   ],
   bodyMarkupData: [
     {

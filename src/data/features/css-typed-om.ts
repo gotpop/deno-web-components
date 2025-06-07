@@ -5,7 +5,7 @@ export const cssTypedOmFeature: Feature = {
   blurb:
     "The CSS Typed Object Model (OM) provides a JavaScript interface to CSS values that is more performant and easier to use than string-based manipulation.",
   description: [
-    "The CSS Typed Object Model (OM) API provides a more typed and structured way to interact with CSS values in JavaScript, as opposed to the traditional string-based approach of `element.style`. It offers better performance and more robust handling of CSS properties and their values.",
+    "The CSS Typed Object Model (OM) API provides a more typed and structured way to interact with CSS values in JavaScript, as opposed to the traditional string-based approach of `element.style`.",
   ],
   bodyMarkupData: [
     {
