@@ -12,7 +12,7 @@
 }
 
 html:active-view-transition-type(forwards, backwards) {
-  .feature-content {
+  .page {
     view-transition-name: feature-content;
   }
 

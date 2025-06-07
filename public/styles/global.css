@@ -96,7 +96,7 @@ nav.button-group {
 }
 .navigation-bar-features {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: end;
   align-items: start;
   padding: 0rem;
@@ -104,7 +104,7 @@ nav.button-group {
   /* width: calc-size(max-content, round(up, size, 1rem)); */
   grid-column: 10 / -1;
   view-transition-name: attr(id type(<custom-ident>), none);
-  max-height: 5rem;
+  /* max-height: 5rem; */
 
   :has(.navigation-bar) & {
     /* background-color: --transparent(var(--white), 0.4); */
@@ -136,6 +136,15 @@ nav.button-group {
   align-items: start;
 }
 
+.hero-section-features {
+  grid-column: 4 / -4;
+  display: grid;
+  grid-template-columns: subgrid;
+  padding: 3rem;
+  background-color: --transparent(var(--white), 0.4);
+  align-items: start;
+}
+
 .aside-links {
   display: flex;
   flex-direction: column;
@@ -158,18 +167,30 @@ p > code {
   font-weight: 500;
 }
 
+.page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1rem);
+  grid-template-rows: auto;
+  padding: 3rem;
+  row-gap: 3rem;
+  /* max-width: calc-size(max-content, round(up, size, 1rem)); */
+  background-color: --transparent(var(--white), 0.4);
+  grid-column: 4 / -4;
+  view-transition-name: attr(id type(<custom-ident>), none);
+}
+
 .left {
-  grid-column: 1 / 2;
+  grid-column: 1 / 52;
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 2rem;
-  gap: 1rem;
+  /* padding: 2rem; */
+  /* gap: 1rem; */
   /* background-color: yellow; */
 }
 
 .right {
-  grid-column: 3 / -1;
+  grid-column: 54 / -1;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -177,4 +198,5 @@ p > code {
   gap: 1rem;
   /* background-color: teal; */
   background-color: --transparent(var(--white), 0.4);
+  max-height: calc-size(max-content, round(up, size, 1rem));
 }

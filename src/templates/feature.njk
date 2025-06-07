@@ -40,7 +40,7 @@
                     </a>
                 {% endif %}
             </nav>
-            <aside class="aside-links" id="links">
+            {# <aside class="aside-links" id="links">
                 <h4 variant="md" top="1" bottom="1">Links</h2>
                 {% for link in currentFeature.links %}
                     <a 
@@ -50,23 +50,15 @@
             >
                         <span>{{ link.label }}</span></a>
                 {% endfor %}
-            </aside>
+            </aside> #}
         </layout-item>
     </section>
 
 {% endblock %}
 
 {% block page_content %}
-    <surface-item 
-        aria-label="{{ currentFeature.title }}"
-        id="{{ currentFeature.slug }}"
-        size="large" 
-        variant="light"
-        end="-4"
-        start="4"
-        class="feature-content"
-        >
 
+    <div class="page" id={{ currentFeature.slug }}>
         <section
         class="left"
         >
@@ -106,7 +98,7 @@
             <h4 variant="md" top="1" bottom="1">Links</h4>
             {% for link in currentFeature.links %}
                 <a 
-                    class="link-feature"
+                    class="link-simple"
                     justify="left"
                     href="{{ link.link }}"
                 >
@@ -114,7 +106,7 @@
             {% endfor %}
         </aside>
 
-    </surface-item>
+    </div>
     {# <surface-item   
         align="start"
         align-self="start"

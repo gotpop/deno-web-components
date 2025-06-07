@@ -65,10 +65,11 @@ a:not([class]) {
 .link-simple {
   color: black;
   text-decoration: none;
-  /* text-decoration: underline 0.1em var(--secondary-500); */
-  /* text-underline-offset: calc(var(--spacing-base) - 0.1em); */
+  text-decoration: underline 0.1em var(--secondary-500);
+  text-underline-offset: calc(var(--spacing-base) - 0.1em);
   width: calc-size(max-content, round(up, size, 1rem));
   padding-block-start: calc(1rem - 1cap);
+  margin-block-end: 1rem;
 
   &:focus {
     outline: none;

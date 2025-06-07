@@ -2,44 +2,49 @@
 {% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
-  <surface-item start="4" end="26" row="1" id="hero" variant="light" size="large" role="banner">
-    <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Features</h1>
-    <p variant="lg" id="subheading" top="4">A collection of the latest in CSS and Web Components</p>
-  </surface-item>
-{% endblock %}
-
-{% block page_content %}
-  <flex-items 
-      start="4" 
-      end="-4"
+  <section class="hero-section-features" id="hero-section-features">
+    <layout-item start="1" end="22" row="1" id="hero" variant="light" size="large" role="banner">
+      <h1 variant="xl" top="2" bottom="2" id="heading-primary">Features</h1>
+      <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components</p>
+    </layout-item>
+    <surface-item start="28" end="-1" row="1" variant="light" size="medium" role="banner">
+      <flex-items 
+      start="1" 
+      end="-1"
       id="navigation-bar"
     >
-    <nav class="navigation-bar-features" id="navigation-bar-features">
-      <a variant="button" href="?filter=browser-api&order={{ orderQuery }}">
-        <b>Browser API</b>
-      </a>
-      <a variant="button" href="?filter=css&order={{ orderQuery }}">
-        <b>CSS</b>
-      </a>
-      <a variant="button" href="?filter=cssom&order={{ orderQuery }}">
-        <b>CSSOM</b>
-      </a>
-      <a variant="button" href="/features?order={{ orderQuery }}">
-        <b>All</b>
-      </a>
-    </nav>
-    <flex-item
+        <nav class="navigation-bar-features" id="navigation-bar-features">
+          <a variant="button" href="/features?order={{ orderQuery }}">
+            <b>All</b>
+          </a>
+          <a variant="button" href="?filter=browser-api&order={{ orderQuery }}">
+            <b>Browser API</b>
+          </a>
+          <a variant="button" href="?filter=css&order={{ orderQuery }}">
+            <b>CSS</b>
+          </a>
+          <a variant="button" href="?filter=cssom&order={{ orderQuery }}">
+            <b>CSSOM</b>
+          </a>
+        </nav>
+        <flex-item
       aria-label="Order features"
       id="order-selector" 
     >
-      <form class="order" method="GET" action="">
-        <select class="custom-select" id="order" name="order">
-          <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
-          <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
-        </select>
-      </form>
-    </flex-item>
-  </flex-items>
+          <form class="order" method="GET" action="">
+            <select class="custom-select" id="order" name="order">
+              <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
+              <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
+            </select>
+          </form>
+        </flex-item>
+      </flex-items>
+    </surface-item>
+  </section>
+{% endblock %}
+
+{% block page_content %}
+
   <grid-auto>
     {% for feature in features %}
       {{ featureComponents.featureCard(feature) }}
