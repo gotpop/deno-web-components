@@ -3,7 +3,7 @@
 
 {% block hero %}
     <section class="hero-section" id="hero-section">
-        <layout-item start="1" end="22" row="1" id="hero" variant="light" size="large" role="banner">
+        <layout-item start="1" end="40" row="1" id="hero" variant="light" size="large" role="banner">
             <h1 
         bottom="1" 
         id="heading-primary"
@@ -20,27 +20,42 @@
             </p>
         </layout-item>
         <layout-item 
-        start="16" 
+        start="42" 
         end="-1"
         id="navigation-bar"
         row="1"
         >
             <nav class="navigation-bar" id="navigation-bar">
                 {% if navigation.previous %}
-                    <a id="previous" variant="button" href="/features/{{ navigation.previous.slug }}">
-                        <i>&larr;</i>
-                        <b>{{ navigation.previous.name }}</b>
+                    <a class="link-button-large" id="previous" href="/features/{{ navigation.previous.slug }}">
+                        <span>
+                            {% include "partials/icons/previous.njk" %}
+                        </span>
+                        <span>{{ navigation.previous.name }}</span>
                     </a>
                 {% endif %}
 
                 {% if navigation.next %}
-                    <a id="next" variant="button" href="/features/{{ navigation.next.slug }}">
-                        <b>{{ navigation.next.name }}</b>
-                        <i>&rarr;</i>
+                    <a class="link-button-large" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
+                        <span>{{ navigation.next.name }}</span>
+                        <span>
+                            {% include "partials/icons/previous.njk" %}
+                        </span>
+
                     </a>
                 {% endif %}
             </nav>
         </layout-item>
+        {# <aside class="links-social">
+            <a href="/" class="links-social-item" aria-label="Publication" data-brand="linkedin">
+                <span>LinkedIn</span>
+                {% include "partials/icons/linkedin.njk" %}
+            </a>
+            <a href="/" class="links-social-item" aria-label="Publication" data-brand="github">
+                <span>GitHub</span>
+                {% include "partials/icons/github.njk" %}
+            </a>
+        </aside> #}
     </section>
 
 {% endblock %}
