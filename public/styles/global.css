@@ -231,8 +231,17 @@ nav.button-group {
   padding: 2rem;
   gap: 1rem;
   /* background-color: teal; */
-  background-color: --transparent(var(--white), 0.4);
+  /* background-color: --transparent(var(--white), 0.4); */
+  /* border: 1rem solid grey; */
   max-height: calc-size(max-content, round(up, size, 1rem));
+
+  background-color: var(--accent);
+  /* mask-image: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  mask-size: 100% 100%;
+  mask-composite: subtract; */
+  background-color: var(--site-background);
+  background-image: paint(grid);
+  /* background-position: 0 0.5rem; */
 }
 
 .hero-about {
