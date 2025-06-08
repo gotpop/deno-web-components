@@ -3,7 +3,7 @@
 
 {% block hero %}
     <section class="hero-section" id="hero-section">
-        <layout-item start="1" end="40" row="1" id="hero" variant="light" size="large" role="banner">
+        <layout-item start="1" end="42" row="1" id="hero" variant="light" size="large" role="banner">
             <h1 
         bottom="1" 
         id="heading-primary"
@@ -11,16 +11,16 @@
         variant="lg" 
     >{{ currentFeature.title }}</h1>
             <p 
-                    variant="md" 
+                    variant="base" 
                     id="subheading-{{ loop.index }}" 
-                    top="3">
+                    top="2">
                 {% for desc in currentFeature.description %}
                     {{ desc | codeBackticks | safe }}
                 {% endfor %}
             </p>
         </layout-item>
         <layout-item 
-        start="42" 
+        start="43" 
         end="-1"
         id="navigation-bar"
         row="1"
@@ -28,10 +28,10 @@
             <nav class="navigation-bar" id="navigation-bar">
                 {% if navigation.previous %}
                     <a class="link-button-large" id="previous" href="/features/{{ navigation.previous.slug }}">
+                        <span>{{ navigation.previous.name }}</span>
                         <span>
                             {% include "partials/icons/previous.njk" %}
                         </span>
-                        <span>{{ navigation.previous.name }}</span>
                     </a>
                 {% endif %}
 
@@ -46,16 +46,6 @@
                 {% endif %}
             </nav>
         </layout-item>
-        {# <aside class="links-social">
-            <a href="/" class="links-social-item" aria-label="Publication" data-brand="linkedin">
-                <span>LinkedIn</span>
-                {% include "partials/icons/linkedin.njk" %}
-            </a>
-            <a href="/" class="links-social-item" aria-label="Publication" data-brand="github">
-                <span>GitHub</span>
-                {% include "partials/icons/github.njk" %}
-            </a>
-        </aside> #}
     </section>
 
 {% endblock %}
