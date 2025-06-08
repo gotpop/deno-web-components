@@ -5,6 +5,9 @@ TypeScript configuration.
 
 ## Architecture
 
+<details>
+<summary>View Architecture Diagram</summary>
+
 ```mermaid
 graph TD
     A[Browser] -->|HTTP Request| B[Deno Server]
@@ -14,7 +17,12 @@ graph TD
     C -->|main.css| E[Styles]
 ```
 
+</details>
+
 ## Project Structure
+
+<details>
+<summary>View Project Structure Diagram</summary>
 
 ```mermaid
 graph TD
@@ -25,6 +33,8 @@ graph TD
     E -->|Scripts| F[main.js]
     E -->|Styles| G[main.css]
 ```
+
+</details>
 
 ## Features
 
@@ -72,6 +82,9 @@ The project uses `deno.json` for configuration with the following features:
 
 ## Development Flow
 
+<details>
+<summary>View Development Flow Diagram</summary>
+
 ```mermaid
 sequenceDiagram
     participant Browser
@@ -89,6 +102,8 @@ sequenceDiagram
         Browser->>Browser: Update content
     end
 ```
+
+</details>
 
 ## Requirements
 
