@@ -57,4 +57,9 @@ surface-item {
   grid-template-columns: auto;
   padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
   view-transition-name: attr(id type(<custom-ident>), none);
+
+  @media (width < 1024px) {
+    grid-column: 2 / -2;
+    grid-template-columns: 1fr;
+  }
 }

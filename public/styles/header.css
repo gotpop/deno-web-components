@@ -1,13 +1,38 @@
 header {
+  --rows: 1rem min-content 1rem;
   background-color: --transparent(var(--secondary-700), 1);
   container-type: scroll-state;
   display: grid;
   grid-column: full;
   grid-row: header;
-  grid-template-columns: subgrid;
-  grid-template-rows: 1rem min-content 1rem;
+  grid-template-columns: --responsive(1fr, 1fr, subgrid);
+  grid-template-rows: 1fr;
   position: sticky;
   top: 0;
   view-transition-name: attr(id type(<custom-ident>), none);
   z-index: 1;
+
+  @media (width > 1024px) {
+    grid-template-rows: 1rem min-content 1rem;
+  }
+
+  svg {
+    max-width: 5rem;
+  }
+
+  > layout-item {
+    @media (width < 1024px) {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      grid-column: 1 / -1;
+    }
+  }
+
+  > grid-auto-fill {
+    @media (width < 1024px) {
+      grid-column: 1 / -1;
+      grid-template-columns: 1fr;
+      grid-row: 2;
+    }
+  }
 }
