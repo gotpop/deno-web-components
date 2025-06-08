@@ -102,6 +102,6 @@ registerPaint('checkerboard', class {
   ],
   slug: "css-paint-api",
   tags: ["cssom"],
-  title: "CSS Paint API",
+  title: "CSS Painting API Level 1",
   type: "cssom",
 }

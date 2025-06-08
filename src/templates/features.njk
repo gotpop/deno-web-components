@@ -18,6 +18,7 @@
       start="1" 
       end="-1"
       id="navigation-bar"
+      class="navigation-bar-features-wrapper"
     >
         <nav class="navigation-bar-features" id="navigation-bar-features">
           <a variant="button" href="/features?order={{ orderQuery }}">
@@ -47,7 +48,7 @@
       </flex-items>
     </layout-item>
     <layout-item start="1" end="-1" row="1" id="features-list">
-      <grid-auto>
+      <grid-auto gap="1">
         {% for feature in features %}
           {{ featureComponents.featureCard(feature) }}
         {% endfor %}

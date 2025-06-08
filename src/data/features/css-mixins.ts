@@ -109,6 +109,6 @@ export const cssMixinsFeature: Feature = {
   ],
   slug: "css-mixins",
   tags: ["css"],
-  title: "CSS Mixins",
+  title: "CSS Mixins Module",
   type: "css",
 }

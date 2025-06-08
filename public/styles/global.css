@@ -73,6 +73,9 @@ nav.button-group {
   background-color: --transparent(var(--white), 0.4);
   height: calc-size(min-content, round(up, size, 1rem));
 
+  background-image: paint(grid);
+  --grid-offset: 0;
+
   /* :has(.navigation-bar) & {
     & + form {
       display: flex;
@@ -126,6 +129,13 @@ nav.button-group {
     /* transition: width 0.3s ease-in-out; */
   }
 }
+
+/* .navigation-bar-features-wrapper {
+  padding: 1rem;
+  background-image: paint(grid);
+  --grid-offset: 0;
+  --grid-base-color: rgb(190, 187, 187);
+} */
 
 .navigation-bar-features {
   display: flex;
@@ -218,9 +228,10 @@ nav.button-group {
   display: flex;
   flex-direction: column;
   align-items: start;
-  /* padding: 2rem; */
-  /* gap: 1rem; */
-  /* background-color: yellow; */
+
+  &[data-page="contact"] {
+    grid-column: 1 / 40;
+  }
 }
 
 .right {
@@ -230,18 +241,16 @@ nav.button-group {
   align-items: start;
   padding: 2rem;
   gap: 1rem;
-  /* background-color: teal; */
-  /* background-color: --transparent(var(--white), 0.4); */
-  /* border: 1rem solid grey; */
   max-height: calc-size(max-content, round(up, size, 1rem));
-
   background-color: var(--accent);
-  /* mask-image: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  mask-size: 100% 100%;
-  mask-composite: subtract; */
   background-color: var(--site-background);
   background-image: paint(grid);
-  /* background-position: 0 0.5rem; */
+  --grid-offset: 0;
+  --grid-base-color: rgb(190, 187, 187);
+
+  &[data-page="contact"] {
+    grid-column: 42 / -1;
+  }
 }
 
 .hero-about {
@@ -271,6 +280,8 @@ nav.button-group {
   padding: 2rem;
   background-color: --transparent(var(--white), 0.4);
   grid-column: 52 / -1;
+  background-image: paint(grid);
+  --grid-offset: 0;
 
   a {
     display: flex;
@@ -341,6 +352,8 @@ nav.button-group {
   /* padding: 3rem; */
   /* background-color: --transparent(var(--white), 0.4); */
   align-items: start;
+  background-color: --transparent(var(--white), 0.6);
+  padding: 2rem;
 }
 
 .wrapper-index {
@@ -350,4 +363,10 @@ nav.button-group {
   padding: 3rem;
   row-gap: 3rem;
   background-color: --transparent(var(--white), 0.3);
+}
+
+.card-feature {
+  background-image: paint(grid);
+  --grid-offset: 0;
+  --grid-base-color: rgb(190, 187, 187);
 }

@@ -8,6 +8,7 @@ if (typeof registerPaint !== "undefined") {
         "--animation-progress",
         "--stagger-delay",
         "--even-odd",
+        "--grid-offset",
       ]
     }
 
@@ -20,8 +21,13 @@ if (typeof registerPaint !== "undefined") {
 
       const evenOdd = properties.get("--even-odd").toString().trim() || "even"
 
+      const gridOffsetProp = properties.get("--grid-offset")?.toString().trim()
+      const gridOffset = gridOffsetProp !== undefined && gridOffsetProp !== ""
+        ? parseFloat(gridOffsetProp)
+        : null
+
       // Use the drawGrid utility function directly
-      this.drawGrid(ctx, geom, gridSize, baseColor, evenOdd)
+      this.drawGrid(ctx, geom, gridSize, baseColor, evenOdd, gridOffset)
     }
 
     // Utility functions directly included in the worklet
@@ -48,20 +54,33 @@ if (typeof registerPaint !== "undefined") {
       return `rgb(${r}, ${g}, ${b})`
     }
 
-    drawGrid(ctx, geom, gridSize, baseColor, evenOdd = "even") {
-      // Calculate horizontal offset for vertical lines
-      let offset = (geom.width % gridSize) / 2
+    drawGrid(
+      ctx,
+      geom,
+      gridSize,
+      baseColor,
+      evenOdd = "even",
+      gridOffset = null,
+    ) {
+      // Use custom offset if provided, otherwise calculate centered offset
+      let offset
+      if (gridOffset !== null) {
+        offset = gridOffset
+      } else {
+        // Calculate horizontal offset for vertical lines (centered)
+        offset = (geom.width % gridSize) / 2
 
-      // Calculate the number of vertical lines
-      let numLinesX = Math.floor((geom.width - 2 * offset) / gridSize) + 1
+        // Calculate the number of vertical lines
+        let numLinesX = Math.floor((geom.width - 2 * offset) / gridSize) + 1
 
-      // Determine desired parity (0 for even, 1 for odd)
-      const desiredParity = evenOdd === "odd" ? 1 : 0
+        // Determine desired parity (0 for even, 1 for odd)
+        const desiredParity = evenOdd === "odd" ? 1 : 0
 
-      // Adjust offset if numLinesX parity doesn't match desiredParity
-      if (numLinesX % 2 !== desiredParity) {
-        offset -= gridSize / 2
-        numLinesX = Math.floor((geom.width - 2 * offset) / gridSize) + 1
+        // Adjust offset if numLinesX parity doesn't match desiredParity
+        if (numLinesX % 2 !== desiredParity) {
+          offset -= gridSize / 2
+          numLinesX = Math.floor((geom.width - 2 * offset) / gridSize) + 1
+        }
       }
 
       // Draw vertical grid lines
