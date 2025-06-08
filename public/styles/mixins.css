@@ -5,17 +5,3 @@
 .header {
   @apply --box;
 } */
-
-/* grid-auto {
-  @apply --box;
-} */
-
-/* ​@mixin --button (--face, --text, --radius) {
-  background-color: var(--face);
-  color: var(--text);
-  border-radius: var(--radius);
-}
-
-.btn {
-  @apply --button(rebeccapurple, white, 1rem);
-} */

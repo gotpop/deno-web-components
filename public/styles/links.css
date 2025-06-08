@@ -73,8 +73,6 @@ a:not([class]) {
 
   &:focus {
     outline: none;
-    /* box-shadow: 0 0 0 2px var(--color-primary);
-    box-shadow: 4px 0 0 0 rgba(0, 0, 0, 1); Right side shadow */
     color: var(--color-primary);
   }
 }
@@ -83,16 +81,16 @@ a:not([class]) {
   --justify: attr(justify type(<custom-ident>), right);
 
   box-shadow: 0 0 0 0 transparent;
+  justify-self: if(style(--justify: left): start; else: end);
+  line-height: 2.6;
+  margin-block-end: 1rem;
   margin-inline: if(style(--justify: left): 0 auto; else: auto 0);
   outline: none;
   padding: calc(2rem - 1cap) 1rem 1rem 1rem;
+  text-align: if(style(--justify: left): left; else: right);
   text-decoration: underline 2px var(--secondary-200);
   text-underline-offset: calc(var(--spacing-base) - 0.1em);
   transition: all 0.2s ease-in-out;
-  margin-block-end: 1rem;
-  line-height: 2.6;
-  justify-self: if(style(--justify: left): start; else: end);
-  text-align: if(style(--justify: left): left; else: right);
 
   &:link {
     color: var(--secondary-500);

@@ -18,17 +18,12 @@
   --background-color: var(--secondary-900);
 
   align-items: end;
-  display: flex;
-  /* padding-inline: var(--spacing-base); */
-  transition: background-color 0.4s ease-in-out;
   background-color: var(--background-color);
-  width: 100%;
+  color: --transparent(var(--light-100), 0.6);
   display: flex;
   justify-content: center;
+  transition: background-color 0.4s ease-in-out;
   width: 3rem;
-
-  color: --transparent(var(--light-100), 0.6);
-  align-items: end;
 
   svg {
     width: 27px;

@@ -10,11 +10,7 @@
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translate3d(
-      0,
-      100%,
-      0
-    ); /* Use translate3d for GPU acceleration */
+    transform: translate3d(0, 100%, 0);
   }
   to {
     opacity: 1;
@@ -25,7 +21,7 @@
 @keyframes fade-out {
   from {
     opacity: 1;
-    transform: translate3d(0, 0, 0); /* Use translate3d for GPU acceleration */
+    transform: translate3d(0, 0, 0);
   }
   to {
     opacity: 0;
@@ -35,11 +31,7 @@
 @keyframes slide-in-from-right {
   from {
     opacity: 0;
-    transform: translate3d(
-      100%,
-      0,
-      0
-    ); /* Use translate3d for GPU acceleration */
+    transform: translate3d(100%, 0, 0);
   }
   to {
     opacity: 1;
@@ -61,7 +53,7 @@
 @keyframes slide-out-to-left {
   from {
     opacity: 1;
-    transform: translate3d(0, 0, 0); /* Use translate3d for GPU acceleration */
+    transform: translate3d(0, 0, 0);
   }
   to {
     opacity: 0;
@@ -72,7 +64,7 @@
 @keyframes slide-out-to-right {
   from {
     opacity: 1;
-    transform: translate3d(0, 0, 0); /* Use translate3d for GPU acceleration */
+    transform: translate3d(0, 0, 0);
   }
   to {
     opacity: 0;
@@ -83,11 +75,7 @@
 @keyframes slide-in-from-left {
   from {
     opacity: 0;
-    transform: translate3d(
-      -20%,
-      0,
-      0
-    ); /* Use translate3d for GPU acceleration */
+    transform: translate3d(-20%, 0, 0);
   }
   to {
     opacity: 1;

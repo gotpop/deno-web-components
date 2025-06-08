@@ -1,19 +1,3 @@
-/**
- * View Transitions with Performance Optimizations for Weak CPUs
- * 
- * Performance Optimizations Applied:
- * 1. Hardware acceleration with translateZ(0) and will-change
- * 2. GPU layer promotion with backface-visibility: hidden
- * 3. CSS containment for layout/style/paint isolation
- * 4. translate3d() instead of translate for better GPU acceleration
- * 5. Device capability detection and adaptive animation durations
- * 6. Connection-aware optimizations for slow networks
- * 7. Dynamic CSS custom properties for runtime optimization
- * 8. Automatic fallback to simple fade animations on weak devices
- * 9. Performance monitoring and auto-adjustment
- * 10. Preloading disabled on low-end devices to save resources
- */
-
 @view-transition {
   navigation: auto;
 }
