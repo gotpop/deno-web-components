@@ -21,68 +21,59 @@
 
 {% block page_content %}
   <div class="page" id="about-page">
-    <section
-      class="left"
-      data-page="contact"
-      >
+    <section class="left" data-page="contact">
       <h2 variant="lg" top="1" bottom="3" id="contact-heading">Get in Touch</h2>
       <p top="1" bottom="2">Have a question, suggestion, or just want to say hello? Fill out the form below and I'll get back to you as soon as possible.</p>
       <p top="1">Have a question, suggestion, or just want to say hello? Fill out the form below and I'll get back to you as soon as possible.</p>
-
     </section>
+
     <div data-page="contact" class="right">
-      <form 
-      action="/api/contact"
-      class="form-contact"
-      method="POST"
-    >
+      <form action="/api/contact" class="form-contact" method="POST">
         <label for="name">
           <span>Name</span>
         </label>
         <input 
-        autocomplete="true"
-        id="name"
-        maxlength="50"
-        minlength="2"
-        name="name"
-        placeholder="Your name"
-        required
-        type="text"
+          autocomplete="true"
+          id="name"
+          maxlength="50"
+          minlength="2"
+          name="name"
+          placeholder="Your name"
+          required
+          type="text"
 />
 
         <label for="email">
           <span>Email</span>
         </label>
         <input 
-        autocomplete="true"
-        id="email"
-        maxlength="50"
-        minlength="2"
-        name="email"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-        placeholder="Your email address"
-        required
-        title="Please enter a valid email address"
-        type="email"
-      >
+          autocomplete="true"
+          id="email"
+          maxlength="50"
+          minlength="2"
+          name="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          placeholder="Your email address"
+          required
+          title="Please enter a valid email address"
+          type="email"
+/>
 
         <label for="message">
           <span>Message</span>
         </label>
         <textarea 
-        cols="30"
-        id="message"
-        minlength="2"
-        name="message"
-        placeholder="Get typing"
-        required
-        rows="10"
-      ></textarea>
+          cols="30"
+          id="message"
+          minlength="2"
+          name="message"
+          placeholder="Get typing"
+          required
+          rows="10"
+        ></textarea>
 
         <button type="submit">Send</button>
       </form>
-
     </div>
   </div>
-</surface-item>
 {% endblock %}

@@ -57,5 +57,4 @@ surface-item {
   grid-template-columns: auto;
   padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
   view-transition-name: attr(id type(<custom-ident>), none);
-  /* height: calc-size(100%, round(size, 1rem)); */
 }

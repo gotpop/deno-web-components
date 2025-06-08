@@ -43,70 +43,35 @@ body {
   overflow: hidden auto;
 }
 
-nav.button-group {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-
-  a {
-    padding: calc(1rem - calc(1cap / 2)) 2rem;
-    width: calc-size(max-content, round(size, 1rem));
-    text-align: center;
-
-    span {
-      padding: 0;
-    }
-  }
-}
-
 .navigation-bar {
+  align-items: start;
+  background-color: --transparent(var(--white), 0.4);
   display: flex;
   flex-direction: column;
-  /* justify-content: end; */
-  align-items: start;
-  padding: 0rem;
   gap: 1rem;
   grid-column: 10 / -1;
-  view-transition-name: attr(id type(<custom-ident>), none);
-  /* max-height: 7rem; */
-  padding: 2rem;
-  background-color: --transparent(var(--white), 0.4);
   height: calc-size(min-content, round(up, size, 1rem));
-
+  padding: 0rem;
+  padding: 2rem;
+  view-transition-name: attr(id type(<custom-ident>), none);
   background-image: paint(grid);
   --grid-offset: 0;
 
-  /* :has(.navigation-bar) & {
-    & + form {
-      display: flex;
-    }
-  } */
-
   .link-button-large {
+    align-content: center;
+    align-items: center;
+    background-color: green;
+    color: var(--light-100, #ffffff);
+    display: flex;
+    font-weight: 600;
+    gap: 1rem;
+    height: calc-size(min-content, round(up, size, 1rem));
+    justify-content: space-between;
     padding: 1rem;
     text-align: left;
-    align-content: center;
-    background-color: green;
-    color: white;
-    gap: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     width: 100%;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    padding-block: calc(2rem - calc(1cap / 2));
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--light-100, #ffffff);
-    transition: color 0.3s ease-in-out;
-    /* background-color: var(--warning-800); */
-    justify-content: space-between;
-    padding: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease-in-out;
-    height: calc-size(min-content, round(up, size, 1rem));
 
     &#next svg {
       rotate: 180deg;
@@ -114,7 +79,6 @@ nav.button-group {
 
     svg {
       width: 3rem;
-      /* height: 2rem; */
     }
 
     b {
@@ -122,20 +86,10 @@ nav.button-group {
     }
 
     span {
-      /* font-size: 2.4rem; */
       display: flex;
     }
-    /* view-transition-name: attr(id type(<custom-ident>), none); */
-    /* transition: width 0.3s ease-in-out; */
   }
 }
-
-/* .navigation-bar-features-wrapper {
-  padding: 1rem;
-  background-image: paint(grid);
-  --grid-offset: 0;
-  --grid-base-color: rgb(190, 187, 187);
-} */
 
 .navigation-bar-features {
   display: flex;
@@ -145,89 +99,82 @@ nav.button-group {
   justify-self: end;
   padding: 0rem;
   gap: 1rem;
-  /* width: calc-size(max-content, round(up, size, 1rem)); */
   grid-column: 10 / -1;
   view-transition-name: attr(id type(<custom-ident>), none);
-  /* max-height: 5rem; */
 
   :has(.navigation-bar) & {
-    /* background-color: --transparent(var(--white), 0.4); */
-
     & + form {
-      /* grid-column: 17 / -1; */
       display: flex;
     }
   }
 
   a {
+    gap: 1rem;
+    height: 2rem;
+    justify-content: center;
     padding-inline: 1rem !important;
     padding: 1rem;
     text-align: left;
-    justify-content: center;
-    /* display: grid !important; */
-    height: 2rem;
-    gap: 1rem;
     view-transition-name: attr(id type(<custom-ident>), none);
   }
 }
 
 .hero-section {
-  grid-column: 4 / -4;
+  align-items: start;
+  background-color: --transparent(var(--white), 0.4);
   display: grid;
+  grid-column: 4 / -4;
   grid-template-columns: repeat(auto-fill, 1rem);
   padding: 3rem;
-  background-color: --transparent(var(--white), 0.4);
-  align-items: start;
 }
 
 .hero-section-features {
-  grid-column: 4 / -4;
+  align-items: start;
+  background-color: --transparent(var(--white), 0.4);
   display: grid;
+  grid-column: 4 / -4;
   grid-template-columns: repeat(auto-fill, 1rem);
   padding: 3rem;
-  background-color: --transparent(var(--white), 0.4);
-  align-items: start;
 }
 
 .aside-links {
+  background-color: --transparent(var(--white), 0.4);
   display: flex;
   flex-direction: column;
-  grid-template-columns: subgrid;
-  grid-column: 20 / -1;
-  padding: 2rem;
   gap: 1rem;
+  grid-column: 20 / -1;
+  grid-template-columns: subgrid;
   margin-top: 2rem;
-  background-color: --transparent(var(--white), 0.4);
+  padding: 2rem;
 }
 
 /* Inline code styling */
 :where(p, li) > code {
   background-color: var(--light-200, #f4f4f4);
-  color: var(--accent, #007acc);
-  padding: 0.2em 0.4em;
   border-radius: 0.25rem;
+  color: var(--accent, #007acc);
   font-family: "Monaspace", "Courier New", monospace;
   font-size: 0.9em;
   font-weight: 500;
+  padding: 0.2em 0.4em;
 }
 
 .page {
+  background-color: --transparent(var(--white), 0.4);
   display: grid;
+  grid-column: 4 / -4;
   grid-template-columns: repeat(auto-fill, 1rem);
   grid-template-rows: auto;
   padding: 3rem;
   row-gap: 3rem;
-  /* max-width: calc-size(max-content, round(up, size, 1rem)); */
-  background-color: --transparent(var(--white), 0.4);
-  grid-column: 4 / -4;
   view-transition-name: attr(id type(<custom-ident>), none);
 }
 
 .left {
-  grid-column: 1 / 50;
+  align-items: start;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  grid-column: 1 / 50;
 
   &[data-page="contact"] {
     grid-column: 1 / 40;
@@ -235,15 +182,14 @@ nav.button-group {
 }
 
 .right {
-  grid-column: 52 / -1;
+  align-items: start;
+  background-color: var(--site-background);
   display: flex;
   flex-direction: column;
-  align-items: start;
-  padding: 2rem;
   gap: 1rem;
+  grid-column: 52 / -1;
   max-height: calc-size(max-content, round(up, size, 1rem));
-  background-color: var(--accent);
-  background-color: var(--site-background);
+  padding: 2rem;
   background-image: paint(grid);
   --grid-offset: 0;
   --grid-base-color: rgb(190, 187, 187);
@@ -254,47 +200,40 @@ nav.button-group {
 }
 
 .hero-about {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 1rem);
-  grid-column: 4 / -4;
-  padding: 3rem;
-  background-color: --transparent(var(--white), 0.4);
   align-items: start;
+  background-color: --transparent(var(--white), 0.4);
+  display: grid;
+  grid-column: 4 / -4;
+  grid-template-columns: repeat(auto-fill, 1rem);
+  padding: 3rem;
 }
 
 .hero-about-content {
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fill, 1fr); */
-  grid-column: 1 / 50;
-  /* padding: 3rem; */
-  /* background-color: --transparent(var(--white), 0.4); */
   align-items: start;
+  grid-column: 1 / 50;
 }
 
 .links-social {
+  background-color: --transparent(var(--white), 0.4);
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
   gap: 1rem;
-  padding: 2rem;
-  background-color: --transparent(var(--white), 0.4);
   grid-column: 52 / -1;
+  padding: 2rem;
   background-image: paint(grid);
   --grid-offset: 0;
 
   a {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--light-100, #ffffff);
-    transition: color 0.3s ease-in-out;
     background-color: var(--warning-800);
+    color: var(--light-100, #ffffff);
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
     justify-content: space-between;
     padding: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
     span {
       padding-inline-start: 1rem;
@@ -323,10 +262,10 @@ nav.button-group {
   }
 
   svg {
-    width: 2rem;
-    height: 2rem;
     fill: var(--light-100, #ffffff);
+    height: 2rem;
     transition: fill 0.3s ease-in-out;
+    width: 2rem;
 
     &:hover {
       fill: var(--accent-hover, #005f99);
@@ -336,33 +275,29 @@ nav.button-group {
 
 .wrapper-features {
   background-color: --transparent(var(--white), 0.4);
-  grid-column: 4 / -4;
-  padding: 3rem;
-
   display: flex;
   flex-direction: column;
+  grid-column: 4 / -4;
+  padding: 3rem;
   row-gap: 3rem;
 }
 
 .form-contact {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 100%;
-  /* grid-column: 40 / -1; */
-  /* padding: 3rem; */
-  /* background-color: --transparent(var(--white), 0.4); */
   align-items: start;
   background-color: --transparent(var(--white), 0.6);
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 2rem;
+  width: 100%;
 }
 
 .wrapper-index {
-  grid-column: 4 / -4;
+  background-color: --transparent(var(--white), 0.3);
   display: grid;
+  grid-column: 4 / -4;
   grid-template-columns: repeat(auto-fill, 1fr);
   padding: 3rem;
   row-gap: 3rem;
-  background-color: --transparent(var(--white), 0.3);
 }
 
 .card-feature {

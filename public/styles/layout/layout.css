@@ -7,21 +7,18 @@ main-content {
 }
 
 flex-items {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
   grid-column: 4 / -4;
+  justify-content: space-between;
 }
 
 flex-item {
-  /* flex: 1 1 calc-size(max-content, round(up, size, 20rem)); */
-  width: calc-size(max-content, round(up, size, 1rem));
-  /* padding: 1rem; */
   background-color: var(--color-secondary);
   border-radius: var(--border-radius);
-  /* background-color: --transparent(var(--white), 0.4); */
   view-transition-name: attr(id type(<custom-ident>), none);
+  width: calc-size(max-content, round(up, size, 1rem));
 }

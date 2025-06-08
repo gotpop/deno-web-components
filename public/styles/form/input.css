@@ -42,7 +42,7 @@ input {
 
   &:focus {
     --color: var(--color-primary);
-    /* outline: none; */
+
     border-radius: 0;
     outline-offset: -2px;
     outline-style: solid;
@@ -58,7 +58,7 @@ input {
   }
 }
 
-/* Optional: Add a custom message using the title attribute */
+/* Add a custom message using the title attribute */
 input:invalid:focus::after,
 textarea:invalid:focus::after {
   content: attr(title);

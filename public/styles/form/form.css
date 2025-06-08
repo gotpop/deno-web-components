@@ -64,7 +64,6 @@ form:has(:invalid) button {
   border: none;
   width: calc-size(min-content, round(up, size, 1rem));
   height: calc-size(max-content, round(up, size, 1rem));
-  /* padding: calc(1rem - calc(1cap / 2)) 2rem; */
   line-height: 1.5;
   font-weight: 700;
 
@@ -76,12 +75,10 @@ form:has(:invalid) button {
     line-height: 3rem;
     height: 3rem;
     border: none;
-    /* border: 2px solid red !important; */
   }
 
   &::picker(select) {
     border: none;
-    /* top: calc(anchor(bottom) + 1px); */
     right: anchor(right);
   }
 
@@ -108,8 +105,4 @@ form.order {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  /* align-items: center; */
-
-  /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
-  /* background-color: var(--color-secondary); */
 }

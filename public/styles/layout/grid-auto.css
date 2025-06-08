@@ -19,9 +19,6 @@ grid-auto {
   grid-column: var(--begin) / var(--end);
   grid-template-columns: repeat(auto-fit, minmax(var(--min-content), 1fr));
   grid-row: attr(row type(<integer> | <custom-ident>), auto);
-  /* background-image: paint(grid); */
-  /* --grid-offset: 0; */
-  /* padding: 2rem 1rem; */
 }
 
 grid-auto-fill {
