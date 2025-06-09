@@ -6,7 +6,11 @@
       style(--variant: md): var(--font-scaled-md);
       style(--variant: lg): var(--font-scaled-lg);
       style(--variant: xl): var(--font-scaled-xl);
-      style(--variant: xxl): var(--font-scaled-xxl);
+      style(--variant: xxl): --responsive(
+          var(--font-scaled-lg), 
+          var(--font-scaled-xxl), 
+          var(--font-scaled-xxl)
+      );
 
       else: var(--font-scaled-base)
   )
