@@ -1,9 +1,22 @@
 @scope {
   & {
     display: flex;
-    height: 10rem;
-    width: 10rem;
-    background-color: azure;
+  }
+
+  .outer {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .circles {
+    height: 20rem;
+    width: 20rem;
+    background-color: yellow;
     margin: 2rem;
+    border-radius: 50%;
   }
 }
