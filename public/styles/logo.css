@@ -6,6 +6,8 @@
   display: inline flex;
   transition: background-color 0.3s ease-in-out;
   /* max-width: 10rem; */
+  text-decoration: none;
+  max-height: 4rem;
 
   @container scroll-state(stuck: top) {
     --opacity: 1;
