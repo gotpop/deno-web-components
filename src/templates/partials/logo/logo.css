@@ -1,0 +1,9 @@
+@scope {
+  & {
+    display: flex;
+    height: 10rem;
+    width: 10rem;
+    background-color: azure;
+    margin: 2rem;
+  }
+}
