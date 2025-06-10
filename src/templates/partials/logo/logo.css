@@ -1,6 +1,26 @@
 @scope {
   & {
     display: flex;
+    --main-circle-size: 20rem;
+    --main-circle-radius: calc(var(--main-circle-size) / 2);
+    --small-circle-size: 10rem;
+    --small-circle-radius: calc(var(--small-circle-size) / 2);
+    --orbit-radius: calc(
+      var(--main-circle-radius) - var(--small-circle-radius)
+    );
+    --main-circle-color: yellow;
+    --small-circle-color: orange;
+  }
+
+  .text {
+    font-size: 2rem;
+    color: var(--dark-600);
+    text-align: center;
+    margin-top: 1rem;
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
   }
 
   .outer {
@@ -13,10 +33,97 @@
   }
 
   .circles {
-    height: 20rem;
-    width: 20rem;
-    background-color: yellow;
+    position: relative;
+    height: var(--main-circle-size);
+    width: var(--main-circle-size);
     margin: 2rem;
+  }
+
+  .circle-main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-circle-color);
     border-radius: 50%;
+    top: 0;
+    left: 0;
+  }
+
+  .circle-small {
+    --hue: calc(sibling-index() * 50);
+
+    position: absolute;
+    width: var(--small-circle-size);
+    height: var(--small-circle-size);
+    /* background-color: var(--small-circle-color); */
+    border-radius: 50%;
+    transform-origin: center;
+    border: 1px solid var(--primary-100);
+    background-color: oklch(70% 70% var(--hue));
+    mix-blend-mode: color-dodge;
+    /* background-image: linear-gradient(
+      45deg,
+      var(--primary-100) 25%,
+      transparent 25%,
+      transparent 50%,
+      var(--primary-100) 50%,
+      var(--primary-100) 75%,
+      transparent 75%,
+      transparent
+    ); */
+  }
+
+  .circle-1 {
+    top: calc(
+      50% - var(--small-circle-radius) - var(--orbit-radius) * sin(0deg)
+    );
+    left: calc(
+      50% - var(--small-circle-radius) + var(--orbit-radius) * cos(0deg)
+    );
+  }
+
+  .circle-2 {
+    top: calc(
+      50% - var(--small-circle-radius) - var(--orbit-radius) * sin(60deg)
+    );
+    left: calc(
+      50% - var(--small-circle-radius) + var(--orbit-radius) * cos(60deg)
+    );
+  }
+
+  .circle-3 {
+    top: calc(
+      50% - var(--small-circle-radius) - var(--orbit-radius) * sin(120deg)
+    );
+    left: calc(
+      50% - var(--small-circle-radius) + var(--orbit-radius) * cos(120deg)
+    );
+  }
+
+  .circle-4 {
+    top: calc(
+      50% - var(--small-circle-radius) - var(--orbit-radius) * sin(180deg)
+    );
+    left: calc(
+      50% - var(--small-circle-radius) + var(--orbit-radius) * cos(180deg)
+    );
+  }
+
+  .circle-5 {
+    top: calc(
+      50% - var(--small-circle-radius) - var(--orbit-radius) * sin(240deg)
+    );
+    left: calc(
+      50% - var(--small-circle-radius) + var(--orbit-radius) * cos(240deg)
+    );
+  }
+
+  .circle-6 {
+    top: calc(
+      50% - var(--small-circle-radius) - var(--orbit-radius) * sin(300deg)
+    );
+    left: calc(
+      50% - var(--small-circle-radius) + var(--orbit-radius) * cos(300deg)
+    );
   }
 }
