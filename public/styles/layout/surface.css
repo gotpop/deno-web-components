@@ -61,5 +61,6 @@ surface-item {
   @media (width < 1024px) {
     grid-column: 2 / -2;
     grid-template-columns: 1fr;
+    max-width: 100vw;
   }
 }

@@ -15,10 +15,13 @@ grid-auto {
 
   display: grid;
   gap: var(--gap);
-  gap: 1rem;
+  gap: 4rem;
   grid-column: var(--begin) / var(--end);
   grid-template-columns: repeat(auto-fit, minmax(var(--min-content), 1fr));
   grid-row: attr(row type(<integer> | <custom-ident>), auto);
+
+  column-rule: 1rem solid;
+  column-rule-color: --transparent(var(--primary-500), 0.05);
 }
 
 grid-auto-fill {

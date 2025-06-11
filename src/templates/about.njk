@@ -27,15 +27,17 @@
       {% include "partials/body-markup-renderer.njk" %}
     </section>
     <aside class="right">
-      <h4 variant="md" top="1" bottom="1">On this page</h4>
-      {% for item in bodyMarkupData %}
-        {% if item
-          .tag
-          .startsWith('h') %}
-          <a href="#{{ item.id }}" class="link-simple">
-            <span>{{ item.content }}</span></a>
-        {% endif %}
-      {% endfor %}
+      <section class="widget">
+        <h4 variant="md" top="1" bottom="1">On this page</h4>
+        {% for item in bodyMarkupData %}
+          {% if item
+            .tag
+            .startsWith('h') %}
+            <a href="#{{ item.id }}" class="link-simple">
+              <span>{{ item.content }}</span></a>
+          {% endif %}
+        {% endfor %}
+      </section>
     </aside>
   </div>
 {% endblock %}

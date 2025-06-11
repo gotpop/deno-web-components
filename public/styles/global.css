@@ -320,12 +320,24 @@ body {
   grid-template-columns: repeat(auto-fill, 1fr);
   padding: 3rem;
   row-gap: 3rem;
+  /* column-rule-width: repeat(2, 1px) 4px repeat(2, 1px) 4px repeat(2, 1px); */
+  /* column-rule-style: solid; */
+  /* column-rule-color: var(--secondary--400); */
+  /* row-rule-width: repeat(2, 1px) 4px repeat(2, 1px) 4px repeat(2, 1px); */
+  /* row-rule-style: solid; */
+  /* row-rule-color: var(--secondary-400); */
+
+  > layout-item {
+    /* gap: 10px; */
+    row-rule: 1rem solid;
+    row-rule-color: --transparent(var(--secondary-500), 0.2) transparent;
+  }
 }
 
 .card-feature {
   background-image: paint(grid);
   --grid-offset: 0;
-  --grid-base-color: rgb(190, 187, 187);
+  /* --grid-base-color: rgb(190, 187, 187); */
 }
 
 p > span {
@@ -350,4 +362,12 @@ p > span {
     z-index: -1;
     top: 2px;
   } */
+}
+
+.widget {
+  background-color: var(--light-100);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

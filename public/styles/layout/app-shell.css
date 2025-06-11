@@ -15,5 +15,11 @@ app-shell {
   header {
     grid-column: full-start / full-end;
     grid-row: header;
+
+    @media (width < 1024px) {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      position: static;
+    }
   }
 }
