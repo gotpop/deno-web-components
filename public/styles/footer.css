@@ -3,10 +3,15 @@ footer {
   color: var(--colour-light-1);
   display: grid;
   gap: 4rem 0;
-  grid-column: full;
+  grid-column: 1 / -1;
   grid-row: footer;
   grid-template-columns: subgrid;
   min-height: 20rem;
-  padding-block: var(--spacing-xl);
   view-transition-name: attr(id type(<custom-ident>), none);
+  padding: var(--spacing-xl);
+
+  @media (width > 1024px) {
+    padding-block: var(--spacing-xl);
+    grid-column: full;
+  }
 }
