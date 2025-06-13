@@ -5,12 +5,19 @@ footer {
   gap: 4rem 0;
   grid-column: 1 / -1;
   grid-row: footer;
-  grid-template-columns: subgrid;
+  grid-template-columns: 1fr;
   min-height: 20rem;
   view-transition-name: attr(id type(<custom-ident>), none);
   padding: var(--spacing-xl);
 
+  grid-auto-fill {
+    @media (width < 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (width > 1024px) {
+    grid-template-columns: subgrid;
     padding-block: var(--spacing-xl);
     grid-column: full;
   }
