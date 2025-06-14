@@ -12,6 +12,13 @@ app-shell {
     overflow: clip;
   }
 
+  #main {
+    /* row-rule: 5rem solid rgba(255, 255, 255, 0.4);
+    row-rule-outset: 0rem; */
+    /* row-rule-break: spanning-item; */
+    /* row-rule-color: --transparent(var(--primary-500), 0.06); */
+  }
+
   header {
     grid-column: full-start / full-end;
     grid-row: header;

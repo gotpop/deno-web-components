@@ -3,7 +3,7 @@
 {% block hero %}
   <section id="hero" class="hero-about" role="banner">
     <article class="hero-about-content">
-      <h1 variant="xl" top="3" bottom="2" id="heading-primary">About</h1>
+      <h1 variant="xl" top="2" bottom="2" id="heading-primary">About</h1>
       <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components.</p>
     </article>
     <aside class="links-social">
@@ -26,18 +26,16 @@
         >
       {% include "partials/body-markup-renderer.njk" %}
     </section>
-    <aside class="right">
-      <section class="widget">
-        <h4 variant="md" top="1" bottom="1">On this page</h4>
-        {% for item in bodyMarkupData %}
-          {% if item
-            .tag
-            .startsWith('h') %}
-            <a href="#{{ item.id }}" class="link-simple">
-              <span>{{ item.content }}</span></a>
-          {% endif %}
-        {% endfor %}
-      </section>
+    <aside class="widget">
+      <h4 variant="md" top="1" bottom="1">On this page</h4>
+      {% for item in bodyMarkupData %}
+        {% if item
+          .tag
+          .startsWith('h') %}
+          <a href="#{{ item.id }}" class="link-simple">
+            <span>{{ item.content }}</span></a>
+        {% endif %}
+      {% endfor %}
     </aside>
   </div>
 {% endblock %}

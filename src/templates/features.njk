@@ -7,6 +7,30 @@
       <h1 variant="xl" top="2" bottom="2" id="heading-primary">Features</h1>
       <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components. Try filtering or ordering to see the view transitions in action.</p>
     </layout-item>
+
+    <div 
+        start="43" 
+        end="-1"
+        id="navigation-bar"
+        row="1"
+        >
+      <nav class="navigation-bar" id="navigation-bar">
+
+        <a class="link-button-large" id="previous" href="/features/{{ navigation.previous.slug }}">
+          <span>{{ navigation.previous.name }}</span>
+          <span>
+            {% include "partials/icons/previous.njk" %}
+          </span>
+        </a>
+        <a class="link-button-large" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
+          <span>{{ navigation.next.name }}</span>
+          <span>
+            {% include "partials/icons/previous.njk" %}
+          </span>
+
+        </a>
+      </nav>
+    </div>
   </section>
 {% endblock %}
 
