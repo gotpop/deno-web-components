@@ -128,29 +128,6 @@ body {
   padding: 3rem;
 }
 
-.hero-section-features {
-  align-items: start;
-  background-color: --transparent(var(--white), 0.4);
-  display: grid;
-  grid-column: 4 / -4;
-  grid-template-columns: 1fr 24rem;
-  padding: 3rem;
-  box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.4);
-  column-rule: 3rem solid;
-  column-rule-break: spanning-item;
-  column-rule-color: --transparent(var(--primary-500), 0.04);
-  gap: 3rem;
-
-  > layout-item {
-    grid-column: 1 /-1;
-    padding: 2rem;
-
-    @media (width > 1224px) {
-      grid-column: 1 / span 1;
-    }
-  }
-}
-
 .aside-links {
   background-color: --transparent(var(--white), 0.4);
   display: flex;
@@ -371,32 +348,19 @@ body {
 }
 
 .wrapper-features {
+  background-blend-mode: overlay;
+  background-clip: border-box;
   background-color: --transparent(var(--white), 0.4);
+  background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
+  background-size: 1rem 1rem;
+  box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
   display: flex;
   flex-direction: column;
   grid-column: 4 / -4;
   padding: 3rem;
-  row-gap: 2rem;
-  row-rule: 2rem solid;
-  row-rule-color: --transparent(var(--primary-500), 0.05);
-  box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
   position: relative;
-  padding-top: 5rem;
-
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    rgba(0, 0, 0, 0.2) 10px,
-    rgba(0, 0, 0, 0.2) 11px
-  );
-  background-blend-mode: overlay;
-
-  .navigation-bar-features-wrapper {
-    position: absolute;
-    left: 3rem;
-    top: 2rem;
-  }
+  row-gap: 2rem;
+  row-rule: 2rem solid --transparent(var(--primary-500), 0.06);
 }
 
 .form-contact {

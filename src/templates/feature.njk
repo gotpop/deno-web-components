@@ -13,7 +13,7 @@
             <p 
                     variant="base" 
                     id="subheading-{{ loop.index }}" 
-                    top="1">
+                    top="">
                 {% for desc in currentFeature.description %}
                     {{ desc | codeBackticks | safe }}
                 {% endfor %}
