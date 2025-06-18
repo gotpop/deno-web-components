@@ -2,11 +2,11 @@
 {% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
-  <section class="hero-section-features" id="hero-section-features">
-    <layout-item start="1" end="40" row="1" id="hero" variant="light" size="large" role="banner">
+  <section class="block-side" id="block-side" role="banner">
+    <section class="main-content">
       <h1 variant="lg" top="1" bottom="2" id="heading-primary">Features</h1>
       <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components. Try filtering or ordering to see the view transitions in action.</p>
-    </layout-item>
+    </section>
 
     <div 
         start="43" 
@@ -15,11 +15,11 @@
         row="1"
         >
       <nav class="navigation-bar" id="navigation-bar">
-        <a class="link-button-large" id="previous" href="/features/{{ navigation.previous.slug }}">
+        <a class="link-button-large" id="previous" href="/features/css-anchor-position-1">
           <span>CSS Anchor positioning</span>
           <span class="icon" variant="previous"></span>
         </a>
-        <a class="link-button-large" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
+        <a class="link-button-large" id="next" variant="button" href="/features/popover-api">
           <span>HTML Popover API</span>
           <span class="icon" variant="next"></span>
         </a>

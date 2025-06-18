@@ -69,13 +69,8 @@
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     width: 100%;
 
-    &#next svg {
-      rotate: 180deg;
-    }
+background-image: paint(grid);
 
-    svg {
-      width: 3rem;
-    }
 
     b {
       display: inline-flex;
@@ -86,3 +81,11 @@
     }
   }
 }
+
+    .icon {
+      background-color: rgba(255, 255, 255, 0.81);
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+  clip-path: shape(from 0% 0%, line to  0% 100%, line to  100% 50%, close);
+    }

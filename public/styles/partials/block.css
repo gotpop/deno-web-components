@@ -1,0 +1,49 @@
+.block-side {
+  background-blend-mode: overlay;
+  background-clip: border-box;
+  background-color: --transparent(var(--white), 0.4);
+  background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
+  background-size: 1rem 1rem;
+  box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
+  column-rule: 3rem solid --transparent(var(--primary-500), 0.02);
+  display: grid;
+  gap: 3rem;
+  grid-column: 4 / -4;
+  padding: 3rem;
+  grid-template-columns: 1fr;
+
+  @media (width > 1224px) {
+    grid-template-columns: [main] 1fr [sidebar] 23rem;
+  }
+
+  .main-content {
+    align-items: start;
+    background-color: --transparent(var(--white), 1);
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    padding: 3rem;
+    background-image: paint(grid);
+    --grid-offset: 0;
+
+    @media (width > 1224px) {
+      grid-column: main;
+      padding: 2rem;
+    }
+  }
+
+  .side-bar {
+    background-color: --transparent(var(--white), 0.4);
+    display: grid;
+    gap: 1rem;
+    grid-column: 1 / -1;
+    grid-template-columns:  1fr;
+    padding: 3rem;
+        background-image: paint(grid);
+    --grid-offset: 0;
+    
+    @media (width > 1224px) {
+        grid-column: sidebar;
+    }
+  }
+}
