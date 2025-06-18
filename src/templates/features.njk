@@ -4,7 +4,7 @@
 {% block hero %}
   <section class="hero-section-features" id="hero-section-features">
     <layout-item start="1" end="40" row="1" id="hero" variant="light" size="large" role="banner">
-      <h1 variant="xl" top="2" bottom="2" id="heading-primary">Features</h1>
+      <h1 variant="lg" top="1" bottom="2" id="heading-primary">Features</h1>
       <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components. Try filtering or ordering to see the view transitions in action.</p>
     </layout-item>
 
@@ -15,19 +15,13 @@
         row="1"
         >
       <nav class="navigation-bar" id="navigation-bar">
-
         <a class="link-button-large" id="previous" href="/features/{{ navigation.previous.slug }}">
-          <span>{{ navigation.previous.name }}</span>
-          <span>
-            {% include "partials/icons/previous.njk" %}
-          </span>
+          <span>CSS Anchor positioning</span>
+          <span class="icon" variant="previous"></span>
         </a>
         <a class="link-button-large" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
-          <span>{{ navigation.next.name }}</span>
-          <span>
-            {% include "partials/icons/previous.njk" %}
-          </span>
-
+          <span>HTML Popover API</span>
+          <span class="icon" variant="next"></span>
         </a>
       </nav>
     </div>

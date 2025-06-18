@@ -71,3 +71,14 @@ p:not([class]) {
   padding-block-start: calc(attr(top rem, unset) - 1cap);
   text-wrap: pretty;
 }
+
+/* Inline code styling */
+:where(p, li) > code {
+  background-color: var(--light-200, #f4f4f4);
+  border-radius: 0.25rem;
+  color: var(--accent, #007acc);
+  font-family: "Monaspace", "Courier New", monospace;
+  font-size: 0.9em;
+  font-weight: 500;
+  padding: 0.2em 0.4em;
+}
