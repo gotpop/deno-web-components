@@ -1,11 +1,7 @@
 .card-feature {
+  --grid-offset: 0;
+  
   background-color: --transparent(var(--white), 0.8);
   background-image: paint(grid);
-  --grid-offset: 0;
-
-/* 
-  @media (width > 1224px) {
-    grid-row: 2;
-  } */
 }
 
