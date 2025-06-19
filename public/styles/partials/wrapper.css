@@ -1,28 +1,4 @@
 
-
-.wrapper-index {
-  background-color: --transparent(var(--white), 0.3);
-  display: grid;
-  grid-column: 4 / -4;
-  grid-template-columns: repeat(auto-fill, 1fr);
-  padding: 3rem;
-  row-gap: 3rem;
-  /* column-rule-width: repeat(2, 1px) 4px repeat(2, 1px) 4px repeat(2, 1px); */
-  /* column-rule-style: solid; */
-  /* column-rule-color: var(--secondary--400); */
-  /* row-rule-width: repeat(2, 1px) 4px repeat(2, 1px) 4px repeat(2, 1px); */
-  /* row-rule-style: solid; */
-  /* row-rule-color: var(--secondary-400); */
-
-  > layout-item {
-    /* gap: 10px; */
-    row-rule: 3rem solid;
-    row-rule-break: spanning-item;
-    row-rule-color: --transparent(var(--primary-500), 0.03)
-      --transparent(var(--primary-500), 0.03);
-  }
-}
-
 .wrapper-index-section {
   background-color: --transparent(var(--white), 0.3);
   box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.3);
@@ -52,7 +28,6 @@
 
     a {
       display: flex;
-      /* width: 100%; */
       width: calc-size(max-content, round(up, size, 1rem));
       background-color: --transparent(var(--secondary-500), 0.7);
     }
