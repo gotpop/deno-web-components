@@ -1,4 +1,4 @@
-.navigation-bar-features {
+.navigation-bar {
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -24,30 +24,3 @@
     view-transition-name: attr(id type(<custom-ident>), none);
   }
 }
-
-/* .icon {
-  --grid-offset: 0;
-
-  display: flex;
-  height: 2rem;
-  width: 2rem;
-  --grid-base-color: var(--primary-500);
-  background-image: paint(grid);
-  --grid-offset: 0;
-  background-color: --transparent(var(--white), 0.8);
-} */
-
-/* .navigation-bar {
-  --grid-offset: 0;
-
-  align-items: start;
-  background-color: --transparent(var(--white), 0.4);
-  background-image: paint(grid);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  height: calc-size(min-content, round(up, size, 1rem));
-  view-transition-name: attr(id type(<custom-ident>), none);
-} */
-
-
