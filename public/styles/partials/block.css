@@ -1,4 +1,7 @@
 content-with-sidebar {
+    --grid-horizontal-color: rgba(201, 201, 201, 0.986);
+  --grid-vertical-color: rgb(231, 231, 231);
+  
   background-blend-mode: overlay;
   background-clip: border-box;
   background-color: --transparent(var(--white), 0.4);
