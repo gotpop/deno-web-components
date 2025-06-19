@@ -22,16 +22,9 @@
 {% endblock %}
 
 {% block page_content %}
-
   <section class="wrapper-features">
-    <layout-item start="42" end="-1" row="1" variant="light" size="medium" role="banner" align-self="end">
-      <flex-items 
-      start="1" 
-      end="-1"
-      id="navigation-bar"
-      class="navigation-bar-features-wrapper"
-    >
-        <nav class="navigation-bar" id="navigation-bar">
+    <navigation-bar>
+      <nav class="group-filters" id="group-filters">
           <a variant="button" href="/features?order={{ orderQuery }}">
             <b>All</b>
           </a>
@@ -45,19 +38,14 @@
             <b>CSSOM</b>
           </a>
         </nav>
-        <flex-item
-      aria-label="Order features"
-      id="order-selector" 
-    >
-          <form class="order" method="GET" action="">
-            <select class="custom-select" id="order" name="order">
-              <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
-              <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
-            </select>
-          </form>
-        </flex-item>
-      </flex-items>
-    </layout-item>
+        <form class="order" method="GET" action="">
+          <select class="custom-select" id="order" name="order">
+            <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
+            <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
+          </select>
+        </form>
+    </navigation-bar>
+
     <layout-item start="1" end="-1" row="1" id="features-list">
       <grid-auto gap="1">
         {% for feature in features %}
