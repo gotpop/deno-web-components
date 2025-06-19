@@ -21,10 +21,7 @@ if (typeof registerPaint !== "undefined") {
 
       const evenOdd = properties.get("--even-odd").toString().trim() || "even"
 
-      const gridOffsetProp = properties.get("--grid-offset")?.toString().trim()
-      const gridOffset = gridOffsetProp !== undefined && gridOffsetProp !== ""
-        ? parseFloat(gridOffsetProp)
-        : null
+      const gridOffset = properties.get("--grid-offset")?.toString().trim()
 
       // Use the drawGrid utility function directly
       this.drawGrid(ctx, geom, gridSize, baseColor, evenOdd, gridOffset)
@@ -62,11 +59,11 @@ if (typeof registerPaint !== "undefined") {
       evenOdd = "even",
       gridOffset = null,
     ) {
-      // Use custom offset if provided, otherwise calculate centered offset
-      let offset
-      if (gridOffset !== null) {
-        offset = gridOffset
-      } else {
+      // Default to left-aligned (offset = 0)
+      let offset = 0
+
+      // If gridOffset is 'centre', calculate centered offset
+      if (gridOffset === "centre") {
         // Calculate horizontal offset for vertical lines (centered)
         offset = (geom.width % gridSize) / 2
 

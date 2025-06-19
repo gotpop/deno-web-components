@@ -1,4 +1,6 @@
 app-shell {
+  --grid-offset: centre;  
+
   background-color: var(--site-background);
   background-image: paint(grid);
   display: grid;
@@ -10,13 +12,6 @@ app-shell {
     grid-template-columns: minmax(0, 1fr) max-content minmax(0, 1fr);
     max-width: 100vw;
     overflow: clip;
-  }
-
-  #main {
-    /* row-rule: 5rem solid rgba(255, 255, 255, 0.4);
-    row-rule-outset: 0rem; */
-    /* row-rule-break: spanning-item; */
-    /* row-rule-color: --transparent(var(--primary-500), 0.06); */
   }
 
   header {

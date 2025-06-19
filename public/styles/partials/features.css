@@ -1,6 +1,4 @@
 .card-feature {
-  --grid-offset: 0;
-  
   background-color: --transparent(var(--white), 0.8);
   background-image: paint(grid);
 }
