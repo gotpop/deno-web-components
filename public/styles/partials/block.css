@@ -1,4 +1,4 @@
-.block-side {
+content-with-sidebar {
   background-blend-mode: overlay;
   background-clip: border-box;
   background-color: --transparent(var(--white), 0.4);
@@ -9,41 +9,41 @@
   display: grid;
   gap: 3rem;
   grid-column: 4 / -4;
+  grid-template-columns: --mobile-to-desktop(1fr, [main] 1fr [sidebar] 23rem);
   padding: 3rem;
+}
+
+
+content-main {
+  --grid-offset: 0;
+
+  align-items: start;
+  background-color: --transparent(var(--white), 1);
+  background-image: paint(grid);
+  display: grid;
+  grid-column: 1 / -1;
   grid-template-columns: 1fr;
+  padding: 3rem;
 
   @media (width > 1224px) {
-    grid-template-columns: [main] 1fr [sidebar] 23rem;
+    grid-column: main;
+    padding: 2rem;
   }
+}
 
-  .main-content {
-    align-items: start;
-    background-color: --transparent(var(--white), 1);
-    display: grid;
-    grid-column: 1 / -1;
-    grid-template-columns: 1fr;
-    padding: 3rem;
-    background-image: paint(grid);
-    --grid-offset: 0;
+content-sidebar {
+  --grid-offset: 0;
 
-    @media (width > 1224px) {
-      grid-column: main;
-      padding: 2rem;
-    }
-  }
+  background-color: --transparent(var(--white), 1);
+  background-image: paint(grid);
+  display: grid;
+  gap: 1rem;
+  grid-column: 1 / -1;
+  grid-template-columns:  1fr;
+  padding: 2rem;
+  align-self: start;
 
-  .side-bar {
-    background-color: --transparent(var(--white), 0.4);
-    display: grid;
-    gap: 1rem;
-    grid-column: 1 / -1;
-    grid-template-columns:  1fr;
-    padding: 3rem;
-        background-image: paint(grid);
-    --grid-offset: 0;
-    
-    @media (width > 1224px) {
-        grid-column: sidebar;
-    }
+  @media (width > 1224px) {
+      grid-column: sidebar;
   }
 }

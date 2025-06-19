@@ -39,14 +39,5 @@
     }
   }
 
-  svg {
-    fill: var(--light-100, #ffffff);
-    height: 2rem;
-    transition: fill 0.3s ease-in-out;
-    width: 2rem;
 
-    &:hover {
-      fill: var(--accent-hover, #005f99);
-    }
-  }
 }

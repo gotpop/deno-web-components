@@ -1,27 +1,27 @@
 {% extends "base-hero.njk" %}
 
 {% block hero %}
-  <section id="hero" class="hero-about" role="banner">
-    <article class="hero-about-content">
+  <content-with-sidebar role="banner">
+    <content-main>
       <h1 variant="xl" top="2" bottom="2" id="heading-primary">Contact us</h1>
       <p variant="md" id="subheading" top="2">Get in touch to discuss your next project or opportunity.</p>
-    </article>
-    <aside class="links-social">
-      <a href="/" class="links-social-item" aria-label="Publication" data-brand="linkedin">
+    </content-main>
+    <content-sidebar>
+      <a href="/" class="link-button-jumbo" aria-label="Publication" data-brand="linkedin">
         <span>LinkedIn</span>
         {% include "partials/icons/linkedin.njk" %}
       </a>
-      <a href="/" class="links-social-item" aria-label="Publication" data-brand="github">
+      <a href="/" class="link-button-jumbo" aria-label="Publication" data-brand="github">
         <span>GitHub</span>
         {% include "partials/icons/github.njk" %}
       </a>
-    </aside>
-  </section>
+    </content-sidebar>
+  </content-with-sidebar>
 {% endblock %}
 
 {% block page_content %}
-  <div class="page" id="about-page">
-    <section class="left" data-page="contact">
+  <content-with-sidebar role="banner">
+    <content-main>
       <form action="/api/contact" class="form-contact" method="POST">
         <label for="name">
           <span>Name</span>
@@ -68,14 +68,12 @@
 
         <button type="submit">Send</button>
       </form>
-    </section>
-
-    <div data-page="contact" class="right">
+    </content-main>
+    <content-sidebar>
       <h2 variant="lg" top="1" bottom="3" id="contact-heading">Get in Touch</h2>
       <p top="1" bottom="2">Have a question, suggestion, or just want to say hello? Fill out the form below and I'll get back to you as soon as possible.</p>
       <p top="1">
         <span>Have a question, suggestion, or just want to say hello? Fill out the form below and I'll get back to you as soon as possible.</span></p>
-
-    </div>
-  </div>
+    </content-sidebar>
+  </content-with-sidebar>
 {% endblock %}

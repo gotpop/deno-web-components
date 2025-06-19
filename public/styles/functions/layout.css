@@ -25,3 +25,11 @@
     result: var(--desktop);
   }
 }
+
+@function --mobile-to-desktop(--mobile, --desktop) {
+  result: var(--mobile);
+
+  @media screen and (width >= 1024px) {
+    result: var(--desktop);
+  }
+}

@@ -2,8 +2,8 @@
 {% from "partials/code/code-block.njk" import codeBlock %}
 
 {% block hero %}
-    <section class="hero-section" id="hero-section">
-        <layout-item start="1" end="42" row="1" id="hero" variant="light" size="large" role="banner">
+    <content-with-sidebar role="banner">
+        <content-main>
             <h1 
         bottom="1" 
         id="heading-primary"
@@ -13,49 +13,42 @@
             <p 
                     variant="base" 
                     id="subheading-{{ loop.index }}" 
-                    top="">
+                    top="2">
                 {% for desc in currentFeature.description %}
                     {{ desc | codeBackticks | safe }}
                 {% endfor %}
             </p>
-        </layout-item>
-        <layout-item 
-        start="43" 
-        end="-1"
-        id="navigation-bar"
-        row="1"
-        >
-            <nav class="navigation-bar" id="navigation-bar">
-                {% if navigation.previous %}
-                    <a class="link-button-large" id="previous" href="/features/{{ navigation.previous.slug }}">
-                        <span>{{ navigation.previous.name }}</span>
-                        <span>
-                            {% include "partials/icons/previous.njk" %}
-                        </span>
-                    </a>
-                {% endif %}
+        </content-main>
+        <content-sidebar>
 
-                {% if navigation.next %}
-                    <a class="link-button-large" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
-                        <span>{{ navigation.next.name }}</span>
-                        <span>
-                            {% include "partials/icons/previous.njk" %}
-                        </span>
+            {% if navigation.previous %}
+                <a class="link-button-jumbo" id="previous" href="/features/{{ navigation.previous.slug }}">
+                    <span>{{ navigation.previous.name }}</span>
+                    <span>
+                        {% include "partials/icons/previous.njk" %}
+                    </span>
+                </a>
+            {% endif %}
 
-                    </a>
-                {% endif %}
-            </nav>
-        </layout-item>
-    </section>
+            {% if navigation.next %}
+                <a class="link-button-jumbo" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
+                    <span>{{ navigation.next.name }}</span>
+                    <span>
+                        {% include "partials/icons/previous.njk" %}
+                    </span>
+
+                </a>
+            {% endif %}
+
+        </content-sidebar>
+    </content-with-sidebar>
 
 {% endblock %}
 
 {% block page_content %}
 
-    <div class="page" id={{ currentFeature.slug }}>
-        <section
-        class="left"
-        >
+    <content-with-sidebar role="banner">
+        <content-main>
 
             {% for item in currentFeature.bodyMarkupData %}
                 {% if item.tag == "h2" %}
@@ -87,8 +80,8 @@
             class="link-feature" 
             href="/features">
                 <span>Back to Features</span></a>
-        </section>
-        <aside class="right">
+        </content-main>
+        <content-sidebar>
             <h4 variant="md" top="1" bottom="1">Links</h4>
             {% for link in currentFeature.links %}
                 <a 
@@ -98,7 +91,6 @@
                 >
                     <span>{{ link.label }}</span></a>
             {% endfor %}
-        </aside>
-
-    </div>
+        </content-sidebar>
+    </content-with-sidebar>
 {% endblock %}

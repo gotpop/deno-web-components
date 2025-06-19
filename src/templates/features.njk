@@ -2,30 +2,23 @@
 {% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
-  <section class="block-side" id="block-side" role="banner">
-    <section class="main-content">
+  <content-with-sidebar role="banner">
+    <content-main>
       <h1 variant="lg" top="1" bottom="2" id="heading-primary">Features</h1>
       <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components. Try filtering or ordering to see the view transitions in action.</p>
-    </section>
+    </content-main>
 
-    <div 
-        start="43" 
-        end="-1"
-        id="navigation-bar"
-        row="1"
-        >
-      <nav class="navigation-bar" id="navigation-bar">
-        <a class="link-button-large" id="previous" href="/features/css-anchor-position-1">
-          <span>CSS Anchor positioning</span>
-          <span class="icon" variant="previous"></span>
-        </a>
-        <a class="link-button-large" id="next" variant="button" href="/features/popover-api">
-          <span>HTML Popover API</span>
-          <span class="icon" variant="next"></span>
-        </a>
-      </nav>
-    </div>
-  </section>
+    <content-sidebar>
+      <a class="link-button-jumbo" id="previous" href="/features/css-anchor-position-1">
+        <span>CSS Anchor positioning</span>
+        <span class="icon" variant="previous"></span>
+      </a>
+      <a class="link-button-jumbo" id="next" variant="button" href="/features/popover-api">
+        <span>HTML Popover API</span>
+        <span class="icon" variant="next"></span>
+      </a>
+    </content-sidebar>
+  </content-with-sidebar>
 {% endblock %}
 
 {% block page_content %}

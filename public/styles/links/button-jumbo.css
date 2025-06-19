@@ -1,0 +1,59 @@
+.link-button-jumbo {
+    --brand-colour: rgb(42, 107, 26);
+
+    align-content: center;
+    align-items: center;
+    background-color: var(--brand-colour);
+    background-image: paint(grid);
+    color: var(--light-100, #ffffff);
+    display: flex;
+    font-weight: 600;
+    gap: 1rem;
+    height: calc-size(min-content, round(up, size, 1rem));
+    justify-content: space-between;
+    padding: 1rem;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    width: 100%;
+
+    &[data-brand="github"] {
+        --brand-colour: #333;
+    }
+  
+    &[data-brand="linkedin"] {
+        --brand-colour: #1da1f2;
+    }
+
+    &:hover {
+        background-color: oklch(from var(--brand-colour) calc(l * 0.75) c h);
+    }
+  
+    b {
+      display: inline-flex;
+    }
+  
+    span {
+      display: flex;
+    }
+
+    svg {
+        fill: var(--light-100, #ffffff);
+        height: 2rem;
+        transition: fill 0.3s ease-in-out;
+        width: 2rem;
+    
+        &:hover {
+          fill: var(--accent-hover, #005f99);
+        }
+    }
+
+
+    .icon {
+        background-color: rgba(255, 255, 255, 0.81);
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        clip-path: shape(from 0% 0%, line to  0% 100%, line to  100% 50%, close);
+    }
+}
