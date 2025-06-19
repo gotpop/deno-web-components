@@ -28,7 +28,7 @@ if (typeof registerPaint !== "undefined") {
 
       const evenOdd = properties.get("--even-odd").toString().trim() || "even"
 
-      const gridOffset = gridOffsetProp
+      const gridOffset = properties.get("--grid-offset")?.toString().trim()
 
       // Use the drawGrid utility function directly
       this.drawGrid(
