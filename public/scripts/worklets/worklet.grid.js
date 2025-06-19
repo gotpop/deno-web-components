@@ -5,6 +5,8 @@ if (typeof registerPaint !== "undefined") {
         "--root-grid-size",
         "--grid-gap",
         "--grid-base-color",
+        "--grid-vertical-color",
+        "--grid-horizontal-color",
         "--animation-progress",
         "--stagger-delay",
         "--even-odd",
@@ -13,18 +15,31 @@ if (typeof registerPaint !== "undefined") {
     }
 
     paint(ctx, geom, properties) {
-      const baseColor = properties.get("--grid-base-color").toString().trim() ||
+      const baseColor =
+        properties.get("--grid-base-color").toString().trim() ||
         "rgba(115, 92, 221, 0.4)"
+      const verticalColor =
+        properties.get("--grid-vertical-color")?.toString().trim() || baseColor
+      const horizontalColor =
+        properties.get("--grid-horizontal-color")?.toString().trim() || baseColor
 
       const gridSize =
         parseInt(properties.get("--root-grid-size").toString()) || 16
 
       const evenOdd = properties.get("--even-odd").toString().trim() || "even"
 
-      const gridOffset = properties.get("--grid-offset")?.toString().trim()
+      const gridOffset = gridOffsetProp
 
       // Use the drawGrid utility function directly
-      this.drawGrid(ctx, geom, gridSize, baseColor, evenOdd, gridOffset)
+      this.drawGrid(
+        ctx,
+        geom,
+        gridSize,
+        verticalColor,
+        horizontalColor,
+        evenOdd,
+        gridOffset,
+      )
     }
 
     // Utility functions directly included in the worklet
@@ -55,7 +70,8 @@ if (typeof registerPaint !== "undefined") {
       ctx,
       geom,
       gridSize,
-      baseColor,
+      verticalColor,
+      horizontalColor,
       evenOdd = "even",
       gridOffset = null,
     ) {
@@ -85,7 +101,7 @@ if (typeof registerPaint !== "undefined") {
         ctx.beginPath()
         ctx.moveTo(x, 0)
         ctx.lineTo(x, geom.height)
-        ctx.strokeStyle = baseColor
+        ctx.strokeStyle = verticalColor
         ctx.stroke()
       }
 
@@ -94,7 +110,7 @@ if (typeof registerPaint !== "undefined") {
         ctx.beginPath()
         ctx.moveTo(0, y)
         ctx.lineTo(geom.width, y)
-        ctx.strokeStyle = baseColor
+        ctx.strokeStyle = horizontalColor
         ctx.stroke()
       }
     }
