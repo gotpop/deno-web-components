@@ -1,12 +1,19 @@
-.navigation-bar {
+navigation-bar {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: --transparent(var(--white), 0.6);
+}
+
+.group-filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
   align-items: start;
-  justify-self: end;
-  padding: 0rem;
-  gap: 1rem;
-  grid-column: 10 / -1;
+  justify-self: start;
+  background-color: --transparent(var(--white), 0.2);
   view-transition-name: attr(id type(<custom-ident>), none);
 
   :has(.navigation-bar) & {
