@@ -1,5 +1,5 @@
 content-with-sidebar {
-    --grid-horizontal-color: rgba(201, 201, 201, 0.986);
+  --grid-horizontal-color: rgba(201, 201, 201, 0.986);
   --grid-vertical-color: rgb(231, 231, 231);
   
   background-blend-mode: overlay;
@@ -11,42 +11,29 @@ content-with-sidebar {
   column-rule: 3rem solid --transparent(var(--primary-500), 0.02);
   display: grid;
   gap: 3rem;
-  grid-column: 4 / -4;
+  grid-column: --mobile-to-desktop(2 / -2, 4 / -4);
   grid-template-columns: --mobile-to-desktop(1fr, [main] 1fr [sidebar] 23rem);
   padding: 3rem;
 }
 
 
 content-main {
-  --grid-offset: 0;
-
   align-items: start;
-  background-color: --transparent(var(--white), 1);
+  background-color: var(--white);
   background-image: paint(grid);
   display: grid;
-  grid-column: 1 / -1;
+  grid-column: --mobile-to-desktop(1 / -1, main);
   grid-template-columns: 1fr;
-  padding: 3rem;
-
-  @media (width > 1224px) {
-    grid-column: main;
-    padding: 2rem;
-  }
+  padding: --mobile-to-desktop(3rem, 2rem);
 }
 
 content-sidebar {
-  --grid-offset: 0;
-
+  align-self: start;
   background-color: --transparent(var(--white), 1);
   background-image: paint(grid);
   display: grid;
   gap: 1rem;
-  grid-column: 1 / -1;
+  grid-column: --mobile-to-desktop(1 / -1, sidebar);
   grid-template-columns:  1fr;
   padding: 2rem;
-  align-self: start;
-
-  @media (width > 1224px) {
-      grid-column: sidebar;
-  }
 }

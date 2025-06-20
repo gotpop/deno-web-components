@@ -1,11 +1,10 @@
-.logo-link {
+.link-logo {
   --opacity: 0.8;
   --background-colour: var(--secondary-300);
 
   background-color: var(--background-colour);
   display: inline flex;
   transition: background-color 0.3s ease-in-out;
-  /* max-width: 10rem; */
   text-decoration: none;
   max-height: 4rem;
 

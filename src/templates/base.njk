@@ -18,21 +18,35 @@
         <header-logo aria-label="Site logo">
           <a 
             aria-label="Home"
-            class="logo-link" 
+            class="link-logo" 
             href="{{ BASE_URL }}" 
           >
             {% include "partials/logo/logo.njk" %}
           </a>
+          <button 
+              aria-controls="header-nav"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-label="Toggle navigation"
+              class="button-toggle-menu" 
+              id="header-toggle" 
+              type="button"
+              popovertarget="main-menu-popover" 
+            >
+            Open ☰
+            </button>
         </header-logo>
-        <header-nav
+        <div
+          id="main-menu-popover"
+              popover="auto"
           aria-label="Primary navigation"  
           aria-orientation="horizontal"
-          min-content="6"
+          class="header-nav"
         >
           {% for item in navigationData.menuItems %}
             {% include "partials/menu-item.njk" %}
           {% endfor %}
-        </header-nav>
+        </div>
       </header>
 
       <layout-item 

@@ -4,15 +4,11 @@ app-shell {
   background-color: var(--site-background);
   background-image: paint(grid);
   display: grid;
-  grid-template-columns: --grid(12);
+  grid-template-columns: --responsive(--grid(8), --grid(10), --grid(12));
   grid-template-rows: --grid-row-base(5rem, 10rem);
   min-height: 100dvh;
 
-  @media (width < 1024px) {
-    grid-template-columns: minmax(0, 1fr) max-content minmax(0, 1fr);
-    max-width: 100vw;
-    overflow: clip;
-  }
+
 
   header {
     grid-column: full-start / full-end;
