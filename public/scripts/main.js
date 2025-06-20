@@ -1,8 +1,9 @@
-import { FeatureDetect } from "./feature-detect.js"
-import { initLiveReload } from "./live-reload.js"
-import { initViewTransitions } from "./view-transitions/init.js"
 import { initWebComponents } from "./define-web-components.js"
+import { FeatureDetect } from "./feature-detect.js"
+import { initMobilePopover } from "./init-mobile-popover.js"
+import { initLiveReload } from "./live-reload.js"
 import { performanceOptimizer } from "./utils/performance-optimizer.js"
+import { initViewTransitions } from "./view-transitions/init.js"
 
 const worklets = ["grid", "tetris", "tetris-grid"].map(
   (name) => `/scripts/worklets/worklet.${name}.js`,
@@ -89,6 +90,7 @@ function initPerformanceAwarePreloading() {
 document.addEventListener("DOMContentLoaded", () => {
   initializeOrderSelect()
   initPerformanceAwarePreloading()
+  initMobilePopover()
 })
 
 // Re-initialize after custom navigation event
@@ -98,3 +100,6 @@ document.addEventListener("app:navigationend", function () {
   )
   initializeOrderSelect()
 })
+
+
+
