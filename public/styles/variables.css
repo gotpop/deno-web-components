@@ -240,4 +240,7 @@
     rgba(0, 0, 0, 0.2) 10px,
     rgba(0, 0, 0, 0.2) 11px
   );
+
+  --round-up: calc-size(max-content, round(up, size, 1rem));
+  --round-down: calc-size(max-content, round(down, size, 1rem));
 }
