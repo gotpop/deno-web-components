@@ -13,7 +13,7 @@ content-with-sidebar {
   gap: 3rem;
   grid-column: --mobile-to-desktop(2 / -2, 4 / -4);
   grid-template-columns: --mobile-to-desktop(1fr, [main] 1fr [sidebar] 23rem);
-  padding: 3rem;
+  padding: --mobile-to-desktop(1rem, 3rem);
 }
 
 
@@ -24,7 +24,7 @@ content-main {
   display: grid;
   grid-column: --mobile-to-desktop(1 / -1, main);
   grid-template-columns: 1fr;
-  padding: --mobile-to-desktop(3rem, 2rem);
+  padding: --mobile-to-desktop(1rem, 2rem);
 }
 
 content-sidebar {

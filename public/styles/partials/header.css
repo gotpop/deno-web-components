@@ -16,7 +16,7 @@ header {
 
 header-logo {
   display: grid;
-  grid-template-columns: 1fr [logo] 20rem [button-toggle];
+  grid-template-columns: 1fr [logo] 5rem [button-toggle];
   grid-column: --mobile-to-desktop(1 / -1, 4 / 5);
   grid-row: 1 / -1;
 }
@@ -47,4 +47,5 @@ header-nav-item {
   grid-column: button-toggle;
   padding: 1rem 2rem;
   width: var(--round-up);
+  height: var(--round-up);
 }
