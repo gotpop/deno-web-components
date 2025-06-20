@@ -15,12 +15,7 @@
         id="header" 
         role="banner" 
       >
-        <layout-item 
-          end="5"
-          start="4"
-          variant="column"
-          row="full"
-        >
+        <header-logo aria-label="Site logo">
           <a 
             aria-label="Home"
             class="logo-link" 
@@ -28,20 +23,16 @@
           >
             {% include "partials/logo/logo.njk" %}
           </a>
-        </layout-item>
-        <grid-auto-fill
+        </header-logo>
+        <header-nav
           aria-label="Primary navigation"  
           aria-orientation="horizontal"
-          end="-2"
           min-content="6"
-          role="menubar"
-          row="2"
-          start="25"
         >
           {% for item in navigationData.menuItems %}
             {% include "partials/menu-item.njk" %}
           {% endfor %}
-        </grid-auto-fill>
+        </header-nav>
       </header>
 
       <layout-item 
