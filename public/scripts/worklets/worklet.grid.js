@@ -14,23 +14,43 @@ if (typeof registerPaint !== "undefined") {
       ]
     }
 
+    getPropertyValue(properties, name, defaultValue = null) {
+      const prop = properties.get(name)
+      if (prop) {
+        const value = prop.toString().trim()
+        if (value) {
+          return value
+        }
+      }
+      
+      return defaultValue
+    }
+    
     paint(ctx, geom, properties) {
-      const baseColor =
-        properties.get("--grid-base-color").toString().trim() ||
-        "rgba(115, 92, 221, 0.4)"
-      const verticalColor =
-        properties.get("--grid-vertical-color")?.toString().trim() || baseColor
-      const horizontalColor =
-        properties.get("--grid-horizontal-color")?.toString().trim() || baseColor
+      const base = "rgba(115, 92, 221, 0.4)"
+      const baseColor = this.getPropertyValue(
+        properties,
+        "--grid-base-color",
+        base,
+      )
+      const verticalColor = this.getPropertyValue(
+        properties,
+        "--grid-vertical-color",
+        baseColor,
+      )
+      const horizontalColor = this.getPropertyValue(
+        properties,
+        "--grid-horizontal-color",
+        baseColor,
+      )
 
-      const gridSize =
-        parseInt(properties.get("--root-grid-size").toString()) || 16
+      const gridSize = parseInt(
+        this.getPropertyValue(properties, "--root-grid-size", "16"),
+      )
 
-      const evenOdd = properties.get("--even-odd").toString().trim() || "even"
+      const evenOdd = this.getPropertyValue(properties, "--even-odd", "even")
+      const gridOffset = this.getPropertyValue(properties, "--grid-offset")
 
-      const gridOffset = properties.get("--grid-offset")?.toString().trim()
-
-      // Use the drawGrid utility function directly
       this.drawGrid(
         ctx,
         geom,
@@ -59,10 +79,12 @@ if (typeof registerPaint !== "undefined") {
       if (rgbValues === null || rgbValues.length !== 3) {
         throw new Error("Invalid RGB color format")
       }
+      
       let [r, g, b] = rgbValues.map(Number)
       r = Math.max(0, Math.min(255, Math.round(r * factor)))
       g = Math.max(0, Math.min(255, Math.round(g * factor)))
       b = Math.max(0, Math.min(255, Math.round(b * factor)))
+
       return `rgb(${r}, ${g}, ${b})`
     }
 
