@@ -14,8 +14,12 @@
     gutter-end] auto [full-end];
 }
 
+@function --grid-auto(--repeat, --col-width) {
+  result: [full-start] minmax(0, 1fr) [content-start] repeat(var(--repeat), var(--col-width)) [content-end] minmax(0, 1fr) [full-end];
+}
+
 @function --grid-mobile() {
-  result: auto calc(round(down, 45vw, 3rem)) calc(round(down, 45vw, 3rem)) auto;
+  result: auto calc(round(80vw, 2rem) + if(style(--scrollbar-width: 0px): 12px; else: 0px)) auto;
 }
 
 @function --responsive(--mobile, --tablet, --desktop) {

@@ -1,15 +1,15 @@
 app-shell {
   --grid-offset: centre;  
+  --column-width: --responsive(21rem, 4rem, 3rem);
+  --repeat: --responsive(auto-fit, auto-fit, 12);
 
   background-color: var(--site-background);
   background-image: paint(grid);
   display: grid;
-  grid-template-columns: --responsive(--grid-mobile(), --grid(10), --grid(12));
-    gap: --responsive(1rem, 0, 4rem);
+  grid-template-columns: --grid-auto(var(--repeat), var(--column-width));
+  column-gap: --responsive(1rem, 1rem, 3rem);
   grid-template-rows: --grid-row-base(5rem, 10rem);
   min-height: 100dvh;
-
-
 
   header {
     grid-column: full-start / full-end;

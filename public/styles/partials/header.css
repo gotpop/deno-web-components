@@ -17,12 +17,12 @@ header {
 header-logo {
   display: grid;
   grid-template-columns: 1fr [logo] 5rem [button-toggle];
-  grid-column: --mobile-to-desktop(1 / -1, 4 / 5);
+  grid-column: --mobile-to-desktop(1 / -1, 2 / 3);
   grid-row: 1 / -1;
 }
 
 .header-nav {
-  grid-column: 28 / -4;
+  grid-column: 5 / -2;
   grid-row: 2;
   display: --mobile-to-desktop(revert, flex);
   flex-direction: --mobile-to-desktop(column, row);

@@ -11,8 +11,9 @@ content-with-sidebar {
   column-rule: 3rem solid --transparent(var(--primary-500), 0.02);
   display: grid;
   gap: 3rem;
-  grid-column: --mobile-to-desktop(2 / -2, 4 / -4);
+  grid-column: --mobile-to-desktop(2 / -2, content);
   grid-template-columns: --mobile-to-desktop(1fr, [main] 1fr [sidebar] 23rem);
+  grid-template-columns: subgrid;
   padding: --mobile-to-desktop(1rem, 3rem);
 }
 
@@ -25,6 +26,7 @@ content-main {
   grid-column: --mobile-to-desktop(1 / -1, main);
   grid-template-columns: 1fr;
   padding: --mobile-to-desktop(1rem, 2rem);
+  grid-column: span 7;
 }
 
 content-sidebar {
@@ -36,4 +38,5 @@ content-sidebar {
   grid-column: --mobile-to-desktop(1 / -1, sidebar);
   grid-template-columns:  1fr;
   padding: 2rem;
+  grid-column: span 5;
 }
