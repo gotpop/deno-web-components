@@ -4,7 +4,8 @@ app-shell {
   background-color: var(--site-background);
   background-image: paint(grid);
   display: grid;
-  grid-template-columns: --responsive(--grid(6), --grid(10), --grid(12));
+  grid-template-columns: --responsive(--grid-mobile(), --grid(10), --grid(12));
+    gap: --responsive(1rem, 0, 0);
   grid-template-rows: --grid-row-base(5rem, 10rem);
   min-height: 100dvh;
 

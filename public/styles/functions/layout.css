@@ -8,10 +8,14 @@
     repeat(
       var(--columns-number),
       [gutter-start] var(--gutter-columns) var(--gutter-columns) [gutter-end
-        content-start] clamp(2rem, round(5.5vw, 2rem), 8rem) [content-end]
+        content-start] clamp(2rem, round(5.5vw, 2rem), 6rem) [content-end]
     )
     [gutter-start] var(--gutter-columns) var(--gutter-columns) [center-end
     gutter-end] auto [full-end];
+}
+
+@function --grid-mobile() {
+  result: auto calc(round(down, 45vw, 2rem)) calc(round(down, 45vw, 2rem)) auto;
 }
 
 @function --responsive(--mobile, --tablet, --desktop) {
