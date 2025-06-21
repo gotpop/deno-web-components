@@ -15,7 +15,7 @@
 }
 
 @function --grid-mobile() {
-  result: auto calc(round(down, 45vw, 2rem)) calc(round(down, 45vw, 2rem)) auto;
+  result: auto calc(round(down, 45vw, 3rem)) calc(round(down, 45vw, 3rem)) auto;
 }
 
 @function --responsive(--mobile, --tablet, --desktop) {

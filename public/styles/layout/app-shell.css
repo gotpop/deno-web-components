@@ -5,7 +5,7 @@ app-shell {
   background-image: paint(grid);
   display: grid;
   grid-template-columns: --responsive(--grid-mobile(), --grid(10), --grid(12));
-    gap: --responsive(1rem, 0, 0);
+    gap: --responsive(1rem, 0, 4rem);
   grid-template-rows: --grid-row-base(5rem, 10rem);
   min-height: 100dvh;
 
