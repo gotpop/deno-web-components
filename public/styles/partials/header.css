@@ -30,7 +30,23 @@ header-logo {
   grid-auto-flow: column;
   gap: 1rem;
 
+  &[popover] {
+    border: 0;
+    padding: 3rem;
+    
+    gap: 2rem;
 
+    &::backdrop {
+      background-color: var(--dark-500);
+      opacity: 0.8;
+    }
+
+    &:popover-open {
+      background-color: var(--secondary-500);
+      display: flex;
+    }
+
+  }
 }
 
 header-nav-item {

@@ -15,7 +15,7 @@ grid-auto {
 
   display: grid;
   gap: var(--gap);
-  gap: 4rem;
+  gap: 3rem;
   grid-column: var(--begin) / var(--end);
   grid-template-columns: repeat(auto-fit, minmax(var(--min-content), 1fr));
   grid-row: attr(row type(<integer> | <custom-ident>), auto);
