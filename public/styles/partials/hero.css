@@ -17,5 +17,4 @@ main {
     grid-template-columns: subgrid;
     grid-area: main / content;
     row-gap: 4rem;
-      view-transition-name: feature-content;
 }
