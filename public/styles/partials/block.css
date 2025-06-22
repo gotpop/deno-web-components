@@ -1,6 +1,20 @@
 content-with-sidebar {
   --grid-horizontal-color: rgba(201, 201, 201, 0.986);
   --grid-vertical-color: rgb(231, 231, 231);
+
+  --xs: 'main' 'sidebar';
+  --sm: 'main main main' 'sidebar sidebar sidebar';
+  --md: 'main main main main' 'sidebar sidebar sidebar sidebar';
+  --lg: 'main main main main sidebar sidebar';
+  --xl: 'main main main main sidebar sidebar sidebar';
+
+  --areas: --rwd(
+    var(--xs),
+    var(--sm),
+    var(--md),
+    var(--lg),
+    var(--xl)
+  );
   
   background-blend-mode: overlay;
   background-clip: border-box;
@@ -10,11 +24,9 @@ content-with-sidebar {
   box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
   column-rule: 3rem solid --transparent(var(--primary-500), 0.02);
   display: grid;
-  gap: 3rem;
   grid-column: --mobile-to-desktop(2 / -2, content);
-  grid-template-columns: --mobile-to-desktop(1fr, [main] 1fr [sidebar] 23rem);
+  grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
-  padding: --mobile-to-desktop(1rem, 3rem);
 }
 
 
@@ -23,10 +35,9 @@ content-main {
   background-color: var(--white);
   background-image: paint(grid);
   display: grid;
-  grid-column: --mobile-to-desktop(1 / -1, main);
+  grid-column: main;
   grid-template-columns: 1fr;
   padding: --mobile-to-desktop(1rem, 2rem);
-  grid-column: span 7;
 }
 
 content-sidebar {
@@ -35,8 +46,7 @@ content-sidebar {
   background-image: paint(grid);
   display: grid;
   gap: 1rem;
-  grid-column: --mobile-to-desktop(1 / -1, sidebar);
+  grid-column: sidebar;
   grid-template-columns:  1fr;
   padding: 2rem;
-  grid-column: span 5;
 }

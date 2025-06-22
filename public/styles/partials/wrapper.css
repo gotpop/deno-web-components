@@ -1,39 +1,48 @@
 
 .wrapper-index-section {
+  --xs: 'header' 'card-1' 'card-2' 'card-3';
+  --sm: 'header .' 'card-1 card-1' 'card-2 card-2' 'card-3 card-3';
+  --md: 'header header . .' 'card-1 card-1 card-2 card-2' 'card-3 card-3 card-3 card-3';
+  --lg: 'header header . . . .' 'card-1 card-1 card-1 card-2 card-2 card-2' 'card-3 card-3 card-3 card-3 card-3 card-3';
+  --xl: 'header header . . . .'  'card-1 card-1 card-2 card-2 card-3 card-3';
 
+  --areas: --rwd(
+    var(--xs),
+    var(--sm),
+    var(--md),
+    var(--lg),
+    var(--xl)
+  );
+  
   background-blend-mode: overlay;
   background-clip: border-box;
   background-color: --transparent(var(--white), 0.4);
   background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
   background-size: 1rem 1rem;
-  box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
-  display: flex;
-  flex-direction: column;
-  grid-column: 4 / -4;
-  padding: 3rem;
-  position: relative;
-  row-gap: 2rem;
-  row-rule: 2rem solid --transparent(var(--primary-500), 0.06);
-
-
-  background-color: --transparent(var(--white), 0.3);
   box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.3);
-  column-gap: 4rem;
+  /* column-gap: 3rem; */
   column-rule-break: none;
-  column-rule: 4rem solid --transparent(var(--primary-500), 0.06);
+  column-rule: 3rem solid --transparent(var(--primary-500), 0.06);
   display: grid;
-  grid-column: 4 / -4;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  padding: 3rem;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
   row-gap: 2rem;
   row-rule: 2rem solid --transparent(var(--primary-500), 0.06);
+  grid-template-areas: var(--areas);
+  grid-auto-flow: row dense;
+  /* display: none; */
+
+  surface-item {
+    /* grid-column: card; */
+    grid-area: attr(area type(<custom-ident>), card);
+  }
 }
 
 .wrapper-index-header {
-  grid-column: 1 / -1;
+  grid-column: header;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
 
   a {
     display: flex;

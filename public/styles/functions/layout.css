@@ -41,3 +41,23 @@
     result: var(--desktop);
   }
 }
+
+@function --rwd(--xs, --sm, --md, --lg, --xl) {
+  result: var(--xs);
+
+  @media screen and (width >= 480px) {
+    result: var(--sm);
+  }
+
+  @media screen and (width >= 768px) {
+    result: var(--md);
+  }
+
+  @media screen and (width >= 1024px) {
+    result: var(--lg);
+  }
+
+  @media screen and (width >= 1280px) {
+    result: var(--xl);
+  }
+}

@@ -48,17 +48,11 @@
         </div>
       </header>
 
-      <layout-item 
+      <main
         aria-label="Main content" 
-        end="-1"
-        id="main" 
-        role="main" 
-        row-gap="5" 
-        row="main" 
-        start="1" 
       >
         {% block content %}{% endblock %}
-      </layout-item>
+      </main>
 
       {% include "partials/site-footer.njk" %}
     </app-shell>

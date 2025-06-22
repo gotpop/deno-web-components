@@ -2,10 +2,10 @@
 {% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
-  <surface-item start="4" end="28" row="1" id="hero" variant="light" size="large" role="banner">
+  <hero-home id="hero" role="banner">
     <h1 variant="xxl" top="4" bottom="2" id="heading-primary">Web Platform Features Showcase</h1>
     <p  variant="lg" id="subheading" top="4">A collection of modern web features using <a class="jump-link" href="#section-css">CSS</a>, <a class="jump-link" href="#section-cssom">Houdini Paint API</a>, and Web Platform APIs. Examples include layout techniques, custom paint worklets, and <a class="jump-link" href="#section-bapi">browser APIs</a> working together.</p>
-  </surface-item>
+  </hero-home>
 {% endblock %}
 
 {% block page_content %}
@@ -18,7 +18,7 @@
     </div>
 
     {% for feature in features.cssFeatures %}
-      {{ featureComponents.featureCard(feature) }}
+      {{ featureComponents.featureCard(feature, loop.index0) }}
     {% endfor %}
 
   </section>
@@ -31,7 +31,7 @@
     </div>
 
     {% for feature in features.cssomFeatures %}
-      {{ featureComponents.featureCard(feature) }}
+      {{ featureComponents.featureCard(feature, loop.index0) }}
     {% endfor %}
 
   </section>
@@ -44,7 +44,7 @@
     </div>
 
     {% for feature in features.browserApiFeatures %}
-      {{ featureComponents.featureCard(feature) }}
+      {{ featureComponents.featureCard(feature, loop.index0) }}
     {% endfor %}
 
   </section>

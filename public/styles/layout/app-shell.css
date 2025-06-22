@@ -1,13 +1,13 @@
 app-shell {
   --grid-offset: centre;  
-  --column-width: --responsive(21rem, 4rem, 3rem);
-  --repeat: --responsive(auto-fit, auto-fit, 12);
+  --column-width: --rwd(21rem, 7rem, 11rem, 7rem, 10rem);
+  --repeat: --responsive(auto-fit, auto-fit, 6);
 
   background-color: var(--site-background);
   background-image: paint(grid);
   display: grid;
   grid-template-columns: --grid-auto(var(--repeat), var(--column-width));
-  column-gap: --responsive(1rem, 1rem, 3rem);
+  column-gap: --rwd(1rem, 1rem, 1rem, 3rem, 3rem);
   grid-template-rows: --grid-row-base(5rem, 10rem);
   min-height: 100dvh;
 
