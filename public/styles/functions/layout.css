@@ -41,6 +41,13 @@
     result: var(--desktop);
   }
 }
+@function --mobile-tablet-up(--mobile, --tablet) {
+  result: var(--mobile);
+
+  @media screen and (width >= 768px) {
+    result: var(--tablet);
+  }
+}
 
 @function --rwd(--xs, --sm, --md, --lg, --xl) {
   result: var(--xs);

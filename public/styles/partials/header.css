@@ -43,7 +43,7 @@ header-nav-item {
   background-color: aqua;
   border: none;
   cursor: pointer;
-  display: --mobile-to-desktop(flex, none);
+  display: --mobile-tablet-up(flex, none);
   grid-column: button-toggle;
   padding: 1rem 2rem;
   width: var(--round-up);

@@ -19,32 +19,46 @@ export function initMobilePopover() {
   }
   
   const mediaQuery = window.matchMedia("(width >= 768px)");
-  const isDesktop = mediaQuery.matches;
+
+  function isPopover() {
+    return menu.hasAttribute("popover");
+  }
   
+  function isPopoverOpen() {
+    return menu.matches(":popover-open");
+  }
+
+  function openPopover() {
+    menu.setAttribute("popover", "auto");
+    menu.showPopover();
+  }
+
+  function closePopover() {
+    if (isPopoverOpen()) menu.hidePopover();
+    
+    menu.removeAttribute("popover");
+  }
+
   function applyPopover() {
-    if (isDesktop) {
-      if (menu.hasAttribute("popover")) {
-        if (menu.matches(':popover-open')) {
-          menu.hidePopover();
-        }
-        menu.removeAttribute("popover");
-      }
-    } else {
+    const isDesktop = mediaQuery.matches;
+    if (isDesktop && isPopover()) {
+      closePopover();
+      return;
+    }
+    if (!isDesktop) {
       menu.setAttribute("popover", "auto");
     }
   }
-  
-  toggle.addEventListener("click", () => {
-    if (menu.hasAttribute("popover") && menu.matches(':popover-open')) {
-      menu.hidePopover();
-      menu.removeAttribute("popover");
+
+  function handleToggleClick() {
+    if (isPopover() && isPopoverOpen()) {
+      closePopover();
     } else {
-      menu.setAttribute("popover", "auto");
-      menu.showPopover();
+      openPopover();
     }
-  });
-
-
+  }
+  
+  toggle.addEventListener("click", handleToggleClick);
   mediaQuery.addEventListener("change", applyPopover);
 
   applyPopover(); 
