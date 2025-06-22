@@ -1,5 +1,6 @@
 import { initWebComponents } from "./define-web-components.js"
 import { FeatureDetect } from "./feature-detect.js"
+import { initMobilePopover } from "./init-mobile-popover.js"
 import { initLiveReload } from "./live-reload.js"
 import { performanceOptimizer } from "./utils/performance-optimizer.js"
 import { initViewTransitions } from "./view-transitions/init.js"
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   initializeOrderSelect()
   initPerformanceAwarePreloading()
-  // initMobilePopover()
+  initMobilePopover()
 })
 
 // Re-initialize after custom navigation event

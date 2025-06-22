@@ -1,7 +1,7 @@
 
 .wrapper-index-section {
   --xs: 'header' 'card-1' 'card-2' 'card-3';
-  --sm: 'header .' 'card-1 card-1' 'card-2 card-2' 'card-3 card-3';
+  --sm: 'header header . .' 'card-1 card-1 card-1 card-1' 'card-2 card-2 card-2 card-2' 'card-3 card-3 card-3 card-3';
   --md: 'header header . . .' 'card-1 card-1 card-2 card-2 card-2' 'card-3 card-3 card-3 card-3 card-3';
   --lg: 'header header . . . .' 'card-1 card-1 card-1 card-2 card-2 card-2' 'card-3 card-3 card-3 card-3 card-3 card-3';
   --xl: 'header header . . . .'  'card-1 card-1 card-2 card-2 card-3 card-3';
@@ -20,7 +20,7 @@
   background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
   background-size: 1rem 1rem;
   box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.3);
-  /* column-gap: 3rem; */
+  column-gap: 3rem;
   column-rule-break: none;
   column-rule: 3rem solid --transparent(var(--primary-500), 0.06);
   display: grid;

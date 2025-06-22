@@ -1,6 +1,7 @@
 export function initMobilePopover() {
   const menu = document.getElementById("main-menu-popover");
   const toggle = document.getElementById("header-toggle");
+
   if (!menu || !toggle) {
     return;
   }
@@ -17,34 +18,34 @@ export function initMobilePopover() {
     // and that's fine.
   }
   
-  const mediaQuery = window.matchMedia("(max-width: 767px)");
+  const mediaQuery = window.matchMedia("(width >= 768px)");
+  const isDesktop = mediaQuery.matches;
   
   function applyPopover() {
-    if (!mediaQuery.matches) {
-      menu.hidePopover();
-      document.documentElement.style.setProperty("--is-mobile", "0");
-      menu.removeAttribute("popover");
+    if (isDesktop) {
+      if (menu.hasAttribute("popover")) {
+        if (menu.matches(':popover-open')) {
+          menu.hidePopover();
+        }
+        menu.removeAttribute("popover");
+      }
+    } else {
+      menu.setAttribute("popover", "auto");
     }
   }
   
   toggle.addEventListener("click", () => {
-    if (!menu.hasAttribute("popover")) {
-      menu.setAttribute("popover", "auto");
-    }
-
-    if (mediaQuery.matches) {
-      console.log('menu :', menu);
-      console.log('toggle :', toggle);
-      menu.showPopover();
-      document.documentElement.style.setProperty("--is-mobile", "1");
-    } else {
+    if (menu.hasAttribute("popover") && menu.matches(':popover-open')) {
       menu.hidePopover();
-      document.documentElement.style.setProperty("--is-mobile", "0");
       menu.removeAttribute("popover");
+    } else {
+      menu.setAttribute("popover", "auto");
+      menu.showPopover();
     }
-
   });
 
+
   mediaQuery.addEventListener("change", applyPopover);
-  applyPopover(); // Ensure cleanup is executed on initialization if needed
+
+  applyPopover(); 
 }
