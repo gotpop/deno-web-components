@@ -27,19 +27,20 @@ content-with-sidebar {
   grid-column: --mobile-to-desktop(1 / -1, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
-  view-transition-name: attr(id type(<custom-ident>), none);
   height: var(--round-down);
+  min-width: var(--round-down);
   
-  /* TODO be more specific */
+  /* TODO be more specific
   &:last-child {
     view-transition-name: feature-content;
+    } */
   }
-}
-
-
-content-main {
-  align-items: start;
-  background-color: var(--white);
+  
+  
+  content-main {
+    align-items: start;
+    background-color: var(--white);
+    view-transition-name: attr(id type(<custom-ident>), none);
   background-image: paint(grid);
   display: grid;
   grid-column: main;
