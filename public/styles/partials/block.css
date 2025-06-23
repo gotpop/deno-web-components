@@ -3,8 +3,8 @@ content-with-sidebar {
   --grid-vertical-color: rgb(231, 231, 231);
 
   --xs: 'main' 'sidebar';
-  --sm: 'main main main' 'sidebar sidebar sidebar';
-  --md: 'main main main main' 'sidebar sidebar sidebar sidebar';
+  --sm: 'main main main main' 'sidebar sidebar sidebar sidebar';
+  --md: 'main main sidebar sidebar';
   --lg: 'main main main main sidebar sidebar';
   --xl: 'main main main main sidebar sidebar sidebar';
 
