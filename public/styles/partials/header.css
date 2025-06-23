@@ -16,7 +16,7 @@ header {
 
 header-logo {
   display: grid;
-  grid-template-columns: 1fr [logo] 5rem [button-toggle];
+  grid-template-columns: [logo] 1fr [button-toggle] 5rem;
   grid-column: --mobile-to-desktop(1 / -1, 2 / 3);
   grid-row: 1 / -1;
 }
@@ -59,9 +59,9 @@ header-nav-item {
   background-color: aqua;
   border: none;
   cursor: pointer;
-  display: --mobile-tablet-up(flex, none);
+  display: --mobile-to-desktop(flex, none);
   grid-column: button-toggle;
   padding: 1rem 2rem;
-  width: var(--round-up);
-  height: var(--round-up);
+  align-items: center;
+  justify-content: center;
 }
