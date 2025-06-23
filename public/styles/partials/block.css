@@ -24,7 +24,7 @@ content-with-sidebar {
   box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
   column-rule: 3rem solid --transparent(var(--primary-500), 0.02);
   display: grid;
-  grid-column: --mobile-to-desktop(2 / -2, content);
+  grid-column: --mobile-to-desktop(1 / -1, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
   view-transition-name: attr(id type(<custom-ident>), none);
