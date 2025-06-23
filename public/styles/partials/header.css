@@ -24,7 +24,7 @@ header-logo {
 .header-nav {
   grid-column: 5 / -2;
   grid-row: 2;
-  display: --mobile-to-desktop(revert, flex);
+  display: --mobile-to-desktop(none, flex);
   flex-direction: --mobile-to-desktop(column, row);
   justify-content: end;
   grid-auto-flow: column;
@@ -35,6 +35,18 @@ header-logo {
     padding: 3rem;
     
     gap: 2rem;
+    display: none;
+
+    position-anchor: --myAnchor;
+    position: fixed;
+    right: anchor(right);
+    top: anchor(bottom);
+
+    left: auto;
+    bottom: auto;
+    margin: 0;
+
+
 
     &::backdrop {
       background-color: var(--dark-500);
@@ -64,4 +76,5 @@ header-nav-item {
   padding: 1rem 2rem;
   align-items: center;
   justify-content: center;
+  anchor-name: --myAnchor;
 }
