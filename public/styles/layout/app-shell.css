@@ -1,6 +1,6 @@
 app-shell {
   --grid-offset: centre;  
-  --column-width: --rwd(21rem, 12rem, 10rem, 7rem, 10rem);
+  --column-width: --rwd(21rem, 12rem, 10rem, 8rem, 10rem);
   --repeat: --rwd(1, 2, 4, 6, 6);
 
   background-color: var(--site-background);

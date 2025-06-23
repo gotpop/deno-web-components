@@ -47,7 +47,7 @@
 
 {% block page_content %}
 
-    <content-with-sidebar role="banner" class="feature-content" id="{{ currentFeature.slug }}">
+    <content-with-sidebar role="banner" id="{{ currentFeature.slug }}">
         <content-main>
 
             {% for item in currentFeature.bodyMarkupData %}

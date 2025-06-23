@@ -6,7 +6,7 @@ content-with-sidebar {
   --sm: 'main main main main' 'sidebar sidebar sidebar sidebar';
   --md: 'main main sidebar sidebar';
   --lg: 'main main main main sidebar sidebar';
-  --xl: 'main main main main sidebar sidebar sidebar';
+  --xl: 'main main main main sidebar sidebar';
 
   --areas: --rwd(
     var(--xs),
@@ -28,6 +28,12 @@ content-with-sidebar {
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
   view-transition-name: attr(id type(<custom-ident>), none);
+  height: var(--round-down);
+  
+  /* TODO be more specific */
+  &:last-child {
+    view-transition-name: feature-content;
+  }
 }
 
 
@@ -37,14 +43,21 @@ content-main {
   background-image: paint(grid);
   display: grid;
   grid-column: main;
+  grid-column: main / sidebar;
+  grid-area: main;
   grid-template-columns: 1fr;
   padding: --mobile-to-desktop(1rem, 2rem);
-
+  height: var(--round-down);
   border-radius: 80px / 0 50% 50% 0;
   corner-shape: bevel;
 
   border-radius: 0 3rem 0 0;
   corner-shape: notch;
+  width: 100%;
+/* 
+  > * {
+    display: none;
+  } */
 }
 
 content-sidebar {
@@ -54,6 +67,9 @@ content-sidebar {
   display: grid;
   gap: 1rem;
   grid-column: sidebar;
+  grid-column: sidebar / sidebar;
+  grid-area:: sidebar;
   grid-template-columns:  1fr;
   padding: 2rem;
+  width: 100%;
 }

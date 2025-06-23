@@ -13,7 +13,7 @@
 
 html:active-view-transition-type(forwards, backwards) {
   .feature-content {
-    view-transition-name: feature-content;
+    /* view-transition-name: feature-content; */
     /* Performance optimizations for weaker CPUs */
     will-change: transform, opacity;
     contain: layout style paint;
