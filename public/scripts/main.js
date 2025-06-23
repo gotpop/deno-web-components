@@ -1,9 +1,9 @@
-import { initWebComponents } from "./define-web-components.js"
 import { FeatureDetect } from "./feature-detect.js"
-import { initMobilePopover } from "./init-mobile-popover.js"
 import { initLiveReload } from "./live-reload.js"
-import { performanceOptimizer } from "./utils/performance-optimizer.js"
+import { initMobilePopover } from "./init-mobile-popover.js"
 import { initViewTransitions } from "./view-transitions/init.js"
+import { initWebComponents } from "./define-web-components.js"
+import { performanceOptimizer } from "./utils/performance-optimizer.js"
 
 const worklets = ["grid", "tetris", "tetris-grid"].map(
   (name) => `/scripts/worklets/worklet.${name}.js`,
@@ -88,9 +88,13 @@ function initPerformanceAwarePreloading() {
 
 // Initial setup
 document.addEventListener("DOMContentLoaded", () => {
-  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-  document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
-  
+  const scrollbarWidth = window.innerWidth -
+    document.documentElement.clientWidth
+  document.documentElement.style.setProperty(
+    "--scrollbar-width",
+    `${scrollbarWidth}px`,
+  )
+
   initializeOrderSelect()
   initPerformanceAwarePreloading()
   initMobilePopover()
@@ -102,7 +106,5 @@ document.addEventListener("app:navigationend", function () {
     "[main.js] app:navigationend event received. Re-initializing order select.",
   )
   initializeOrderSelect()
+  initMobilePopover()
 })
-
-
-

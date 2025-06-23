@@ -1,7 +1,7 @@
 app-shell {
   --grid-offset: centre;  
   --column-width: --rwd(21rem, 9rem, 9rem, 7rem, 10rem);
-  --repeat: --rwd(auto-fit, auto-fit, auto-fit, auto-fit, 6);
+  --repeat: --responsive(auto-fit, auto-fit, 6);
 
   background-color: var(--site-background);
   background-image: paint(grid);
