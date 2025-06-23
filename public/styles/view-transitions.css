@@ -12,7 +12,7 @@
 }
 
 html:active-view-transition-type(forwards, backwards) {
-  .page {
+  .feature-content {
     view-transition-name: feature-content;
     /* Performance optimizations for weaker CPUs */
     will-change: transform, opacity;

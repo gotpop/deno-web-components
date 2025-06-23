@@ -27,6 +27,7 @@ content-with-sidebar {
   grid-column: --mobile-to-desktop(2 / -2, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
+  view-transition-name: attr(id type(<custom-ident>), none);
 }
 
 
@@ -38,6 +39,12 @@ content-main {
   grid-column: main;
   grid-template-columns: 1fr;
   padding: --mobile-to-desktop(1rem, 2rem);
+
+  border-radius: 80px / 0 50% 50% 0;
+  corner-shape: bevel;
+
+  border-radius: 0 3rem 0 0;
+  corner-shape: notch;
 }
 
 content-sidebar {
