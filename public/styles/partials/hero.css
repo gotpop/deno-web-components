@@ -18,10 +18,3 @@ main {
     grid-area: main / content;
     row-gap: 4rem;
 }
-
-
-h1 {
-    background-clip: text;
-color: transparent;
-text-shadow: none;
-}
