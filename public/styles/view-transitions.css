@@ -15,9 +15,6 @@ html:active-view-transition-type(forwards, backwards) {
   .feature-content {
     view-transition-name: feature-content;
     will-change: transform, opacity;
-    /* Watch out for JANK */
-    /* contain: layout style paint; */
-    /* transform: translateZ(0);  */
   }
 
   :root {

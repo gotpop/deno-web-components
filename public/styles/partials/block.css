@@ -21,44 +21,22 @@ content-with-sidebar {
   background-color: --transparent(var(--white), 0.4);
   background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
   background-size: 1rem 1rem;
-  box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
   column-rule: 3rem solid --transparent(var(--primary-500), 0.02);
   display: grid;
   grid-column: --mobile-to-desktop(1 / -1, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
-  height: var(--round-down);
-  min-width: var(--round-down);
-  
-  /* TODO be more specific
-  &:last-child {
-    view-transition-name: feature-content;
-    } */
-  }
+  view-transition-name: attr(id type(<custom-ident>), none);
+}
   
   
-  content-main {
-    align-items: start;
-    background-color: var(--white);
-    /* view-transition-name: attr(id type(<custom-ident>), none); */
+content-main {
+  background-color: var(--white);
   background-image: paint(grid);
   display: grid;
-  grid-column: main;
-  grid-column: main / sidebar;
   grid-area: main;
   grid-template-columns: 1fr;
   padding: --mobile-to-desktop(1rem, 2rem);
-  height: var(--round-down);
-  border-radius: 80px / 0 50% 50% 0;
-  corner-shape: bevel;
-
-  border-radius: 0 3rem 0 0;
-  corner-shape: notch;
-  width: 100%;
-/* 
-  > * {
-    display: none;
-  } */
 }
 
 content-sidebar {
@@ -67,10 +45,7 @@ content-sidebar {
   background-image: paint(grid);
   display: grid;
   gap: 1rem;
-  grid-column: sidebar;
-  grid-column: sidebar / sidebar;
-  grid-area:: sidebar;
+  grid-area: sidebar;
   grid-template-columns:  1fr;
-  padding: 2rem;
-  width: 100%;
+  padding: --mobile-to-desktop(1rem, 2rem);
 }

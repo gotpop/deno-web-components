@@ -24,18 +24,14 @@
             {% if navigation.previous %}
                 <a class="link-button-jumbo" id="previous" href="/features/{{ navigation.previous.slug }}">
                     <span>{{ navigation.previous.name }}</span>
-                    <span>
-                        {% include "partials/icons/previous.njk" %}
-                    </span>
+<span class="icon" variant="previous"></span>
                 </a>
             {% endif %}
 
             {% if navigation.next %}
                 <a class="link-button-jumbo" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
                     <span>{{ navigation.next.name }}</span>
-                    <span>
-                        {% include "partials/icons/previous.njk" %}
-                    </span>
+<span class="icon" variant="next"></span>
 
                 </a>
             {% endif %}
@@ -47,8 +43,8 @@
 
 {% block page_content %}
 
-    <content-with-sidebar role="banner"  class="feature-content">
-        <content-main id="{{ currentFeature.slug }}">
+    <content-with-sidebar id="{{ currentFeature.slug }}" role="banner"  class="feature-content">
+        <content-main>
 
             {% for item in currentFeature.bodyMarkupData %}
                 {% if item.tag == "h2" %}

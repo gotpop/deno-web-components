@@ -1,10 +1,10 @@
 hero-home {
     background-blend-mode: overlay;
-    background-clip: border-box;
-    background-color: --transparent(var(--white), 0.4);
+    background-clip: padding-box, content-box;
+    background-color: --transparent(var(--white), 0.6) ;
     background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
     background-size: 1rem 1rem;
-    box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.2);
+    box-shadow: inset 0 0 0 3rem --transparent(var(--light-100), 0.4);
     display: grid;
     grid-column: 1 / -1;
     grid-template-columns: 1fr;
@@ -17,4 +17,11 @@ main {
     grid-template-columns: subgrid;
     grid-area: main / content;
     row-gap: 4rem;
+}
+
+
+h1 {
+    background-clip: text;
+color: transparent;
+text-shadow: none;
 }
