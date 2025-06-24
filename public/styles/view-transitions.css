@@ -14,10 +14,10 @@
 html:active-view-transition-type(forwards, backwards) {
   .feature-content {
     view-transition-name: feature-content;
-    /* Performance optimizations for weaker CPUs */
     will-change: transform, opacity;
-    contain: layout style paint;
-    transform: translateZ(0); /* Force hardware acceleration */
+    /* Watch out for JANK */
+    /* contain: layout style paint; */
+    /* transform: translateZ(0);  */
   }
 
   :root {

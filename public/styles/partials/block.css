@@ -40,7 +40,7 @@ content-with-sidebar {
   content-main {
     align-items: start;
     background-color: var(--white);
-    view-transition-name: attr(id type(<custom-ident>), none);
+    /* view-transition-name: attr(id type(<custom-ident>), none); */
   background-image: paint(grid);
   display: grid;
   grid-column: main;
