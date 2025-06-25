@@ -8,23 +8,23 @@
   --transparent: oklch(0 0 0 / 0);
 
   /* Primary color scale (hotpink) */
-  --primary-100: oklch(from var(--base-color) calc(l + .90) c h);
-  --primary-200: oklch(from var(--base-color) calc(l + .80) c h);
-  --primary-300: oklch(from var(--base-color) calc(l + .70) c h);
-  --primary-400: oklch(from var(--base-color) calc(l + .60) c h);
-  --primary-500: oklch(from var(--base-color) calc(l + .50) c h);
-  --primary-600: oklch(from var(--base-color) calc(l + .10) c h);
+  --primary-100: oklch(from var(--base-color) calc(l + .35) c h);
+  --primary-200: oklch(from var(--base-color) calc(l + .30) c h);
+  --primary-300: oklch(from var(--base-color) calc(l + .20) c h);
+  --primary-400: oklch(from var(--base-color) calc(l + .10) c h);
+  --primary-500: oklch(from var(--base-color) calc(l + .00) c h);
+  --primary-600: oklch(from var(--base-color) calc(l - .10) c h);
   --primary-700: oklch(from var(--base-color) calc(l - .20) c h);
   --primary-800: oklch(from var(--base-color) calc(l - .40) c h);
   --primary-900: oklch(from var(--base-color) calc(l - .60) c h);
 
   /* Secondary color scale (blue) */
-  --secondary-100: oklch(from var(--triad-1) calc(l + .90) c h);
-  --secondary-200: oklch(from var(--triad-1) calc(l + .80) c h);
-  --secondary-300: oklch(from var(--triad-1) calc(l + .70) c h);
-  --secondary-400: oklch(from var(--triad-1) calc(l + .60) c h);
-  --secondary-500: oklch(from var(--triad-1) calc(l + .50) c h);
-  --secondary-600: oklch(from var(--triad-1) calc(l + .10) c h);
+  --secondary-100: oklch(from var(--triad-1) calc(l + .35) c h);
+  --secondary-200: oklch(from var(--triad-1) calc(l + .30) c h);
+  --secondary-300: oklch(from var(--triad-1) calc(l + .20) c h);
+  --secondary-400: oklch(from var(--triad-1) calc(l + .10) c h);
+  --secondary-500: oklch(from var(--triad-1) calc(l + .00) c h);
+  --secondary-600: oklch(from var(--triad-1) calc(l - .10) c h);
   --secondary-700: oklch(from var(--triad-1) calc(l - .20) c h);
   --secondary-800: oklch(from var(--triad-1) calc(l - .40) c h);
   --secondary-900: oklch(from var(--triad-1) calc(l - .60) c h);
