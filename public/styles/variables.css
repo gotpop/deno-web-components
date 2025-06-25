@@ -3,6 +3,9 @@
   --base-color: oklch(0.69 0.35 327.92);
   --triad-1: oklch(from var(--base-color) l c calc(h - 120));
   --triad-2: oklch(from var(--base-color) l c calc(h + 120));
+  --base-light: oklch(1 0 0);
+  --base-dark: oklch(0 0 0);
+  --transparent: oklch(0 0 0 / 0);
 
   /* Primary color scale (hotpink) */
   --primary-100: oklch(from var(--base-color) calc(l + .90) c h);
@@ -15,45 +18,34 @@
   --primary-800: oklch(from var(--base-color) calc(l - .40) c h);
   --primary-900: oklch(from var(--base-color) calc(l - .60) c h);
 
-  /* Secondary color scale (aqua) */
-  --secondary-100: oklch(from var(--triad-1) 100% c h);
-  --secondary-200: oklch(from var(--triad-1) 90% c h);
-  --secondary-300: oklch(from var(--triad-1) 80% c h);
-  --secondary-400: oklch(from var(--triad-1) 70% c h);
-  --secondary-500: oklch(from var(--triad-1) 60% c h);
-  --secondary-600: oklch(from var(--triad-1) 50% c h);
-  --secondary-700: oklch(from var(--triad-1) 40% c h);
-  --secondary-800: oklch(from var(--triad-1) 30% c h);
-  --secondary-900: oklch(from var(--triad-1) 20% c h);
+  /* Secondary color scale (blue) */
+  --secondary-100: oklch(from var(--triad-1) calc(l + .90) c h);
+  --secondary-200: oklch(from var(--triad-1) calc(l + .80) c h);
+  --secondary-300: oklch(from var(--triad-1) calc(l + .70) c h);
+  --secondary-400: oklch(from var(--triad-1) calc(l + .60) c h);
+  --secondary-500: oklch(from var(--triad-1) calc(l + .50) c h);
+  --secondary-600: oklch(from var(--triad-1) calc(l + .10) c h);
+  --secondary-700: oklch(from var(--triad-1) calc(l - .20) c h);
+  --secondary-800: oklch(from var(--triad-1) calc(l - .40) c h);
+  --secondary-900: oklch(from var(--triad-1) calc(l - .60) c h);
 
   /* Light scale (white to grey) */
-  --light-100: oklch(1 0 0); /* white */
-  --light-200: oklch(0.95 0.01 0);
-  --light-300: oklch(0.9 0.01 0);
-  --light-400: oklch(0.85 0.01 0);
-  --light-500: oklch(0.8 0.01 0);
-  --light-600: oklch(0.75 0.01 0);
-  --light-700: oklch(0.7 0.01 0);
+  --light-100: var(--base-light); /* white */
+  --light-200: oklch(from var(--base-light) calc(l - .10) c h);
+  --light-300: oklch(from var(--base-light) calc(l - .20) c h);
+  --light-400: oklch(from var(--base-light) calc(l - .30) c h);
+  --light-500: oklch(from var(--base-light) calc(l - .40) c h);
+  --light-600: oklch(from var(--base-light) calc(l - .50) c h);
+  --light-700: oklch(from var(--base-light) calc(l - .60) c h);
 
   /* Dark scale (grey to black) */
-  --dark-100: oklch(0.55 0.01 0);
-  --dark-200: oklch(0.45 0.01 0);
-  --dark-300: oklch(0.35 0.01 0);
-  --dark-400: oklch(0.25 0.01 0);
-  --dark-500: oklch(0.15 0.01 0);
-  --dark-600: oklch(0.1 0.01 0);
-  --dark-700: oklch(0 0 0);
-
-  /* Oklab colours applied */
-  --white: var(--light-100);
-  --black: var(--dark-700);
-  --transparent: oklch(0 0 0 / 0);
-
-  /* Layout */
-  --site-max-width: 1200px;
-  --site-header-height: 6rem;
-  --columns-number: 12;
-  --padding: 1rem; /*  Used in header */
+  --dark-100: var(--base-dark); /* black */
+  --dark-200: oklch(from var(--base-dark) calc(l + .10) c h);
+  --dark-300: oklch(from var(--base-dark) calc(l + .20) c h);
+  --dark-400: oklch(from var(--base-dark) calc(l + .30) c h);
+  --dark-500: oklch(from var(--base-dark) calc(l + .40) c h);
+  --dark-600: oklch(from var(--base-dark) calc(l + .50) c h);
+  --dark-700: oklch(from var(--base-dark) calc(l + .60) c h);
 
   /* Font stack */
   --font-stack-serif: "Times New Roman", Times, serif;
@@ -87,14 +79,13 @@
   --body-colour: var(--colour-light-1);
 
   /* Theming */
-  --accent: var(--color-primary);
-  --colour-bg-site: var(--grey-100);
-  --root-font-size: clamp(12px, 1.5vw, 16px);
+  --accent: var(--primary-100);
+  --colour-bg-site: var(--dark-100);
   --color-scheme: only light;
 
   /* Scrollbar */
   --scrollbar-width: thin;
-  /* --scrollbar-gutter: stable; */
+  --scrollbar-gutter: stable;
   --scrollbar-color: var(--slate-300) var(--slate-700);
 
   /* Spacing */
@@ -105,47 +96,33 @@
   --spacing-xl: calc(var(--spacing-base) * 4);
   --spacing-xxl: calc(var(--spacing-base) * 5);
 
-  /* Tranitions */
-  --transition: background-color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  --transition-color: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-
-  /* Animations */
-  --animation-fadeout: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
-  --animation-fadein: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in;
-  --animation-slide-to-right: 600ms cubic-bezier(0.4, 0, 0.2, 1) both
-    slide-from-right;
-  --animation-slide-to-left: 600ms cubic-bezier(0.4, 0, 0.2, 1) both
-    slide-to-left;
-
-  /* Layout */
-  --grid-column-centre: center;
-  --grid-column-full: full;
-  --grid-column-span: 3 / -3;
-
+  /* Backgrounds */
   --site-background: linear-gradient(
     to bottom right,
-    var(--slate-100),
-    var(--slate-200),
-    var(--slate-300),
-    var(--slate-400),
-    var(--slate-500)
+    var(--light-100),
+    var(--light-200),
+    var(--light-200),
+    var(--light-200),
+    var(--light-300)
   );
 
   --bg-diagonal-1: repeating-linear-gradient(
     45deg,
     transparent,
     transparent 10px,
-    rgba(0, 0, 0, 0.2) 10px,
-    rgba(0, 0, 0, 0.2) 11px
+    var(--light-600) 10px,
+    var(--light-600) 11px
   );
+
   --bg-diagonal-2: repeating-linear-gradient(
     -45deg,
     transparent,
     transparent 10px,
-    rgba(0, 0, 0, 0.2) 10px,
-    rgba(0, 0, 0, 0.2) 11px
+    var(--light-300) 10px,
+    var(--light-300) 11px
   );
 
+  /* Rounding */
   --round-up: calc-size(max-content, round(up, size, 1rem));
   --round-down: calc-size(max-content, round(down, size, 1rem));
 }
