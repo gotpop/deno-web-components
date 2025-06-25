@@ -40,19 +40,17 @@
 
   background-color: var(--background-colour);
   color: var(--colour);
+  display: flex;
   font-size: var(--font-scaled-sm);
-  padding: var(--spacing-base);
+  padding-block: calc(1rem - calc(1cap / 2));
   place-content: center;
   text-align: center;
-  width: clamp(5rem, 6rem, 8rem);
-  padding-block: calc(1rem - calc(1cap / 2));
   text-decoration: none;
-  width: 100%;
-  display: flex;
+  width: clamp(5rem, 6rem, 8rem);
 
   &[data-active] {
     --background-colour: var(--secondary-900);
-    --colour: var(--primary-200);
+    --colour: var(--light-300);
   }
 
   &:hover {

@@ -28,6 +28,7 @@
     transform: translate3d(0, 100%, 0);
   }
 }
+
 @keyframes slide-in-from-right {
   from {
     opacity: 0;

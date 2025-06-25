@@ -7,7 +7,6 @@
 }
 
 :target {
-  /* border-bottom: 1rem solid var(--white); */
   box-sizing: content-box;
 }
 
@@ -31,13 +30,12 @@ html {
   background-image: var(--site-background);
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
-  scrollbar-gutter: stable;
+  scrollbar-gutter: var(--scrollbar-gutter);
   scrollbar-width: thin;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
-  color: var(--body-colour);
   font-family: var(--font-family-base);
   margin: unset;
   overflow: hidden auto;
