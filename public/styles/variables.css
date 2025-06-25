@@ -96,6 +96,9 @@
   --spacing-xl: calc(var(--spacing-base) * 4);
   --spacing-xxl: calc(var(--spacing-base) * 5);
 
+  /* Accessibility */
+  --outline-offset: -0.5em;
+
   /* Backgrounds */
   --site-background: linear-gradient(
     to bottom right,
