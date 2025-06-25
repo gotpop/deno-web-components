@@ -18,7 +18,7 @@ content-with-sidebar {
   
   background-blend-mode: overlay;
   background-clip: border-box;
-  background-color: --opacity(var(--white), 0.4);
+  background-color: --opacity(var(--light-100), 0.4);
   background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
   background-size: 1rem 1rem;
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
@@ -31,7 +31,7 @@ content-with-sidebar {
   
   
 content-main {
-  background-color: var(--white);
+  background-color: var(--light-100);
   background-image: paint(grid);
   display: grid;
   grid-area: main;
@@ -41,7 +41,7 @@ content-main {
 
 content-sidebar {
   align-self: start;
-  background-color: --opacity(var(--white), 1);
+  background-color: --opacity(var(--light-100), 1);
   background-image: paint(grid);
   display: grid;
   gap: 1rem;

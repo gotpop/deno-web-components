@@ -32,7 +32,7 @@
   .button-copy {
     font-size: var(--font-scaled-base);
     font-weight: var(--font-weight-bold);
-    color: var(--white);
+    color: var(--light-100);
     background-color: var(--slate-500);
     border: none;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -54,7 +54,7 @@
     @container style(--code-language: bash) {
       align-items: center;
 
-      color: var(--white);
+      color: var(--light-100);
       display: flex;
       font-palette: --bash;
       gap: var(--spacing-sm);
@@ -67,19 +67,19 @@
 
     @container style(--code-language: html) {
       background-color: var(--slate-700);
-      color: var(--white);
+      color: var(--light-100);
       font-palette: --css;
     }
 
     @container style(--code-language: css) {
       background-color: var(--slate-700);
-      color: var(--white);
+      color: var(--light-100);
       font-palette: --css;
     }
 
     @container style(--code-language: js) {
       background-color: var(--slate-500);
-      color: var(--white);
+      color: var(--light-100);
       font-palette: --javascript;
     }
   }

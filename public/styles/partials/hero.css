@@ -1,7 +1,7 @@
 hero-home {
     background-blend-mode: overlay;
     background-clip: padding-box, content-box;
-    background-color: --opacity(var(--white), 0.6) ;
+    background-color: --opacity(var(--light-100), 0.6) ;
     background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
     background-size: 1rem 1rem;
     box-shadow: inset 0 0 0 3rem --opacity(var(--light-100), 0.4);
