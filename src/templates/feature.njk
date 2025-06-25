@@ -11,41 +11,38 @@
         variant="lg" 
     >{{ currentFeature.title }}</h1>
             <p 
-                    variant="base" 
-                    id="subheading-{{ loop.index }}" 
-                    top="2">
+                variant="base" 
+                id="subheading-{{ loop.index }}" 
+                top="2">
+                {% if currentFeature.icon %}
+                    <span class="icon" variant="{{ currentFeature.icon }}"></span>
+                {% endif %}
+                {{ currentFeature.subtitle | codeBackticks | safe }}
                 {% for desc in currentFeature.description %}
                     {{ desc | codeBackticks | safe }}
                 {% endfor %}
             </p>
         </content-main>
         <content-sidebar>
-
             {% if navigation.previous %}
                 <a class="link-button-jumbo" id="previous" href="/features/{{ navigation.previous.slug }}">
                     <span>{{ navigation.previous.name }}</span>
-<span class="icon" variant="previous"></span>
+                    <span class="icon" variant="previous"></span>
                 </a>
             {% endif %}
-
             {% if navigation.next %}
                 <a class="link-button-jumbo" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
                     <span>{{ navigation.next.name }}</span>
-<span class="icon" variant="next"></span>
-
+                    <span class="icon" variant="next"></span>
                 </a>
             {% endif %}
-
         </content-sidebar>
     </content-with-sidebar>
-
 {% endblock %}
 
 {% block page_content %}
-
     <content-with-sidebar id="{{ currentFeature.slug }}" role="banner"  class="feature-content">
         <content-main>
-
             {% for item in currentFeature.bodyMarkupData %}
                 {% if item.tag == "h2" %}
                     <h2 variant="lg" top="1" bottom="3" id="{{ item.id }}">{{ item.content }}</h2>

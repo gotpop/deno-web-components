@@ -25,25 +25,25 @@
   <section class="wrapper-features">
     <navigation-bar>
       <nav class="group-filters" id="group-filters">
-          <a variant="button" href="/features?order={{ orderQuery }}">
-            <b>All</b>
-          </a>
-          <a variant="button" href="?filter=browser-api&order={{ orderQuery }}">
-            <b>Browser API</b>
-          </a>
-          <a variant="button" href="?filter=css&order={{ orderQuery }}">
-            <b>CSS</b>
-          </a>
-          <a variant="button" href="?filter=cssom&order={{ orderQuery }}">
-            <b>CSSOM</b>
-          </a>
-        </nav>
-        <form class="order" method="GET" action="">
-          <select class="custom-select" id="order" name="order">
-            <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
-            <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
-          </select>
-        </form>
+        <a  class="button-filter" variant="button" href="/features?order={{ orderQuery }}">
+          <b>All</b>
+        </a>
+        <a  class="button-filter" variant="button" href="?filter=browser-api&order={{ orderQuery }}">
+          <b>Browser API</b>
+        </a>
+        <a  class="button-filter" variant="button" href="?filter=css&order={{ orderQuery }}">
+          <b>CSS</b>
+        </a>
+        <a  class="button-filter" variant="button" href="?filter=cssom&order={{ orderQuery }}">
+          <b>CSSOM</b>
+        </a>
+      </nav>
+      <form class="order" method="GET" action="">
+        <select class="custom-select" id="order" name="order">
+          <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
+          <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
+        </select>
+      </form>
     </navigation-bar>
 
     <layout-item start="1" end="-1" row="1" id="features-list">
