@@ -42,9 +42,9 @@ nav {
 }
 
 surface-item {
-  --dark-scheme: --transparent(var(--secondary-400), var(--opacity));
+  --dark-scheme: --opacity(var(--secondary-400), var(--opacity));
   --end: attr(end type(<integer> | <custom-ident>), -1);
-  --light-scheme: --transparent(var(--light-100), var(--opacity));
+  --light-scheme: --opacity(var(--light-100), var(--opacity));
   --opacity: attr(opacity type(<number>), 0.4);
   --start: attr(start type(<integer> | <custom-ident>), 1);
 

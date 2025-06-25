@@ -20,7 +20,7 @@
 
 a:not([class]) {
   --dark-scheme: var(--secondary-600);
-  --light-scheme: --transparent(var(--light-100), 0.4);
+  --light-scheme: --opacity(var(--light-100), 0.4);
   --variant: attr(variant type(<custom-ident>), link);
 
   background-color: --get-type(var(--variant));

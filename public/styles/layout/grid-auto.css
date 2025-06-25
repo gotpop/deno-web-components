@@ -20,11 +20,11 @@ grid-auto {
   grid-template-columns: repeat(auto-fit, minmax(var(--min-content), 1fr));
   grid-row: attr(row type(<integer> | <custom-ident>), auto);
 
-  column-rule: 4rem solid --transparent(var(--primary-500), 0.02);
+  column-rule: 4rem solid --opacity(var(--primary-500), 0.02);
   row-rule-outset: 0rem;
   row-rule-break: intersection;
   row-rule: 4rem solid;
-  row-rule-color: --transparent(var(--primary-500), 0.02);
+  row-rule-color: --opacity(var(--primary-500), 0.02);
 }
 
 grid-auto-fill {

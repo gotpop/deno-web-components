@@ -18,7 +18,7 @@ input {
     var(--color) var(--w)
   );
 
-  background-color: --transparent(var(--light-100), 0.5);
+  background-color: --opacity(var(--light-100), 0.5);
   border-image: var(--grad) 16;
   border-right-width: 1rem;
   color: var(--dark-500);

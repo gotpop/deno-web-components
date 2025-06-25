@@ -1,4 +1,4 @@
-@function --transparent(--color <color>, --opacity <number>) returns <color> {
+@function --opacity(--color <color>, --opacity <number>) returns <color> {
   result: oklch(from var(--color) l c h / var(--opacity));
 }
 

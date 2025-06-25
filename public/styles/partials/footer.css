@@ -1,14 +1,14 @@
 footer {
-  background-color: --transparent(var(--secondary-900), 0.8);
-  color: var(--colour-light-1);
+  background-color: --opacity(var(--secondary-900), 0.8);
+  color: var(--light-300);
   display: grid;
   gap: 4rem 0;
   grid-column: 1 / -1;
   grid-row: footer;
   grid-template-columns: 1fr;
   min-height: 20rem;
-  view-transition-name: attr(id type(<custom-ident>), none);
   padding: var(--spacing-xl);
+  view-transition-name: attr(id type(<custom-ident>), none);
 
   grid-auto-fill {
     @media (width < 1024px) {

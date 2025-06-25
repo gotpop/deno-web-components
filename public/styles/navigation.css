@@ -19,7 +19,7 @@
 
   align-items: end;
   background-color: var(--background-color);
-  color: --transparent(var(--light-100), 0.6);
+  color: --opacity(var(--light-100), 0.6);
   display: flex;
   justify-content: center;
   transition: background-color 0.4s ease-in-out;

@@ -5,7 +5,7 @@
   --triad-2: oklch(from var(--base-color) l c calc(h + 120));
   --base-light: oklch(1 0 0);
   --base-dark: oklch(0 0 0);
-  --transparent: oklch(0 0 0 / 0);
+  --opacity: oklch(0 0 0 / 0);
 
   /* Primary color scale (hotpink) */
   --primary-100: oklch(from var(--base-color) calc(l + .35) c h);
