@@ -1,5 +1,6 @@
 header {
   background-color: var(--secondary-700);
+  background-image: paint(grid);
   container-type: scroll-state;
   display: grid;
   grid-column: full;
