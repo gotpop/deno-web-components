@@ -1,125 +1,30 @@
 :where(html) {
-  /* --base-colour: deeppink;
-
-  --colour-1: var(--base-colour);
-  --colour-2: oklch(from var(--base-colour) calc(l - 0.1) c calc(h - 10));
-  --colour-3: oklch(from var(--base-colour) calc(l - 0.2) c calc(h - 20));
-  --colour-4: oklch(from var(--base-colour) calc(l - 0.3) c calc(h - 30));
-  --colour-5: oklch(from var(--base-colour) calc(l - 0.4) c calc(h - 40));
-
-  --colour-light-1: --lighten(var(--colour-5), 6);
-  --colour-light-2: --lighten(var(--colour-5), 5);
-  --colour-light-3: --lighten(var(--colour-5), 4);
-  --colour-light-4: --lighten(var(--colour-5), 3);
-  --colour-light-5: --lighten(var(--colour-5), 2);
-
-  --colour-dark-1: oklch(from var(--colour-5) calc(l * 0.05) c h);
-  --colour-dark-2: oklch(from var(--colour-5) calc(l * 0.05) c h);
-  --colour-dark-3: oklch(from var(--colour-5) calc(l * 0.05) c h);
-  --colour-dark-4: oklch(from var(--colour-5) calc(l * 0.05) c h);
-  --colour-dark-5: oklch(from var(--colour-5) calc(l * 1.5) c h); */
-
-  /* --colour-primary: var(--colour-1); */
-
-  /* --site-background: linear-gradient(
-    to bottom right,
-    var(--colour-1),
-    var(--colour-2),
-    var(--colour-3),
-    var(--colour-4),
-    var(--colour-5)
-  ); */
-
-  /* Primary */
-  --success-base: oklch(0.75 0.3 148.61);
-  --success-100: oklch(from var(--success-base) 100% 5% h);
-  --success-200: oklch(from var(--success-base) 90% 5% h);
-  --success-300: oklch(from var(--success-base) 80% 5% h);
-  --success-400: oklch(from var(--success-base) 70% 5% h);
-  --success-500: oklch(from var(--success-base) 60% 5% h);
-  --success-600: oklch(from var(--success-base) 50% 5% h);
-  --success-700: oklch(from var(--success-base) 40% 5% h);
-  --success-800: oklch(from var(--success-base) 30% 5% h);
-  --success-900: oklch(from var(--success-base) 20% 5% h);
-  --success-1000: oklch(from var(--success-base) 10% 5% h);
-
-  /* Warning */
-  --warning-base: oklch(0.8 0.19 99.45);
-  --warning-100: oklch(from var(--warning-base) 100% 5% h);
-  --warning-200: oklch(from var(--warning-base) 90% 5% h);
-  --warning-300: oklch(from var(--warning-base) 80% 5% h);
-  --warning-400: oklch(from var(--warning-base) 70% 5% h);
-  --warning-500: oklch(from var(--warning-base) 60% 5% h);
-  --warning-600: oklch(from var(--warning-base) 50% 5% h);
-  --warning-700: oklch(from var(--warning-base) 40% 5% h);
-  --warning-800: oklch(from var(--warning-base) 30% 5% h);
-  --warning-900: oklch(from var(--warning-base) 20% 5% h);
-  --warning-1000: oklch(from var(--warning-base) 10% 5% h);
-
-  /* Error */
-  --error-base: oklch(0.58 0.26 16.73);
-  --error-100: oklch(from var(--error-base) 100% 5% h);
-  --error-200: oklch(from var(--error-base) 90% 5% h);
-  --error-300: oklch(from var(--error-base) 80% 5% h);
-  --error-400: oklch(from var(--error-base) 70% 5% h);
-  --error-500: oklch(from var(--error-base) 60% 5% h);
-  --error-600: oklch(from var(--error-base) 50% 5% h);
-  --error-700: oklch(from var(--error-base) 40% 5% h);
-  --error-800: oklch(from var(--error-base) 30% 5% h);
-  --error-900: oklch(from var(--error-base) 20% 5% h);
-  --error-1000: oklch(from var(--error-base) 10% 5% h);
-
-  /* Grey */
-  --grey-base: oklch(1 0 0);
-  --grey-100: oklch(from var(--grey-base) 95% c h);
-  --grey-200: oklch(from var(--grey-base) 90% c h);
-  --grey-300: oklch(from var(--grey-base) 85% c h);
-  --grey-400: oklch(from var(--grey-base) 80% c h);
-  --grey-500: oklch(from var(--grey-base) 75% c h);
-  --grey-600: oklch(from var(--grey-base) 70% c h);
-  --grey-700: oklch(from var(--grey-base) 65% c h);
-  --grey-800: oklch(from var(--grey-base) 60% c h);
-  --grey-900: oklch(from var(--grey-base) 55% c h);
-  --grey-1000: oklch(from var(--grey-base) 50% c h);
-
-  /* Slate */
-  --slate-base: oklch(0.48 0.24 261.35);
-  --slate-100: oklch(from var(--slate-base) 100% 5% h);
-  --slate-200: oklch(from var(--slate-base) 90% 5% h);
-  --slate-300: oklch(from var(--slate-base) 80% 5% h);
-  --slate-400: oklch(from var(--slate-base) 70% 5% h);
-  --slate-500: oklch(from var(--slate-base) 60% 5% h);
-  --slate-600: oklch(from var(--slate-base) 50% 5% h);
-  --slate-700: oklch(from var(--slate-base) 40% 5% h);
-  --slate-800: oklch(from var(--slate-base) 30% 5% h);
-  --slate-900: oklch(from var(--slate-base) 20% 5% h);
-  --slate-1000: oklch(from var(--slate-base) 10% 5% h);
-
   /* Base colors */
-  --color-primary: oklch(0.72 0.32 360); /* hotpink */
-  --color-secondary: oklch(0.9 0.2 195); /* aqua */
+  --base-color: oklch(0.69 0.35 327.92);
+  --triad-1: oklch(from var(--base-color) l c calc(h - 120));
+  --triad-2: oklch(from var(--base-color) l c calc(h + 120));
 
   /* Primary color scale (hotpink) */
-  --primary-100: oklch(from var(--color-primary) 100% c h);
-  --primary-200: oklch(from var(--color-primary) 90% c h);
-  --primary-300: oklch(from var(--color-primary) 80% c h);
-  --primary-400: oklch(from var(--color-primary) 70% c h);
-  --primary-500: oklch(from var(--color-primary) 60% c h);
-  --primary-600: oklch(from var(--color-primary) 50% c h);
-  --primary-700: oklch(from var(--color-primary) 40% c h);
-  --primary-800: oklch(from var(--color-primary) 30% c h);
-  --primary-900: oklch(from var(--color-primary) 20% c h);
+  --primary-100: oklch(from var(--base-color) calc(l + .90) c h);
+  --primary-200: oklch(from var(--base-color) calc(l + .80) c h);
+  --primary-300: oklch(from var(--base-color) calc(l + .70) c h);
+  --primary-400: oklch(from var(--base-color) calc(l + .60) c h);
+  --primary-500: oklch(from var(--base-color) calc(l + .50) c h);
+  --primary-600: oklch(from var(--base-color) calc(l + .10) c h);
+  --primary-700: oklch(from var(--base-color) calc(l - .20) c h);
+  --primary-800: oklch(from var(--base-color) calc(l - .40) c h);
+  --primary-900: oklch(from var(--base-color) calc(l - .60) c h);
 
   /* Secondary color scale (aqua) */
-  --secondary-100: oklch(from var(--color-secondary) 100% c h);
-  --secondary-200: oklch(from var(--color-secondary) 90% c h);
-  --secondary-300: oklch(from var(--color-secondary) 80% c h);
-  --secondary-400: oklch(from var(--color-secondary) 70% c h);
-  --secondary-500: oklch(from var(--color-secondary) 60% c h);
-  --secondary-600: oklch(from var(--color-secondary) 50% c h);
-  --secondary-700: oklch(from var(--color-secondary) 40% c h);
-  --secondary-800: oklch(from var(--color-secondary) 30% c h);
-  --secondary-900: oklch(from var(--color-secondary) 20% c h);
+  --secondary-100: oklch(from var(--triad-1) 100% c h);
+  --secondary-200: oklch(from var(--triad-1) 90% c h);
+  --secondary-300: oklch(from var(--triad-1) 80% c h);
+  --secondary-400: oklch(from var(--triad-1) 70% c h);
+  --secondary-500: oklch(from var(--triad-1) 60% c h);
+  --secondary-600: oklch(from var(--triad-1) 50% c h);
+  --secondary-700: oklch(from var(--triad-1) 40% c h);
+  --secondary-800: oklch(from var(--triad-1) 30% c h);
+  --secondary-900: oklch(from var(--triad-1) 20% c h);
 
   /* Light scale (white to grey) */
   --light-100: oklch(1 0 0); /* white */
