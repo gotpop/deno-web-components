@@ -1,8 +1,8 @@
 @scope {
   & {
     --font-palette: --kung-fury;
-    --font-color: var(--slate-100);
-    --background-code: var(--slate-400);
+    --font-color: var(--light-100);
+    --background-code: var(--dark-400);
     --code-language: html;
 
     display: grid;
@@ -66,19 +66,19 @@
     }
 
     @container style(--code-language: html) {
-      background-color: var(--slate-700);
+      background-color: var(--light-700);
       color: var(--light-100);
       font-palette: --css;
     }
 
     @container style(--code-language: css) {
-      background-color: var(--slate-700);
+      background-color: var(--light-700);
       color: var(--light-100);
       font-palette: --css;
     }
 
     @container style(--code-language: js) {
-      background-color: var(--slate-500);
+      background-color: var(--light-500);
       color: var(--light-100);
       font-palette: --javascript;
     }
