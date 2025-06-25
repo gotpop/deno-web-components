@@ -53,7 +53,7 @@
 
   /* Fonts main */
   --font-family-base: "Inter", var(--font-stack-sans-serif);
-  --font-family-heading: var(--font-family-base), var(--font-stack-serif);
+  --font-family-heading: var(--font-family-base);
   --font-familiy-code: "Monaspace", monospace;
 
   /* Font scale */
