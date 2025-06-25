@@ -1,6 +1,6 @@
 .link-logo {
   --opacity: 0.8;
-  --background-colour: var(--secondary-300);
+  --background-colour: var(--secondary-800);
 
   background-color: var(--background-colour);
   display: inline flex;

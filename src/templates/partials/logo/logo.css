@@ -15,10 +15,10 @@
   }
 
   .text {
-    color: var(--light-600);
+    color: var(--light-200);
     font-family: var(--font-family-heading);
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     letter-spacing: 0.1rem;
     text-align: center;
     text-transform: uppercase;
@@ -37,7 +37,6 @@
     position: relative;
     height: var(--main-circle-size);
     width: var(--main-circle-size);
-    /* margin: 2rem; */
   }
 
   .circle-main {
@@ -53,17 +52,16 @@
   .circle-small {
     --hue: calc(sibling-index() * 50);
     --angle: calc((sibling-index() - 1) * 60deg);
+    --orbit-y: calc(var(--orbit-radius) * sin(var(--angle)));
+    --orbit-x: calc(var(--orbit-radius) * cos(var(--angle)));
+    --center-offset: calc(50% - var(--small-circle-radius));
 
-    position: absolute;
-    width: var(--small-circle-size);
-    height: var(--small-circle-size);
-    border-radius: 50%;
-    transform-origin: center;
     background-color: --opacity(oklch(70% 70% var(--hue)), 0.5);
-    top: calc(
-      50% - var(--small-circle-radius) - var(--orbit-radius) * sin(var(--angle))
-    );
-    left: calc(
-      50% - var(--small-circle-radius) + var(--orbit-radius) * cos(var(--angle))
-    );
+    border-radius: 50%;
+    height: var(--small-circle-size);
+    left: calc(var(--center-offset) + var(--orbit-x));
+    position: absolute;
+    top: calc(var(--center-offset) - var(--orbit-y));
+    transform-origin: center;
+    width: var(--small-circle-size);
 }
