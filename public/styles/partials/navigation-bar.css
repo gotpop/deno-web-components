@@ -4,7 +4,6 @@ navigation-bar {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: --opacity(var(--light-100), 0.6);
 }
 
 .group-filters {
