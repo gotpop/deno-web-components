@@ -63,7 +63,7 @@ header-nav-item {
 .button-toggle-menu {
   align-items: center;
   anchor-name: --buttonToggle;
-  background-color: var(--secondary-800);
+  background-color: var(--secondary-700);
   border: none;
   color: var(--light-100);
   cursor: pointer;
@@ -71,5 +71,7 @@ header-nav-item {
   font-size: var(--font-scaled-lg);
   grid-column: button-toggle;
   justify-content: center;
-  padding: var(--spacing-base) var(--spacing-md);
+  padding-block: var(--spacing-base);
+  padding-inline: var(--spacing-md) calc(var(--spacing-md) + var(--scrollbar-width));
 }
+

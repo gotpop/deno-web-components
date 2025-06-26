@@ -40,3 +40,7 @@
 @import "./partials/block.css";
 
 @import "./links/button-jumbo.css";
+
+
+/* Icons */
+@import "./icons/hamburger.css";
