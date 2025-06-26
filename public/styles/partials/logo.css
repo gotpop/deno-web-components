@@ -3,11 +3,12 @@
   --background-colour: var(--secondary-800);
 
   background-color: var(--background-colour);
-  display: inline flex;
+  display: flex;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
   max-height: 4rem;
-  width: calc-size(max-content, round(up, size, 1rem));
+  padding: 0.5rem;
+  width: stretch;
 
   @container scroll-state(stuck: top) {
     --opacity: 1;
@@ -15,9 +16,5 @@
 
   &:hover {
     --background-colour: var(--secondary-600);
-  }
-
-  .logo {
-    padding: var(--spacing-base);
   }
 }
