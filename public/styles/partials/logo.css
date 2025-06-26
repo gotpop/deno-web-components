@@ -1,5 +1,4 @@
 .link-logo {
-  --opacity: 0.8;
   --background-colour: var(--secondary-800);
 
   background-color: var(--background-colour);
@@ -15,6 +14,6 @@
   }
 
   &:hover {
-    --background-colour: var(--secondary-600);
+    --background-colour: var(--secondary-900);
   }
 }

@@ -36,7 +36,6 @@ content-main {
   display: grid;
   grid-area: main;
   grid-template-columns: 1fr;
-  height: var(--round-up);
   padding: --mobile-to-desktop(1rem, 2rem);
 }
 
