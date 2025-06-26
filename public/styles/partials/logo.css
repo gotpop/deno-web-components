@@ -6,7 +6,6 @@
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
   max-height: 4rem;
-  padding: 0.5rem;
   width: stretch;
 
   @container scroll-state(stuck: top) {

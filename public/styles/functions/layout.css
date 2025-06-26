@@ -41,6 +41,15 @@
     result: var(--desktop);
   }
 }
+
+/* @function --wider-than(--mobile, --desktop) {
+  result: var(--mobile);
+
+  @media screen and (width >= 1024px) {
+    result: var(--desktop);
+  }
+} */
+
 @function --mobile-tablet-up(--mobile, --tablet) {
   result: var(--mobile);
 

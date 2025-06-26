@@ -1,52 +1,52 @@
 @scope {
   & {
-    --main-circle-size: 3rem;
+    container: logo / inline-size;
+    margin: unset;
+    padding: var(--spacing-sm);
+    user-select: none;
+    width: stretch;
+  }
+
+  .outer {
+    --main-circle-color: --opacity(var(--secondary-400), 0.2);
+    --small-circle-color: var(--triad-2);
+    --main-circle-size: 2rem;
     --main-circle-radius: calc(var(--main-circle-size) / 2);
     --small-circle-size: calc(var(--main-circle-size) / 2);
     --small-circle-radius: calc(var(--small-circle-size) / 2);
     --orbit-radius: calc(
       var(--main-circle-radius) - var(--small-circle-radius)
     );
-    --main-circle-color:   --opacity(var(--color-secondary), 0.5);;
-    --small-circle-color: orange;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .text {
-    color: var(--light-200);
-    font-family: var(--font-family-heading);
-    font-size: 1rem;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0.1rem;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .outer {
+    
     align-items: center;
     display: flex;
-    gap: 1rem;
-    height: 100%;
+    gap: calc(var(--spacing-base) * .8);
+    height: stretch;
     justify-content: center;
-    width: 100%;
+    width: stretch;
+
+    @container (width >= 9rem) {
+      --main-circle-size: 3rem;
+    }
   }
 
   .circles {
     position: relative;
-    height: var(--main-circle-size);
+    aspect-ratio: 1;
     width: var(--main-circle-size);
+  }
+  
+  .circle {
+    aspect-ratio: 1;
+    clip-path: circle(50%);
+    position: absolute;
+    transform-origin: center;
+    width: var(--main-circle-size);
+    inset: 0;
   }
 
   .circle-main {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     background-color: var(--main-circle-color);
-    border-radius: 50%;
-    top: 0;
-    left: 0;
   }
 
   .circle-small {
@@ -56,12 +56,24 @@
     --orbit-x: calc(var(--orbit-radius) * cos(var(--angle)));
     --center-offset: calc(50% - var(--small-circle-radius));
 
-    background-color: --opacity(oklch(70% 70% var(--hue)), 0.5);
-    border-radius: 50%;
-    height: var(--small-circle-size);
+    background-color: --opacity(oklch(100% 100% var(--hue)), 0.5);
     left: calc(var(--center-offset) + var(--orbit-x));
-    position: absolute;
     top: calc(var(--center-offset) - var(--orbit-y));
-    transform-origin: center;
     width: var(--small-circle-size);
+  }
+
+  .logo-text {
+    --font-size: var(--font-scaled-sm);
+
+    color: var(--triad-2);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    
+    @container (width >= 9rem) {
+      --font-size: calc(var(--font-scaled-base) * .9);
+    }
+  }
 }
