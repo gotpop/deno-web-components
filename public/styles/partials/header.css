@@ -61,11 +61,14 @@ header-nav-item {
 
 
 .button-toggle-menu {
+  --background-color: var(--secondary-500);
+  --button-toggle-color: var(--light-100);
+
   align-items: center;
   anchor-name: --buttonToggle;
-  background-color: var(--secondary-700);
+  background-color: var(--background-color);
   border: none;
-  color: var(--light-100);
+  color: var(--button-toggle-color);
   cursor: pointer;
   display: --mobile-to-desktop(flex, none);
   font-size: var(--font-scaled-lg);
@@ -73,5 +76,11 @@ header-nav-item {
   justify-content: center;
   padding-block: var(--spacing-base);
   padding-inline: var(--spacing-md) calc(var(--spacing-md) + var(--scrollbar-width));
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    --background-color: var(--secondary-600);
+    --button-toggle-color: var(--secondary-300);
+  }
 }
 
