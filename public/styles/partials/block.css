@@ -26,6 +26,8 @@ content-with-sidebar {
   grid-column: --mobile-to-desktop(1 / -1, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
+  height: var(--round-down);
+  overflow: clip;
   view-transition-name: attr(id type(<custom-ident>), none);
 }
   
