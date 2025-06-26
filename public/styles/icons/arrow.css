@@ -1,0 +1,7 @@
+.icon {
+  background-color: var(--light-400);
+  clip-path: shape(from 0% 0%, line to 0% 100%, line to 100% 50%, close);
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+}

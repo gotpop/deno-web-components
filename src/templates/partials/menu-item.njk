@@ -20,7 +20,7 @@
   >
     {% if item.isExternal %}
       <span hidden>{{ item.name }}</span>
-      {% include "partials/icons/github-inverse.njk" %}
+      <icon-github-inversed aria-hidden="true"></icon-github-inversed>
     {% else %}
       <span>{{ item.name }}</span>
 
