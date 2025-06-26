@@ -39,7 +39,7 @@ export const cssPropertiesValuesApiFeature: Feature = {
     {
       tag: "p",
       content:
-        "In this example, we register a custom property named '--my-color'. We define its syntax as a color, set its initial value to 'black', and specify that it does not inherit.",
+        "In this example, we register a custom property named `--my-color`. We define its syntax as a color, set its initial value to 'black', and specify that it does not inherit.",
     },
     {
       tag: "p",
@@ -61,7 +61,7 @@ export const cssPropertiesValuesApiFeature: Feature = {
     {
       tag: "p",
       content:
-        "Because '--my-color' is registered with a defined syntax (e.g., '<color>'), the browser understands how to interpolate it, allowing for smooth transitions and animations.",
+        "Because `--my-color` is registered with a defined syntax (e.g., '<color>'), the browser understands how to interpolate it, allowing for smooth transitions and animations.",
     },
   ],
   links: [

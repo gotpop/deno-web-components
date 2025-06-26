@@ -16,16 +16,7 @@ export const cssMixinsFeature: Feature = {
     {
       tag: "p",
       content:
-        "The `@apply` rule was a proposal for CSS that allowed authors to share a set of CSS declarations between rules, similar to mixins in CSS preprocessors like Sass. While `@apply` itself is not currently on the standards track for browsers, the concept of mixins is often achieved using CSS Custom Properties.",
-    },
-    {
-      tag: "p",
-      content:
-        "Here's how the `@apply` rule was envisioned, and how a similar effect can be achieved with custom properties:",
-    },
-    {
-      tag: "h3",
-      content: "Original @apply Proposal (Not Standard)",
+        "The @apply rule was a proposal for CSS that allowed authors to share a set of CSS declarations between rules, similar to mixins in CSS preprocessors like Sass. While @apply itself is not currently on the standards track for browsers, the concept of mixins is often achieved using CSS Custom Properties.",
     },
     {
       tag: "codeblock",
@@ -50,18 +41,13 @@ export const cssMixinsFeature: Feature = {
 }`,
     },
     {
-      tag: "p",
-      content:
-        "In this hypothetical example, `--my-theme-styles` defines a block of styles that are then applied to `.button` and `.panel`.",
-    },
-    {
       tag: "h3",
-      content: "Achieving a Similar Effect with Custom Properties (Standard)",
+      content: "Achieving a Similar Effect with Custom Properties",
     },
     {
       tag: "p",
       content:
-        "While not a direct replacement for the block-based `@apply`, you can use custom properties to create reusable style snippets, though it's more verbose for multiple properties:",
+        "While not a direct replacement for the block-based @apply, you can use custom properties to create reusable style snippets, though it's more verbose for multiple properties:",
     },
     {
       tag: "codeblock",

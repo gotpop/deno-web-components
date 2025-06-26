@@ -19,19 +19,6 @@ export const cssValues5Feature: Feature = {
         "CSS Values and Units Level 5 continues to expand the range of values and units available to CSS authors, allowing for more sophisticated and responsive designs. While specific features can vary as the specification evolves, it generally includes enhancements to mathematical functions and new ways to define lengths and other values.",
     },
     {
-      tag: "p",
-      content: "Key areas of development often include:",
-    },
-    {
-      tag: "ul",
-      items: [
-        "<strong>Trigonometric functions:</strong> `sin()`, `cos()`, `tan()`, `asin()`, `acos()`, `atan()`, and `atan2()` for use within `calc()`.",
-        "<strong>Step-value functions:</strong> Such as `round()`, `mod()`, and `rem()` for more control over calculated values.",
-        "<strong>New viewport units:</strong> Potentially units that account for dynamic browser UI elements (e.g., dynamic viewports).",
-        "<strong>Extended color functions:</strong> Further enhancements to color manipulation in CSS.",
-      ],
-    },
-    {
       tag: "h3",
       content: "Example: Trigonometric Functions",
     },
@@ -58,11 +45,6 @@ export const cssValues5Feature: Feature = {
     {
       tag: "h3",
       content: "Example: Step-Value Functions",
-    },
-    {
-      tag: "p",
-      content:
-        "The `round()` function can be used to snap values to a certain stepping interval.",
     },
     {
       tag: "codeblock",

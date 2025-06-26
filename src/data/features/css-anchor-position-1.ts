@@ -58,16 +58,6 @@ export const cssAnchorPositionFeature: Feature = {
   }
 </style>`,
     },
-    {
-      tag: "p",
-      content:
-        'In this example, the `button` with `id="myAnchorButton"` is designated as an anchor using the `anchor-name: --my-anchor;` CSS property. The `div` with class `tooltip` then uses `anchor(--my-anchor left)` and `anchor(--my-anchor bottom)` to position itself relative to this anchor.',
-    },
-    {
-      tag: "p",
-      content:
-        "The `anchor()` function can take various arguments to specify which edge or point of the anchor element to use, and you can combine it with `calc()` for more complex positioning. This feature greatly simplifies the creation of UIs that require elements to be dynamically positioned relative to others.",
-    },
   ],
   links: [
     {

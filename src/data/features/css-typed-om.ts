@@ -19,11 +19,6 @@ export const cssTypedOmFeature: Feature = {
         "The CSS Typed Object Model (OM) exposes CSS values as typed JavaScript objects rather than simple strings. This allows for more robust and performant manipulation of CSS properties directly from JavaScript.",
     },
     {
-      tag: "p",
-      content:
-        "Traditionally, when you get a CSS value via `element.style.width` or `getComputedStyle(element).width`, you get a string like '100px'. With Typed OM, you get a `CSSUnitValue` object.",
-    },
-    {
       tag: "codeblock",
       language: "javascript",
       code: `const element = document.getElementById('myElement');
@@ -55,28 +50,6 @@ if (element.attributeStyleMap) {
 } else {
   console.log('CSS Typed OM not supported in this browser.');
 }`,
-    },
-    {
-      tag: "p",
-      content:
-        "In this example, `element.attributeStyleMap` provides access to inline styles as typed objects. `CSS.number()`, `CSS.px()`, `CSS.percent()`, etc., are factory functions to create these typed values.",
-    },
-    {
-      tag: "p",
-      content: "Benefits of Typed OM include:",
-    },
-    {
-      tag: "ul",
-      items: [
-        "<strong>Performance:</strong> Reduces string parsing overhead as values are already numbers.",
-        "<strong>Correctness:</strong> Less error-prone as you work with specific units and types.",
-        "<strong>Arithmetic:</strong> `CSSNumericValue` objects support arithmetic operations (e.g., `CSS.px(10).add(CSS.percent(50))`).",
-      ],
-    },
-    {
-      tag: "p",
-      content:
-        "The Typed OM is a powerful addition for developers who need to manipulate CSS values dynamically and efficiently in JavaScript.",
     },
   ],
   links: [
