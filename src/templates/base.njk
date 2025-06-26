@@ -36,7 +36,7 @@
             <span hidden>Toggle navigation</span>
           </button>
         </header-logo>
-        <div
+        <nav
           id="main-menu-popover"
           aria-label="Primary navigation"  
           aria-orientation="horizontal"
@@ -45,7 +45,7 @@
           {% for item in navigationData.menuItems %}
             {% include "partials/menu-item.njk" %}
           {% endfor %}
-        </div>
+        </nav>
       </header>
 
       <main

@@ -1,17 +1,6 @@
-/* Navigation styles */
-.menu-bar {
+header-nav-item {
   display: flex;
-  gap: var(--spacing-base);
-}
-
-.menu-item {
-  display: flex;
-  height: var(--spacing-lg);
-}
-
-.menu-item-social {
-  margin-inline: auto 0;
-  width: 4rem;
+  width: var(--round-up);
 }
 
 .menu-item-link-social {

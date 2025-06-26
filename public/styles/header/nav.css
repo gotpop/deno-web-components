@@ -1,0 +1,30 @@
+.header-nav {
+  display: --mobile-to-desktop(none, flex);
+  flex-direction: --mobile-to-desktop(column, row);
+  gap: var(--spacing-base);
+  grid-auto-flow: column;
+  grid-column: 5 / -2;
+  grid-row: 2;
+  justify-content: end;
+
+  &[popover] {
+    border: 0;
+    display: none;
+    gap: 2rem;
+    inset: anchor(bottom) anchor(right) auto auto;
+    margin: 0;
+    padding: 3rem;
+    position-anchor: --buttonToggle;
+    position: fixed;
+
+    &::backdrop {
+      background-color: var(--dark-500);
+      opacity: 0.8;
+    }
+
+    &:popover-open {
+      background-color: var(--secondary-500);
+      display: flex;
+    }
+  }
+}

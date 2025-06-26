@@ -1,0 +1,6 @@
+header-logo {
+  display: grid;
+  grid-column: --mobile-to-desktop(1 / -1, 2 / 3);
+  grid-row: 1 / -1;
+  grid-template-columns: --mobile-to-desktop([logo] 1fr [button-toggle] 6rem, 1fr);
+}

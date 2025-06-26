@@ -24,11 +24,9 @@
 @import "./reset.css";
 @import "./feature-detect-dialog.css";
 @import "./links.css";
-@import "./navigation.css";
 
 /* Partials */
 @import "./partials/logo.css";
-@import "./partials/header.css";
 @import "./partials/footer.css";
 @import "./partials/hero.css";
 @import "./partials/social.css";
@@ -46,4 +44,8 @@
 @import "./icons/hamburger.css";
 
 /* Header menu */
-@import "./header/menu-toggle.css";
+@import "./header/header.css";
+@import "./header/header-logo.css";
+@import "./header/nav-items.css";
+@import "./header/nav-toggle.css";
+@import "./header/nav.css";
