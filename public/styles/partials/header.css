@@ -20,7 +20,6 @@ header-logo {
   grid-template-columns: [logo] 1fr [button-toggle] 5rem;
   grid-column: --mobile-to-desktop(1 / -1, 2 / 3);
   grid-row: 1 / -1;
-  background-color: yellow;
 }
 
 .header-nav {

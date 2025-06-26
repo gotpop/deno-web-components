@@ -47,6 +47,8 @@
   text-align: center;
   text-decoration: none;
   width: clamp(5rem, 6rem, 8rem);
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &[data-active] {
     --background-colour: var(--secondary-900);
