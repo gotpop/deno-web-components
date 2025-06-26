@@ -1,6 +1,6 @@
 content-with-sidebar {
-  --grid-horizontal-color: rgba(201, 201, 201, 0.986);
-  --grid-vertical-color: rgb(231, 231, 231);
+  --grid-horizontal-color: var(--light-200);
+  --grid-vertical-color: var(--light-200);
 
   --xs: 'main' 'sidebar';
   --sm: 'main main main main' 'sidebar sidebar sidebar sidebar';
