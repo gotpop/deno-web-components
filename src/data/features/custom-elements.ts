@@ -5,7 +5,7 @@ export const customElementsFeature: Feature = {
   blurb:
     "Custom Elements allow authors to define their own HTML tags, encapsulating structure and behavior for reusable web components.",
   description: [
-    "Custom Elements are a key part of the Web Components standard that allow developers to define their own HTML tags with custom templates, styles, and behaviors. This promotes reusability and modularity in web development.",
+    "Custom Elements are a key part of the Web Components standard that allow developers to define their own HTML tags with custom templates, styles, and behaviors.",
   ],
   bodyMarkupData: [
     {

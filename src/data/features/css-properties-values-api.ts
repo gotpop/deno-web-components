@@ -5,7 +5,7 @@ export const cssPropertiesValuesApiFeature: Feature = {
   blurb:
     "The CSS Properties and Values API allows developers to register custom CSS properties, defining their syntax, initial value, and inheritance behavior.",
   description: [
-    "The CSS Properties and Values API is part of the CSS Houdini umbrella of APIs. It allows developers to explicitly define their CSS custom properties, including specifying a type (syntax), an initial value, and whether the property inherits.",
+    "The CSS Properties and Values API is part of the CSS Houdini umbrella of APIs.",
   ],
   bodyMarkupData: [
     {
