@@ -1,13 +1,18 @@
 @scope {
   & {
+    align-items: center;
     container: logo / inline-size;
+    display: flex;
+    gap: calc(var(--spacing-base) * .8);
+    height: stretch;
+    justify-content: center;
     margin: unset;
     padding: var(--spacing-sm);
     user-select: none;
     width: stretch;
   }
 
-  .outer {
+  .circles {
     --main-circle-color: --opacity(var(--secondary-400), 0.2);
     --small-circle-color: var(--triad-2);
     --main-circle-size: 2rem;
@@ -17,48 +22,31 @@
     --orbit-radius: calc(
       var(--main-circle-radius) - var(--small-circle-radius)
     );
-    
-    align-items: center;
-    display: flex;
-    gap: calc(var(--spacing-base) * .8);
-    height: stretch;
-    justify-content: center;
-    width: stretch;
+
+    position: relative;
+    aspect-ratio: 1;
+    width: var(--main-circle-size);
 
     @container (width >= 9rem) {
       --main-circle-size: 3rem;
     }
   }
-
-  .circles {
-    position: relative;
-    aspect-ratio: 1;
-    width: var(--main-circle-size);
-  }
   
   .circle {
-    aspect-ratio: 1;
-    clip-path: circle(50%);
-    position: absolute;
-    transform-origin: center;
-    width: var(--main-circle-size);
-    inset: 0;
-  }
-
-  .circle-main {
-    background-color: var(--main-circle-color);
-  }
-
-  .circle-small {
     --hue: calc(sibling-index() * 50);
     --angle: calc((sibling-index() - 1) * 60deg);
     --orbit-y: calc(var(--orbit-radius) * sin(var(--angle)));
     --orbit-x: calc(var(--orbit-radius) * cos(var(--angle)));
     --center-offset: calc(50% - var(--small-circle-radius));
 
+    aspect-ratio: 1;
     background-color: --opacity(oklch(100% 100% var(--hue)), 0.5);
+    clip-path: circle(50%);
+    inset: 0;
     left: calc(var(--center-offset) + var(--orbit-x));
+    position: absolute;
     top: calc(var(--center-offset) - var(--orbit-y));
+    transform-origin: center;
     width: var(--small-circle-size);
   }
 
