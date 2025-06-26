@@ -1,7 +1,7 @@
 .button-toggle-menu {
   --background-color: var(--secondary-500);
   --button-toggle-color: var(--light-100);
-  --padding-right: calc(var(--spacing-md) + var(--scrollbar-width))
+  --padding-right: calc(var(--spacing-md) + var(--scrollbar-width));
 
   align-items: center;
   anchor-name: --buttonToggle;
