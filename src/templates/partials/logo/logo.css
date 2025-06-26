@@ -4,7 +4,6 @@
     container: logo / inline-size;
     display: flex;
     gap: calc(var(--spacing-base) * .8);
-    height: stretch;
     justify-content: center;
     margin: unset;
     padding: var(--spacing-sm);
