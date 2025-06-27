@@ -26,14 +26,14 @@
         <content-sidebar>
             {% if navigation.previous %}
                 <a class="link-button-jumbo" id="previous" href="/features/{{ navigation.previous.slug }}">
-                    <span>{{ navigation.previous.name }}</span>
-                    <icon-arrow></icon-arrow>
+                    {{ navigation.previous.name }}
+                    <icon-css></icon-css>
                 </a>
             {% endif %}
             {% if navigation.next %}
                 <a class="link-button-jumbo" id="next" variant="button" href="/features/{{ navigation.next.slug }}">
-                    <span>{{ navigation.next.name }}</span>
-                    <icon-arrow></icon-arrow>
+                    {{ navigation.next.name }}
+                    <icon-css></icon-css>
                 </a>
             {% endif %}
         </content-sidebar>

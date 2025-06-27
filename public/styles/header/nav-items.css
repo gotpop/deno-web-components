@@ -3,26 +3,6 @@ header-nav-item {
   width: var(--round-up);
 }
 
-.menu-item-link-social {
-  --background-color: var(--secondary-900);
-
-  align-items: end;
-  background-color: var(--background-color);
-  color: --opacity(var(--light-100), 0.6);
-  display: flex;
-  justify-content: center;
-  transition: background-color 0.4s ease-in-out;
-  width: 3rem;
-
-  svg {
-    width: 27px;
-  }
-
-  &:hover {
-    --background-color: var(--secondary-900);
-  }
-}
-
 .menu-item-link {
   --background-colour: var(--secondary-800);
   --colour: var(--light-100);
@@ -47,5 +27,12 @@ header-nav-item {
   &:hover {
     --background-color: var(--secondary-900);
     --color: var(--light-100);
+  }
+
+  &[data-variant="compact"] {
+    align-items: end;
+    justify-content: center;
+    width: 3rem;
+    padding: 0;
   }
 }

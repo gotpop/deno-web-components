@@ -2,7 +2,7 @@ header-logo {
   --layout-sm: [logo] 1fr [button-toggle] 6rem;
 
   display: grid;
-  grid-column: --xs-lg-up(1 / -1, logo);
-  grid-row: full-height;
+  grid-column: --xs-lg-up(header-logo, logo);
+  grid-row: --xs-lg-up(header-logo, full-height);
   grid-template-columns: --xs-lg-up(var(--layout-sm), 1fr);
 }
