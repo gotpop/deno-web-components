@@ -5,20 +5,9 @@ app-shell {
 
   background-color: var(--site-background);
   background-image: paint(grid);
+  column-gap: --xs-sm-md-lg-xl-up(1rem, 1rem, 1rem, 3rem, 3rem);
   display: grid;
   grid-template-columns: --grid-auto(var(--repeat), var(--column-width));
-  column-gap: --xs-sm-md-lg-xl-up(1rem, 1rem, 1rem, 3rem, 3rem);
   grid-template-rows: --grid-row-base(5rem, 10rem);
   min-height: 100dvh;
-
-  header {
-    grid-column: full-start / full-end;
-    grid-row: header;
-
-    @media (width < 1024px) {
-      grid-column: 1 / -1;
-      grid-row: 1;
-      position: static;
-    }
-  }
 }
