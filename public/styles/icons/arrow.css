@@ -95,8 +95,6 @@ icon-css {
 
   &::after {
     background-color: currentColor;
-    width: calc(2rem - 10px);
-    height: calc(2rem - 10px);
     clip-path: var(--triangle);
     grid-column: icon-start / icon-end;
     grid-row: icon-start / icon-end;
