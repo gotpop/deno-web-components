@@ -1,6 +1,6 @@
 .header-nav {
-  display: --mobile-to-desktop(none, flex);
-  flex-direction: --mobile-to-desktop(column, row);
+  display: --xs-lg-up(none, flex);
+  flex-direction: --xs-lg-up(column, row);
   gap: var(--spacing-base);
   grid-auto-flow: column;
   grid-column: nav;

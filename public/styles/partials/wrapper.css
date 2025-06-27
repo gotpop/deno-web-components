@@ -1,19 +1,21 @@
-
 .wrapper-index-section {
-  --xs: 'header' 'card-1' 'card-2' 'card-3';
-  --sm: 'header header . .' 'card-1 card-1 card-1 card-1' 'card-2 card-2 card-2 card-2' 'card-3 card-3 card-3 card-3';
-  --md: 'header header . . .' 'card-1 card-1 card-2 card-2 card-2' 'card-3 card-3 card-3 card-3 card-3';
-  --lg: 'header header . . . .' 'card-1 card-1 card-1 card-2 card-2 card-2' 'card-3 card-3 card-3 card-3 card-3 card-3';
-  --xl: 'header . . . . .'  'card-1 card-1 card-2 card-2 card-3 card-3';
+  --xs: "header" "card-1" "card-2" "card-3";
+  --sm: "header header . ." "card-1 card-1 card-1 card-1"
+    "card-2 card-2 card-2 card-2" "card-3 card-3 card-3 card-3";
+  --md: "header header . . ." "card-1 card-1 card-2 card-2 card-2"
+    "card-3 card-3 card-3 card-3 card-3";
+  --lg: "header header . . . ." "card-1 card-1 card-1 card-2 card-2 card-2"
+    "card-3 card-3 card-3 card-3 card-3 card-3";
+  --xl: "header . . . . ." "card-1 card-1 card-2 card-2 card-3 card-3";
 
-  --areas: --rwd(
+  --areas: --xs-sm-md-lg-xl-up(
     var(--xs),
     var(--sm),
     var(--md),
     var(--lg),
     var(--xl)
   );
-  
+
   background-blend-mode: overlay;
   background-clip: border-box;
   background-color: --opacity(var(--light-100), 0.4);

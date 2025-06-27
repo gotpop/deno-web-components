@@ -1,20 +1,19 @@
 header {
+  --layout-row-lg: [full-height-start] 0rem min-content 0rem [full-height-end];
+  --layout-lg: subgrid [] [logo-start] [logo-end nav-start] [] [] [] []
+    [nav-end] [];
+
   background-color: var(--secondary-700);
   background-image: paint(grid);
   display: grid;
   grid-area: header / full;
-  grid-template-columns: --mobile-to-desktop(
-    1fr,
-    subgrid [] [logo-start] [logo-end] [nav-start] [] [] [] [nav-end] []
-  );
-  grid-template-rows: --mobile-to-desktop(
-    1fr,
-    [full-height-start] 0rem min-content 0rem [full-height-end]
-  );
-  row-gap: 1rem;
-  height: --mobile-to-desktop(var(--round-up), auto);
+  grid-template-columns: --xs-lg-up(1fr, var(--layout-lg));
+  grid-template-rows: --xs-lg-up(1fr, var(--layout-row-lg));
+  height: --xs-lg-up(var(--round-up), auto);
   position: sticky;
+  row-gap: --xs-lg-up(0, var(--spacing-base));
   top: 0;
   view-transition-name: header;
   z-index: 1;
+  /* column-gap: var(--spacing-base); */
 }
