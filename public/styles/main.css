@@ -1,18 +1,27 @@
 @import "./properties.css";
-@import "./variables.css";
-@import "./functions.css";
-@import "./mixins.css";
-@import "./fonts.css";
 
 /* Functions */
 @import "./functions/typographic.css";
 @import "./functions/layout.css";
 @import "./functions/media-queries.css";
 @import "./functions/tetriminoes.css";
+@import "./functions.css";
 
+/* Variables */
+@import "./variables.css";
+@import "./mixins.css";
+@import "./fonts.css";
+
+/* Fonts */
 @import "./global.css";
 @import "./typography.css";
 
+/* Reset */
+@import "./reset.css";
+@import "./keyframes.css";
+@import "./view-transitions.css";
+
+/* Layout */
 @import "./layout/layout-properties.css";
 @import "./layout/grid-auto.css";
 @import "./layout/layout.css";
@@ -20,28 +29,9 @@
 @import "./layout/app-shell.css";
 @import "./layout/layout-item.css";
 
+/* Forms */
 @import "./form/input.css";
 @import "./form/form.css";
-
-@import "./keyframes.css";
-@import "./view-transitions.css";
-@import "./reset.css";
-@import "./feature-detect-dialog.css";
-@import "./links.css";
-
-/* Partials */
-@import "./partials/logo.css";
-@import "./partials/footer.css";
-@import "./partials/hero.css";
-@import "./partials/social.css";
-@import "./partials/wrapper.css";
-@import "./partials/page.css";
-@import "./partials/navigation-bar.css";
-@import "./partials/form-contact.css";
-@import "./partials/features.css";
-@import "./partials/block.css";
-
-@import "./links/button-jumbo.css";
 
 /* Icons */
 @import "./icons/hamburger.css";
@@ -50,9 +40,26 @@
 @import "./icons/github.css";
 @import "./icons/linkedin.css";
 
+/* Elements */
+@import "./links.css";
+@import "./links/button-jumbo.css";
+
+/* Partials */
+@import "./feature-detect-dialog.css";
+@import "./partials/block.css";
+@import "./partials/features.css";
+@import "./partials/footer.css";
+@import "./partials/form-contact.css";
+@import "./partials/hero.css";
+@import "./partials/logo.css";
+@import "./partials/navigation-bar.css";
+@import "./partials/page.css";
+@import "./partials/social.css";
+@import "./partials/wrapper.css";
+
 /* Header menu */
-@import "./header/header.css";
 @import "./header/header-logo.css";
+@import "./header/header.css";
 @import "./header/nav-items.css";
 @import "./header/nav-toggle.css";
 @import "./header/nav.css";
