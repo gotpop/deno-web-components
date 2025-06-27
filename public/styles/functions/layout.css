@@ -3,25 +3,8 @@
     var(--gap-two) [footer] min-content;
 }
 
-@function --grid(--columns-number <integer>) {
-  result: [full-start] auto [center-start]
-    repeat(
-      var(--columns-number),
-      [gutter-start] var(--gutter-columns) var(--gutter-columns) [gutter-end
-        content-start] clamp(2rem, round(5.5vw, 2rem), 6rem) [content-end]
-    )
-    [gutter-start] var(--gutter-columns) var(--gutter-columns) [center-end
-    gutter-end] auto [full-end];
-}
-
 @function --grid-auto(--repeat, --col-width) {
   result: [full-start] minmax(0, 1fr) [content-start]
     repeat(var(--repeat), var(--col-width)) [content-end] minmax(0, 1fr)
     [full-end];
-}
-
-@function --grid-mobile() {
-  result: auto
-    calc(round(80vw, 2rem) + if(style(--scrollbar-width: 0px): 12px; else: 0px))
-    auto;
 }
