@@ -3,7 +3,7 @@
   flex-direction: --mobile-to-desktop(column, row);
   gap: var(--spacing-base);
   grid-auto-flow: column;
-  grid-column: 5 / -2;
+  grid-column: nav;
   grid-row: 2;
   justify-content: end;
 

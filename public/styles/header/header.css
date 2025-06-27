@@ -1,20 +1,20 @@
 header {
   background-color: var(--secondary-700);
   background-image: paint(grid);
-  container-type: scroll-state;
   display: grid;
-  grid-column: full;
-  grid-row: header;
-  grid-template-columns: --mobile-to-desktop(1fr, subgrid);
-  grid-template-rows: --mobile-to-desktop(1fr, 1rem min-content 1rem);
+  grid-area: header / full;
+  grid-template-columns: --mobile-to-desktop(
+    1fr,
+    subgrid [] [logo-start] [logo-end] [nav-start] [] [] [] [nav-end] []
+  );
+  grid-template-rows: --mobile-to-desktop(
+    1fr,
+    [full-height-start] 0rem min-content 0rem [full-height-end]
+  );
+  row-gap: 1rem;
   height: --mobile-to-desktop(var(--round-up), auto);
-  min-width: 100vw;
   position: sticky;
   top: 0;
-  view-transition-name: auto;
+  view-transition-name: header;
   z-index: 1;
 }
-
-
-
-
