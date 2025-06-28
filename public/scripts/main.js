@@ -10,26 +10,22 @@ import { initViewTransitions } from "./view-transitions/init.js"
 
 initWorklets()
 initWebComponents()
+setScrollbarWidth()
+initializeOrderSelect(viewTransitionManager)
+initPerformanceAwarePreloading()
+initMobilePopover()
 
 new FeatureDetect(document.getElementById("feature-detect-popover")).init()
 const viewTransitionManager = initViewTransitions()
 
-if (window.location.hostname === "localhost") {
+const isLocalhost = import.meta.env?.DEV || window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+
+if (isLocalhost) {
   initLiveReload()
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setScrollbarWidth()
-  initializeOrderSelect(viewTransitionManager)
-  initPerformanceAwarePreloading()
-  initMobilePopover()
-})
-
-// Re-initialize after custom navigation event
 document.addEventListener("app:navigationend", function () {
-  console.log(
-    "[main.js] app:navigationend event received. Re-initializing order select.",
-  )
   initializeOrderSelect(viewTransitionManager)
   initMobilePopover()
 })
+ 
