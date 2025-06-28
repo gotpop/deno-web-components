@@ -1,6 +1,3 @@
-/**
- * Calculate and set scrollbar width CSS custom property
- */
 export function setScrollbarWidth() {
   const scrollbarWidth = window.innerWidth -
     document.documentElement.clientWidth

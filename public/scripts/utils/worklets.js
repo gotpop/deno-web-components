@@ -1,8 +1,5 @@
-/**
- * Initialize CSS Paint Worklets
- */
 export async function initWorklets() {
-  const worklets = ["grid", "tetris", "tetris-grid"].map(
+  const worklets = ["grid"].map(
     (name) => `/scripts/worklets/worklet.${name}.js`,
   )
 
