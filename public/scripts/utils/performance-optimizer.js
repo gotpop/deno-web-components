@@ -213,11 +213,28 @@ export class PerformanceOptimizer {
   preloadNextPage(url) {
     if (this.deviceCapabilities.isLowEnd) return // Skip preloading on weak devices
 
+    // Check if already preloaded to avoid duplicates
+    const existingPreload = document.querySelector(`link[rel="preload"][href="${url}"]`)
+    if (existingPreload) return
+
     const link = document.createElement("link")
     link.rel = "preload"
     link.href = url
     link.as = "fetch"
     link.crossOrigin = "anonymous"
+    
+    // Remove preload after a short delay to avoid browser warnings
+    const timeoutId = setTimeout(() => {
+      if (link.parentNode) {
+        link.parentNode.removeChild(link)
+      }
+    }, 3000) // Remove after 3 seconds if not used
+    
+    // Clean up timeout if page is actually navigated to
+    link.addEventListener('load', () => {
+      clearTimeout(timeoutId)
+    })
+    
     document.head.appendChild(link)
   }
 }

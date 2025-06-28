@@ -1,6 +1,6 @@
-import { determineTransitionType } from "./transition-type.js"
 import { performanceOptimizer } from "../utils/performance-optimizer.js"
 import { waitForStylesheets } from "./stylesheet-loader.js"
+import { determineTransitionType } from "./transition-type.js"
 
 export function initNavigationHandler() {
   if (!window.navigation) {
@@ -58,6 +58,12 @@ export function initNavigationHandler() {
             pageElement && !performanceOptimizer.deviceCapabilities.isLowEnd
           ) {
             pageElement.classList.add("gpu-accelerated")
+          }
+
+          // Remove speculation rules script from new document to prevent re-insertion warning
+          const speculationScript = newDoc.querySelector('script[type="speculationrules"]')
+          if (speculationScript) {
+            speculationScript.remove()
           }
 
           document.documentElement.replaceChildren(

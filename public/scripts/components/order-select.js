@@ -29,7 +29,6 @@ export function initializeOrderSelect(viewTransitionManager) {
     orderSelect.addEventListener("change", function () {
       handleOrderChange(this, viewTransitionManager)
     })
-  } else {
-    console.log("[order-select] Order select element not found on this page.")
   }
+  // Removed console.log for missing element as this is expected on some pages
 }
