@@ -1,9 +1,8 @@
 import { FeatureDetect } from "./feature-detect.js"
-import { initLiveReload } from "./live-reload.js"
 import { initMobilePopover } from "./init-mobile-popover.js"
-import { initViewTransitions } from "./view-transitions/init.js"
-import { initWebComponents } from "./define-web-components.js"
+import { initLiveReload } from "./live-reload.js"
 import { performanceOptimizer } from "./utils/performance-optimizer.js"
+import { initViewTransitions } from "./view-transitions/init.js"
 
 const worklets = ["grid", "tetris", "tetris-grid"].map(
   (name) => `/scripts/worklets/worklet.${name}.js`,
@@ -20,8 +19,6 @@ worklets.forEach(async (worklet) => {
     console.error(`Failed to load worklet ${worklet}:`, error)
   }
 })
-
-initWebComponents()
 
 new FeatureDetect(document.getElementById("feature-detect-popover")).init()
 
@@ -86,15 +83,19 @@ function initPerformanceAwarePreloading() {
   })
 }
 
-// Initial setup
-document.addEventListener("DOMContentLoaded", () => {
+// Calculate and set scrollbar width CSS custom property
+function setScrollbarWidth() {
   const scrollbarWidth = window.innerWidth -
     document.documentElement.clientWidth
   document.documentElement.style.setProperty(
     "--scrollbar-width",
     `${scrollbarWidth}px`,
   )
+}
 
+// Initial setup
+document.addEventListener("DOMContentLoaded", () => {
+  setScrollbarWidth()
   initializeOrderSelect()
   initPerformanceAwarePreloading()
   initMobilePopover()
