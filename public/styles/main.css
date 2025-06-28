@@ -1,25 +1,28 @@
-@import "./properties.css";
+/* Variables */
+@import "./variables/properties.css";
+@import "./variables/variables.css";
 
 /* Functions */
 @import "./functions/typographic.css";
 @import "./functions/layout.css";
 @import "./functions/media-queries.css";
 @import "./functions/tetriminoes.css";
-@import "./functions.css";
+@import "./functions/functions.css";
 
-/* Variables */
-@import "./variables.css";
-@import "./mixins.css";
-@import "./fonts.css";
+/*  Typography */
+@import "./typography/fonts.css";
+@import "./typography/typography.css";
 
-/* Fonts */
-@import "./global.css";
-@import "./typography.css";
+/* Mixins */
+@import "./mixins/mixins.css";
 
-/* Reset */
-@import "./reset.css";
-@import "./keyframes.css";
-@import "./view-transitions.css";
+/* Base */
+@import "./base/global.css";
+@import "./base/reset.css";
+
+/* Animations */
+@import "./animations/keyframes.css";
+@import "./animations/view-transitions.css";
 
 /* Layout */
 @import "./layout/layout-properties.css";
@@ -30,8 +33,8 @@
 @import "./layout/layout-item.css";
 
 /* Forms */
-@import "./form/input.css";
-@import "./form/form.css";
+@import "./forms/input.css";
+@import "./forms/form.css";
 
 /* Icons */
 @import "./icons/hamburger.css";
@@ -41,11 +44,18 @@
 @import "./icons/linkedin.css";
 
 /* Elements */
-@import "./links.css";
+@import "./links/links.css";
 @import "./links/button-jumbo.css";
 
+/* Components */
+@import "./components/feature-detect-dialog.css";
+@import "./components/header/header-logo.css";
+@import "./components/header/header.css";
+@import "./components/header/nav-items.css";
+@import "./components/header/nav-toggle.css";
+@import "./components/header/nav.css";
+
 /* Partials */
-@import "./feature-detect-dialog.css";
 @import "./partials/block.css";
 @import "./partials/features.css";
 @import "./partials/footer.css";
@@ -57,9 +67,3 @@
 @import "./partials/social.css";
 @import "./partials/wrapper.css";
 
-/* Header menu */
-@import "./header/header-logo.css";
-@import "./header/header.css";
-@import "./header/nav-items.css";
-@import "./header/nav-toggle.css";
-@import "./header/nav.css";
