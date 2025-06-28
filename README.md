@@ -4,8 +4,6 @@ With so many exciting new web platform features being adopted this site aims to 
 
 ## Web Platform Features Used
 
-<details>
-<summary>View Features</summary>
 | Feature | Type | Description | Implementation |
 |---------|------|-------------|----------------|
 | **CSS Anchor Positioning** | CSS | Position elements relative to other elements using `anchor()` | Used in nav popovers with `anchor-name` and `position-anchor` |
@@ -26,7 +24,6 @@ With so many exciting new web platform features being adopted this site aims to 
 | **Performance Observer** | JS | Monitor web performance metrics | Adaptive animations based on device capabilities |
 | **CSS Paint Worklets** | JS | Background generation in separate thread | Grid and pattern generation |
 | **Speculation Rules** | HTML | Prefetch and prerender hints | Performance optimization for navigation |
-</details>
 
 ## Project Structure
 
