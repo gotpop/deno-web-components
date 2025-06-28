@@ -148,6 +148,9 @@ export class PerformanceOptimizer {
   }
 
   logCapabilities() {
+    // Only log if debug mode is enabled
+    if (!globalThis.DEBUG_PERFORMANCE && !window.DEBUG_PERFORMANCE) return
+    
     console.group("🚀 Performance Optimizer")
     console.log("Device Capabilities:", this.deviceCapabilities)
     console.log("Optimizations Applied:", {
@@ -170,18 +173,23 @@ export class PerformanceOptimizer {
           entry.name.includes("view-transition") ||
           entry.entryType === "navigation"
         ) {
-          console.log(
-            `Performance: ${entry.name} took ${entry.duration.toFixed(2)}ms`,
-          )
+          // Only log if debug mode is enabled
+          if (globalThis.DEBUG_PERFORMANCE || window.DEBUG_PERFORMANCE) {
+            console.log(
+              `Performance: ${entry.name} took ${entry.duration.toFixed(2)}ms`,
+            )
+          }
 
           // Auto-adjust if performance is poor
           if (
             entry.duration > 100 &&
             this.deviceCapabilities.performanceLevel !== "low"
           ) {
-            console.warn(
-              "Poor animation performance detected, reducing complexity",
-            )
+            if (globalThis.DEBUG_PERFORMANCE || window.DEBUG_PERFORMANCE) {
+              console.warn(
+                "Poor animation performance detected, reducing complexity",
+              )
+            }
             this.reduceAnimationComplexity()
           }
         }
