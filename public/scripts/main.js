@@ -22,7 +22,7 @@ if (isLocalhost) {
   initLiveReload()
 }
 
-document.addEventListener("app:navigationend", function () {
+document.addEventListener("app:navigationend", function() {
   initializeOrderSelect(viewTransitionManager)
   initMobilePopover()
 })
