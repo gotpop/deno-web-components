@@ -1,4 +1,3 @@
-
 export const log = {
     success: (message) => console.log('%c' + message, 'color: #00ff00; font-weight: bold;'),
     error: (message) => console.log('%c' + message, 'color: #ff0000; font-weight: bold;'),
