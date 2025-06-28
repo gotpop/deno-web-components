@@ -1,6 +1,6 @@
 import { testCssFeatures } from "./utils/test-css-features.js"
 
-export class FeatureDetect {
+class FeatureDetect {
   constructor(dialog) {
     if (!dialog) {
       throw new Error("Dialog element is required")
@@ -68,3 +68,7 @@ export class FeatureDetect {
     console.groupEnd("CSS Feature Support")
   }
 }
+
+
+
+export const featureDetect = (id) => new FeatureDetect(document.getElementById(id)).init()
