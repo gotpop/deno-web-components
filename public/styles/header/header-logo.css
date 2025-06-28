@@ -1,6 +1,8 @@
 header-logo {
+  --layout-sm: [logo] 1fr [button-toggle] 6rem;
+
   display: grid;
-  grid-column: --mobile-to-desktop(1 / -1, 2 / 3);
-  grid-row: 1 / -1;
-  grid-template-columns: --mobile-to-desktop([logo] 1fr [button-toggle] 6rem, 1fr);
+  grid-column: --xs-lg-up(header-logo, logo);
+  grid-row: --xs-lg-up(header-logo, full-height);
+  grid-template-columns: --xs-lg-up(var(--layout-sm), 1fr);
 }

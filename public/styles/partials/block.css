@@ -2,20 +2,20 @@ content-with-sidebar {
   --grid-horizontal-color: var(--light-200);
   --grid-vertical-color: var(--light-200);
 
-  --xs: 'main' 'sidebar';
-  --sm: 'main main main main' 'sidebar sidebar sidebar sidebar';
-  --md: 'main main sidebar sidebar';
-  --lg: 'main main main main sidebar sidebar';
-  --xl: 'main main main main sidebar sidebar';
+  --xs: "main" "sidebar";
+  --sm: "main main main main" "sidebar sidebar sidebar sidebar";
+  --md: "main main sidebar sidebar";
+  --lg: "main main main main sidebar sidebar";
+  --xl: "main main main main sidebar sidebar";
 
-  --areas: --rwd(
+  --areas: --xs-sm-md-lg-xl-up(
     var(--xs),
     var(--sm),
     var(--md),
     var(--lg),
     var(--xl)
   );
-  
+
   background-blend-mode: overlay;
   background-clip: border-box;
   background-color: --opacity(var(--light-100), 0.4);
@@ -23,22 +23,21 @@ content-with-sidebar {
   background-size: 1rem 1rem;
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
   display: grid;
-  grid-column: --mobile-to-desktop(1 / -1, content);
+  grid-column: --xs-lg-up(1 / -1, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
   height: var(--round-down);
   overflow: clip;
   view-transition-name: attr(id type(<custom-ident>), none);
 }
-  
-  
+
 content-main {
   background-color: var(--light-100);
   background-image: paint(grid);
   display: grid;
   grid-area: main;
   grid-template-columns: 1fr;
-  padding: --mobile-to-desktop(1rem, 2rem);
+  padding: --xs-lg-up(1rem, 2rem);
 }
 
 content-sidebar {
@@ -48,6 +47,6 @@ content-sidebar {
   display: grid;
   gap: 1rem;
   grid-area: sidebar;
-  grid-template-columns:  1fr;
-  padding: --mobile-to-desktop(1rem, 2rem);
+  grid-template-columns: 1fr;
+  padding: --xs-lg-up(1rem, 2rem);
 }

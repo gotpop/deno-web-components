@@ -2,56 +2,56 @@
 {% import "partials/feature-card.njk" as featureComponents %}
 
 {% block hero %}
-  <content-with-sidebar role="banner">
-    <content-main>
-      <h1 variant="lg" top="1" bottom="2" id="heading-primary">Features</h1>
-      <p variant="md" id="subheading" top="2">A collection of the latest in CSS and Web Components. Try filtering or ordering to see the view transitions in action.</p>
-    </content-main>
+    <content-with-sidebar role="banner">
+        <content-main>
+            <h1 variant="lg" top="1" bottom="2" id="heading-primary">Features</h1>
+            <p variant="base" id="subheading" top="2">A collection of the latest in CSS and Web Components. Try filtering or ordering to see the view transitions in action.</p>
+        </content-main>
 
-    <content-sidebar>
-      <a class="link-button-jumbo" id="previous" href="/features/css-anchor-position-1">
-        <span>CSS Anchor positioning</span>
-        <span class="icon" variant="previous"></span>
-      </a>
-      <a class="link-button-jumbo" id="next" variant="button" href="/features/popover-api">
-        <span>HTML Popover API</span>
-        <span class="icon" variant="next"></span>
-      </a>
-    </content-sidebar>
-  </content-with-sidebar>
+        <content-sidebar>
+            <a class="link-button-jumbo" id="previous" href="/features/css-anchor-position-1">
+                <span>CSS Anchor positioning</span>
+                <icon-css></icon-css>
+            </a>
+            <a class="link-button-jumbo" id="next" variant="button" href="/features/popover-api">
+                <span>HTML Popover API</span>
+                <icon-css></icon-css>
+            </a>
+        </content-sidebar>
+    </content-with-sidebar>
 {% endblock %}
 
 {% block page_content %}
-  <section class="wrapper-features">
-    <navigation-bar>
-      <nav class="group-filters" id="group-filters">
-        <a  class="button-filter" variant="button" href="/features?order={{ orderQuery }}">
-          <b>All</b>
-        </a>
-        <a  class="button-filter" variant="button" href="?filter=browser-api&order={{ orderQuery }}">
-          <b>Browser API</b>
-        </a>
-        <a  class="button-filter" variant="button" href="?filter=css&order={{ orderQuery }}">
-          <b>CSS</b>
-        </a>
-        <a  class="button-filter" variant="button" href="?filter=cssom&order={{ orderQuery }}">
-          <b>CSSOM</b>
-        </a>
-      </nav>
-      <form class="order" method="GET" action="">
-        <select class="custom-select" id="order" name="order">
-          <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
-          <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
-        </select>
-      </form>
-    </navigation-bar>
+    <section class="wrapper-features">
+        <navigation-bar>
+            <nav class="group-filters" id="group-filters">
+                <a  class="button-filter" variant="button" href="/features?order={{ orderQuery }}">
+                    <b>All</b>
+                </a>
+                <a  class="button-filter" variant="button" href="?filter=browser-api&order={{ orderQuery }}">
+                    <b>Browser API</b>
+                </a>
+                <a  class="button-filter" variant="button" href="?filter=css&order={{ orderQuery }}">
+                    <b>CSS</b>
+                </a>
+                <a  class="button-filter" variant="button" href="?filter=cssom&order={{ orderQuery }}">
+                    <b>CSSOM</b>
+                </a>
+            </nav>
+            <form class="order" method="GET" action="">
+                <select class="custom-select" id="order" name="order">
+                    <option value="asc"{% if orderQuery == "asc" or not orderQuery %} selected{% endif %}>Ascending</option>
+                    <option value="desc"{% if orderQuery == "desc" %} selected{% endif %}>Descending</option>
+                </select>
+            </form>
+        </navigation-bar>
 
-    <layout-item start="1" end="-1" row="1" id="features-list">
-      <grid-auto gap="1">
-        {% for feature in features %}
-          {{ featureComponents.featureCard(feature) }}
-        {% endfor %}
-      </grid-auto>
-    </layout-item>
-  </section>
+        <layout-item start="1" end="-1" row="1" id="features-list">
+            <grid-auto gap="1">
+                {% for feature in features %}
+                    {{ featureComponents.featureCard(feature) }}
+                {% endfor %}
+            </grid-auto>
+        </layout-item>
+    </section>
 {% endblock %}

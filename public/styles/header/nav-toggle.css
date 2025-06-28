@@ -9,7 +9,7 @@
   border: none;
   color: var(--button-toggle-color);
   cursor: pointer;
-  display: --mobile-to-desktop(flex, none);
+  display: --xs-lg-up(flex, none);
   font-size: var(--font-scaled-lg);
   grid-column: button-toggle;
   justify-content: center;

@@ -74,7 +74,7 @@ p:not([class]) {
 
 :where(p, li) > code {
   background-color: --opacity(var(--light-200), 0.5);
-  color: var(--dark-700);
+  color: var(--triad-2);
   font-family: var(--font-family-base);
   font-weight: 500;
   padding: calc(var(--spacing-base) - 1cap) 0.4em;

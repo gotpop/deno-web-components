@@ -1,19 +1,16 @@
 <header-nav-item 
-    aria-label="{{ item.name }}"
-      {% if item.isExternal %}
-    justify="center"
-
-  {% endif %}
-    span="{{ '2' if item.isExternal else '3' }}"
-    variant="column" 
+    {% if item.isExternal %}
+      width="narrow" 
+    {% endif %}
   >
   <a 
+  class="menu-item-link"
   role="menuitem" 
-  class="{{ 'menu-item-link-social' if item.isExternal else 'menu-item-link' }}"
+  data-variant="{{ 'compact' if item.isExternal else 'normal' }}"
   href="{{ item.href }}"
+  aria-label="{{ item.name }}"
   {{ item.key | isActive(currentPage) }}
   {% if item.isExternal %}
-    aria-label="{{ item.name }}"
     target="_blank"
     rel="noopener"
   {% endif %}

@@ -1,28 +1,32 @@
 .link-button-jumbo {
-    --brand-colour: var(--triad-2);
-    --brand-colour-alt: --darken(var(--brand-colour), 1.1);
-    --bg: var(--brand-colour);
+  --brand-colour: var(--secondary-200);
+  --brand-colour-alt: --darken(var(--brand-colour), 1.1);
+  --bg: var(--brand-colour);
 
-    align-items: center;
-    background-color: var(--bg);
-    color: var(--light-100);
-    display: flex;
-    font-weight: var(--font-weight-bold);
-    gap: var(--spacing-base);
-    justify-content: space-between;
-    padding: var(--spacing-base) ;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  align-items: center;
+  background-color: var(--bg);
+  color: var(--light-100);
+  display: grid;
+  grid-template-columns: auto 2rem;
+  font-weight: var(--font-weight-bold);
+  gap: var(--spacing-md);
+  justify-content: space-between;
+  padding: var(--spacing-base);
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  text-wrap: balance;
+  line-height: 1.5;
+  letter-spacing: 0.015em;
 
-    &[data-brand="github"] {
-        --brand-colour: #333;
-    }
-  
-    &[data-brand="linkedin"] {
-        --brand-colour: #1da1f2;
-    }
+  &[data-brand="github"] {
+    --brand-colour: #333;
+  }
 
-    &:hover {
-      --bg: var(--brand-colour-alt);
-    }
+  &[data-brand="linkedin"] {
+    --brand-colour: #1da1f2;
+  }
+
+  &:hover {
+    --bg: var(--brand-colour-alt);
+  }
 }

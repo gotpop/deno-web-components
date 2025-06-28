@@ -1,7 +1,32 @@
-.icon {
-  background-color: var(--light-400);
-  clip-path: shape(from 0% 0%, line to 0% 100%, line to 100% 50%, close);
-  display: flex;
-  height: 2rem;
-  width: 2rem;
+icon-css {
+  --width: 2rem;
+  --padding: 0.5em;
+  --icon-size: calc(var(--width) - (var(--padding) * 2));
+  --border-radius: 0px;
+  --corner-shape: notch;
+  --areas: [full-start] var(--padding) [icon-start] var(--icon-size) [icon-end]
+    var(--padding) [full-end];
+
+  aspect-ratio: 1;
+  display: grid;
+  grid-template: var(--areas) / var(--areas);
+  width: var(--width);
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    background-color: var(--secondary-500);
+    border-radius: 0px;
+    corner-shape: notch;
+    grid-area: full;
+  }
+
+  &::after {
+    background-color: currentColor;
+    clip-path: var(--icon-triangle);
+    grid-area: icon;
+  }
 }

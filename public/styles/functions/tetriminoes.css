@@ -105,9 +105,3 @@
     close
   );
 }
-
-@function {
-  result: if(style(--shape: t): yellow; else: blue ;);
-
-  @return result;
-}
