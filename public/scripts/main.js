@@ -1,5 +1,4 @@
 import { initializeOrderSelect } from "./components/order-select.js"
-import { initWebComponents } from "./define-web-components.js"
 import { FeatureDetect } from "./feature-detect.js"
 import { initMobilePopover } from "./init-mobile-popover.js"
 import { initLiveReload } from "./live-reload.js"
@@ -9,7 +8,6 @@ import { initWorklets } from "./utils/worklets.js"
 import { initViewTransitions } from "./view-transitions/init.js"
 
 initWorklets()
-initWebComponents()
 setScrollbarWidth()
 initializeOrderSelect(viewTransitionManager)
 initPerformanceAwarePreloading()
