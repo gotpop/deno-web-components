@@ -30,5 +30,4 @@ export function initializeOrderSelect(viewTransitionManager) {
       handleOrderChange(this, viewTransitionManager)
     })
   }
-  // Removed console.log for missing element as this is expected on some pages
 }
