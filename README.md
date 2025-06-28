@@ -25,45 +25,6 @@ With so many exciting new web platform features being adopted this site aims to 
 | **CSS Paint Worklets** | JS | Background generation in separate thread | Grid and pattern generation |
 | **Speculation Rules** | HTML | Prefetch and prerender hints | Performance optimization for navigation |
 
-## Project Structure
-
-<details>
-<summary>View Project Structure Diagram</summary>
-
-```mermaid
-graph TD
-    A[deno-server] -->|Contains| B[src]
-    A -->|Config| C[deno.json]
-    B -->|Entry| D[server.ts]
-    B -->|Static| E[public]
-    E -->|Scripts| F[main.js]
-    E -->|Styles| G[main.css]
-```
-
-</details>
-
-## Features
-
-- Hot module reloading
-- Static file serving
-- TypeScript support
-- Strict type checking
-- Development mode with watch
-- Formatting and linting built-in
-
-## Configuration
-
-The project uses `deno.json` for configuration with the following features:
-
-```json
-{
-  "compilerOptions": {
-    "lib": ["deno.window"],
-    "strict": true
-  }
-}
-```
-
 ## Available Scripts
 
 - `deno task dev` - Run in development mode with hot reloading
