@@ -24,10 +24,10 @@ class FeatureDetect {
     ).some(({ supported }) => supported === false);
 
     if (hasUnsupportedCSSFeature) {
-      console.warn("Some features are not supported");
+      console.warn("Some CSS features are not supported");
       this.dialog.showModal();
     } else {
-      log.success("All features are supported");
+      log.success("All CSS features are supported");
     }
 
     this.render(testedCSSFeatures);
