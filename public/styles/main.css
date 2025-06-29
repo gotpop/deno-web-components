@@ -39,9 +39,7 @@
 /* Icons */
 @import "./icons/hamburger.css";
 @import "./icons/github-inversed.css";
-@import "./icons/arrow.css";
-@import "./icons/github.css";
-@import "./icons/linkedin.css";
+@import "./icons/icon-css.css";
 
 /* Elements */
 @import "./links/links.css";
