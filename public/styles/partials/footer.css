@@ -1,24 +1,31 @@
 footer {
+  --columns: --xs-sm-md-lg-xl-up(
+    1fr,
+    1fr,
+    subgrid [] [logo]  [section] [section] [section] [],
+    subgrid [] [logo]  [section] [section] [section] [section] [],
+    subgrid [] [logo] [logo] [section] [section] [section] [section] [section] []
+  );
+  
   background-color: --opacity(var(--secondary-900), 0.8);
   color: var(--light-300);
   display: grid;
-  gap: 4rem 0;
-  grid-column: 1 / -1;
+  grid-column: full;
   grid-row: footer;
-  grid-template-columns: 1fr;
-  min-height: 20rem;
-  padding: var(--spacing-xl);
+  grid-template-columns: var(--columns);
+  padding-block: var(--spacing-xl);
   view-transition-name: attr(id type(<custom-ident>), none);
+  row-gap: var(--spacing-xl);
 
-  grid-auto-fill {
-    @media (width < 1024px) {
-      grid-template-columns: 1fr;
-    }
+  .footer-logo {
+    grid-column: logo;
+  width: stretch;
+  /* height: stretch; */
+  background-color: yellow;
+
   }
 
-  @media (width > 1024px) {
-    grid-template-columns: subgrid;
-    padding-block: var(--spacing-xl);
-    grid-column: full;
+  .footer-section {
+    grid-column: section calc(sibling-index() - 1);
   }
 }

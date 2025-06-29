@@ -4,12 +4,8 @@
   role="contentinfo" 
   variant="dark"
 >
-  <grid-auto-fill begin="2" end="-2" gap-column="3">
-    <grid-auto-fill-item 
-      align="start"
-      span="3" 
-      variant="column" 
-    >
+
+    <div class="footer-logo">
       <a 
         href="/" 
         class="logo-link" 
@@ -17,13 +13,9 @@
       >
         {% include "partials/logo/logo.njk" %}
       </a>
-    </grid-auto-fill-item>
+    </div>
     {% for section in siteData.site.footer.sections %}
-      <grid-auto-fill-item 
-        gap="1"
-        span="4" 
-        variant="column" 
-      >
+      <div class="footer-section">
         <h4 
           bottom="1"
           top="1" 
@@ -35,9 +27,9 @@
             href="{{ link.url }}"
           >{{ link.text }}</a>
         {% endfor %}
-      </grid-auto-fill-item>
+      </div>
     {% endfor %}
-  </grid-auto-fill>
+
 
   <layout-item 
     end="-3" 
