@@ -1,7 +1,3 @@
-/**
- * Logging utility with environment variable control
- */
-
 // Log levels
 const LOG_LEVELS = {
   OFF: 0,
