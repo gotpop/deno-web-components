@@ -29,3 +29,4 @@ footer {
     grid-column: section calc(sibling-index() - 1);
   }
 }
+
