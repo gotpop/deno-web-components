@@ -1,3 +1,14 @@
+/* prettier-ignore */
+@function --get-icon(--icon <custom-ident>)  {
+  result: if(
+      style(--icon: arrow): var(--icon-triangle);
+      style(--icon: github): var(--icon-github);
+      style(--icon: linkedin): var(--icon-linkedin);
+      
+      else: var(--icon-github)
+  )
+}
+
 icon-css {
   --width: 2rem;
   --padding: 0.5em;
@@ -6,6 +17,9 @@ icon-css {
   --corner-shape: notch;
   --areas: [full-start] var(--padding) [icon-start] var(--icon-size) [icon-end]
     var(--padding) [full-end];
+
+
+  --icon: attr(icon type(<custom-ident>), github);
 
   aspect-ratio: 1;
   display: grid;
@@ -26,7 +40,7 @@ icon-css {
 
   &::after {
     background-color: currentColor;
-    clip-path: var(--icon-triangle);
+    clip-path: --get-icon(var(--icon));
     grid-area: icon;
   }
 }
