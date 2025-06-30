@@ -60,7 +60,7 @@
           ]
         },
         {
-          "title": "Web Standards",
+          "title": "Standards",
           "layout": {
             "column-start": 27,
             "column-end": 31
@@ -69,7 +69,7 @@
             { "text": "W3C", "url": "https://www.w3.org" },
             { "text": "WHATWG", "url": "https://whatwg.org" },
             {
-              "text": "Web Standards Project",
+              "text": "Web Standards",
               "url": "https://www.webstandards.org/"
             }
           ]
