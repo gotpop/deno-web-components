@@ -1,7 +1,31 @@
 /* @mixin --box {
-  background-color: red;
+  @result {
+    background-color: red;
+  }
+}
+
+@mixin --button(--face, --text, --radius) {
+  --background: var(--face, teal);
+  --color: color-mix(in lch, var(--text, white) 85%, var(--background));
+  --border-color: color-mix(in lch, var(--text, white) 80%, var(--background));
+
+  @result {
+    background: var(--background);
+    border: medium double var(--border-color);
+    border-radius: var(--radius, 3px);
+    color: var(--color);
+    padding: 0.25lh 2ch;
+  }
+}
+
+@mixin --center-content {
+  display: grid;
+  place-content: center;
 }
 
 .header {
+  @apply --button(rebeccaPurple);
+  @apply --center-content;
   @apply --box;
+  width: 100%;
 } */
