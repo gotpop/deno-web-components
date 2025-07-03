@@ -1,32 +1,16 @@
 footer {
-  /* --columns: --xs-sm-md-lg-xl-up(
-    1fr,
-    1fr,
-    subgrid [] [section] [section] [section] [section] [],
-    subgrid [] [section] [section] [section] [section] [section] [section] [],
-    subgrid [] [logo] [logo] [section] [section] [section] [section] [section]
-      []
-  ); */
-
   background-color: --opacity(var(--secondary-900), 0.8);
   color: var(--light-300);
   display: grid;
+  gap: 3rem;
+  grid-auto-columns: auto;
+  grid-auto-flow: row dense;
   grid-column: full;
   grid-row: footer;
-  grid-auto-columns: auto;
   grid-template-columns: subgrid;
-  gap: 3rem;
-  grid-auto-flow: row dense;
+  justify-content: center;
   padding-block: var(--spacing-xl);
   view-transition-name: attr(id type(<custom-ident>), none);
-  row-gap: var(--spacing-xl);
-  justify-content: center;
-
-  .container {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: content;
-  }
 
   layout-item {
     grid-column: content;

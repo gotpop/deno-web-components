@@ -1,7 +1,7 @@
 header {
   --layout-row-lg: [full-height-start] 0rem min-content 0rem [full-height-end];
-  --layout-lg: subgrid [] [logo-start] [logo-end nav-start] [] [] [] []
-    [nav-end] [];
+  --layout-lg: subgrid [] [] [logo-start] [logo-end nav-start] [] [] [] []
+    [nav-end] [] [];
 
   background-color: var(--secondary-700);
   background-image: paint(grid);

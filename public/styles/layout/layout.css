@@ -6,6 +6,13 @@ main-content {
   row-gap: attr(row-gap rem, 5rem);
 }
 
+main {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-area: main / breakout;
+  row-gap: 4rem;
+}
+
 flex-items {
   align-items: center;
   display: flex;
@@ -21,4 +28,11 @@ flex-item {
   border-radius: var(--border-radius);
   view-transition-name: attr(id type(<custom-ident>), none);
   width: calc-size(max-content, round(up, size, 1rem));
+}
+
+contain-items {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: content;
+  row-gap: var(--spacing-xl);
 }

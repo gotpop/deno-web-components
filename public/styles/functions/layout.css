@@ -4,7 +4,7 @@
 }
 
 @function --grid-auto(--repeat, --col-width) {
-  result: [full-start] minmax(0, 1fr) [content-start]
-    repeat(var(--repeat), var(--col-width)) [content-end] minmax(0, 1fr)
-    [full-end];
+  result: [full-start] minmax(0, 1fr) [breakout-start] 0px [content-start]
+    repeat(var(--repeat), var(--col-width)) [content-end] 0px [breakout-end]
+    minmax(0, 1fr) [full-end];
 }

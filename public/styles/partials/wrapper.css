@@ -25,7 +25,7 @@
   column-rule-break: none;
   column-rule: 3rem solid --opacity(var(--primary-500), 0.06);
   display: grid;
-  grid-column: 1 / -1;
+  grid-column: content;
   grid-template-columns: subgrid;
   row-gap: 2rem;
   row-rule: 2rem solid;
