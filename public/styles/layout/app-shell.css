@@ -2,6 +2,7 @@ app-shell {
   --grid-offset: centre;
   --column-width: --xs-sm-md-lg-xl-up(21rem, 12rem, 10rem, 7rem, 9rem);
   --repeat: --xs-sm-md-lg-xl-up(1, 2, 4, 6, 6);
+  --url: url("../../images/bg.svg");
 
   background-color: var(--site-background);
   background-image: paint(grid);
@@ -10,27 +11,4 @@ app-shell {
   grid-template-columns: --grid-auto(var(--repeat), var(--column-width));
   grid-template-rows: --grid-row-base(5rem, 10rem);
   min-height: 100dvh;
-
-  --url: url("../../images/bg.svg");
-  /* --url: url("../../images/logo.svg"); */
-  /* background: var(--url); */
-  /* background-size: cover; */
-  /* background-position: center;
-  background-repeat: repeat;
-  background-size: 50rem 50rem; */
-
-  /* &:before {
-    content: "";
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    filter: contrast(170%) brightness(1000%);
-    background-size: 30rem 30rem, cover;
-    background-position: center;
-    mix-blend-mode: overlay;
-    background: linear-gradient(0deg, rgba(0, 0, 255, 1), rgba(0, 0, 0, 0)),
-      var(--url);
-  } */
 }

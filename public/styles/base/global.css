@@ -55,7 +55,7 @@ svg[height="0"][aria-hidden="true"] {
   position: absolute;
   top: 0;
   left: 0;
-  mix-blend-mode: color;
+  /* mix-blend-mode: color; */
   z-index: -1;
 
   g {
