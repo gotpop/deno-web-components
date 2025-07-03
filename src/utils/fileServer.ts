@@ -33,6 +33,7 @@ function getContentType(filePath: string): string {
     jpg: "image/jpeg",
     jpeg: "image/jpeg",
     gif: "image/gif",
+    svg: "image/svg+xml",
     woff: "font/woff",
     woff2: "font/woff2",
   }
