@@ -45,7 +45,6 @@ body {
   min-height: 100vh;
 }
 
-/* take out of document flow */
 svg[height="0"][aria-hidden="true"] {
   position: fixed;
 }
