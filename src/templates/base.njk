@@ -4,6 +4,38 @@
     {% include "partials/head.njk" %}
   </head>
   <body>
+  <svg width="0" height="0" aria-hidden="true">
+  <!-- use units relative to input size-->
+  <!-- sRGB is what we normally want (but not default)-->
+  <filter id="grain" color-interpolation-filters="sRGB" primitiveUnits="objectBoundingBox">
+    <!-- generate fine noise-->
+    <feTurbulence type="fractalNoise" baseFrequency=".713" numOctaves="4"></feTurbulence>
+    <!-- use noise as displacement map-->
+    <feDisplacementMap in="SourceGraphic" scale=".1" xChannelSelector="R"></feDisplacementMap>
+    <!-- place filter input underneath to cover transparent edge pixels-->
+    <feBlend in2="SourceGraphic"></feBlend>
+  </filter>
+</svg>
+  <svg class="card">
+    <linearGradient id="g91">
+      <stop stop-color="#2524c0"></stop>
+      <stop stop-color="#3f3295" offset="1"></stop>
+    </linearGradient>
+    <linearGradient id="g92">
+      <stop stop-color="#ca95f6"></stop>
+      <stop stop-color="#ea4833" offset="1"></stop>
+    </linearGradient>
+    <linearGradient id="g93">
+      <stop stop-color="#6069ff"></stop>
+      <stop stop-color="#ffcccf" offset="1"></stop>
+    </linearGradient>
+    <g>
+      <rect width="100%" height="100%" fill="#1e1e1e"></rect>
+      <ellipse rx="50%" ry="42.5%" fill="url(#g91)"></ellipse>
+      <circle r="30%" fill="url(#g92)"></circle>
+      <circle r="20%" fill="url(#g93)"></circle>
+    </g>
+  </svg>
     <app-shell
       aria-label="application"
       id="app-shell"

@@ -19,7 +19,7 @@ app-shell {
   background-repeat: repeat;
   background-size: 50rem 50rem; */
 
-  &:before {
+  /* &:before {
     content: "";
     position: fixed;
     top: 0;
@@ -32,5 +32,5 @@ app-shell {
     mix-blend-mode: overlay;
     background: linear-gradient(0deg, rgba(0, 0, 255, 1), rgba(0, 0, 0, 0)),
       var(--url);
-  }
+  } */
 }
