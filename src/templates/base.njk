@@ -5,17 +5,12 @@
   </head>
   <body>
   <svg width="0" height="0" aria-hidden="true">
-  <!-- use units relative to input size-->
-  <!-- sRGB is what we normally want (but not default)-->
-  <filter id="grain" color-interpolation-filters="sRGB" primitiveUnits="objectBoundingBox">
-    <!-- generate fine noise-->
-    <feTurbulence type="fractalNoise" baseFrequency=".713" numOctaves="4"></feTurbulence>
-    <!-- use noise as displacement map-->
-    <feDisplacementMap in="SourceGraphic" scale=".1" xChannelSelector="R"></feDisplacementMap>
-    <!-- place filter input underneath to cover transparent edge pixels-->
-    <feBlend in2="SourceGraphic"></feBlend>
-  </filter>
-</svg>
+    <filter id="grain" color-interpolation-filters="sRGB" primitiveUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency=".713" numOctaves="4"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale=".1" xChannelSelector="R"></feDisplacementMap>
+      <feBlend in2="SourceGraphic"></feBlend>
+    </filter>
+  </svg>
   <svg class="card">
     <linearGradient id="g91">
       <stop stop-color="#2524c0"></stop>
