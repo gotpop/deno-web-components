@@ -1,12 +1,12 @@
 app-shell {
   --grid-offset: centre;
-  --column-width: --xs-sm-md-lg-xl-up(21rem, 12rem, 10rem, 7rem, 9rem);
-  --repeat: --xs-sm-md-lg-xl-up(1, 2, 4, 6, 6);
+  --column-width: --xs-sm-md-lg-xl-up(21rem, 12rem, 10rem, 14rem, 10rem);
+  --repeat: --xs-sm-md-lg-xl-up(1, 2, 4, 4, 6);
   --url: url("../../images/bg.svg");
 
   background-color: var(--site-background);
   background-image: paint(grid);
-  column-gap: --xs-sm-md-lg-xl-up(1rem, 1rem, 1rem, 3rem, 3rem);
+  column-gap: --xs-sm-md-lg-xl-up(1rem, 1rem, 1rem, 1rem, 3rem);
   display: grid;
   grid-template-columns: --grid-auto(var(--repeat), var(--column-width));
   grid-template-rows: --grid-row-base(5rem, 10rem);

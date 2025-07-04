@@ -1,8 +1,9 @@
 hero-home {
   --layout: [full-start] 3rem [hero-content-start] 1fr [hero-content-end] 3rem
     [full-end];
-  --row: [full-start] 3rem [hero-content-start heading-start] 1fr [heading-end
-    body-start] 1fr [body-end hero-content-end] 3rem [full-end];
+  --row: [full-start] 3rem [hero-content-start heading-start] min-content
+    [heading-end body-start] min-content [body-end hero-content-end] 3rem
+    [full-end];
 
   background-blend-mode: overlay;
   background-clip: padding-box, content-box;
@@ -14,7 +15,7 @@ hero-home {
   grid-column: breakout;
   grid-auto-flow: row dense;
   grid-template: var(--row) / var(--layout);
-  padding: 3rem;
+  padding: --xs-md-up(0rem, 3rem);
   position: relative;
 
   > h1 {

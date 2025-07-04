@@ -6,7 +6,7 @@
   background-size: 1rem 1rem;
   display: flex;
   flex-direction: column;
-  grid-column: 1 / -1;
+  grid-column: --xs-xl-up(breakout, content);
   row-gap: 2rem;
   row-rule: 2rem solid --opacity(var(--primary-500), 0.06);
 }

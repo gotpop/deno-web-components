@@ -1,26 +1,41 @@
 /**
-  TODO consider bp spread
  * Breakpoints:
+ * - xs: 480px
  * - sm: 640px
  * - md: 768px
  * - lg: 1024px
- * - xl: 1280px
- * - 2xl: 1536px
+ * - xl: 1480px
  */
 
-@function --xs-md-up(--mobile, --tablet) {
-  result: var(--mobile);
+@function --xs-sm-up(--xs, --sm) {
+  result: var(--xs);
 
-  @media screen and (width >= 768px) {
-    result: var(--tablet);
+  @media screen and (width >= 480px) {
+    result: var(--sm);
   }
 }
 
-@function --xs-lg-up(--mobile, --desktop) {
-  result: var(--mobile);
+@function --xs-md-up(--xs, --md) {
+  result: var(--xs);
+
+  @media screen and (width >= 768px) {
+    result: var(--md);
+  }
+}
+
+@function --xs-lg-up(--xs, --lg) {
+  result: var(--xs);
 
   @media screen and (width >= 1024px) {
-    result: var(--desktop);
+    result: var(--lg);
+  }
+}
+
+@function --xs-xl-up(--xs, --xl) {
+  result: var(--xs);
+
+  @media screen and (width >= 1480px) {
+    result: var(--xl);
   }
 }
 
@@ -51,7 +66,7 @@
     result: var(--lg);
   }
 
-  @media screen and (width >= 1280px) {
+  @media screen and (width >= 1480px) {
     result: var(--xl);
   }
 }

@@ -2,9 +2,9 @@ content-with-sidebar {
   --grid-horizontal-color: var(--light-200);
   --grid-vertical-color: var(--light-200);
 
-  --xs: "main" "sidebar";
+  --xs: "main main main" "sidebar sidebar sidebar";
   --sm: "main main main main" "sidebar sidebar sidebar sidebar";
-  --md: "main main sidebar sidebar";
+  --md: "main main main main sidebar sidebar";
   --lg: "main main main main sidebar sidebar";
   --xl: "main main main main sidebar sidebar";
 
@@ -23,21 +23,22 @@ content-with-sidebar {
   background-size: 1rem 1rem;
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
   display: grid;
-  grid-column: --xs-lg-up(1 / -1, content);
+  grid-column: --xs-xl-up(breakout, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
-  height: var(--round-down);
+  height: stretch;
   overflow: clip;
   view-transition-name: attr(id type(<custom-ident>), none);
 }
 
 content-main {
+  height: stretch;
   background-color: var(--light-100);
   background-image: paint(grid);
   display: grid;
   grid-area: main;
   grid-template-columns: 1fr;
-  padding: --xs-lg-up(1rem, 2rem);
+  padding: --xs-sm-up(1rem, 2rem);
 }
 
 content-sidebar {
