@@ -26,6 +26,10 @@ hero-home {
   > p {
     grid-column: hero-content;
     grid-row: body;
+
+    @media (width <= 768px) {
+      font-size: 1rem !important;
+    }
   }
 
   &::before {

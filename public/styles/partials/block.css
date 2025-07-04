@@ -23,6 +23,7 @@ content-with-sidebar {
   background-size: 1rem 1rem;
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
   display: grid;
+  column-gap: --xs-xl-up(2rem, 3rem);
   grid-column: --xs-xl-up(breakout, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
