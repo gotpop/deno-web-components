@@ -33,12 +33,13 @@ content-with-sidebar {
 }
 
 content-main {
-  height: stretch;
   background-color: var(--light-100);
   background-image: paint(grid);
   display: grid;
   grid-area: main;
+  grid-auto-rows: min-content;
   grid-template-columns: 1fr;
+  height: stretch;
   padding: --xs-sm-up(1rem, 2rem);
 }
 

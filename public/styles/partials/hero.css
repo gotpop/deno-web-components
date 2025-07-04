@@ -17,6 +17,9 @@ hero-home {
   grid-template: var(--row) / var(--layout);
   padding: --xs-md-up(0rem, 3rem);
   position: relative;
+  height: var(--round-up);
+  view-transition-name: hero-home;
+  align-content: space-between;
 
   > h1 {
     grid-column: hero-content;
@@ -39,7 +42,7 @@ hero-home {
     left: 0;
     width: stretch;
     height: 100%;
-    background-color: var(--light-100);
+    background-color: --opacity(var(--light-200), 0.7);
     grid-column: full;
     grid-row: full;
     z-index: -1;
