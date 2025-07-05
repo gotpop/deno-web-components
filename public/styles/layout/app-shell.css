@@ -1,6 +1,6 @@
 app-shell {
   --grid-offset: centre;
-  --column-width: --xs-sm-md-lg-xl-up(21rem, 12rem, 10rem, 14rem, 10rem);
+  --column-width: --xs-sm-md-lg-xl-up(21rem, 12rem, 10rem, 15rem, 10rem);
   --repeat: --xs-sm-md-lg-xl-up(1, 2, 4, 4, 6);
   --url: url("../../images/bg.svg");
 

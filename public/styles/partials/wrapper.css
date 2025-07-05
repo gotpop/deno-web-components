@@ -1,11 +1,12 @@
 .wrapper-index-section {
-  --xs: "header" "card-1" "card-2" "card-3";
+  --xs: "header header header" "card-1 card-1 card-1" "card-2 card-2 card-2"
+    "card-3 card-3 card-3";
   --sm: "header header . ." "card-1 card-1 card-1 card-1"
     "card-2 card-2 card-2 card-2" "card-3 card-3 card-3 card-3";
-  --md: "header header . . ." "card-1 card-1 card-2 card-2 card-2"
-    "card-3 card-3 card-3 card-3 card-3";
-  --lg: "header . . ." "card-1 card-1 card-2 card-2"
-    "card-3 card-3 card-3 card-3";
+  --md: "header header . . . ." "card-1 card-1 card-1 card-2 card-2 card-2"
+    "card-3 card-3 card-3 card-3 card-3 card-3";
+  --lg: "header header . . . ." "card-1 card-1 card-1 card-2 card-2 card-2"
+    "card-3 card-3 card-3 card-3 card-3 card-3";
   --xl: "header . . . . ." "card-1 card-1 card-2 card-2 card-3 card-3";
 
   --areas: --xs-sm-md-lg-xl-up(
@@ -17,21 +18,15 @@
   );
 
   background-blend-mode: overlay;
-  background-clip: border-box;
   background-color: --opacity(var(--light-100), 0.4);
-  background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
+  background-image: var(--bg-diagonal-1);
   background-size: 1rem 1rem;
   column-gap: 3rem;
-  column-rule-break: none;
-  column-rule: 3rem solid --opacity(var(--primary-500), 0.06);
   display: grid;
   grid-column: --xs-xl-up(breakout, content);
+  grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
   row-gap: 2rem;
-  row-rule: 2rem solid;
-  row-rule-color: --opacity(var(--primary-500), 0.02);
-  grid-template-areas: var(--areas);
-  grid-auto-flow: row dense;
 
   surface-item {
     grid-area: attr(area type(<custom-ident>), card);

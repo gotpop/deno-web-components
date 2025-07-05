@@ -4,7 +4,8 @@ content-with-sidebar {
 
   --xs: "main main main" "sidebar sidebar sidebar";
   --sm: "main main main main" "sidebar sidebar sidebar sidebar";
-  --md: "main main main main sidebar sidebar";
+  --md: "main main main main main main"
+    "sidebar sidebar sidebar sidebar sidebar sidebar";
   --lg: "main main main main sidebar sidebar";
   --xl: "main main main main sidebar sidebar";
 
