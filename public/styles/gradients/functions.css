@@ -1,9 +1,11 @@
 @function --bg-gradient() {
   result: linear-gradient(
-    to bottom,
+    to bottom right,
     var(--light-100),
-    var(--light-200) 50%,
-    var(--light-300) 100%
+    var(--light-200),
+    var(--light-200),
+    var(--light-200),
+    var(--light-300)
   );
 }
 

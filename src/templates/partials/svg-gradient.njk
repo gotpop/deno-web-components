@@ -1,0 +1,25 @@
+  <svg class="gradient-grainy">
+    <filter id="grain" color-interpolation-filters="sRGB" primitiveUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency=".713" numOctaves="4"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale=".1" xChannelSelector="R"></feDisplacementMap>
+      <feBlend in2="SourceGraphic"></feBlend>
+    </filter>
+    <linearGradient id="g91">
+      <stop stop-color="#2524c0"></stop>
+      <stop stop-color="#3f3295" offset="1"></stop>
+    </linearGradient>
+    <linearGradient id="g92">
+      <stop stop-color="#ca95f6"></stop>
+      <stop stop-color="#ea4833" offset="1"></stop>
+    </linearGradient>
+    <linearGradient id="g93">
+      <stop stop-color="#6069ff"></stop>
+      <stop stop-color="#ffcccf" offset="1"></stop>
+    </linearGradient>
+    <g>
+      <rect width="100%" height="100%" fill="#1e1e1e"></rect>
+      <ellipse rx="50%" ry="42.5%" fill="url(#g91)"></ellipse>
+      <circle r="30%" fill="url(#g92)"></circle>
+      <circle r="20%" fill="url(#g93)"></circle>
+    </g>
+  </svg>

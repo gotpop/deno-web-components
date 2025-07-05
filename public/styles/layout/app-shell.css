@@ -4,7 +4,6 @@ app-shell {
   --repeat: --xs-sm-md-lg-xl-up(1, 2, 4, 4, 6);
   --url: url("../../images/bg.svg");
 
-  background-color: var(--site-background);
   background-image: paint(grid);
   column-gap: --xs-sm-md-lg-xl-up(1rem, 1rem, 1rem, 1rem, 3rem);
   display: grid;

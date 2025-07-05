@@ -4,7 +4,6 @@
 
 /* Functions */
 @import "./functions/functions.css";
-@import "./functions/gradients.css";
 @import "./functions/layout.css";
 @import "./functions/media-queries.css";
 @import "./functions/typographic.css";
@@ -15,6 +14,10 @@
 
 /* Mixins */
 @import "./mixins/mixins.css";
+
+/* Gradients */
+@import "./gradients/functions.css";
+@import "./gradients/gradient-svg.css";
 
 /* Base */
 @import "./base/global.css";
