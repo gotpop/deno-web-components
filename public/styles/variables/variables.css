@@ -100,16 +100,6 @@
   /* Accessibility */
   --outline-offset: -0.5em;
 
-  /* Backgrounds */
-  --site-background: linear-gradient(
-    to bottom right,
-    var(--light-100),
-    var(--light-200),
-    var(--light-200),
-    var(--light-200),
-    var(--light-300)
-  );
-
   /* Rounding */
   --round-up: calc-size(max-content, round(up, size, 1rem));
   --round-up-stretch: calc-size(stretch, round(up, size, 1rem));
