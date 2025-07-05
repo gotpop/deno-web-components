@@ -110,24 +110,9 @@
     var(--light-300)
   );
 
-  --bg-diagonal-1: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    var(--light-600) 10px,
-    var(--light-600) 11px
-  );
-
-  --bg-diagonal-2: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 10px,
-    var(--light-300) 10px,
-    var(--light-300) 11px
-  );
-
   /* Rounding */
   --round-up: calc-size(max-content, round(up, size, 1rem));
+  --round-up-stretch: calc-size(stretch, round(up, size, 1rem));
   --round-down: calc-size(max-content, round(down, size, 1rem));
 
   /* Icons CSS */

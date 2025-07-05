@@ -1,0 +1,18 @@
+@function --bg-gradient() {
+  result: linear-gradient(
+    to bottom,
+    var(--light-100),
+    var(--light-200) 50%,
+    var(--light-300) 100%
+  );
+}
+
+@function --bg-diagonal(--angle: 45deg, --color: var(--light-100)) {
+  result: repeating-linear-gradient(
+    var(--angle),
+    transparent,
+    transparent 10px,
+    var(--color) 10px,
+    var(--color) 11px
+  );
+}

@@ -2,7 +2,7 @@
   background-blend-mode: overlay;
   background-clip: border-box;
   background-color: --opacity(var(--light-100), 0.4);
-  background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
+  background-image: --bg-diagonal(), --bg-diagonal(-45deg, var(--light-200));
   background-size: 1rem 1rem;
   display: flex;
   flex-direction: column;

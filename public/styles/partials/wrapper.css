@@ -19,7 +19,7 @@
 
   background-blend-mode: overlay;
   background-color: --opacity(var(--light-100), 0.4);
-  background-image: var(--bg-diagonal-1);
+  background-image: --bg-diagonal();
   background-size: 1rem 1rem;
   column-gap: 3rem;
   display: grid;

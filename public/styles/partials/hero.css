@@ -5,22 +5,21 @@ hero-home {
     [heading-end body-start] min-content [body-end hero-content-end] 3rem
     [full-end];
 
+  align-content: space-between;
   background-blend-mode: overlay;
   background-clip: padding-box, content-box;
   background-color: --opacity(var(--light-100), 0.6);
-  background-image: var(--bg-diagonal-1), var(--bg-diagonal-2);
+  background-image: --bg-diagonal(), --bg-diagonal(-45deg, var(--light-200));
   background-size: 1rem 1rem;
   box-shadow: inset 0 0 0 3rem --opacity(var(--light-100), 0.4);
   display: grid;
-  grid-column: breakout;
   grid-auto-flow: row dense;
+  grid-column: breakout;
   grid-template: var(--row) / var(--layout);
+  height: var(--round-up-stretch);
   padding: --xs-md-up(0rem, 3rem);
   position: relative;
-  height: var(--round-up);
   view-transition-name: hero-home;
-  align-content: space-between;
-  height: calc-size(stretch, round(up, size, 1rem));
 
   > h1 {
     grid-column: hero-content;
