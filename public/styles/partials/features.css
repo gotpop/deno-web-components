@@ -2,7 +2,10 @@
   --grid-horizontal-color: var(--light-200);
   --grid-vertical-color: var(--light-100);
 
+  --round-stretch-up: calc(calc-size(stretch, round(up, size, 1rem)) + 1px);
+
   background-color: --opacity(var(--light-100), 0.8);
   background-image: paint(grid);
+  height: var(--round-stretch-up);
+  height: calc-size(stretch, round(up, size, 1rem));
 }
-

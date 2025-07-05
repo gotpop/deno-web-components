@@ -20,6 +20,7 @@ hero-home {
   height: var(--round-up);
   view-transition-name: hero-home;
   align-content: space-between;
+  height: calc-size(stretch, round(up, size, 1rem));
 
   > h1 {
     grid-column: hero-content;

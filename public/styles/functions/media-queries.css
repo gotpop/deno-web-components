@@ -62,11 +62,11 @@
     result: var(--md);
   }
 
-  @media screen and (width >= 1024px) {
+  @media screen and (width >= 1280px) {
     result: var(--lg);
   }
 
-  @media screen and (width >= 1480px) {
+  @media screen and (width >= 1400px) {
     result: var(--xl);
   }
 }
