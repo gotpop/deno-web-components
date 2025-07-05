@@ -1,12 +1,11 @@
 .wrapper-index-section {
-  --xs: "header header header" "card-1 card-1 card-1" "card-2 card-2 card-2"
-    "card-3 card-3 card-3";
+  --xs: "header" "card-1" "card-2" "card-3";
   --sm: "header header . ." "card-1 card-1 card-1 card-1"
     "card-2 card-2 card-2 card-2" "card-3 card-3 card-3 card-3";
-  --md: "header header header . . ." "card-1 card-1 card-1 card-2 card-2 card-2"
-    "card-3 card-3 card-3 card-3 card-3 card-3";
-  --lg: "header header . . . ." "card-1 card-1 card-1 card-2 card-2 card-2"
-    "card-3 card-3 card-3 card-3 card-3 card-3";
+  --md: "header header . . ." "card-1 card-1 card-2 card-2 card-2"
+    "card-3 card-3 card-3 card-3 card-3";
+  --lg: "header . . ." "card-1 card-1 card-2 card-2"
+    "card-3 card-3 card-3 card-3";
   --xl: "header . . . . ." "card-1 card-1 card-2 card-2 card-3 card-3";
 
   --areas: --xs-sm-md-lg-xl-up(
