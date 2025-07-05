@@ -3,11 +3,11 @@
 @import "./variables/variables.css";
 
 /* Functions */
-@import "./functions/typographic.css";
+@import "./functions/functions.css";
+@import "./functions/gradients.css";
 @import "./functions/layout.css";
 @import "./functions/media-queries.css";
-@import "./functions/tetriminoes.css";
-@import "./functions/functions.css";
+@import "./functions/typographic.css";
 
 /*  Typography */
 @import "./typography/fonts.css";
@@ -41,6 +41,9 @@
 @import "./icons/github-inversed.css";
 @import "./icons/icon-css.css";
 
+/* Shapes */
+@import "./shapes/tetriminoes.css";
+
 /* Elements */
 @import "./links/links.css";
 @import "./links/button-jumbo.css";
@@ -64,4 +67,3 @@
 @import "./partials/page.css";
 @import "./partials/social.css";
 @import "./partials/wrapper.css";
-
