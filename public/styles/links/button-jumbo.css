@@ -4,7 +4,6 @@
   --bg: var(--brand-colour);
   --text-display: none;
   --gap: var(--spacing-sm);
-  --font-size: var(--font-scaled-sm);
 
   align-items: center;
   background-color: var(--bg);
@@ -21,8 +20,11 @@
   line-height: 1.5;
   letter-spacing: 0.015em;
   container: jumbo / inline-size;
+  height: var(--round-up-stretch);
 
   span {
+    --font-size: var(--font-scaled-sm);
+
     display: var(--text-display);
     font-size: var(--font-size);
 
