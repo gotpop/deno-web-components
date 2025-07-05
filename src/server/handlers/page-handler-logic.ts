@@ -50,7 +50,6 @@ export function handleFeatureTemplate(
 
   return {
     pageData: {
-      // ...featuresData,
       currentFeature: feature,
       navigation: {
         previous,

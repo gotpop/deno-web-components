@@ -8,7 +8,6 @@
     display: grid;
     width: calc-size(max-content, round(up, size, 1rem));
     width: 100%;
-    /* max-width: fit-content; */
   }
 
   figure {
@@ -53,7 +52,6 @@
 
     @container style(--code-language: bash) {
       align-items: center;
-
       color: var(--light-100);
       display: flex;
       font-palette: --bash;
@@ -90,11 +88,3 @@
     font-size: inherit;
   }
 }
-
-/* .code-block {
-  display: flex;
-  flex-direction: column;
-  width: calc-size(max-content, round(up, size, 1rem));
-  white-space: pre-wrap;
-  view-transition-name: attr(id type(<custom-ident>), none);
-} */

@@ -1,12 +1,7 @@
 async function serveFile(filePath: string): Promise<Response> {
   try {
     const file = await Deno.readFile(filePath)
-    // console.log("file :", file)
     const contentType = getContentType(filePath)
-
-    // Add debug logging
-    // console.log(`Serving file: ${filePath}`)
-    // console.log(`Content-Type: ${contentType}`)
 
     return new Response(file, {
       headers: {
