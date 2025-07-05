@@ -19,13 +19,16 @@
 @import "./gradients/functions.css";
 @import "./gradients/gradient-svg.css";
 
-/* Base */
-@import "./base/global.css";
-@import "./base/reset.css";
+/* Shapes */
+@import "./shapes/tetriminoes.css";
 
 /* Animations */
 @import "./animations/keyframes.css";
 @import "./animations/view-transitions.css";
+
+/* Base */
+@import "./base/global.css";
+@import "./base/reset.css";
 
 /* Layout */
 @import "./layout/layout-properties.css";
@@ -43,9 +46,6 @@
 @import "./icons/hamburger.css";
 @import "./icons/github-inversed.css";
 @import "./icons/icon-css.css";
-
-/* Shapes */
-@import "./shapes/tetriminoes.css";
 
 /* Elements */
 @import "./links/links.css";
