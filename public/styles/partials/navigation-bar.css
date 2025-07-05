@@ -22,7 +22,6 @@ navigation-bar {
   background-color: var(--secondary-400);
   color: var(--light-100);
   cursor: pointer;
-  /* height: 2rem; */
   justify-content: center;
   padding-inline: var(--spacing-base);
   padding: calc(1rem - calc(1cap / 2)) var(--spacing-base);
