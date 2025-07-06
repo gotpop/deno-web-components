@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  mix-blend-mode: color;
+  mix-blend-mode: multiply;
   z-index: -1;
 
   g {
@@ -23,5 +23,6 @@
     cx: 50%;
     cy: 50%;
     filter: blur(calc(4vmin + 4vmax));
+    mix-blend-mode: hard-light;
   }
 }
