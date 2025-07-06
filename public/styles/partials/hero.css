@@ -35,7 +35,7 @@ hero-home {
   > p {
     grid-column: hero-content;
     grid-row: body;
-    color: var(--dark-500) !important;
+    color: var(--dark-400) !important;
 
     @media (width <= 768px) {
       font-size: 1rem !important;
