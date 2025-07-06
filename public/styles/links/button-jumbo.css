@@ -1,5 +1,5 @@
 .link-button-jumbo {
-  --brand-colour: var(--secondary-200);
+  --brand-colour: var(--secondary-600);
   --brand-colour-alt: --darken(var(--brand-colour), 1.1);
   --bg: var(--brand-colour);
   --text-display: none;

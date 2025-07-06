@@ -18,9 +18,8 @@ content-with-sidebar {
   );
 
   background-blend-mode: overlay;
-  background-clip: border-box;
-  background-color: --opacity(var(--light-100), 0.4);
-  background-image: --bg-diagonal(), --bg-diagonal(-45deg, var(--light-200));
+  background-color: --opacity(var(--light-100), 0.3);
+  background-image: --bg-diagonal();
   background-size: 1rem 1rem;
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
   display: grid;
@@ -33,6 +32,9 @@ content-with-sidebar {
 }
 
 content-main {
+  --grid-horizontal-color: var(--light-200);
+  --grid-vertical-color: var(--light-100);
+
   background-color: var(--light-100);
   background-image: paint(grid);
   display: grid;
@@ -41,11 +43,18 @@ content-main {
   grid-template-columns: 1fr;
   height: stretch;
   padding: --xs-sm-up(1rem, 2rem);
+
+  p {
+    color: var(--dark-400) !important;
+  }
 }
 
 content-sidebar {
+  --grid-horizontal-color: var(--light-200);
+  --grid-vertical-color: var(--light-100);
+
   align-self: start;
-  background-color: --opacity(var(--light-100), 1);
+  background-color: var(--light-100);
   background-image: paint(grid);
   display: grid;
   gap: 1rem;

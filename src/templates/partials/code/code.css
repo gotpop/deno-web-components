@@ -50,6 +50,9 @@
     display: flex;
     height: calc-size(max-content, round(down, size, 1rem));
 
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+
     @container style(--code-language: bash) {
       align-items: center;
       color: var(--light-100);
