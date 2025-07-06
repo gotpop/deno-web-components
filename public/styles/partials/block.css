@@ -32,10 +32,10 @@ content-with-sidebar {
 }
 
 content-main {
-  --grid-horizontal-color: var(--light-200);
-  --grid-vertical-color: var(--light-100);
+  --grid-horizontal-color: var(--light-300);
+  --grid-vertical-color: var(--light-200);
 
-  background-color: var(--light-100);
+  background-color: var(--light-200);
   background-image: paint(grid);
   display: grid;
   grid-area: main;
@@ -50,11 +50,11 @@ content-main {
 }
 
 content-sidebar {
-  --grid-horizontal-color: var(--light-200);
-  --grid-vertical-color: var(--light-100);
+  --grid-horizontal-color: var(--light-300);
+  --grid-vertical-color: var(--light-200);
 
   align-self: start;
-  background-color: var(--light-100);
+  background-color: var(--light-200);
   background-image: paint(grid);
   display: grid;
   gap: 1rem;
