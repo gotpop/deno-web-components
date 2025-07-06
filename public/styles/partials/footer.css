@@ -18,6 +18,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    p {
+      color: var(--light-300) !important;
+    }
   }
 
   .footer-logo {
