@@ -35,9 +35,11 @@
   override-colors: 0 red, 1 lightblue, 2 yellow, 3 purple,  4 green,  5 orange, 6 black,  7 hotpink, 8 lime ;
 }
 
+
+
 @font-palette-values --html {
   font-family: "Monaspace";
-  override-colors: 0 red, 1 lightblue, 2 yellow, 3 purple,  4 green,  5 orange, 6 black,  7 hotpink, 8 lime ;
+  override-colors: 0 hotpink, 1 lightblue, 2 aqua, 3 purple,  4 pink,  5 salmon, 6 black,  7 hotpink, 8 purple;
 }
 
 @font-palette-values --js {

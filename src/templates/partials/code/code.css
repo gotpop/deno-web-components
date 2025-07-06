@@ -67,9 +67,9 @@
     }
 
     @container style(--code-language: html) {
-      background-color: var(--light-700);
+      background-color: var(--dark-300);
       color: var(--light-100);
-      font-palette: --css;
+      font-palette: --html;
     }
 
     @container style(--code-language: css) {
@@ -89,5 +89,6 @@
     color: inherit;
     font-family: var(--font-familiy-code);
     font-size: inherit;
+    line-height: 1.8;
   }
 }
