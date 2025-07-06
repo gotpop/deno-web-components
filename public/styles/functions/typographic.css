@@ -19,9 +19,9 @@
 /* prettier-ignore */
 @function --get-font-colour(--theme <custom-ident>) returns <color> {
   result: if(
-      style(--theme: dark): white; 
+      style(--theme: dark): var(--light-200); 
 
-      else: black
+      else: var(--dark-300)
   )
 }
 

@@ -62,6 +62,16 @@ p:not([class]) {
   }
 
   color: --get-font-colour(var(--theme));
+  color: if(
+    style(--variant: xxl): var(--dark-300);
+    style(--variant: xl): var(--dark-300);
+    style(--variant: lg): var(--dark-300);
+    style(--variant: md): var(--dark-200);
+    style(--variant: base): var(--dark-400);
+    style(--variant: sm): var(--dark-100);
+
+    else: var(--dark-200)
+  );
   font-size: --get-font-size(var(--variant));
   font-weight: --get-font-weight(var(--variant));
   letter-spacing: 0.015em;
