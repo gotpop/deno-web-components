@@ -1,4 +1,4 @@
-# Deno & Custom Elements
+# Web Platform Features Showcase
 
 With so many exciting new web platform features being adopted this site aims to
 combine as many possible together to see what tomorrow's build may look like.
