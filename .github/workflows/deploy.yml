@@ -27,6 +27,6 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "web-platform-showcase"
-          entrypoint: "server/server.ts"
+          entrypoint: "src/server/server.ts"
           
           
