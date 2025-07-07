@@ -6,14 +6,9 @@ hero-home {
     minmax(3rem, auto) [full-end];
 
   align-content: start;
-  background-blend-mode: overlay;
-  background-clip: padding-box, content-box;
-  background-color: --opacity(var(--light-100), 0.6);
-  background-image:
-    --bg-diagonal(),
-    --bg-diagonal(-45deg, var(--light-200));
+  background-image: --bg-diagonal(),
+    --bg-diagonal(-45deg, --opacity(var(--dark-600), 0.7));
   background-size: 1rem 1rem;
-  box-shadow: inset 0 0 0 3rem --opacity(var(--light-100), 0.4);
   display: grid;
   grid-column: breakout;
   grid-template: var(--row) / var(--layout);
@@ -22,26 +17,42 @@ hero-home {
   position: relative;
   view-transition-name: hero-home;
 
-  > h1 {
+  .hero-home-title {
     grid-column: hero-content;
     grid-row: heading;
-    padding-block-start: calc(4rem - 1cap) !important;
-    line-height: 80px;
+    font-size: var(--font-scaled-lg);
+    margin: 0;
+    letter-spacing: -0.02em;
+    margin-block-end: var(--spacing-md);
+    text-wrap: balance;
+    color: var(--dark-300);
+    padding-block-start: calc(2rem - 1cap);
+    line-height: 1.34;
 
-    @media (width <= 768px) {
-      padding-block-start: calc(2rem - 1cap) !important;
-      line-height: 1.34 !important;
+    @media (width >= 768px) {
+      margin-block-end: var(--spacing-xl);
+      font-size: var(--font-scaled-xxl);
+      padding-block-start: calc(var(--font-scaled-xxl) - 1cap);
+      line-height: 96px;
     }
   }
 
-  > p {
+  .hero-home-subtitle {
     grid-column: hero-content;
     grid-row: body;
-    color: var(--dark-400) !important;
+    color: var(--dark-400);
+    font-weight: 400;
+    padding-block-start: calc(2rem - 1cap);
+    font-size: var(--font-scaled-lg);
+    line-height: 1.78;
+    margin: 0;
+    text-wrap: pretty;
+    max-width: 40ch;
+    margin-block-end: var(--spacing-base);
 
     @media (width <= 768px) {
-      font-size: 1rem !important;
-      line-height: 2 !important;
+      font-size: 1rem;
+      line-height: 2;
     }
   }
 
