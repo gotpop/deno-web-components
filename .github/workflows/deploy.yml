@@ -28,11 +28,5 @@ jobs:
         with:
           project: "web-platform-showcase"
           entrypoint: "src/server/server.ts"
-          root: "."
-          exclude: |
-            .git/
-            .github/
-            README.md
-            deno.lock
           
           
