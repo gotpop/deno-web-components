@@ -14,7 +14,8 @@ app-shell {
   column-gap: --xs-sm-md-lg-xl-up(0rem, 1rem, 1rem, 1rem, 3rem);
   display: grid;
   grid-template-columns: --grid-auto(var(--repeat), var(--column-width));
-  grid-template-rows: --grid-row-base(5rem, 10rem);
+  grid-template-rows: --grid-row-base();
+  row-gap: var(--spacing-xl);
   min-height: 100dvh;
 
   &::before {

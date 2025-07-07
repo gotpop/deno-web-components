@@ -17,45 +17,6 @@ hero-home {
   position: relative;
   view-transition-name: hero-home;
 
-  .hero-home-title {
-    grid-column: hero-content;
-    grid-row: heading;
-    font-size: var(--font-scaled-lg);
-    margin: 0;
-    letter-spacing: -0.02em;
-    margin-block-end: var(--spacing-md);
-    text-wrap: balance;
-    color: var(--dark-300);
-    padding-block-start: calc(2rem - 1cap);
-    line-height: 1.34;
-
-    @media (width >= 768px) {
-      margin-block-end: var(--spacing-xl);
-      font-size: var(--font-scaled-xxl);
-      padding-block-start: calc(var(--font-scaled-xxl) - 1cap);
-      line-height: 96px;
-    }
-  }
-
-  .hero-home-subtitle {
-    grid-column: hero-content;
-    grid-row: body;
-    color: var(--dark-400);
-    font-weight: 400;
-    padding-block-start: calc(2rem - 1cap);
-    font-size: var(--font-scaled-lg);
-    line-height: 1.78;
-    margin: 0;
-    text-wrap: pretty;
-    max-width: 40ch;
-    margin-block-end: var(--spacing-base);
-
-    @media (width <= 768px) {
-      font-size: 1rem;
-      line-height: 2;
-    }
-  }
-
   &::before {
     content: "";
     position: absolute;
@@ -65,7 +26,7 @@ hero-home {
     height: 100%;
     background-color: --opacity(var(--light-200), 0.7);
 
-    --grid-horizontal-color: var(--light-200);
+    --grid-horizontal-color: var(--light-300);
     --grid-vertical-color: var(--light-100);
 
     background-color: var(--light-100);
@@ -74,5 +35,45 @@ hero-home {
     grid-column: full;
     grid-row: full;
     z-index: -1;
+  }
+}
+
+.hero-home-title {
+  color: var(--dark-300);
+  font-size: var(--font-scaled-lg);
+  grid-column: hero-content;
+  grid-row: heading;
+  letter-spacing: -0.02em;
+  line-height: 1.34;
+  margin-block: 0 var(--spacing-md);
+  padding-block-start: calc(2rem - 1cap);
+  text-wrap: balance;
+  /* font-weight: 800; */
+
+  @media (width >= 768px) {
+    font-size: var(--font-scaled-xxl);
+    line-height: calc(1.62 * 1cap);
+    margin-block-end: var(--spacing-xl);
+    padding-block-start: calc(var(--font-scaled-xxl) - 1cap);
+  }
+}
+
+.hero-home-subtitle {
+  color: var(--dark-400);
+  font-weight: 400;
+  grid-column: hero-content;
+  grid-row: body;
+  line-height: 2.62;
+  margin-block: 0 var(--spacing-md);
+  max-width: 40ch;
+  padding-block-start: calc(2rem - 1cap);
+  font-size: 1rem;
+  text-wrap: pretty;
+  line-height: calc(1.62 * 1cap);
+  line-height: calc(2.74 * 1cap);
+
+  @media (width >= 768px) {
+    line-height: calc(2.44 * 1cap);
+    font-size: var(--font-scaled-lg);
   }
 }
