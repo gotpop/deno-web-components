@@ -11,7 +11,7 @@
 
 @function --bg-diagonal(
   --angle: 45deg,
-  --color: --opacity(var(--dark-600), 0.7)
+  --color: --opacity(var(--dark-600), 0.5)
 ) {
   result: repeating-linear-gradient(
     var(--angle),

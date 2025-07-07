@@ -5,7 +5,7 @@ app-shell {
   --url: url("../../images/bg.svg");
 
   --grid-horizontal-color: --opacity(var(--secondary-600), 0.2);
-  --grid-vertical-color: --opacity(var(--primary-600), 0.2);
+  --grid-vertical-color: --opacity(var(--primary-600), 0.1);
 
   --grid-horizontal-color: --opacity(var(--light-600), 0.4);
   --grid-vertical-color: --opacity(var(--light-600), 0.2);

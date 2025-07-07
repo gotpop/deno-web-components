@@ -17,8 +17,6 @@ content-with-sidebar {
     var(--xl)
   );
 
-  background-blend-mode: overlay;
-  background-color: --opacity(var(--light-100), 0.3);
   background-image: --bg-diagonal();
   background-size: 1rem 1rem;
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
@@ -32,10 +30,10 @@ content-with-sidebar {
 }
 
 content-main {
-  --grid-horizontal-color: var(--light-300);
+  --grid-horizontal-color: --opacity(var(--light-500), 0.5);
   --grid-vertical-color: var(--light-200);
 
-  background-color: var(--light-200);
+  background-color: var(--light-100);
   background-image: paint(grid);
   display: grid;
   grid-area: main;
@@ -45,7 +43,7 @@ content-main {
   padding: --xs-sm-up(1rem, 2rem);
 
   p {
-    color: var(--dark-400) !important;
+    color: var(--dark-400);
   }
 }
 
