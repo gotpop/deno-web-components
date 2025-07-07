@@ -23,11 +23,14 @@ jobs:
         with:
           deno-version: v2.x
 
+      - name: Build step
+        run: "deno task build"
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "web-platform-showcase"
-          entrypoint: "./src/server/server.ts"
+          entrypoint: ".src/server/server.ts"
           root: "."
           
           
