@@ -9,7 +9,7 @@
   width: stretch;
   view-transition-name: logo-link;
 
-  @container scroll-state(stuck: top) {
+  @container scroll-state (stuck: top) {
     --opacity: 1;
   }
 

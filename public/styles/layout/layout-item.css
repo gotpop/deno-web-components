@@ -1,20 +1,18 @@
 /* prettier-ignore */
 @function --get-grid(--variant <custom-ident>) {
   result: if(
-      style(--variant: column): 1fr; 
-      style(--variant: row): subgrid; 
-      
-      else: auto
-  )
+    style(--variant: column): 1fr;
+    style(--variant: row): subgrid;
+    else: auto
+  );
 }
 
 /* prettier-ignore */
 @function --get-row(--row) {
   result: if(
-      style(--row: full): 1 / -1; 
-      
-      else: var(--row)
-  )
+    style(--row: full): 1 / -1;
+    else: var(--row)
+  );
 }
 
 layout-item {

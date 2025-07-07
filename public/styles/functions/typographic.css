@@ -1,63 +1,59 @@
 /* prettier-ignore */
 @function --get-font-size(--variant <custom-ident>) returns <length> {
   result: if(
-      style(--variant: sm): var(--font-scaled-sm); 
-      style(--variant: base): var(--font-scaled-base); 
-      style(--variant: md): var(--font-scaled-md);
-      style(--variant: lg): var(--font-scaled-lg);
-      style(--variant: xl): var(--font-scaled-xl);
-      style(--variant: xxl): --xs-md-lg-up(
-          var(--font-scaled-lg), 
-          var(--font-scaled-xxl), 
-          var(--font-scaled-xxl)
-      );
-
-      else: var(--font-scaled-base)
-  )
+    style(--variant: sm): var(--font-scaled-sm);
+    style(--variant: base): var(--font-scaled-base);
+    style(--variant: md): var(--font-scaled-md);
+    style(--variant: lg): var(--font-scaled-lg);
+    style(--variant: xl): var(--font-scaled-xl);
+    style(--variant: xxl): --xs-md-lg-up(
+      var(--font-scaled-lg),
+      var(--font-scaled-xxl),
+      var(--font-scaled-xxl)
+    );
+    else: var(--font-scaled-base)
+  );
 }
 
 /* prettier-ignore */
 @function --get-font-colour(--theme <custom-ident>) returns <color> {
   result: if(
-      style(--theme: dark): var(--light-200); 
-
-      else: var(--dark-300)
-  )
+    style(--theme: dark): var(--light-200);
+    else: var(--dark-300)
+  );
 }
 
 /* prettier-ignore */
 @function --get-font-weight(--variant <custom-ident>) returns <number> {
   result: if(
-      style(--variant: sm): var(--font-weight-light); 
-      style(--variant: base): var(--font-weight-regular); 
-      style(--variant: md): var(--font-weight-medium);
-      style(--variant: lg): var(--font-weight-semibold);
-      style(--variant: xl): var(--font-weight-bold);
-      style(--variant: xxl): var(--font-weight-black);
-
-      else: var(--font-weight-medium)
-  )
+    style(--variant: sm): var(--font-weight-light);
+    style(--variant: base): var(--font-weight-regular);
+    style(--variant: md): var(--font-weight-medium);
+    style(--variant: lg): var(--font-weight-semibold);
+    style(--variant: xl): var(--font-weight-bold);
+    style(--variant: xxl): var(--font-weight-black);
+    else: var(--font-weight-medium)
+  );
 }
 
 /* prettier-ignore */
 @function --get-padding-start(--variant <custom-ident>) returns <length> {
   result: if(
-      style(--variant: sm): 2rem; 
-      style(--variant: base): 2rem; 
-      style(--variant: md): 3rem;
-      style(--variant: lg): 3rem;
-      style(--variant: xl): 4rem;
-      style(--variant: xxl): 5rem;
-
-      else: 3rem
-  )
+    style(--variant: sm): 2rem;
+    style(--variant: base): 2rem;
+    style(--variant: md): 3rem;
+    style(--variant: lg): 3rem;
+    style(--variant: xl): 4rem;
+    style(--variant: xxl): 5rem;
+    else: 3rem
+  );
 }
 
 /* prettier-ignore */
-@function --get-flow-spacing(--flow <custom-ident>, --padding-block-start <length>) returns <length> {
+@function --get-flow-spacing(--flow <custom-ident>, --padding-block-start
+  <length>) returns <length> {
   result: if(
-      style(--flow: body): var(--padding-block-start);
-      
-      else: 0
-  )
+    style(--flow: body): var(--padding-block-start);
+    else: 0
+  );
 }

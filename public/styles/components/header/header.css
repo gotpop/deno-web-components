@@ -12,7 +12,8 @@ header {
   background-image: paint(grid);
   display: grid;
   grid-area: header / full;
-  grid-template-columns: --xs-sm-md-lg-xl-up(
+  grid-template-columns:
+    --xs-sm-md-lg-xl-up(
     var(--col-xs),
     var(--col-sm),
     var(--col-md),

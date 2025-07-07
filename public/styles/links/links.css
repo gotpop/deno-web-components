@@ -1,22 +1,20 @@
 /* prettier-ignore */
 @function --get-type(--variant <custom-ident>) returns <color> {
-    result: if(
-      style(--variant: button): var(--dark-scheme);
-      
-      else: transparent
-    )
-  }
+  result: if(
+    style(--variant: button): var(--dark-scheme);
+    else: transparent
+  );
+}
 
 /* prettier-ignore */
 @function --get-padding-size2(--size-attr <custom-ident>) returns <length> {
-    result: if(
-      style(--size-attr: large): 3rem;
-      style(--size-attr: medium): 2rem;
-      style(--size-attr: small): 1rem;
-      
-      else: 0rem /* Default padding */
-    )
-  }
+  result: if(
+    style(--size-attr: large): 3rem;
+    style(--size-attr: medium): 2rem;
+    style(--size-attr: small): 1rem;
+    else: 0rem /* Default padding */
+  );
+}
 
 a:not([class]) {
   --dark-scheme: var(--secondary-600);
@@ -105,7 +103,7 @@ a:not([class]) {
   }
 
   &:focus-visible {
-    box-shadow: inset 0 0 0 2px var(--primary-500); 
+    box-shadow: inset 0 0 0 2px var(--primary-500);
     text-underline-offset: calc(var(--spacing-base) - 0.55em);
     padding: 1rem 1rem calc(2rem - 1cap) 1rem;
   }
@@ -113,6 +111,6 @@ a:not([class]) {
   &:active {
     color: var(--primary-900);
     text-decoration: none;
-    box-shadow: 0 0 0 2px var(--primary-900); 
+    box-shadow: 0 0 0 2px var(--primary-900);
   }
 }

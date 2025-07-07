@@ -1,12 +1,11 @@
 /* prettier-ignore */
-@function --get-icon(--icon <custom-ident>)  {
+@function --get-icon(--icon <custom-ident>) {
   result: if(
-      style(--icon: arrow): var(--icon-triangle);
-      style(--icon: github): var(--icon-github);
-      style(--icon: linkedin): var(--icon-linkedin);
-      
-      else: var(--icon-github)
-  )
+    style(--icon: arrow): var(--icon-triangle);
+    style(--icon: github): var(--icon-github);
+    style(--icon: linkedin): var(--icon-linkedin);
+    else: var(--icon-github)
+  );
 }
 
 icon-css {
@@ -15,7 +14,7 @@ icon-css {
 
   --border-radius: 0px;
   --corner-shape: notch;
-  --icon-size: calc(var(--width) - (var(--padding) * 2));
+  --icon-size: calc(var(--width) - var(--padding) * 2);
   --icon: attr(icon type(<custom-ident>), github);
   --padding: 0.5em;
   --width: 2rem;

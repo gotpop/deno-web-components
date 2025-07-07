@@ -15,16 +15,12 @@
     "main.css": "./public/styles/main.css"
   },
   "fmt": {
-    "files": {
-      "include": ["public/scripts/"]
-    },
-    "options": {
-      "useTabs": false,
-      "lineWidth": 80,
-      "indentWidth": 2,
-      "singleQuote": false,
-      "semiColons": false
-    }
+    "include": ["public/scripts/"],
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "singleQuote": false,
+    "semiColons": false
   },
   "lint": {
     "rules": {

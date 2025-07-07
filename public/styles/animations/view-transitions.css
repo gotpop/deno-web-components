@@ -113,7 +113,8 @@ html:active-view-transition-type(backwards) {
 }
 
 /* Ultra-performance mode for very weak devices */
-@media (prefers-reduced-motion: no-preference) and (max-width: 480px) and (max-resolution: 1dppx) {
+@media (prefers-reduced-motion: no-preference) and (max-width: 480px)
+    and (max-resolution: 1dppx) {
   html:active-view-transition-type(forwards, backwards) {
     &::view-transition-image-pair(feature-content) {
       animation-duration: 100ms; /* Very fast animations */

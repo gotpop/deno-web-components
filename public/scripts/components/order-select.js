@@ -12,8 +12,11 @@ function handleOrderChange(selectElement, viewTransitionManager) {
     `${url.pathname}?${params.toString()}`,
     window.location.origin,
   )
-  
-  console.log("[order-select] Order select changed. Navigating to:", newUrl.href)
+
+  console.log(
+    "[order-select] Order select changed. Navigating to:",
+    newUrl.href,
+  )
 
   if (viewTransitionManager && viewTransitionManager.navigate) {
     viewTransitionManager.navigate(newUrl)

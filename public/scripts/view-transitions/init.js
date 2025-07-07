@@ -1,4 +1,4 @@
-import { initNavigationHandler } from "./navigation-handler.js";
+import { initNavigationHandler } from "./navigation-handler.js"
 
 /**
  * Initialize View Transitions API
@@ -13,10 +13,10 @@ export function initViewTransitions() {
   if (!document.startViewTransition || !window.navigation) {
     return {
       navigate: (urlObject) => {
-        window.location.href = urlObject.href;
+        window.location.href = urlObject.href
       },
-    };
+    }
   }
 
-  return initNavigationHandler();
+  return initNavigationHandler()
 }

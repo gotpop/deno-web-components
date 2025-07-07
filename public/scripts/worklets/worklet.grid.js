@@ -22,10 +22,10 @@ if (typeof registerPaint !== "undefined") {
           return value
         }
       }
-      
+
       return defaultValue
     }
-    
+
     paint(ctx, geom, properties) {
       const base = "rgba(115, 92, 221, 0.4)"
       const baseColor = this.getPropertyValue(
@@ -79,7 +79,7 @@ if (typeof registerPaint !== "undefined") {
       if (rgbValues === null || rgbValues.length !== 3) {
         throw new Error("Invalid RGB color format")
       }
-      
+
       let [r, g, b] = rgbValues.map(Number)
       r = Math.max(0, Math.min(255, Math.round(r * factor)))
       g = Math.max(0, Math.min(255, Math.round(g * factor)))

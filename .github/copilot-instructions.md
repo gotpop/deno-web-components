@@ -16,4 +16,4 @@ Keep things simple
 
 Always predict raw html tags first
 
-Please do not suggest more than one line at a time 
+Please do not suggest more than one line at a time

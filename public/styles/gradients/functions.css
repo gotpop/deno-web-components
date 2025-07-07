@@ -9,10 +9,8 @@
   );
 }
 
-@function --bg-diagonal(
-  --angle: 45deg,
-  --color: --opacity(var(--light-200), 0.5)
-) {
+@function --bg-diagonal( --angle: 45deg, --color: --opacity(var(--light-200),
+  0.5) ) {
   result: repeating-linear-gradient(
     var(--angle),
     transparent,

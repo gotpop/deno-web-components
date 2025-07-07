@@ -1,33 +1,35 @@
 icon-hamburger {
-    --hamburger-color: currentColor;
-    --line-thickness: calc(var(--spacing-base) / 8);
-    --bg: linear-gradient(
-      to bottom,
-      transparent 0 calc(50% - var(--line-thickness)),
-      var(--hamburger-color) calc(50% - var(--line-thickness)) calc(50% + var(--line-thickness)),
-      transparent calc(50% + var(--line-thickness)) 100%
-    );
-  
-    aspect-ratio: 1;
-    background: var(--bg);
-    position: relative;
-    width: var(--spacing-md);
-  
-    &::before,
-    &::after {
-      background: var(--hamburger-color);
-      content: "";
-      display: block;
-      height: calc(var(--line-thickness) * 2);
-      position: absolute;
-      width: stretch;
-    }
-  
-    &::before {
-      top: 0;
-    }
-  
-    &::after {
-      bottom: 0;
-    }
+  --hamburger-color: currentColor;
+  --line-thickness: calc(var(--spacing-base) / 8);
+  --bg: linear-gradient(
+    to bottom,
+    transparent 0 calc(50% - var(--line-thickness)),
+    var(--hamburger-color) calc(50% - var(--line-thickness)) calc(
+      50% + var(--line-thickness)
+    ),
+    transparent calc(50% + var(--line-thickness)) 100%
+  );
+
+  aspect-ratio: 1;
+  background: var(--bg);
+  position: relative;
+  width: var(--spacing-md);
+
+  &::before,
+  &::after {
+    background: var(--hamburger-color);
+    content: "";
+    display: block;
+    height: calc(var(--line-thickness) * 2);
+    position: absolute;
+    width: stretch;
   }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}

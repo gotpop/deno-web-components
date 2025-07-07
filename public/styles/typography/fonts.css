@@ -27,7 +27,7 @@
 
 @font-palette-values --bash {
   font-family: "Monaspace";
-  override-colors: 0 hsl(225 100% 40%), 1 hsl(250 100% 80%), 2 hsl(225 100% 40%), 3 hsl(225 100% 40%), 4 hsl(270 50% 40%), 5 hsl(210 40% 2%), 6 hsl(210 10% 30%), 7 hsl(327 100% 54%); 8 hsl(120 100% 50%);
+  override-colors: 0 hsl(225 100% 40%), 1 hsl(250 100% 80%), 2 hsl(225 100% 40%), 3 hsl(225 100% 40%), 4 hsl(270 50% 40%), 5 hsl(210 40% 2%), 6 hsl(210 10% 30%), 7 hsl(327 100% 54%), 8 hsl(120 100% 50%);
 }
 
 @font-palette-values --css {

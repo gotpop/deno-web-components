@@ -20,11 +20,9 @@ button {
     style(--variant: md): 1.5;
     style(--variant: base): 1.5;
     style(--variant: sm): 1.7;
-
     else: 1.5
   );
 
-  
   :is([variant="dark"], [variant="button"]) & {
     --theme: dark;
   }
@@ -53,7 +51,6 @@ p:not([class]) {
     style(--variant: md): 2;
     style(--variant: base): 2;
     style(--variant: sm): 1.45;
-
     else: 2.2
   );
 
@@ -69,7 +66,6 @@ p:not([class]) {
     style(--variant: md): var(--dark-200);
     style(--variant: base): var(--dark-400);
     style(--variant: sm): var(--dark-100);
-
     else: var(--dark-200)
   );
   font-size: --get-font-size(var(--variant));

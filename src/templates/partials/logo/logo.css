@@ -3,7 +3,7 @@
     align-items: center;
     container: logo / inline-size;
     display: flex;
-    gap: calc(var(--spacing-base) * .8);
+    gap: calc(var(--spacing-base) * 0.8);
     justify-content: center;
     margin: unset;
     padding: var(--spacing-sm);
@@ -30,7 +30,7 @@
       --main-circle-size: 3rem;
     }
   }
-  
+
   .circle {
     --hue: calc(sibling-index() * 50);
     --angle: calc((sibling-index() - 1) * 60deg);
@@ -58,9 +58,9 @@
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    
+
     @container (width >= 9rem) {
-      --font-size: calc(var(--font-scaled-base) * .9);
+      --font-size: calc(var(--font-scaled-base) * 0.9);
     }
   }
 }

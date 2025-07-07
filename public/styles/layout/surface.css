@@ -1,33 +1,30 @@
 /* prettier-ignore */
 @function --get-scheme(--variant <custom-ident>) returns <color> {
-    result: if(
-      style(--variant: dark): var(--dark-scheme);
-      style(--variant: light): var(--light-scheme);
-      
-      else: transparent
-    )
-  }
+  result: if(
+    style(--variant: dark): var(--dark-scheme);
+    style(--variant: light): var(--light-scheme);
+    else: transparent
+  );
+}
 
 /* prettier-ignore */
 @function --get-scheme(--variant <custom-ident>) returns <color> {
-    result: if(
-      style(--variant: dark): var(--dark-scheme);
-      style(--variant: light): var(--light-scheme);
-      
-      else: transparent
-    )
-  }
+  result: if(
+    style(--variant: dark): var(--dark-scheme);
+    style(--variant: light): var(--light-scheme);
+    else: transparent
+  );
+}
 
 /* prettier-ignore */
 @function --get-padding-size(--size-attr <custom-ident>) returns <length> {
-    result: if(
-      style(--size-attr: large): 3rem;
-      style(--size-attr: medium): 2rem;
-      style(--size-attr: small): 1rem;
-      
-      else: 0rem 
-    )
-  }
+  result: if(
+    style(--size-attr: large): 3rem;
+    style(--size-attr: medium): 2rem;
+    style(--size-attr: small): 1rem;
+    else: 0rem
+  );
+}
 
 .sticky {
   position: sticky;
