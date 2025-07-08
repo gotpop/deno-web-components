@@ -107,7 +107,12 @@
 
   /* Icons CSS */
   --icon-triangle: shape(from 0% 0%, line to 0% 100%, line to 100% 50%, close);
-  --icon-triangle-left: shape(from 100% 0%, line to 100% 100%, line to 0% 50%, close);
+  --icon-triangle-left: shape(
+    from 100% 0%,
+    line to 100% 100%,
+    line to 0% 50%,
+    close
+  );
   --icon-github: shape(
     from 33.45% 80.52%,
     curve by -1.05% 0.74% with 0% 0.41%/-0.46% 0.74%,
