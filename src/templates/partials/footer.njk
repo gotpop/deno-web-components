@@ -4,8 +4,8 @@
   role="contentinfo" 
   variant="dark"
 >
-    <contain-items>
-        <div class="footer-logo">
+  <contain-items>
+    <div class="footer-logo">
       <a 
         href="/" 
         class="logo-link" 
@@ -29,21 +29,16 @@
         {% endfor %}
       </div>
     {% endfor %}
-  <layout-item 
+    <layout-item 
     end="-3" 
     start="3" 
     variant="column"
   >
-    <p 
-      bottom="1"
-      top="1"
-      variant="sm"
-      align="center"
-    >
-      {{ siteData.site.footer.copyright }}
-      All rights reserved.
-      Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
-    </p>
-  </layout-item>
+      <p class="footer-copyright">
+        {{ siteData.site.footer.copyright }}
+        All rights reserved.
+        Built with Deno Powered by <a href="https://deno.com/deploy">Deno Deploy</a>
+      </p>
+    </layout-item>
   </contain-items>
 </footer>

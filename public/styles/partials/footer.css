@@ -11,32 +11,28 @@ footer {
   justify-content: center;
   padding-block: var(--spacing-xl);
   view-transition-name: attr(id type(<custom-ident>), none);
+}
 
-  layout-item {
-    grid-column: content;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer-copyright {
+  color: var(--light-200);
+  font-size: var(--font-scaled-sm);
+  margin-block: 0;
+  padding-block-start: calc(1rem - 1cap);
+  text-align: center;
+}
 
-    .copyright {
-      color: var(--light-300);
-    }
+.footer-logo {
+  grid-column: --xs-lg-up(content, content-start / span 2);
+  width: stretch;
+  align-self: start;
+
+  figure {
+    justify-content: --xs-lg-up(center, start);
   }
+}
 
-  .footer-logo {
-    grid-column: --xs-lg-up(content, content-start / span 2);
-    width: stretch;
-    align-self: start;
-
-    figure {
-      justify-content: --xs-lg-up(center, start);
-    }
-  }
-
-  .footer-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
