@@ -1,7 +1,8 @@
 /* prettier-ignore */
 @function --get-icon(--icon <custom-ident>) {
   result: if(
-    style(--icon: arrow): var(--icon-triangle);
+    style(--icon: arrow-right): var(--icon-triangle);
+    style(--icon: arrow-left): var(--icon-triangle-left);
     style(--icon: github): var(--icon-github);
     style(--icon: linkedin): var(--icon-linkedin);
     else: var(--icon-github)
