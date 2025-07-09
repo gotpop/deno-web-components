@@ -10,7 +10,7 @@ footer {
   grid-template-columns: subgrid;
   justify-content: center;
   padding-block: var(--spacing-xl);
-  view-transition-name: attr(id type(<custom-ident>), none);
+  view-transition-name: footer;
 }
 
 .footer-copyright {

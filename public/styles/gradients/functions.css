@@ -21,3 +21,17 @@
     var(--color) 11px
   );
 }
+
+@function --bg-diagonal-surface(
+  --angle: 45deg,
+  --color: --opacity(var(--dark-600), 0.5)
+) {
+  result: repeating-linear-gradient(
+      var(--angle),
+      transparent,
+      transparent 10px,
+      var(--color) 10px,
+      var(--color) 11px
+    )
+    1rem 1rem / 1rem 1rem;
+}

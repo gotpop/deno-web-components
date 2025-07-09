@@ -2,7 +2,7 @@ export const aboutData = {
   bodyMarkupData: [
     {
       tag: "h2",
-      content: "About Us",
+      content: "Who we are",
       id: "about-us",
     },
     {
