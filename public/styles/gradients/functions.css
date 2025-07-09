@@ -34,6 +34,21 @@
     top 0.625rem left / 1rem 1rem;
 }
 
+@function --line(--angle: 90deg) {
+  result: repeating-linear-gradient(
+      var(--angle),
+      transparent,
+      transparent 0.625rem,
+      --opacity(var(--light-500), 0.5) 0.625rem,
+      --opacity(var(--light-500), 0.5) 0.6875rem
+    )
+    0.3125rem 0.625rem / 1rem 1rem;
+}
+
+@function --bg-grid() {
+  result: --line(0deg), --line(90deg), var(--light-100);
+}
+
 @function --bg-diagonal-surface(
   --angle: 45deg,
   --color: --opacity(var(--dark-600), 0.5)

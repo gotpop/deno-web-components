@@ -38,7 +38,7 @@ content-main {
 
 content-sidebar {
   align-self: start;
-  background: --bg-line();
+  background: --bg-grid();
   display: grid;
   gap: var(--spacing-base);
   grid-area: sidebar;
