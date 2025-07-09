@@ -17,10 +17,7 @@
     var(--xl)
   );
 
-  background-blend-mode: overlay;
-  background-color: --opacity(var(--light-100), 0.4);
-  background-image: --bg-diagonal();
-  background-size: 1rem 1rem;
+  background: --bg-diagonal-surface();
   column-gap: 3rem;
   display: grid;
   grid-column: --xs-xl-up(breakout, content);

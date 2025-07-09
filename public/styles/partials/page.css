@@ -1,9 +1,5 @@
 .wrapper-features {
-  background-blend-mode: overlay;
-  background-clip: border-box;
-  background-color: --opacity(var(--light-100), 0.3);
-  background-image: --bg-diagonal();
-  background-size: 1rem 1rem;
+  background: --bg-diagonal-surface();
   display: flex;
   flex-direction: column;
   grid-column: --xs-xl-up(breakout, content);
