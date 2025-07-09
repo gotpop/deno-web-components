@@ -1,23 +1,17 @@
 content-with-sidebar {
-  --xs: "main main main" "sidebar sidebar sidebar";
-  --sm: "main main main main" "sidebar sidebar sidebar sidebar";
-  --md: "main main main main main main"
-    "sidebar sidebar sidebar sidebar sidebar sidebar";
-  --lg: "main main main main sidebar sidebar";
-  --xl: "main main main main sidebar sidebar";
-
   --areas: --xs-sm-md-lg-xl-up(
-    var(--xs),
-    var(--sm),
-    var(--md),
-    var(--lg),
-    var(--xl)
+    "main main main" "sidebar sidebar sidebar",
+    "main main main main" "sidebar sidebar sidebar sidebar",
+    "main main main main main main"
+      "sidebar sidebar sidebar sidebar sidebar sidebar",
+    "main main main main sidebar sidebar",
+    "main main main main sidebar sidebar"
   );
 
   background: --bg-diagonal-surface();
+  column-gap: --xs-md-up(2rem, 3rem);
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
   display: grid;
-  column-gap: --xs-md-up(2rem, 3rem);
   grid-column: --xs-xl-up(breakout, content);
   grid-template-areas: var(--areas);
   grid-template-columns: subgrid;
@@ -43,11 +37,8 @@ content-main {
 }
 
 content-sidebar {
-  --grid-horizontal-color: var(--light-300);
-  --grid-vertical-color: var(--light-200);
-
   align-self: start;
-  background: var(--light-200) paint(grid);
+  background: --bg-line();
   display: grid;
   gap: var(--spacing-base);
   grid-area: sidebar;

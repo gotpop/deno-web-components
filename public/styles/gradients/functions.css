@@ -22,6 +22,18 @@
   );
 }
 
+@function --bg-line() {
+  result: var(--light-200)
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 10px,
+      --opacity(var(--dark-600), 0.5) 10px,
+      --opacity(var(--dark-600), 0.5) 11px
+    )
+    top 0.625rem left / 1rem 1rem;
+}
+
 @function --bg-diagonal-surface(
   --angle: 45deg,
   --color: --opacity(var(--dark-600), 0.5)
