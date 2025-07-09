@@ -23,6 +23,21 @@ textarea {
   min-height: 3rem;
   border-radius: unset;
 
+  --w: calc(100% - 1rem);
+  --grad: linear-gradient(
+    to right,
+    var(--light-700) var(--w),
+    var(--color) var(--w)
+  );
+
+  background-color: --opacity(var(--light-100), 0.5);
+  border-image: var(--grad) 16;
+  /* border-right-width: 1rem; */
+  color: var(--dark-500);
+  font-size: var(--font-scaled-base);
+  font-family: var(--font-family-base);
+  border-width: 2px;
+
   &:valid {
     border-right: green solid 1rem;
   }

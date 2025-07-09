@@ -34,6 +34,7 @@ input {
   height: 3rem;
   line-height: 3rem;
 
+  /* Add placeholder-shown */
   &::placeholder {
     color: var(--dark-200);
     font-size: var(--font-scaled-base);
