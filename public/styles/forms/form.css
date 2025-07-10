@@ -22,6 +22,7 @@ textarea {
   width: 100%;
   min-height: 3rem;
   border-radius: unset;
+  height: calc-size(max-content, round(up, size, 1rem));
 
   --w: calc(100% - 1rem);
   --grad: linear-gradient(
@@ -37,6 +38,7 @@ textarea {
   font-size: var(--font-scaled-base);
   font-family: var(--font-family-base);
   border-width: 2px;
+  border: 2px solid var(--dark-500);
 
   &:valid {
     border-right: green solid 1rem;
