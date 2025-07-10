@@ -1,5 +1,5 @@
 .wrapper-features {
-  background: --background(crosshatch);
+  background: --background(diagonal);
   display: flex;
   flex-direction: column;
   grid-column: --xs-xl-up(breakout, content);

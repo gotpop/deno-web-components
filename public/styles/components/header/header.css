@@ -1,23 +1,21 @@
 header {
-  --row-lg: [full-height-start] 0rem min-content 0rem [full-height-end];
-  --col-xs: [header-logo] 1fr;
-  --col-sm: [header-logo] 1fr;
-  --col-md: [header-logo] 1fr;
-  --col-lg: subgrid [] [logo-start] [] [logo-end nav-start] [] [] [] [nav-end]
-    [];
-  --col-xl: subgrid [] [] [logo-start] [logo-end nav-start] [] [] [] []
-    [nav-end] [] [];
+  --grid-col: --xs-sm-md-lg-xl-up(
+    [header-logo] 1fr,
+    [header-logo] 1fr,
+    [header-logo] 1fr,
+    subgrid [] [logo-start] [] [logo-end nav-start] [] [] [] [nav-end] [],
+    subgrid [] [] [logo-start] [logo-end nav-start] [] [] [] [] [nav-end] [] []
+  );
+
+  --grid-row: --xs-lg-up(
+    [header-logo] 1fr,
+    [full-height-start] 0rem min-content 0rem [full-height-end]
+  );
 
   background: --background(header);
   display: grid;
   grid-area: header / full;
-  grid: --xs-lg-up([header-logo] 1fr, var(--row-lg)) / --xs-sm-md-lg-xl-up(
-      var(--col-xs),
-      var(--col-sm),
-      var(--col-md),
-      var(--col-lg),
-      var(--col-xl)
-    );
+  grid: var(--grid-row) / var(--grid-col);
   height: --xs-lg-up(var(--round-up), auto);
   position: sticky;
   row-gap: --xs-lg-up(0, var(--spacing-base));
