@@ -1,6 +1,7 @@
 :where(html) {
   /* Base colors */
   --base-color: oklch(0.69 0.35 327.92);
+  --base-color: oklch(0.38 0.19 328.11);
   --triad-1: oklch(from var(--base-color) l c calc(h - 120));
   --triad-2: oklch(from var(--base-color) l c calc(h + 120));
   --base-light: oklch(1 0 0);
