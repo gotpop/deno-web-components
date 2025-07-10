@@ -14,7 +14,7 @@
   .circles {
     --main-circle-color: --opacity(var(--secondary-400), 0.2);
     --small-circle-color: var(--triad-2);
-    --main-circle-size: 2rem;
+    --main-circle-size: 1.2rem;
     --main-circle-radius: calc(var(--main-circle-size) / 2);
     --small-circle-size: calc(var(--main-circle-size) / 2);
     --small-circle-radius: calc(var(--small-circle-size) / 2);
@@ -25,9 +25,15 @@
     position: relative;
     aspect-ratio: 1;
     width: var(--main-circle-size);
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+
+    .logo:hover & {
+      transform: rotate(360deg);
+    }
 
     @container (width >= 9rem) {
-      --main-circle-size: 3rem;
+      --main-circle-size: 2.6rem;
     }
   }
 
@@ -52,7 +58,7 @@
   .logo-text {
     --font-size: var(--font-scaled-sm);
 
-    color: var(--triad-2);
+    color: var(--light-100);
     font-family: var(--font-family-heading);
     font-size: var(--font-size);
     font-weight: var(--font-weight-bold);
