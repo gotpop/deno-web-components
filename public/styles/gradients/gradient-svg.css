@@ -6,7 +6,7 @@
   left: 0;
   mix-blend-mode: color;
   z-index: -1;
-  display: none;
+  /* display: none; */
 
   g {
     filter: url(#grain);
