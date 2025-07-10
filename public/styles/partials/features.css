@@ -1,16 +1,4 @@
 .card-feature {
-  --grid-horizontal-color: var(--light-200);
-  --grid-vertical-color: var(--light-100);
-
-  background-color: --opacity(var(--light-100), 0.8);
-  background-image: paint(grid);
+  background: --background(line);
   height: var(--round-up-stretch);
-
-  h3 {
-    &:first-child {
-      @media (width <= 768px) {
-        padding-block-start: calc(2rem - 1cap);
-      }
-    }
-  }
 }
