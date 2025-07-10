@@ -26,9 +26,7 @@ hero-home {
     minmax(3rem, auto) [full-end];
 
   align-content: start;
-  background-image: --bg-diagonal(),
-    --bg-diagonal(-45deg, --opacity(var(--dark-600), 0.7));
-  background-size: 1rem 1rem;
+  background: --background(crosshatch);
   display: grid;
   grid-column: breakout;
   grid-template: var(--row) / var(--layout);
@@ -37,7 +35,7 @@ hero-home {
   view-transition-name: hero-home;
 
   &::before {
-    background: --bg-grid();
+    background: --background(grid);
     content: "";
     grid-area: full;
   }

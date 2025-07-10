@@ -9,56 +9,31 @@
   );
 }
 
-@function --bg-diagonal(
-  --angle: 45deg,
-  --color: --opacity(var(--dark-600), 0.5)
+/* Backgrounds */
+
+@function --line(
+  --angle: 90deg,
+  --color: var(--light-500),
+  --position: 0.3125rem 0.625rem
 ) {
-  result: repeating-linear-gradient(
-    var(--angle),
-    transparent,
-    transparent 10px,
-    var(--color) 10px,
-    var(--color) 11px
-  );
-}
-
-@function --bg-line() {
-  result: var(--light-200)
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 10px,
-      --opacity(var(--dark-600), 0.5) 10px,
-      --opacity(var(--dark-600), 0.5) 11px
-    )
-    top 0.625rem left / 1rem 1rem;
-}
-
-@function --line(--angle: 90deg) {
   result: repeating-linear-gradient(
       var(--angle),
       transparent,
       transparent 0.625rem,
-      --opacity(var(--light-500), 0.5) 0.625rem,
-      --opacity(var(--light-500), 0.5) 0.6875rem
+      var(--color) 0.625rem,
+      var(--color) 0.6875rem
     )
-    0.3125rem 0.625rem / 1rem 1rem;
+    var(--position) / 1rem 1rem;
 }
 
-@function --bg-grid() {
-  result: --line(0deg), --line(90deg), var(--light-100);
-}
+/* prettier-ignore */
+@function --background(--variant <custom-ident>) {
+  result: if(
+    style(--variant: line): --line(0deg), var(--light-100);
+    style(--variant: grid): --line(0deg), --line(90deg), var(--light-100);
+    style(--variant: diagonal): --line(45deg, --opacity(var(--dark-600), 0.5), 0 0);
+    style(--variant: crosshatch): --line(45deg, --opacity(var(--dark-600), 0.5), 0 0), --line(-45deg, --opacity(var(--dark-600), 0.5), 0 0);
 
-@function --bg-diagonal-surface(
-  --angle: 45deg,
-  --color: --opacity(var(--dark-600), 0.5)
-) {
-  result: repeating-linear-gradient(
-      var(--angle),
-      transparent,
-      transparent 10px,
-      var(--color) 10px,
-      var(--color) 11px
-    )
-    1rem 1rem / 1rem 1rem;
+    else: var(--light-100);
+  );
 }

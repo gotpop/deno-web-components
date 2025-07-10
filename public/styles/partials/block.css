@@ -8,7 +8,7 @@ content-with-sidebar {
     "main main main main sidebar sidebar"
   );
 
-  background: --bg-diagonal-surface();
+  background: --background(diagonal);
   column-gap: --xs-md-up(2rem, 3rem);
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
   display: grid;
@@ -20,10 +20,7 @@ content-with-sidebar {
 }
 
 content-main {
-  --grid-horizontal-color: --opacity(var(--light-500), 0.5);
-  --grid-vertical-color: var(--light-200);
-
-  background: var(--light-100) paint(grid);
+  background: --background(line);
   display: grid;
   grid-area: main;
   grid-auto-rows: min-content;
@@ -38,7 +35,7 @@ content-main {
 
 content-sidebar {
   align-self: start;
-  background: --bg-grid();
+  background: --background(grid);
   display: grid;
   gap: var(--spacing-base);
   grid-area: sidebar;

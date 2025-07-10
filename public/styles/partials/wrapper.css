@@ -17,7 +17,7 @@
     var(--xl)
   );
 
-  background: --bg-diagonal-surface();
+  background: --background(crosshatch);
   column-gap: 3rem;
   display: grid;
   grid-column: --xs-xl-up(breakout, content);
