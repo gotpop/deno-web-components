@@ -1,6 +1,6 @@
 header {
-  --grid-vertical-color: var(--light-300);
-  --grid-horizontal-color: var(--light-300);
+  --grid-vertical-color: --opacity(var(--light-200), 0.3);
+  --grid-horizontal-color: --opacity(var(--light-200), 0.3);
   --grid-col: --xs-sm-md-lg-xl-up(
     [header-logo] 1fr,
     [header-logo] 1fr,
