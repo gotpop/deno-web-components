@@ -12,7 +12,7 @@
 
 ::selection {
   background-color: var(--accent);
-  color: var(--light-200);
+  color: var(--dark-400);
 }
 
 ::marker {
