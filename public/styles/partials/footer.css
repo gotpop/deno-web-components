@@ -1,5 +1,8 @@
 footer {
-  background: --background(footer);
+  --grid-vertical-color: --opacity(var(--dark-600), 0.3);
+  --grid-horizontal-color: --opacity(var(--dark-600), 0.3);
+
+  background: paint(grid) var(--secondary-900);
   color: var(--light-300);
   display: grid;
   gap: 3rem;

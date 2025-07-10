@@ -1,4 +1,6 @@
 header {
+  --grid-vertical-color: var(--light-300);
+  --grid-horizontal-color: var(--light-300);
   --grid-col: --xs-sm-md-lg-xl-up(
     [header-logo] 1fr,
     [header-logo] 1fr,
@@ -12,7 +14,7 @@ header {
     [full-height-start] 0rem min-content 0rem [full-height-end]
   );
 
-  background: --background(header);
+  background: paint(grid) var(--secondary-700);
   display: grid;
   grid-area: header / full;
   grid: var(--grid-row) / var(--grid-col);
