@@ -8,19 +8,16 @@ header {
   --col-xl: subgrid [] [] [logo-start] [logo-end nav-start] [] [] [] []
     [nav-end] [] [];
 
-  background-color: var(--secondary-700);
-  background-image: paint(grid);
+  background: --background(header);
   display: grid;
   grid-area: header / full;
-  grid-template-columns:
-    --xs-sm-md-lg-xl-up(
-    var(--col-xs),
-    var(--col-sm),
-    var(--col-md),
-    var(--col-lg),
-    var(--col-xl)
-  );
-  grid-template-rows: --xs-lg-up([header-logo] 1fr, var(--row-lg));
+  grid: --xs-lg-up([header-logo] 1fr, var(--row-lg)) / --xs-sm-md-lg-xl-up(
+      var(--col-xs),
+      var(--col-sm),
+      var(--col-md),
+      var(--col-lg),
+      var(--col-xl)
+    );
   height: --xs-lg-up(var(--round-up), auto);
   position: sticky;
   row-gap: --xs-lg-up(0, var(--spacing-base));

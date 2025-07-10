@@ -32,6 +32,7 @@
     style(--variant: line): --line(0deg), var(--light-100);
     style(--variant: grid): --line(0deg), --line(90deg), var(--light-100);
     style(--variant: diagonal): --line(45deg, --opacity(var(--dark-600), 0.5), 0 0);
+    style(--variant: header): --line(45deg, --opacity(var(--dark-600), 0.9), 0 0), var(--secondary-700);
     style(--variant: crosshatch): --line(45deg, --opacity(var(--dark-600), 0.5), 0 0), --line(-45deg, --opacity(var(--dark-600), 0.5), 0 0);
 
     else: var(--light-100);
