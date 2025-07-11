@@ -7,7 +7,7 @@
             <h1 
         bottom="1" 
         id="heading-primary"
-        top="1" 
+        top="2" 
         variant="lg" 
     >{{ currentFeature.title }}</h1>
             <p 
@@ -45,7 +45,7 @@
         <content-main>
             {% for item in currentFeature.bodyMarkupData %}
                 {% if item.tag == "h2" %}
-                    <h2 variant="lg" top="1" bottom="3" id="{{ item.id }}">{{ item.content }}</h2>
+                    <h2 variant="lg" top="2" bottom="3" id="{{ item.id }}">{{ item.content }}</h2>
 
                 {% elif item.tag == "h3" %}
                     <h3 variant="lg" top="4" bottom="3" id="{{ item.id }}">{{ item.content }}</h3>
