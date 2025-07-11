@@ -2,7 +2,7 @@ blockquote {
   hanging-punctuation: first last;
 }
 
-button {
+:where(button, a) {
   &:focus-visible {
     outline: 2px dashed var(--accent);
     outline-offset: var(--outline-offset);

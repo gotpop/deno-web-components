@@ -105,12 +105,12 @@
 /* prettier-ignore */
 @function --get-font-weight-body(--variant <custom-ident>) returns <number> {
   result: if(
-    style(--variant: sm): var(--font-weight-light);
-    style(--variant: base): var(--font-weight-light);
-    style(--variant: md): var(--font-weight-light);
-    style(--variant: lg): var(--font-weight-light);
-    style(--variant: xl): var(--font-weight-light);
-    style(--variant: xxl): var(--font-weight-light);
+    style(--variant: sm): var(--font-weight-regular);
+    style(--variant: base): var(--font-weight-regular);
+    style(--variant: md): var(--font-weight-regular);
+    style(--variant: lg): var(--font-weight-regular);
+    style(--variant: xl): var(--font-weight-regular);
+    style(--variant: xxl): var(--font-weight-regular);
 
     else: var(--font-weight-medium)
   );

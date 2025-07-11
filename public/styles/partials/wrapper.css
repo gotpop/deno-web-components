@@ -31,6 +31,8 @@
 }
 
 .wrapper-index-header {
+  --mode: dark;
+
   grid-column: header;
   display: grid;
   grid-template-columns: 1fr;
