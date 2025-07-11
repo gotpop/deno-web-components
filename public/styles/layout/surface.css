@@ -61,3 +61,22 @@ surface-item {
     max-width: 100vw;
   }
 }
+
+surface-item-index {
+  align-content: attr(align type(<custom-ident>), space-between);
+  align-self: attr(align-self type(<custom-ident>), auto);
+  background-color: --get-scheme(attr(variant type(<custom-ident>), light));
+  display: grid;
+  grid-template-columns: auto;
+  padding: 3rem;
+  view-transition-name: attr(id type(<custom-ident>), none);
+  grid-area: attr(area type(<custom-ident>));
+  background: --background(line);
+  height: var(--round-up-stretch);
+
+  @media (width < 1024px) {
+    grid-column: 2 / -2;
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+  }
+}

@@ -1,0 +1,16 @@
+{% macro featureCard(feature, index) %}
+  <surface-item-index
+    aria-label="{{ feature.title }}"
+    id="{{ feature.slug }}"
+    role="region"
+    area="card-{{ index + 1 }}"
+    >
+    <div>
+      <h3 variant="lg" top="2" bottom="3">{{ feature.title }}</h3>
+      <p variant="base" top="1" bottom="2">{{ feature.blurb }}</p>
+    </div>
+    <a class="link-feature" href="/features/{{ feature.slug }}">
+      <span>Read more</span>
+    </a>
+  </surface-item-index>
+{% endmacro %}
