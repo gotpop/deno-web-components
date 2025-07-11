@@ -9,85 +9,29 @@ button {
   }
 }
 
-/* prettier-ignore */
-@function --font-all-heading(--level: body, --variant: base) {
-  result: normal if(
-    style(--level: body): --get-font-weight-body(var(--variant));
-    else: --get-font-weight(var(--variant));
-  ) --get-font-size(var(--variant)) /
-    if(
-      style(--variant: xxl): 1.2;
-      style(--variant: xl): 1.3;
-      style(--variant: lg): 1.33;
-      style(--variant: md): 1.5;
-      style(--variant: base): 1.5;
-      style(--variant: sm): 1.7;
-      
-      else: 1.5
-    )
-    var(--font-family-base);
-
-}
-
-/* prettier-ignore */
 :where(h1, h2, h3, h4, h5, h6):not([class]) {
-  --variant: attr(variant type(<custom-ident>));
-  --theme: light;
-
-  :is([variant="dark"], [variant="button"]) & {
-    --theme: dark;
-  }
-
-  color: --get-font-colour(var(--theme));
-  font: --font-all-heading(heading, var(--variant));
+  color: --get-font-colour-heading(attr(variant type(<custom-ident>), lg));
+  font: --font(heading, attr(variant type(<custom-ident>), lg));
   margin-block: 0 attr(bottom rem, unset);
   padding-block-start: calc(attr(top rem, unset) - 1cap);
   text-wrap: balance;
 }
 
-/* prettier-ignore */
 p:not([class]) {
-  --variant: attr(variant type(<custom-ident>), base);
-  --theme: light;
-
-  :is([variant="dark"], [variant="button"]) & {
-    --theme: dark;
-  }
-
-
-  --line-height-ratio: if(
-    style(--variant: xxl): 1.183;
-    style(--variant: xl): 1.18;
-    style(--variant: lg): 1.77;
-    style(--variant: md): 2;
-    style(--variant: base): 2;
-    style(--variant: sm): 1.45;
-    else: 2.2
-  );
-
-  color: --get-font-colour(var(--theme));
-  color: if(
-    style(--variant: xxl): var(--dark-300);
-    style(--variant: xl): var(--dark-300);
-    style(--variant: lg): var(--dark-300);
-    style(--variant: md): var(--dark-200);
-    style(--variant: base): var(--dark-400);
-    style(--variant: sm): var(--dark-100);
-    else: var(--dark-200)
-  );
-  font: --font-all-heading(body, var(--variant));
-  line-height: var(--line-height-ratio);
+  color: --get-font-colour-body(attr(variant type(<custom-ident>), base));
+  font: --font(body, attr(variant type(<custom-ident>), base));
   letter-spacing: 0.015em;
   margin-block: 0 attr(bottom rem, unset);
   max-width: 60ch;
-  padding-block-start: calc(attr(top rem, unset) - 1cap);
+  padding-block-start: calc(attr(top rem, 1rem) - 1cap);
   text-wrap: pretty;
+  text-align: attr(align type(<custom-ident>), initial);
 }
 
 :where(p, li) > code {
-  background-color: --opacity(var(--light-200), 0.5);
+  background-color: --opacity(var(--light-200), 0.8);
   color: var(--triad-2);
-  font-family: var(--font-family-base);
-  font-weight: 500;
+  font-family: inherit;
+  font-weight: var(--font-weight-medium);
   padding: calc(var(--spacing-base) - 1cap) 0.4em;
 }

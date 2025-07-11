@@ -1,4 +1,18 @@
 /* prettier-ignore */
+@function --font(--level: body, --variant: base) {
+  result: normal if(
+    style(--level: body): --get-font-weight-body(var(--variant));
+    
+    else: --get-font-weight-heading(var(--variant));
+  ) --get-font-size(var(--variant)) /
+    if(
+    style(--level: body): --get-font-line-height-body(var(--variant));
+    
+    else: --get-font-line-height-heading(var(--variant));
+  ) var(--font-family-heading);
+}
+
+/* prettier-ignore */
 @function --get-font-size(--variant) returns <length> {
   result: if(
     style(--variant: sm): var(--font-scaled-sm);
@@ -8,23 +22,74 @@
     style(--variant: xl): var(--font-scaled-xl);
     style(--variant: xxl): --xs-md-lg-up(
       var(--font-scaled-lg),
-      var(--font-scaled-xxl),
+      var(--font-scaled-xl),
       var(--font-scaled-xxl)
     );
+
     else: var(--font-scaled-base)
   );
 }
 
 /* prettier-ignore */
-@function --get-font-colour(--theme <custom-ident>) returns <color> {
+@function --get-font-colour-heading(--variant <custom-ident>) returns <color> {
   result: if(
-    style(--theme: dark): var(--light-200);
-    else: var(--dark-300)
+    style(--variant: xs): var(--dark-200);
+    style(--variant: sm): var(--dark-200);
+    style(--variant: base): var(--dark-200);
+    style(--variant: md): var(--dark-100);
+    style(--variant: lg): var(--dark-200);
+    style(--variant: xl): var(--dark-300);
+    style(--variant: xxl): var(--dark-400);
+
+
+    else: var(--dark-400)
   );
+
+   @container style(--mode: dark) {
+     result: if(
+       style(--variant: xs): var(--light-200);
+       style(--variant: sm): var(--light-200);
+       style(--variant: base): var(--light-200);
+       style(--variant: md): var(--light-100);
+       style(--variant: lg): var(--light-200);
+       style(--variant: xl): var(--light-300);
+       style(--variant: xxl): var(--light-400);
+
+       else: var(--light-300)
+     );
+  }
 }
 
 /* prettier-ignore */
-@function --get-font-weight(--variant <custom-ident>) returns <number> {
+@function --get-font-colour-body(--variant <custom-ident>) returns <color> {
+  result: if(
+    style(--variant: xxl): var(--dark-300);
+    style(--variant: xl): var(--dark-300);
+    style(--variant: lg): var(--dark-300);
+    style(--variant: md): var(--dark-200);
+    style(--variant: base): var(--dark-400);
+    style(--variant: sm): var(--dark-100);
+
+    else: var(--dark-200)
+  );
+
+   @container style(--mode: dark) {
+     result: if(
+       style(--variant: xs): var(--light-200);
+       style(--variant: sm): var(--light-200);
+       style(--variant: base): var(--light-200);
+       style(--variant: md): var(--light-100);
+       style(--variant: lg): var(--light-200);
+       style(--variant: xl): var(--light-300);
+       style(--variant: xxl): var(--light-400);
+
+       else: var(--light-300)
+     );
+  }
+}
+
+/* prettier-ignore */
+@function --get-font-weight-heading(--variant <custom-ident>) returns <number> {
   result: if(
     style(--variant: sm): var(--font-weight-light);
     style(--variant: base): var(--font-weight-regular);
@@ -32,6 +97,7 @@
     style(--variant: lg): var(--font-weight-semibold);
     style(--variant: xl): var(--font-weight-bold);
     style(--variant: xxl): var(--font-weight-black);
+
     else: var(--font-weight-medium)
   );
 }
@@ -45,11 +111,13 @@
     style(--variant: lg): var(--font-weight-light);
     style(--variant: xl): var(--font-weight-light);
     style(--variant: xxl): var(--font-weight-light);
+
     else: var(--font-weight-medium)
   );
 }
+
 /* prettier-ignore */
-@function --get-font-line-height(--variant <custom-ident>) returns <number> {
+@function --get-font-line-height-heading(--variant <custom-ident>) returns <number> {
   result: if(
     style(--variant: xxl): 1.2;
     style(--variant: xl): 1.3;
@@ -57,7 +125,22 @@
     style(--variant: md): 1.5;
     style(--variant: base): 1.5;
     style(--variant: sm): 1.7;
+
     else: 1.5
+  );
+}
+
+/* prettier-ignore */
+@function --get-font-line-height-body(--variant <custom-ident>) returns <number> {
+  result:  if(
+    style(--variant: xxl): 1.183;
+    style(--variant: xl): 1.18;
+    style(--variant: lg): 1.77;
+    style(--variant: md): 2;
+    style(--variant: base): 2;
+    style(--variant: sm): 1.45;
+
+    else: 2.2
   );
 }
 
@@ -70,6 +153,7 @@
     style(--variant: lg): 3rem;
     style(--variant: xl): 4rem;
     style(--variant: xxl): 5rem;
+
     else: 3rem
   );
 }

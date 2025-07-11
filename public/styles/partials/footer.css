@@ -1,8 +1,19 @@
+@function --light-dark(--mode) {
+  result: var(--mode);
+
+  @media (prefers-color-scheme: dark) {
+    result: if(style(--mode: dark): light; else: dark);
+  }
+}
+
 footer {
   --grid-vertical-color: --opacity(var(--dark-600), 0.3);
   --grid-horizontal-color: --opacity(var(--dark-600), 0.3);
+  --mode: --light-dark(dark);
+  --mode: dark;
 
-  background: paint(grid) var(--secondary-900);
+  /* prettier-ignore */
+  background: paint(grid) if(style(--mode: dark): var(--secondary-900); else: var(--light-100));
   color: var(--light-300);
   display: grid;
   gap: 3rem;
@@ -14,14 +25,6 @@ footer {
   justify-content: center;
   padding-block: var(--spacing-xl);
   view-transition-name: footer;
-}
-
-.footer-copyright {
-  color: var(--light-200);
-  font-size: var(--font-scaled-sm);
-  margin-block: 0;
-  padding-block-start: calc(1rem - 1cap);
-  text-align: center;
 }
 
 .footer-logo {

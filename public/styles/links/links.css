@@ -41,7 +41,7 @@ a:not([class]) {
 }
 
 .footer-link {
-  color: var(--light-100);
+  color: --get-font-colour-body(base);
   display: inline flex;
   font-size: var(--font-scaled-sm);
   gap: var(--spacing-base);
