@@ -1,20 +1,22 @@
 .wrapper-index-section {
-  --xs: "header header header" "card-1 card-1 card-1" "card-2 card-2 card-2"
-    "card-3 card-3 card-3";
-  --sm: "header header . ." "card-1 card-1 card-1 card-1"
-    "card-2 card-2 card-2 card-2" "card-3 card-3 card-3 card-3";
-  --md: "header header . . . ." "card-1 card-1 card-1 card-2 card-2 card-2"
-    "card-3 card-3 card-3 card-3 card-3 card-3";
-  --lg: "header header . . . ." "card-1 card-1 card-1 card-2 card-2 card-2"
-    "card-3 card-3 card-3 card-3 card-3 card-3";
-  --xl: "header . . . . ." "card-1 card-1 card-2 card-2 card-3 card-3";
-
+  /* prettier-ignore */
   --areas: --xs-sm-md-lg-xl-up(
-    var(--xs),
-    var(--sm),
-    var(--md),
-    var(--lg),
-    var(--xl)
+    "header header header" 
+    "card-1 card-1 card-1" 
+    "card-2 card-2 card-2"
+    "card-3 card-3 card-3",
+    "header header . ." 
+    "card-1 card-1 card-1 card-1"
+    "card-2 card-2 card-2 card-2" 
+    "card-3 card-3 card-3 card-3",
+    "header header . . . ." 
+    "card-1 card-1 card-1 card-2 card-2 card-2"
+    "card-3 card-3 card-3 card-3 card-3 card-3",
+    "header header . . . ." 
+    "card-1 card-1 card-1 card-2 card-2 card-2"
+    "card-3 card-3 card-3 card-3 card-3 card-3",
+    "header . . . . ." 
+    "card card card card card card"
   );
 
   background: --background(crosshatch);
@@ -36,10 +38,4 @@
   grid-column: header;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-
-  a {
-    display: flex;
-    background-color: --opacity(var(--secondary-500), 0.7);
-  }
 }
