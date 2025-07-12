@@ -1,5 +1,5 @@
 {% macro featureCard(feature, index) %}
-  <surface-item 
+  <card-element 
     aria-label="{{ feature.title }}"
     end="auto"
     id="{{ feature.slug }}"
@@ -14,5 +14,5 @@
     <a class="link-feature" href="/features/{{ feature.slug }}">
       <span>Read more</span>
     </a>
-  </surface-item>
+  </card-element>
 {% endmacro %}

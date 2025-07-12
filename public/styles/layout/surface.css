@@ -4,7 +4,7 @@
   height: max-content;
 }
 
-surface-item {
+card-element {
   --end: attr(end type(<integer> | <custom-ident>), -1);
   --start: attr(start type(<integer> | <custom-ident>), 1);
 
