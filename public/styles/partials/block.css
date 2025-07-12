@@ -9,7 +9,7 @@ content-with-sidebar {
   );
 
   background: --background(diagonal);
-  column-gap: --xs-md-up(2rem, 3rem);
+  column-gap: --xs-md-up(0, 3rem);
   column-rule: 3rem solid --opacity(var(--primary-500), 0.02);
   display: grid;
   grid-column: --xs-xl-up(breakout, content);
@@ -20,7 +20,9 @@ content-with-sidebar {
 }
 
 content-main {
-  background: --background(line);
+  /* background: --background(line); */
+  background-color: var(--light-100);
+  background-image: paint(grid), var(--grain-uri);
   display: grid;
   grid-area: main;
   grid-auto-rows: min-content;
@@ -35,7 +37,9 @@ content-main {
 
 content-sidebar {
   align-self: start;
-  background: --background(grid);
+  /* background: --background(grid); */
+  background-color: var(--light-100);
+  background-image: paint(grid), var(--grain-uri);
   display: grid;
   gap: var(--spacing-base);
   grid-area: sidebar;

@@ -29,12 +29,12 @@
 /* prettier-ignore */
 @function --background(--variant <custom-ident>) {
   result: if(
-    style(--variant: line): --line(0deg, var(--light-300)), var(--light-100);
-    style(--variant: grid): --line(0deg, var(--light-300)), --line(90deg, var(--light-300)), var(--light-100);
-    style(--variant: diagonal): --line(45deg, --opacity(var(--dark-600), 0.5), 0 0);
+    style(--variant: line): --line(0deg, var(--light-200)), var(--light-100);
+    style(--variant: grid): --line(0deg, var(--light-200)), --line(90deg, var(--light-200)), var(--light-100);
+    style(--variant: diagonal): --line(45deg, --opacity(var(--secondary-600), 0.5), 0 0);
     style(--variant: header): --line(0deg, --opacity(var(--light-300), 0.3), 0.6525rem 0.67rem),  var(--secondary-700);
     style(--variant: footer): --line(0deg, --opacity(var(--dark-600), 0.3), 0 0), var(--secondary-900);
-    style(--variant: crosshatch): --line(45deg, --opacity(var(--dark-600), 0.5), 0 0), --line(-45deg, --opacity(var(--dark-600), 0.5), 0 0);
+    style(--variant: crosshatch): --line(45deg, --opacity(var(--secondary-100), 0.5), 0 0), --line(-45deg, --opacity(var(--secondary-100), 0.5), 0 0);
 
     else: var(--light-100);
   );

@@ -7,15 +7,15 @@
     "card-2 card-2 card-2"
     "card-3 card-3 card-3",
     /* sm */
-    ". header header ." 
+    "header header header header" 
     "card-1 card-1 card-1 card-1"
     "card-2 card-2 card-2 card-2" 
     "card-3 card-3 card-3 card-3",
     /* md */
-    "header header . ." 
-    "card-1 card-1 card-1 card-1"
-    "card-2 card-2 card-2 card-2" 
-    "card-3 card-3 card-3 card-3",
+    "header header . . . ." 
+    "card-1 card-1 card-1 card-1 card-1 card-1"
+    "card-2 card-2 card-2 card-2 card-2 card-2" 
+    "card-3 card-3 card-3 card-3 card-3 card-3",
     /* lg */
     "header header . . . ." 
     "card-1 card-1 card-1 card-2 card-2 card-2"
@@ -26,7 +26,7 @@
   );
 
   background: --background(crosshatch);
-  /* column-gap: var(--spacing-lg); */
+  column-gap: --xs-lg-up(1rem, var(--spacing-lg));
   display: grid;
   grid-column: --xs-xl-up(breakout, content);
   grid-template-areas: var(--areas);

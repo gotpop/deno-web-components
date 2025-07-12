@@ -1,3 +1,9 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
 .header-nav {
   display: --xs-lg-up(none, flex);
   flex-direction: --xs-lg-up(column, row);

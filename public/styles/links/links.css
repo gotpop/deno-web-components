@@ -7,12 +7,12 @@
 }
 
 /* prettier-ignore */
-@function --get-padding-size2(--size-attr <custom-ident>) returns <length> {
+@function --get-padding-size(--size-attr <custom-ident>) returns <length> {
   result: if(
     style(--size-attr: large): 3rem;
     style(--size-attr: medium): 2rem;
     style(--size-attr: small): 1rem;
-    else: 0rem /* Default padding */
+    else: 0rem
   );
 }
 

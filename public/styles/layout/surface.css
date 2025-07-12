@@ -1,82 +1,21 @@
-/* prettier-ignore */
-@function --get-scheme(--variant <custom-ident>) returns <color> {
-  result: if(
-    style(--variant: dark): var(--dark-scheme);
-    style(--variant: light): var(--light-scheme);
-    else: transparent
-  );
-}
-
-/* prettier-ignore */
-@function --get-scheme(--variant <custom-ident>) returns <color> {
-  result: if(
-    style(--variant: dark): var(--dark-scheme);
-    style(--variant: light): var(--light-scheme);
-    else: transparent
-  );
-}
-
-/* prettier-ignore */
-@function --get-padding-size(--size-attr <custom-ident>) returns <length> {
-  result: if(
-    style(--size-attr: large): 3rem;
-    style(--size-attr: medium): 2rem;
-    style(--size-attr: small): 1rem;
-    else: 0rem
-  );
-}
-
 .sticky {
   position: sticky;
   top: var(--site-header-height);
   height: max-content;
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-base);
-}
-
 surface-item {
-  --dark-scheme: --opacity(var(--secondary-400), var(--opacity));
   --end: attr(end type(<integer> | <custom-ident>), -1);
-  --light-scheme: --opacity(var(--light-100), var(--opacity));
-  --opacity: attr(opacity type(<number>), 0.4);
   --start: attr(start type(<integer> | <custom-ident>), 1);
+  --grid-offset: left;
 
   align-content: attr(align type(<custom-ident>), space-between);
-  align-self: attr(align-self type(<custom-ident>), auto);
-  background-color: --get-scheme(attr(variant type(<custom-ident>), light));
   display: grid;
   grid-column: var(--start) / var(--end);
-  grid-row: attr(row type(<integer>));
-  grid-template-columns: auto;
-  padding: --get-padding-size(attr(size type(<custom-ident>), 1rem));
+  /* background: --background(line); */
+  background-color: var(--light-100);
+  background-image: paint(grid), var(--grain-uri);
+  padding: var(--spacing-lg);
   view-transition-name: attr(id type(<custom-ident>), none);
-
-  @media (width < 1024px) {
-    grid-column: 2 / -2;
-    grid-template-columns: 1fr;
-    max-width: 100vw;
-  }
-}
-
-surface-item-index {
-  align-content: attr(align type(<custom-ident>), space-between);
-  align-self: attr(align-self type(<custom-ident>), auto);
-  background-color: --get-scheme(attr(variant type(<custom-ident>), light));
-  display: grid;
-  grid-template-columns: auto;
-  padding: 3rem;
-  view-transition-name: attr(id type(<custom-ident>), none);
-  grid-area: attr(area type(<custom-ident>));
-  background: --background(line);
-  height: var(--round-up-stretch);
-
-  @media (width < 1024px) {
-    grid-column: 2 / -2;
-    grid-template-columns: 1fr;
-    max-width: 100vw;
-  }
+  grid-area: attr(area type(<custom-ident>), initial);
 }
