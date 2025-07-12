@@ -20,7 +20,6 @@ content-with-sidebar {
 }
 
 content-main {
-  /* background: --background(line); */
   background-color: var(--light-100);
   background-image: paint(grid), var(--grain-uri);
   display: grid;
@@ -29,15 +28,10 @@ content-main {
   grid-template-columns: 1fr;
   height: stretch;
   padding: --xs-sm-up(1rem, 2rem);
-
-  p {
-    color: var(--dark-400);
-  }
 }
 
 content-sidebar {
   align-self: start;
-  /* background: --background(grid); */
   background-color: var(--light-100);
   background-image: paint(grid), var(--grain-uri);
   display: grid;

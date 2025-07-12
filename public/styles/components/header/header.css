@@ -1,11 +1,17 @@
+/* prettier-ignore */
 header {
   --grid-vertical-color: --opacity(var(--light-200), 0.2);
   --grid-horizontal-color: --opacity(var(--light-200), 0.1);
   --grid-col: --xs-sm-md-lg-xl-up(
+    /* xs */
     [header-logo] 1fr,
+    /* sm */
     [header-logo] 1fr,
+    /* md */
     [header-logo] 1fr,
+    /* lg */
     subgrid [] [logo-start] [] [logo-end nav-start] [] [] [] [nav-end] [],
+    /* xl */
     subgrid [] [] [logo-start] [logo-end nav-start] [] [] [] [] [nav-end] [] []
   );
 

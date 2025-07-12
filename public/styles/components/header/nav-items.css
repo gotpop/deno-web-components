@@ -21,7 +21,7 @@ header-nav-item {
 
   &[data-active] {
     --background-colour: var(--secondary-900);
-    --colour: var(--light-300);
+    --colour: var(--primary-300);
   }
 
   &:hover {
