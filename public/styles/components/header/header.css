@@ -20,7 +20,7 @@ header {
     [full-height-start] 0rem min-content 0rem [full-height-end]
   );
 
-  background: paint(grid) var(--secondary-700);
+  background: paint(grid) var(--secondary-900);
   display: grid;
   grid-area: header / full;
   grid: var(--grid-row) / var(--grid-col);

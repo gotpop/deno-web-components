@@ -3,7 +3,7 @@
 @import "./variables/variables.css";
 
 /* Functions */
-@import "./functions/functions.css";
+@import "./functions/colours.css";
 @import "./functions/layout.css";
 @import "./functions/media-queries.css";
 @import "./functions/typographic.css";
