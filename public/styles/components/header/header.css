@@ -1,7 +1,7 @@
 /* prettier-ignore */
 header {
-  --grid-vertical-color: --opacity(var(--light-200), 0.2);
-  --grid-horizontal-color: --opacity(var(--light-200), 0.1);
+  --grid-vertical-color: --opacity(var(--light-200), 0.08);
+  --grid-horizontal-color: --opacity(var(--light-200), 0.08);
   --grid-col: --xs-sm-md-lg-xl-up(
     /* xs */
     [header-logo] 1fr,

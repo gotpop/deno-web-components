@@ -17,7 +17,7 @@
   padding-inline: var(--spacing-md) var(--padding-right);
   transition: background-color 0.2s ease, color 0.2s ease;
 
-  &:hover {
+  &:is(:hover, :active) {
     --background-color: var(--secondary-600);
     --button-toggle-color: var(--secondary-300);
   }

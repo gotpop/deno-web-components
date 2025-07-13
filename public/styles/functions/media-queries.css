@@ -70,3 +70,22 @@
     result: var(--xl);
   }
 }
+
+@function --mobile-first(
+  --sm,
+  --md: var(--sm),
+  --lg: var(--md),
+  --xl: var(--lg)
+) {
+  result: var(--sm);
+
+  @media (min-width: 768px) {
+    result: var(--md);
+  }
+  @media (min-width: 1280px) {
+    result: var(--lg);
+  }
+  @media (min-width: 1600px) {
+    result: var(--xl);
+  }
+}
