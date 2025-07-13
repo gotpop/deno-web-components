@@ -59,7 +59,7 @@ button:not([class]) {
   padding: calc(2rem - 1cap) 3rem;
   background-color: var(--primary-300);
   font-size: var(--font-scaled-md);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-regular);
   color: var(--light-100);
   border: none;
   cursor: pointer;
@@ -68,9 +68,9 @@ button:not([class]) {
 }
 
 form:has(:invalid) button {
-  background-color: var(--secondary-500);
+  background-color: var(--dark-500);
   cursor: not-allowed;
-  opacity: 0.5;
+  color: var(--light-300);
 }
 
 .custom-select {
