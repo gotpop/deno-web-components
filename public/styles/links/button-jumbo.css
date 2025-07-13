@@ -10,7 +10,7 @@
   color: var(--light-100);
   display: grid;
   grid-template-columns: auto 2rem;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-regular);
   gap: var(--gap);
   justify-content: space-between;
   padding: var(--spacing-base);
@@ -18,7 +18,7 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   text-wrap: balance;
   line-height: 1.5;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.055em;
   container: jumbo / inline-size;
   height: var(--round-up-stretch);
 
