@@ -46,6 +46,7 @@ icon-css {
     border-radius: 0px;
     corner-shape: notch;
     grid-area: full;
+    display: none;
   }
 
   &::after {
