@@ -1,16 +1,10 @@
-/* @property --state {
-  syntax: "<custom-ident>";
-  inherits: false;
-  initial-value: "inactive";
-} */
-
 header-nav-item {
   --state: attr(state type(<custom-ident>));
   --variant: attr(variant type(<custom-ident>));
 
   display: flex;
   width: var(--round-up);
-  position: relative;
+  width: if(style(--variant: compact): 3rem; else: 5rem);
 }
 
 .menu-item-link {
@@ -27,7 +21,7 @@ header-nav-item {
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  width: clamp(5rem, 6rem, 8rem);
+  width: stretch;
 
   @container style(--state: active) {
     --background-colour: var(--secondary-900);
@@ -36,13 +30,11 @@ header-nav-item {
 
   @container style(--variant: compact) {
     align-items: end;
-    justify-content: center;
-    padding: 0;
-    width: 3rem;
+    padding: unset;
   }
 
   &:hover {
-    --background-color: var(--primary-900);
-    --color: var(--dark-100);
+    --background-colour: var(--primary-300);
+    --colour: var(--dark-100);
   }
 }
