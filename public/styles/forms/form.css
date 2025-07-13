@@ -54,16 +54,22 @@ textarea {
 }
 
 button:not([class]) {
-  display: inline-block;
-  padding: calc(2rem - 1cap) 3rem;
+  align-items: center;
   background-color: var(--primary-300);
-  font-size: var(--font-scaled-md);
-  font-weight: var(--font-weight-regular);
-  color: var(--light-100);
   border: none;
+  color: var(--light-100);
   cursor: pointer;
-  width: calc-size(min-content, round(size, 1rem));
+  display: inline-flex;
+  font-size: var(--font-scaled-base);
+  font-weight: var(--font-weight-bold);
+  gap: var(--spacing-base);
+  gap: 1rem;
+  height: calc-size(max-content, round(up, size, 1rem));
+  justify-content: space-between;
   justify-self: end;
+  padding: calc(round(up, 1cap, 1rem) - 1cap) 1rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  width: calc-size(min-content, round(size, 1rem));
 }
 
 form:has(:invalid) button {

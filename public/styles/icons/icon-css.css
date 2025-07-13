@@ -5,24 +5,35 @@
     style(--icon: arrow-left): var(--icon-triangle-left);
     style(--icon: github): var(--icon-github);
     style(--icon: linkedin): var(--icon-linkedin);
+    style(--icon: send): var(--icon-send);
+
     else: var(--icon-github)
+  );
+}
+/* prettier-ignore */
+@function --get-aspect-ratio(--icon <custom-ident>) {
+  result: if(
+    style(--icon: send): 1.367;
+
+    else: 1
   );
 }
 
 icon-css {
-  --areas: [full-start] var(--padding) [icon-start] var(--icon-size) [icon-end]
+  --rows: [full-start] var(--padding) [icon-start] min-content [icon-end]
     var(--padding) [full-end];
+  --columns: [full-start] var(--padding) [icon-start] var(--icon-size)
+    [icon-end] var(--padding) [full-end];
 
   --border-radius: 0px;
   --corner-shape: notch;
   --icon-size: calc(var(--width) - var(--padding) * 2);
   --icon: attr(icon type(<custom-ident>), github);
-  --padding: 0.5em;
-  --width: 2rem;
+  --padding: 0em;
+  --width: attr(width rem, 2rem);
 
-  aspect-ratio: 1;
   display: grid;
-  grid-template: var(--areas) / var(--areas);
+  grid-template: var(--rows) / var(--columns);
   width: var(--width);
 
   &::before,
@@ -38,6 +49,7 @@ icon-css {
   }
 
   &::after {
+    aspect-ratio: --get-aspect-ratio(var(--icon));
     background-color: currentColor;
     clip-path: --get-icon(var(--icon));
     grid-area: icon;
