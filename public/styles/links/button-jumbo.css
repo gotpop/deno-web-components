@@ -1,48 +1,72 @@
+@property --hover {
+  syntax: <number>;
+  initial: 0;
+  inherits: false;
+}
+
+* {
+  --hover: initial;
+  --focus-visible: initial;
+  --active: initial;
+}
+
+*:hover {
+  --hover: 1;
+}
+
+/* prettier-ignore */
+@function --get-background-colour() {
+  --colour-cached: if(
+    style(--brand: linkedin): #1da1f2; 
+    style(--brand: github): #333;
+    
+    else: var(--secondary-600)
+  );
+  
+  --colour-hover: oklch(
+    from var(--colour-cached) calc(l * 0.05) c h
+  );
+
+  --colour: if(
+    style(--hover): var(--colour-hover); 
+    
+    else: var(--colour-cached)
+  );
+
+  result: var(--colour);
+}
+
+/* prettier-ignore */
 .link-button-jumbo {
-  --brand-colour: var(--secondary-600);
-  --brand-colour-alt: --darken(var(--brand-colour), 1.1);
-  --bg: var(--brand-colour);
-  --text-display: none;
-  --gap: var(--spacing-sm);
+  --brand: attr(brand type(<custom-ident>), none);
+  --icon-size: 2rem;
+  --letter-spacing: 0.055em;
 
   align-items: center;
-  background-color: var(--bg);
+  background-color: --get-background-colour();
   color: var(--light-100);
+  container: jumbo / inline-size;
   display: grid;
-  grid-template-columns: auto 2rem;
-  font-weight: var(--font-weight-regular);
-  gap: var(--gap);
+  gap: var(--spacing-sm);
+  grid-template-columns: auto var(--icon-size);
+  height: var(--round-up-stretch);
   justify-content: space-between;
+  letter-spacing: var(--letter-spacing);
   padding: var(--spacing-base);
   text-decoration: none;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   text-wrap: balance;
-  line-height: 1.5;
-  letter-spacing: 0.055em;
-  container: jumbo / inline-size;
-  height: var(--round-up-stretch);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   span {
+    --text-display: none;
     --font-size: var(--font-scaled-sm);
 
     display: var(--text-display);
     font-size: var(--font-size);
 
-    @container (width >= 4rem) {
+    @container jumbo (width >= 4rem) {
       --text-display: inline;
       --font-size: var(--font-scaled-base);
     }
-  }
-
-  &[data-brand="github"] {
-    --brand-colour: #333;
-  }
-
-  &[data-brand="linkedin"] {
-    --brand-colour: #1da1f2;
-  }
-
-  &:hover {
-    --bg: var(--brand-colour-alt);
   }
 }
