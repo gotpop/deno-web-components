@@ -3,8 +3,9 @@ header-nav-item {
   --variant: attr(variant type(<custom-ident>));
 
   display: flex;
-  width: var(--round-up);
-  width: if(style(--variant: compact): 3rem; else: 5rem);
+  width: if(
+    style(--variant: compact): var(--spacing-lg) ; else: var(--spacing-xxl)
+  );
 }
 
 .menu-item-link {
