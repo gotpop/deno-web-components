@@ -1,4 +1,6 @@
 <header-nav-item 
+  {{ item.key | isActive(currentPage) }}
+  variant="{{ 'compact' if item.isExternal else 'normal' }}"
     {% if item.isExternal %}
       width="narrow" 
     {% endif %}
@@ -6,10 +8,9 @@
   <a 
   class="menu-item-link"
   role="menuitem" 
-  data-variant="{{ 'compact' if item.isExternal else 'normal' }}"
+  variant="{{ 'compact' if item.isExternal else 'normal' }}"
   href="{{ item.href }}"
   aria-label="{{ item.name }}"
-  {{ item.key | isActive(currentPage) }}
   {% if item.isExternal %}
     target="_blank"
     rel="noopener"

@@ -1,6 +1,16 @@
+/* @property --state {
+  syntax: "<custom-ident>";
+  inherits: false;
+  initial-value: "inactive";
+} */
+
 header-nav-item {
+  --state: attr(state type(<custom-ident>));
+  --variant: attr(variant type(<custom-ident>));
+
   display: flex;
   width: var(--round-up);
+  position: relative;
 }
 
 .menu-item-link {
@@ -11,28 +21,28 @@ header-nav-item {
   color: var(--colour);
   display: flex;
   font-size: var(--font-scaled-sm);
+  font-weight: var(--font-weight-bold);
   padding-block: calc(1rem - calc(1cap / 2));
   place-content: center;
   text-align: center;
   text-decoration: none;
-  width: clamp(5rem, 6rem, 8rem);
-  font-weight: var(--font-weight-bold);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  width: clamp(5rem, 6rem, 8rem);
 
-  &[data-active] {
+  @container style(--state: active) {
     --background-colour: var(--secondary-900);
     --colour: var(--primary-300);
   }
 
-  &:hover {
-    --background-color: var(--secondary-900);
-    --color: var(--light-100);
-  }
-
-  &[data-variant="compact"] {
+  @container style(--variant: compact) {
     align-items: end;
     justify-content: center;
-    width: 3rem;
     padding: 0;
+    width: 3rem;
+  }
+
+  &:hover {
+    --background-color: var(--primary-900);
+    --color: var(--dark-100);
   }
 }
