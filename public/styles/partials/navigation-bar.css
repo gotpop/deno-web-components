@@ -20,7 +20,11 @@ navigation-bar {
 }
 
 .button-filter {
-  background-color: var(--secondary-400);
+  --staggered-colour: oklch(
+    from var(--secondary-400) calc(l + sibling-index() * 0.05) c h
+  );
+
+  background-color: var(--staggered-colour);
   color: var(--light-100);
   cursor: pointer;
   justify-content: center;
@@ -29,6 +33,7 @@ navigation-bar {
   text-decoration: none;
   transition: background-color 0.3s ease-in-out;
   width: var(--round-up);
+  text-align: center;
 
   &:hover {
     background-color: var(--secondary-600);
