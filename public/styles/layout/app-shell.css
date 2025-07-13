@@ -7,9 +7,6 @@ app-shell {
   --grid-horizontal-color: --opacity(var(--secondary-600), 0.2);
   --grid-vertical-color: --opacity(var(--primary-600), 0.1);
 
-  /* --grid-horizontal-color: --opacity(var(--light-600), 0.4);
-  --grid-vertical-color: --opacity(var(--light-600), 0.2); */
-
   background-image: paint(grid), var(--grain-uri);
   column-gap: --xs-sm-md-lg-xl-up(0rem, 1rem, 1rem, 1rem, 3rem);
   display: grid;

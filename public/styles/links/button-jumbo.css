@@ -1,21 +1,5 @@
-@property --hover {
-  syntax: <number>;
-  initial: 0;
-  inherits: false;
-}
-
-* {
-  --hover: initial;
-  --focus-visible: initial;
-  --active: initial;
-}
-
-*:hover {
-  --hover: 1;
-}
-
 /* prettier-ignore */
-@function --get-background-colour() {
+@function --get-background-colour()  returns <color> {
   --colour-cached: if(
     style(--brand: linkedin): #1da1f2; 
     style(--brand: github): #333;
@@ -28,7 +12,7 @@
   );
 
   --colour: if(
-    style(--hover): var(--colour-hover); 
+    style(--hover: 1): var(--colour-hover); 
     
     else: var(--colour-cached)
   );
@@ -56,6 +40,10 @@
   text-decoration: none;
   text-wrap: balance;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+  --hover: 1;
+}
 
   span {
     --text-display: none;

@@ -27,6 +27,7 @@
 @import "./animations/view-transitions.css";
 
 /* Base */
+@import "./base/interactions.css";
 @import "./base/global.css";
 @import "./base/reset.css";
 

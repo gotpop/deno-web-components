@@ -1,0 +1,15 @@
+@property --hover {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+* {
+  --hover: initial;
+  --focus-visible: initial;
+  --active: initial;
+}
+
+*:hover {
+  --hover: 1;
+}

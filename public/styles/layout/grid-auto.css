@@ -3,14 +3,15 @@ grid-auto {
   --end: attr(end type(<integer> | <custom-ident>), -4);
   --min-content: attr(min-content rem, 20rem);
   --gap: --xs-md-lg-up(
-    attr(row-sm rem, 1rem),
-    attr(row-md rem, 5rem),
-    attr(row-lg rem, 8rem)
-  ) --xs-md-lg-up(
-    attr(col-sm rem, 1rem),
-    attr(col-md rem, 5rem),
-    attr(col-lg rem, 7rem)
-  );
+      attr(row-sm rem, 1rem),
+      attr(row-md rem, 5rem),
+      attr(row-lg rem, 8rem)
+    )
+    --xs-md-lg-up(
+      attr(col-sm rem, 1rem),
+      attr(col-md rem, 5rem),
+      attr(col-lg rem, 7rem)
+    );
 
   display: grid;
   gap: var(--gap);
@@ -18,7 +19,6 @@ grid-auto {
   grid-column: var(--begin) / var(--end);
   grid-template-columns: repeat(auto-fit, minmax(var(--min-content), 1fr));
   grid-row: attr(row type(<integer> | <custom-ident>), auto);
-
   column-rule: 4rem solid --opacity(var(--primary-500), 0.02);
   row-rule-outset: 0rem;
   row-rule-break: intersection;
@@ -30,10 +30,8 @@ grid-auto-fill {
   display: grid;
   row-gap: attr(gap-row rem, 1rem);
   column-gap: attr(gap-column rem, 1rem);
-  grid-column: attr(begin type(<integer> | <custom-ident>), 28) / attr(
-    end type(<integer> | <custom-ident>),
-    -4
-  );
+  grid-column: attr(begin type(<integer> | <custom-ident>), 28) /
+    attr(end type(<integer> | <custom-ident>), -4);
   grid-row: attr(row type(<integer> | <custom-ident>), auto);
   grid-template-columns: repeat(auto-fill, 1rem);
 }
