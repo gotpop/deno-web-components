@@ -33,7 +33,6 @@ textarea {
 
   background-color: --opacity(var(--light-100), 0.5);
   border-image: var(--grad) 16;
-  /* border-right-width: 1rem; */
   color: var(--dark-500);
   font-size: var(--font-scaled-base);
   font-family: var(--font-family-base);
@@ -82,6 +81,12 @@ form:has(:invalid) button {
   height: calc-size(max-content, round(up, size, 1rem));
   line-height: 1.5;
   font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--secondary-300);
+  }
 
   :has(~ &) & {
     background-color: red;
