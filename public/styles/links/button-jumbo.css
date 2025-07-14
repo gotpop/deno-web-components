@@ -41,18 +41,12 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   span {
-    --text-display: flex;
     --font-size: var(--font-scaled-sm);
 
-    display: var(--text-display);
     font-size: var(--font-size);
 
     @container jumbo (width >= 10rem) {
-      --text-display: flex;
       --font-size: var(--font-scaled-base);
-
-      display: var(--text-display);
-      font-size: var(--font-size);
     }
   }
 }
