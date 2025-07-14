@@ -20,7 +20,6 @@
   result: var(--colour);
 }
 
-/* prettier-ignore */
 .link-button-jumbo {
   --brand: attr(brand type(<custom-ident>), none);
   --icon-size: 2rem;
@@ -40,10 +39,6 @@
   text-decoration: none;
   text-wrap: balance;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-  &:hover {
-  --hover: 1;
-}
 
   span {
     --text-display: none;

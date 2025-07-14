@@ -29,7 +29,7 @@ icon-css {
   --corner-shape: notch;
   --icon-size: calc(var(--width) - var(--padding) * 2);
   --icon: attr(icon type(<custom-ident>), github);
-  --padding: 0em;
+  --padding: attr(padding px, 0rem);
   --width: attr(width rem, 2rem);
 
   display: grid;
