@@ -39,8 +39,11 @@
 @import "./layout/layout-item.css";
 
 /* Forms */
-@import "./forms/input.css";
 @import "./forms/form.css";
+@import "./forms/input.css";
+@import "./forms/select.css";
+@import "./forms/button.css";
+@import "./forms/text-area.css";
 
 /* Icons */
 @import "./icons/hamburger.css";

@@ -1,0 +1,22 @@
+button:not([class]) {
+  align-items: center;
+  background-color: var(--primary-300);
+  border: none;
+  color: var(--light-100);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: var(--font-scaled-base);
+  font-weight: var(--font-weight-medium);
+  gap: var(--spacing-base);
+  justify-content: space-between;
+  justify-self: end;
+  padding: calc(calc(round(up, 1cap, 3rem) - 1cap) / 2) 2rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  width: calc-size(min-content, round(up, size, 1rem));
+
+  form:has(:invalid) & {
+    background-color: var(--dark-500);
+    cursor: not-allowed;
+    color: var(--light-300);
+  }
+}

@@ -1,0 +1,40 @@
+textarea {
+  resize: vertical;
+  display: block;
+  padding: 1rem;
+  field-sizing: content;
+  outline-offset: 0.5rem;
+  margin-block-end: 2rem;
+  width: 100%;
+  min-height: 3rem;
+  border-radius: unset;
+  height: calc-size(max-content, round(up, size, 1rem));
+
+  --w: calc(100% - 1rem);
+  --grad: linear-gradient(
+    to right,
+    var(--light-700) var(--w),
+    var(--color) var(--w)
+  );
+
+  background-color: --opacity(var(--light-100), 0.5);
+  border-image: var(--grad) 16;
+  color: var(--dark-500);
+  font-size: var(--font-scaled-base);
+  font-family: var(--font-family-base);
+  border-width: 2px;
+  border: 2px solid var(--dark-500);
+
+  &:valid {
+    border-right: green solid 1rem;
+  }
+
+  &:user-invalid {
+    border-right: red solid 1rem;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-300);
+  }
+}

@@ -27,7 +27,7 @@ content-main {
   grid-auto-rows: min-content;
   grid-template-columns: 1fr;
   height: stretch;
-  padding: --xs-sm-up(1rem, 2rem);
+  padding: --xs-sm-up(1rem, 3rem);
 }
 
 content-sidebar {

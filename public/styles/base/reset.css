@@ -32,3 +32,8 @@ li:not([class]) {
     gap: var(--spacing-base);
   }
 }
+
+select,
+::picker(select) {
+  appearance: base-select;
+}

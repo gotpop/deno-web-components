@@ -2,6 +2,5 @@
   align-items: start;
   display: grid;
   grid-template-columns: 1fr;
-  padding: 2rem;
   width: 100%;
 }

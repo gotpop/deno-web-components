@@ -1,36 +1,10 @@
 /* prettier-ignore */
 .wrapper-index-section {
-  --areas: --xs-sm-md-lg-xl-up(
-    /* xs */
-    "header header header" 
-    "card-1 card-1 card-1" 
-    "card-2 card-2 card-2"
-    "card-3 card-3 card-3",
-    /* sm */
-    "header header header header" 
-    "card-1 card-1 card-1 card-1"
-    "card-2 card-2 card-2 card-2" 
-    "card-3 card-3 card-3 card-3",
-    /* md */
-    "header header . . . ." 
-    "card-1 card-1 card-1 card-1 card-1 card-1"
-    "card-2 card-2 card-2 card-2 card-2 card-2" 
-    "card-3 card-3 card-3 card-3 card-3 card-3",
-    /* lg */
-    "header header . . . ." 
-    "card-1 card-1 card-1 card-2 card-2 card-2"
-    "card-3 card-3 card-3 card-3 card-3 card-3",
-    /* xl */
-    "header . . . . ." 
-    "card-1 card-1 card-2 card-2 card-3 card-3"
-  );
-
   background: --background(crosshatch);
   column-gap: --xs-lg-up(1rem, var(--spacing-lg));
   display: grid;
   grid-column: --xs-xl-up(breakout, content);
-  grid-template-areas: var(--areas);
-  grid-template-columns: subgrid;
+  grid-template-columns: subgrid [header-start] [header-end];
   row-gap: var(--spacing-md);
 }
 

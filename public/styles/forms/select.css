@@ -1,0 +1,44 @@
+.custom-select {
+  background: var(--secondary-200);
+  color: white;
+  border-radius: 0;
+  border: none;
+  width: calc-size(min-content, round(up, size, 1rem));
+  height: calc-size(max-content, round(up, size, 1rem));
+  line-height: 1.5;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--secondary-300);
+  }
+
+  :has(~ &) & {
+    background-color: red;
+  }
+
+  option {
+    line-height: 3rem;
+    height: 3rem;
+    border: none;
+  }
+
+  &::picker(select) {
+    border: none;
+    right: anchor(right);
+  }
+
+  &::picker-icon {
+    color: #999;
+    transition: 0.4s rotate;
+  }
+
+  &:open::picker-icon {
+    rotate: 180deg;
+  }
+
+  span {
+    background-color: yellow;
+  }
+}
