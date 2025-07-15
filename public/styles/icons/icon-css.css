@@ -20,19 +20,15 @@
 }
 
 icon-css {
-  --rows: [f-start] var(--pad) [i-start] min-content [i-end] var(--pad) [f-end];
-  --columns: [f-start] var(--pad) [i-start] var(--icon-size) [i-end] var(--pad)
-    [f-end];
-
-  --border-radius: attr(radius rem, 0);
-  --corner-shape: attr(radius rem, square);
-  --icon-size: calc(var(--width) - var(--pad) * 2);
+  --cols: [f-start] var(--pad) [i-start] var(--size) [i-end] var(--pad) [f-end];
   --icon: attr(icon type(<custom-ident>), github);
-  --pad: 0em;
+  --pad: 0rem;
+  --rows: [f-start] var(--pad) [i-start] min-content [i-end] var(--pad) [f-end];
+  --size: calc(var(--width) - var(--pad) * 2);
   --width: attr(width rem, 2rem);
 
   display: grid;
-  grid-template: var(--rows) / var(--columns);
+  grid-template: var(--rows) / var(--cols);
   width: var(--width);
 
   &::before,
@@ -42,8 +38,8 @@ icon-css {
 
   &::before {
     background-color: var(--secondary-500);
-    border-radius: var(--border-radius);
-    corner-shape: var(--corner-shape);
+    border-radius: attr(radius rem, 0);
+    corner-shape: attr(radius rem, square);
     grid-area: f;
     display: none;
   }
