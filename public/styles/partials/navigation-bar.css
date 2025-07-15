@@ -6,7 +6,8 @@ navigation-bar {
   gap: var(--spacing-base);
   justify-content: space-between;
   padding: 2rem;
-  /* background: --background(crosshatch); */
+  background: --background(crosshatch);
+  background: --opacity(var(--primary-600), 0.03);
 }
 
 .group-filters {

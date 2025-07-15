@@ -11,10 +11,10 @@ card-element {
   align-content: attr(align type(<custom-ident>), space-between);
   display: grid;
   grid-column: var(--start) / var(--end);
-  /* background: --background(line); */
   background-color: var(--light-100);
   background-image: paint(grid), var(--grain-uri);
   padding: var(--spacing-lg);
   view-transition-name: attr(id type(<custom-ident>), none);
   grid-area: attr(area type(<custom-ident>), initial);
+  max-height: var(--round-down);
 }

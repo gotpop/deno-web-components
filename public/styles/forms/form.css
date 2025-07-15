@@ -61,21 +61,19 @@ button:not([class]) {
   cursor: pointer;
   display: inline-flex;
   font-size: var(--font-scaled-base);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   gap: var(--spacing-base);
-  gap: 1rem;
-  height: calc-size(max-content, round(up, size, 1rem));
   justify-content: space-between;
   justify-self: end;
-  padding: calc(round(up, 1cap, 1rem) - 1cap) 1rem;
+  padding: calc(calc(round(up, 1cap, 3rem) - 1cap) / 2) 2rem;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  width: calc-size(min-content, round(size, 1rem));
-}
+  width: calc-size(min-content, round(up, size, 1rem));
 
-form:has(:invalid) button {
-  background-color: var(--dark-500);
-  cursor: not-allowed;
-  color: var(--light-300);
+  form:has(:invalid) & {
+    background-color: var(--dark-500);
+    cursor: not-allowed;
+    color: var(--light-300);
+  }
 }
 
 .custom-select {

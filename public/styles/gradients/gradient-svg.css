@@ -29,3 +29,27 @@
     mix-blend-mode: hard-light;
   }
 }
+
+.br-grid {
+  background: 0% 0% / auto 25px repeat-y
+      linear-gradient(
+        to top,
+        #ff000000 0% 49%,
+        #ffffff59 49% 51%,
+        #0000ff00 51%
+      ),
+    0% 0% / 25px auto repeat-x
+      linear-gradient(
+        to right,
+        #ff000000 0% 49%,
+        #ffffff59 49% 51%,
+        #0000ff00 51%
+      ),
+    radial-gradient(
+      farthest-corner at 100% 100%,
+      #e3261cff 0%,
+      #a121afff 60%,
+      #261ce3ff 100%
+    );
+  background-blend-mode: overlay;
+}
