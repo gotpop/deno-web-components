@@ -20,16 +20,15 @@
 }
 
 icon-css {
-  --rows: [full-start] var(--padding) [icon-start] min-content [icon-end]
-    var(--padding) [full-end];
-  --columns: [full-start] var(--padding) [icon-start] var(--icon-size)
-    [icon-end] var(--padding) [full-end];
+  --rows: [f-start] var(--pad) [i-start] min-content [i-end] var(--pad) [f-end];
+  --columns: [f-start] var(--pad) [i-start] var(--icon-size) [i-end] var(--pad)
+    [f-end];
 
-  --border-radius: 0px;
-  --corner-shape: notch;
-  --icon-size: calc(var(--width) - var(--padding) * 2);
+  --border-radius: attr(radius rem, 0);
+  --corner-shape: attr(radius rem, square);
+  --icon-size: calc(var(--width) - var(--pad) * 2);
   --icon: attr(icon type(<custom-ident>), github);
-  --padding: attr(padding px, 0rem);
+  --pad: 0em;
   --width: attr(width rem, 2rem);
 
   display: grid;
@@ -43,9 +42,9 @@ icon-css {
 
   &::before {
     background-color: var(--secondary-500);
-    border-radius: 0px;
-    corner-shape: notch;
-    grid-area: full;
+    border-radius: var(--border-radius);
+    corner-shape: var(--corner-shape);
+    grid-area: f;
     display: none;
   }
 
@@ -53,6 +52,6 @@ icon-css {
     aspect-ratio: --get-aspect-ratio(var(--icon));
     background-color: currentColor;
     clip-path: --get-icon(var(--icon));
-    grid-area: icon;
+    grid-area: i;
   }
 }

@@ -13,7 +13,7 @@ blockquote {
   color: --get-font-colour-heading(attr(variant type(<custom-ident>), lg));
   font: --font(heading, attr(variant type(<custom-ident>), lg));
   margin-block: 0 attr(bottom rem, unset);
-  padding-block-start: calc(attr(top rem, unset) - 1cap);
+  padding-block-start: calc(round(1cap, attr(top rem, 0)) - 1cap);
   text-wrap: balance;
 }
 
@@ -23,7 +23,7 @@ p:not([class]) {
   letter-spacing: 0.015em;
   margin-block: 0 attr(bottom rem, unset);
   max-width: 60ch;
-  padding-block-start: calc(attr(top rem, 1rem) - 1cap);
+  padding-block-start: calc(round(up, 1cap, attr(top rem, 0)) - 1cap);
   text-wrap: pretty;
   text-align: attr(align type(<custom-ident>), initial);
 }
