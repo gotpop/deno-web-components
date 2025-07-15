@@ -19,7 +19,7 @@
   );
 }
 
-icon-css {
+icon-element {
   --cols: [f-start] var(--pad) [i-start] var(--size) [i-end] var(--pad) [f-end];
   --icon: attr(icon type(<custom-ident>), github);
   --pad: 0rem;
