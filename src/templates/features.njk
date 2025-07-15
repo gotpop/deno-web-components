@@ -45,13 +45,10 @@
                 </select>
             </form>
         </navigation-bar>
-
-        <layout-item start="1" end="-1" row="1" id="features-list">
-            <grid-auto gap="1">
-                {% for feature in features %}
-                    {{ featureComponents.featureCard(feature) }}
-                {% endfor %}
-            </grid-auto>
-        </layout-item>
+        <card-elements>
+            {% for feature in features %}
+                {{ featureComponents.featureCard(feature) }}
+            {% endfor %}
+        </card-elements>
     </section>
 {% endblock %}

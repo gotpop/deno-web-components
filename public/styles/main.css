@@ -33,9 +33,8 @@
 
 /* Layout */
 @import "./layout/layout-properties.css";
-@import "./layout/grid-auto.css";
 @import "./layout/layout.css";
-@import "./layout/surface.css";
+@import "./layout/cards.css";
 @import "./layout/app-shell.css";
 @import "./layout/layout-item.css";
 

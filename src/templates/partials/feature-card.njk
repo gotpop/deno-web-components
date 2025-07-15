@@ -7,10 +7,10 @@
     start="auto"
     {% if index is defined %}area="card-{{ index + 1 }}"{% endif %}
     >
-    <div>
-      <h3 variant="md" top="1" bottom="2">{{ feature.title }}</h3>
-      <p variant="base" top="1" bottom="2">{{ feature.blurb }}</p>
-    </div>
+
+      <h3 variant="md" top="1" bottom="0">{{ feature.title }}</h3>
+      <p variant="base" top="1" bottom="0">{{ feature.blurb }}</p>
+
     <a class="link-feature" href="/features/{{ feature.slug }}">
       <span>Read more</span>
     </a>

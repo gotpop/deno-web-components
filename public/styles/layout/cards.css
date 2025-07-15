@@ -1,0 +1,19 @@
+card-elements {
+  display: grid;
+  gap: --xs-md-lg-up(3rem, 3rem, 3rem) --xs-md-lg-up(3rem, 3rem, 3rem);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  column-rule: 3rem solid --opacity(var(--primary-500), 0.03);
+  row-rule: 4rem solid --opacity(var(--primary-500), 0.02);
+}
+
+card-element {
+  display: grid;
+  grid-template-rows: subgrid [heading] [body] [footer];
+  grid-row: span 3;
+  background-color: var(--light-100);
+  background-image: paint(grid), var(--grain-uri);
+  padding: var(--spacing-lg);
+  view-transition-name: attr(id type(<custom-ident>), none);
+  gap: var(--spacing-md);
+  max-height: var(--round-down);
+}
